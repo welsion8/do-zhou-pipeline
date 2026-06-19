@@ -11,7 +11,7 @@ export default defineConfig({
       provider: 'istanbul',
       reporter: ['text', 'json'],
       include: ['src/**/*.{ts,tsx}'],
-      exclude: ['src/**/*.{test,spec}.{ts,tsx}', 'src/renderer/**'],
+      exclude: ['src/**/*.{test,spec}.{ts,tsx}'],
     },
   },
   resolve: {

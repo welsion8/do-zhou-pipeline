@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-19T14:27:24.817Z",
+  "timestamp": "2026-06-19T14:46:37.710Z",
   "projectRoot": "F:/小说桌面端工具",
   "codeDir": "do-zhou",
   "stage": "developing",
@@ -80,6 +80,7 @@
           "check": "折叠状态管理",
           "found": true,
           "files": [
+            "coverage/coverage-final.json",
             "src/main/services/skill-service.ts",
             "src/main/services/skill-service.ts",
             "src/main/services/skill-service.ts",
@@ -726,6 +727,10 @@
           "check": "右键菜单实现",
           "found": true,
           "files": [
+            "coverage/coverage-final.json",
+            "coverage/coverage-final.json",
+            "coverage/coverage-final.json",
+            "coverage/coverage-final.json",
             "src/renderer/components/editor/editor-context-menu.tsx",
             "src/renderer/components/editor/editor-context-menu.tsx",
             "src/renderer/components/editor/editor-context-menu.tsx",
@@ -991,6 +996,7 @@
           "check": "自动保存逻辑",
           "found": true,
           "files": [
+            "coverage/coverage-final.json",
             "src/main/services/settings-service.ts",
             "src/main/services/settings-service.ts",
             "src/renderer/components/editor/editor-workspace.tsx",
@@ -2041,6 +2047,7 @@
           "check": "响应式逻辑",
           "found": true,
           "files": [
+            "coverage/coverage-final.json",
             "src/renderer/components/file-tree/file-tree.tsx",
             "src/renderer/components/file-tree/file-tree.tsx",
             "src/renderer/components/file-tree/file-tree.tsx",
@@ -2152,6 +2159,7 @@
         "src\\main\\engine\\claude\\claude-engine.ts",
         "src\\main\\engine\\claude\\session-bridge.ts",
         "src\\main\\engine\\engine-factory.ts",
+        "src\\main\\engine\\types.ts",
         "src\\main\\engine\\universal\\agent-loop.ts",
         "src\\main\\engine\\universal\\model-router.ts",
         "src\\main\\engine\\universal\\tool-executor.ts",
@@ -3475,7 +3483,7 @@
     {
       "check": "a11y: 无障碍属性",
       "status": "🟢",
-      "detail": "36 处 (aria:17 role:2 tabIndex:0 alt:0 label:17) — 12/89 文件 (13%)"
+      "detail": "36 处 (aria:17 role:2 tabIndex:0 alt:0 label:17) — 12/92 文件 (13%)"
     },
     {
       "check": "a11y: 键盘导航",
@@ -4212,6 +4220,6 @@
     "filePathCount": 68
   },
   "code": {
-    "fileCount": 95
+    "fileCount": 98
   }
 }
