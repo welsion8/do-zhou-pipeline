@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>FeiCai 多项目仪表板</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Inter,sans-serif;background:#0F0F11;color:#F0EEE8;padding:24px}
+h1{font-size:20px;margin-bottom:4px}
+.subtitle{font-size:12px;color:#8B8A8E;margin-bottom:24px}
+.banner{padding:12px 16px;border-radius:8px;margin-bottom:20px;font-size:13px}
+.banner.pass{background:#1A2A1A;border:1px solid #4CAF50;color:#A5D6A7}
+.banner.fail{background:#3D2020;border:1px solid #E57373;color:#EF9A9A}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px}
+.card{background:#161618;border:1px solid #FFFFFF14;border-radius:8px;padding:16px}
+.card h2{font-size:16px;margin-bottom:4px}
+.card .type{font-size:10px;color:#5C5B60;text-transform:uppercase;margin-bottom:8px}
+.card .row{display:flex;justify-content:space-between;font-size:12px;padding:3px 0}
+.card .row .label{color:#8B8A8E}
+.card .val{font-weight:600}
+.val.green{color:#4CAF50}.val.yellow{color:#F0A060}.val.red{color:#E57373}
+.status-dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px}
+.status-dot.pass{background:#4CAF50}.status-dot.warn{background:#F0A060}.status-dot.fail{background:#E57373}
+.footer{text-align:center;font-size:11px;color:#5C5B60;margin-top:24px;padding-top:16px;border-top:1px solid #FFFFFF14}
+</style></head>
+<body>
+<h1>📊 FeiCai 多项目仪表板</h1>
+<div class="subtitle">2 个项目 · 2026/6/19 12:19:18</div>
+<div class="banner fail">⚠ 0 项阻断待修复</div>
+<div class="grid">
+<div class="card">
+  <h2><span class="status-dot fail"></span>proj-a</h2>
+  <div class="type">desktop · Phase ?</div>
+  <div class="row"><span class="label">Gate</span><span class="val red">0/12</span></div>
+  <div class="row"><span class="label">审计</span><span class="val green">🔴0 🟠0</span></div>
+  <div class="row"><span class="label">E2E</span><span class="val yellow">0%</span></div>
+</div><div class="card">
+  <h2><span class="status-dot fail"></span>proj-b</h2>
+  <div class="type">desktop · Phase ?</div>
+  <div class="row"><span class="label">Gate</span><span class="val red">0/12</span></div>
+  <div class="row"><span class="label">审计</span><span class="val green">🔴0 🟠0</span></div>
+  <div class="row"><span class="label">E2E</span><span class="val yellow">0%</span></div>
+</div></div><div class="footer">FeiCai Multi-Project Dashboard · 自动生成</div></body></html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8"><title>组件目录 · Do舟</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Inter,sans-serif;background:#0F0F11;color:#F0EEE8;padding:24px}
+h1{font-size:20px;margin-bottom:8px}
+h2{font-size:14px;color:#8B8A8E;margin:24px 0 12px;border-bottom:1px solid #FFFFFF14;padding-bottom:8px}
+.comp{background:#161618;border:1px solid #FFFFFF14;border-radius:8px;padding:16px;margin-bottom:12px}
+.comp h3{font-size:15px;margin-bottom:4px}
+.comp .path{font-size:11px;color:#5C5B60;margin-bottom:8px}
+.comp .meta{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px}
+.tag{font-size:10px;padding:2px 6px;border-radius:3px;background:#252528;color:#8B8A8E}
+.tag.a11y{background:#1A2A1A;color:#A5D6A7}
+.tag.design{background:#2A2520;color:#F0A060}
+.comp .props{font-size:11px;color:#5C5B60;margin-top:8px}
+.comp .props span{color:#8B8A8E}
+.stats{font-size:12px;color:#8B8A8E;margin-bottom:16px}
+</style></head>
+<body>
+<h1>📦 组件目录</h1>
+<div class="stats">37 个组件 · 8 个目录 · 2420 行代码</div>
+<h2>📁 renderer\components</h2><div class="comp">
+  <h3>WindowControls</h3>
+  <div class="path">renderer\components\window-controls.tsx · 21 行</div>
+  <div class="meta"><span class="tag a11y">♿ label="最小化"</span><span class="tag a11y">♿ label="最大化"</span><span class="tag a11y">♿ label="关闭"</span><span class="tag" style="color:#E57373">⚠ 缺 testid</span></div></div><h2>📁 renderer\components\api-config</h2><div class="comp">
+  <h3>ProviderCard</h3>
+  <div class="path">renderer\components\api-config\provider-card.tsx · 211 行</div>
+  <div class="meta"><span class="tag">🧪 provider-card</span><span class="tag">🧪 btn-check-connection</span></div><div class="props">Props: <span>provider: ProviderData; onUpdate: (id: string, u: { apiUrl: string apiKey: string enabled: boolean name: string</span></div></div><h2>📁 renderer\components\chat</h2><div class="comp">
+  <h3>ChatHeader</h3>
+  <div class="path">renderer\components\chat\chat-header.tsx · 21 行</div>
+  <div class="meta"><span class="tag">🧪 btn-search</span><span class="tag">🧪 btn-export</span><span class="tag a11y">♿ label="搜索对话"</span><span class="tag a11y">♿ label="导出对话"</span></div><div class="props">Props: <span>tokenCount: number; onSearch: () => void; onExport: () => void</span></div></div><div class="comp">
+  <h3>ChatInputBar</h3>
+  <div class="path">renderer\components\chat\chat-input-bar.tsx · 63 行</div>
+  <div class="meta"><span class="tag">🧪 chat-input</span><span class="tag">🧪 btn-send</span><span class="tag a11y">♿ label="输入消息"</span></div><div class="props">Props: <span>onSend: (content: string) => void; disabled: boolean; placeholder: string</span></div></div><div class="comp">
+  <h3>ChatMessageAI</h3>
+  <div class="path">renderer\components\chat\chat-message-ai.tsx · 24 行</div>
+  <div class="meta"><span class="tag" style="color:#E57373">⚠ 缺 testid</span></div><div class="props">Props: <span>content: string isStreaming: boolean</span></div></div><div class="comp">
+  <h3>ChatMessageUser</h3>
+  <div class="path">renderer\components\chat\chat-message-user.tsx · 12 行</div>
+  <div class="meta"><span class="tag" style="color:#E57373">⚠ 缺 testid</span></div><div class="props">Props: <span>content: string</span></div></div><div class="comp">
+  <h3>ChatOperationButtons</h3>
+  <div class="path">renderer\components\chat\chat-operation-buttons.tsx · 98 行</div>
+  <div class="meta"><span class="tag" style="color:#E57373">⚠ 缺 testid</span></div><div class="props">Props: <span>fileName: string; userModified: boolean; onManualEdit: (fileName: string) => void; onRegenerate: (fileName: string, extraRequirement: string) => void</span></div></div><div class="comp">
+  <h3>ChatSystemMessage</h3>
+  <div class="path">renderer\components\chat\chat-system-message.tsx · 13 行</div>
+  <div class="meta"><span class="tag" style="color:#E57373">⚠ 缺 testid</span></div><div class="props">Props: <span>content: string timestamp: number</span></div></div><div class="comp">
+  <h3>ChatView</h3>
+  <div class="path">renderer\components\chat\chat-view.tsx · 134 行</div>
+  <div class="meta"><span class="tag">🧪 find-input</span><span class="tag">🧪 chat-body</span><span class="tag">🧪 user-message</span><span class="tag">🧪 ai-message</span><span class="tag">🧪 btn-next-chapter</span><span class="tag">🧪 toast-message</span></div><div class="props">Props: <span>projectRoot: string; activeSkill: string | null</span></div></div><h2>📁 renderer\components\editor</h2><div class="comp">
+  <h3>ChapterIndexPageWrapper</h3>
+  <div class="path">renderer\components\editor\chapter-index-page-wrapper.tsx · 175 行</div>
+  <div class="meta"><span class="tag">🧪 btn-new-chapter</span></div><div class="props">Props: <span>projectPath: string | null; onChapterClick: (chapterNo: number) => void; onBack: () => void; onBackToChapterIndex: () => void  // [← 目录] 标签链接专用</span></div></div><div class="comp">
+  <h3>ChapterIndexRow</h3>
+  <div class="path">renderer\components\editor\chapter-index-row.tsx · 35 行</div>
+  <div class="meta"><span class="tag">🧪 chapter-row</span></div><div class="props">Props: <span>entry: ChapterEntry; onClick: (chapterNo: number) => void</span></div></div><div class="comp">
+  <h3>ChapterIndexView</h3>
+  <div class="path">renderer\components\editor\chapter-index-view.tsx · 71 行</div>
+  <div class="meta"><span class="tag">🧪 btn-back</span></div><div class="props">Props: <span>result: ParseResult; onChapterClick: (chapterNo: number) => void; onBack: () => void</span></div></div><div class="comp">
+  <h3>EditorContextMenu</h3>
+  <div class="path">renderer\components\editor\editor-context-menu.tsx · 40 行</div>
+  <div class="meta"><span class="tag" style="color:#E57373">⚠ 缺 testid</span></div><div class="props">Props: <span>x: number y: number; onClose: () => void; onCopy: () => void; onCut: () => void; onPaste: () => void; onAiRewrite: () => void</span></div></div><div class="comp">
+  <h3>EditorToolbar</h3>
+  <div class="path">renderer\components\editor\editor-toolbar.tsx · 21 行</div>
+  <div class="meta"><span class="tag">🧪 editor-toolbar</span></div><div class="props">Props: <span>mode: 'edit' | 'preview'; onToggleMode: () => void; onNewFile: () => void</span></div></div><div class="comp">
+  <h3>EditorWorkspace</h3>
+  <div class="path">renderer\components\editor\editor-workspace.tsx · 224 行</div>
+  <div class="meta"><span class="tag">🧪 editor-content</span></div></div><div class="comp">
+  <h3>MarkdownEditor</h3>
+  <div class="path">renderer\components\editor\markdown-editor.tsx · 84 行</div>
+  <div class="meta"><span class="tag" style="color:#E57373">⚠ 缺 testid</span></div><div class="props">Props: <span>value: string; onChange: (value: string) => void; readOnly: boolean; placeholder: string; onCursorChange: (line: number, col: number) => void</span></div></div><div class="comp">
+  <h3>MarkdownPreview</h3>
+  <div class="path">renderer\components\editor\markdown-preview.tsx · 50 行</div>
+  <div class="meta"><span class="tag" style="color:#E57373">⚠ 缺 testid</span></div><div class="props">Props: <span>content: string</span></div></div><div class="comp">
+  <h3>ShortcutPanel</h3>
+  <div class="path">renderer\components\editor\shortcut-panel.tsx · 67 行</div>
+  <div class="meta"><span class="tag">🧪 shortcut-panel</span><span class="tag">🧪 modal-title</span><span class="tag">🧪 modal-close</span></div></div><div class="comp">
+  <h3>TabBar</h3>
+  <div class="path">renderer\components\editor\tab-bar.tsx · 123 行</div>
+  <div class="meta"><span class="tag">🧪 tab</span><span class="tag">🧪 tab-close</span></div><div class="props">Props: <span>tabs: Tab[]; activeTabId: string | null; onSelectTab: (tabId: string) => void; onCloseTab: (tabId: string) => void; onRenameTab: (tabId: string, name: string) => void; onReorderTabs: (from: number, to: number) => void</span></div></div><div class="comp">
+  <h3>TabContextMenu</h3>
+  <div class="path">renderer\components\editor\tab-context-menu.tsx · 46 行</div>
+  <div class="meta"><span class="tag" style="color:#E57373">⚠ 缺 testid</span></div><div class="props">Props: <span>x: number y: number; tabTitle: string; filePath: string; onClose: () => void; onCloseTab: () => void; onCloseOthers: () => void</span></div></div><h2>📁 renderer\components\file-tree</h2><div class="comp">
+  <h3>FileTreeContextMenu</h3>
+  <div class="path">renderer\components\file-tree\file-tree-context-menu.tsx · 23 行</div>
+  <div class="meta"><span class="tag" style="color:#E57373">⚠ 缺 testid</span></div></div><div class="comp">
+  <h3>FileTree</h3>
+  <div class="path">renderer\components\file-tree\file-tree.tsx · 159 行</div>
+  <div class="meta"><span class="tag">🧪 file-item</span><span class="tag">🧪 file-item</span><span class="tag">🧪 file-item</span><span class="tag">🧪 modal-overlay</span><span class="tag">🧪 modal-body</span><span class="tag">🧪 modal-title</span><span class="tag">🧪 modal-cancel</span><span class="tag">🧪 modal-confirm</span><span class="tag">🧪 modal-overlay</span><span class="tag">🧪 modal-body</span><span class="tag">🧪 modal-title</span><span class="tag">🧪 modal-cancel</span><span class="tag">🧪 modal-confirm</span></div></div><h2>📁 renderer\components\layout</h2><div class="comp">
+  <h3>AppLayout</h3>
+  <div class="path">renderer\components\layout\app-layout.tsx · 64 行</div>
+  <div class="meta"><span class="tag" style="color:#E57373">⚠ 缺 testid</span></div></div><div class="comp">
+  <h3>CenterPanel</h3>
+  <div class="path">renderer\components\layout\center-panel.tsx · 12 行</div>
+  <div class="meta"><span class="tag" style="color:#E57373">⚠ 缺 testid</span></div></div><div class="comp">
+  <h3>FabButton</h3>
+  <div class="path">renderer\components\layout\fab-button.tsx · 13 行</div>
+  <div class="meta"><span class="tag a11y">♿ label="AI 对话"</span><span class="tag" style="color:#E57373">⚠ 缺 testid</span></div></div><div class="comp">
+  <h3>LeftPanel</h3>
+  <div class="path">renderer\components\layout\left-panel.tsx · 190 行</div>
+  <div class="meta"><span class="tag">🧪 modal-overlay</span><span class="tag">🧪 modal-body</span><span class="tag">🧪 modal-title</span><span class="tag">🧪 modal-cancel</span><span class="tag">🧪 modal-confirm</span></div></div><div class="comp">
+  <h3>ModelDropdown</h3>
+  <div class="path">renderer\components\layout\model-dropdown.tsx · 63 行</div>
+  <div class="meta"><span class="tag">🧪 model-option</span></div><div class="props">Props: <span>onClose: () => void; onSelectModel: (providerId: string, modelId: string) => void; onOpenConfig: () => void; selectedModel: string</span></div></div><div class="comp">
+  <h3>ResizableDivider</h3>
+  <div class="path">renderer\components\layout\resizable-divider.tsx · 30 行</div>
+  <div class="meta"><span class="tag" style="color:#E57373">⚠ 缺 testid</span></div><div class="props">Props: <span>onResize: (d: number) => void minSize: number maxSize: number</span></div></div><div class="comp">
+  <h3>RightPanel</h3>
+  <div class="path">renderer\components\layout\right-panel.tsx · 14 行</div>
+  <div class="meta"><span class="tag" style="color:#E57373">⚠ 缺 testid</span></div></div><div class="comp">
+  <h3>StatusBar</h3>
+  <div class="path">renderer\components\layout\status-bar.tsx · 12 行</div>
+  <div class="meta"><span class="tag" style="color:#E57373">⚠ 缺 testid</span></div></div><div class="comp">
+  <h3>Toolbar</h3>
+  <div class="path">renderer\components\layout\toolbar.tsx · 66 行</div>
+  <div class="meta"><span class="tag">🧪 btn-home</span><span class="tag">🧪 btn-model-switch</span><span class="tag">🧪 btn-settings</span><span class="tag a11y">♿ label="主页"</span><span class="tag a11y">♿ label="设置"</span><span class="tag design">🎨 帧:f7c4Zl</span></div><div class="props">Props: <span>onHomeClick: () => void; onOpenConfig: () => void; onOpenSettings: () => void; selectedModel: string; onSelectModel: (providerId: string, modelId: string) => void; skillName: string</span></div></div><h2>📁 renderer\components\navigation</h2><div class="comp">
+  <h3>ProjectContextMenu</h3>
+  <div class="path">renderer\components\navigation\project-context-menu.tsx · 42 行</div>
+  <div class="meta"><span class="tag" style="color:#E57373">⚠ 缺 testid</span></div><div class="props">Props: <span>x: number y: number; projectName: string; onClose: () => void; onOpen: () => void; onRename: () => void; onPinToTop: () => void</span></div></div><div class="comp">
+  <h3>StageCardItem</h3>
+  <div class="path">renderer\components\navigation\stage-card-item.tsx · 85 行</div>
+  <div class="meta"><span class="tag">🧪 stage-card</span><span class="tag">🧪 file-item</span></div><div class="props">Props: <span>stage: StageDef; isActive: boolean; isExpanded: boolean; chapters: string[]; onClick: (id: StageId) => void; onChapterJump: (chapterNo: number) => void</span></div></div><div class="comp">
+  <h3>StageCards</h3>
+  <div class="path">renderer\components\navigation\stage-cards.tsx · 40 行</div>
+  <div class="meta"><span class="tag" style="color:#E57373">⚠ 缺 testid</span></div><div class="props">Props: <span>api: StageNavAPI; onToggleExpanded: (expanded: boolean) => void</span></div></div><h2>📁 renderer\components\ui</h2><div class="comp">
+  <h3>DropdownSelect</h3>
+  <div class="path">renderer\components\ui\dropdown-select.tsx · 38 行</div>
+  <div class="meta"><span class="tag" style="color:#E57373">⚠ 缺 testid</span></div><div class="props">Props: <span>value: string; options: { value: string label: string</span></div></div><div class="comp">
+  <h3>Slider</h3>
+  <div class="path">renderer\components\ui\slider.tsx · 18 行</div>
+  <div class="meta"><span class="tag" style="color:#E57373">⚠ 缺 testid</span></div><div class="props">Props: <span>value: number min: number max: number step: number; onChange: (value: number) => void label: string</span></div></div><div class="comp">
+  <h3>ToggleSwitch</h3>
+  <div class="path">renderer\components\ui\toggle-switch.tsx · 18 行</div>
+  <div class="meta"><span class="tag" style="color:#E57373">⚠ 缺 testid</span></div><div class="props">Props: <span>checked: boolean onChange: (checked: boolean) => void label: string</span></div></div></body></html>
