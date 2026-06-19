@@ -73,6 +73,10 @@ const api = {
     glob: (pattern: string) => ipcRenderer.invoke('tool:glob', pattern),
     grep: (path: string, regex: string) => ipcRenderer.invoke('tool:grep', path, regex),
   },
+  notify: {
+    complete: (title: string, body: string) => ipcRenderer.invoke('notify:complete', title, body),
+    error: (title: string, body: string) => ipcRenderer.invoke('notify:error', title, body),
+  },
   app: { getDataRoot: () => ipcRenderer.invoke('app:getDataRoot') },
   platform: process.platform
 }

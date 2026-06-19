@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-19T19:20:28.142Z",
+  "timestamp": "2026-06-19T19:25:18.116Z",
   "projectRoot": "F:/小说桌面端工具",
   "codeDir": "do-zhou",
   "stage": "developing",
@@ -14,7 +14,7 @@
   "summary": {
     "red": 1,
     "orange": 29,
-    "yellow": 118,
+    "yellow": 116,
     "green": 258
   },
   "d1_traceability": [
@@ -1353,6 +1353,7 @@
             "e2e/user-stories.spec.ts",
             "electron/main.ts",
             "electron/main.ts",
+            "electron/preload.ts",
             "src/common/error-reporting.test.ts",
             "src/common/error-reporting.test.ts",
             "src/common/error-reporting.test.ts",
@@ -1519,6 +1520,7 @@
             "src/renderer/components/recent-projects.tsx",
             "src/renderer/components/recent-projects.tsx",
             "src/renderer/components/recent-projects.tsx",
+            "src/renderer/hooks/use-chat-engine.ts",
             "src/renderer/hooks/use-chat-engine.ts",
             "src/renderer/hooks/use-chat-engine.ts",
             "src/renderer/hooks/use-chat-engine.ts",
@@ -2215,6 +2217,7 @@
         "e2e\\spec-generated.spec.ts",
         "e2e\\user-stories.spec.ts",
         "electron\\main.ts",
+        "electron\\preload.ts",
         "src\\common\\error-reporting.test.ts",
         "src\\common\\error-reporting.ts",
         "src\\main\\engine\\claude\\claude-engine.ts",
@@ -3201,7 +3204,7 @@
     {
       "check": "状态: 错误处理",
       "found": true,
-      "file": "46 文件",
+      "file": "47 文件",
       "status": "✅"
     }
   ],
@@ -3263,18 +3266,7 @@
       "detail": "存在返回路径"
     }
   ],
-  "ipc_bridge": [
-    {
-      "channel": "notify:complete",
-      "issue": "主进程注册了但 preload 未暴露",
-      "status": "🟡"
-    },
-    {
-      "channel": "notify:error",
-      "issue": "主进程注册了但 preload 未暴露",
-      "status": "🟡"
-    }
-  ],
+  "ipc_bridge": [],
   "secure_storage": [
     {
       "file": "src\\main\\services\\api-config-service.ts",

@@ -59,6 +59,8 @@ export function useChatEngine() {
 
       if (result.success && result.messages) {
         setMessages(result.messages)
+        // 桌面通知: AI 生成完成
+        window.electronAPI?.notify?.complete?.('AI 生成完成', content.substring(0, 30) + '... 的内容已生成').catch(() => {})
       } else {
         setError(result.error || '对话失败')
       }
