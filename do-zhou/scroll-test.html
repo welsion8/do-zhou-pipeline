@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<title>Editor Scroll Test</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body, #root { height: 100%; }
+  body { font-family: -apple-system, sans-serif; background: #1a1a2e; color: #e0e0e0; }
+
+  /* 模拟工作台布局 */
+  .workbench {
+    display: flex; flex-direction: column; height: 100vh;
+  }
+  .toolbar {
+    height: 40px; background: #16213e; display: flex; align-items: center; padding: 0 12px;
+    border-bottom: 1px solid #2a2a4a; flex-shrink: 0;
+  }
+  .editor-toolbar {
+    height: 36px; background: #1a1a2e; display: flex; align-items: center; padding: 0 12px;
+    border-bottom: 1px solid #2a2a4a; gap: 8px; flex-shrink: 0;
+  }
+  .editor-toolbar button {
+    background: #2a2a4a; border: 1px solid #3a3a5a; color: #ccc; padding: 4px 12px;
+    border-radius: 3px; cursor: pointer; font-size: 12px;
+  }
+  .editor-toolbar button.active { background: #4a4a6a; border-color: #6a6a8a; }
+
+  /* ★ 关键测试区：这是对外层滚动容器的模拟 */
+  .editor-area {
+    flex: 1 1 0%;
+    min-height: 0;
+    /* 测试1: overflow-y: auto (修复前) */
+    /* 测试2: overflow: hidden (修复后) */
+    overflow: hidden;  /* ← 这是修复 */
+    background: #1e1e32;
+  }
+
+  /* CodeMirror 需要这些 */
+  .editor-wrapper {
+    height: 100%;
+    width: 100%;
+  }
+
+  /* 预览区 */
+  .preview-area {
+    height: 100%;
+    overflow-y: auto;
+    padding: 24px 32px;
+    line-height: 1.8;
+    font-size: 15px;
+  }
+  .preview-content {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  /* 诊断信息 */
+  .diagnostics {
+    position: fixed; bottom: 0; left: 0; right: 0;
+    background: rgba(0,0,0,0.9); color: #0f0; font-family: monospace;
+    font-size: 11px; padding: 8px 16px; z-index: 999;
+    border-top: 1px solid #333;
+    display: flex; gap: 24px; flex-wrap: wrap;
+  }
+  .diagnostics span { white-space: nowrap; }
+  .pass { color: #0f0; }
+  .fail { color: #f00; }
+</style>
+</head>
+<body>
+<div id="root"></div>
+<div id="diag" class="diagnostics"></div>
+
+<script type="module">
+// ★ 直接在这个页面里测试滚动行为，不依赖 React/CodeMirror 构建
+// 我们模拟一个类似 CodeMirror 的编辑器：一个有内部 overflow-y: auto 的 div
+// 外层用 overflow: hidden vs overflow-y: auto 来做对比测试
+
+const root = document.getElementById('root')
+const diag = document.getElementById('diag')
+
+// 生成长测试内容
+const longContent = Array.from({ length: 200 }, (_, i) =>
+  `<p>第 ${i + 1} 行 —— 这是一段用于测试滚动的长文本内容。` +
+  `故事正文故事正文故事正文故事正文故事正文故事正文故事正文。` +
+  `人物对话人物对话人物对话人物对话人物对话人物对话。` +
+  `环境描写环境描写环境描写环境描写环境描写环境描写环境描写。</p>`
+).join('\n')
+
+// ★ 编辑模式（模拟 CodeMirror）
+function buildEditMode() {
+  return `
+    <div class="workbench">
+      <div class="toolbar">📝 编辑模式测试 — 标签栏模拟</div>
+      <div class="editor-toolbar">
+        <button class="active" id="btnEdit">✏️ 编辑</button>
+        <button id="btnPreview">👁 预览</button>
+        <span style="font-size:11px;color:#888;margin-left:auto">外层: overflow: hidden</span>
+      </div>
+      <div class="editor-area" id="editorArea">
+        <div class="editor-wrapper" id="cmSimulator" style="
+          overflow-y: auto;
+          font-family: 'Fira Code', monospace;
+          font-size: 14px;
+          line-height: 1.6;
+          padding: 16px 24px;
+          white-space: pre-wrap;
+          background: #1e1e32;
+        ">${longContent}</div>
+      </div>
+    </div>
+  `
+}
+
+// ★ 预览模式
+function buildPreviewMode() {
+  return `
+    <div class="workbench">
+      <div class="toolbar">👁 预览模式测试 — 标签栏模拟</div>
+      <div class="editor-toolbar">
+        <button id="btnEdit2">✏️ 编辑</button>
+        <button class="active" id="btnPreview2">👁 预览</button>
+        <span style="font-size:11px;color:#888;margin-left:auto">外层: overflow: hidden</span>
+      </div>
+      <div class="editor-area" id="editorArea">
+        <div class="preview-area" id="previewSimulator">
+          <div class="preview-content">${longContent}</div>
+        </div>
+      </div>
+    </div>
+  `
+}
+
+let mode = 'edit'
+root.innerHTML = buildEditMode()
+
+// 切换逻辑
+function switchTo(m) {
+  mode = m
+  root.innerHTML = m === 'edit' ? buildEditMode() : buildPreviewMode()
+  bindButtons()
+  setTimeout(runDiagnostics, 100)
+}
+
+function bindButtons() {
+  document.getElementById('btnEdit')?.addEventListener('click', () => switchTo('edit'))
+  document.getElementById('btnPreview')?.addEventListener('click', () => switchTo('preview'))
+  document.getElementById('btnEdit2')?.addEventListener('click', () => switchTo('edit'))
+  document.getElementById('btnPreview2')?.addEventListener('click', () => switchTo('preview'))
+}
+
+bindButtons()
+
+// ★★★ 核心诊断函数 ★★★
+function runDiagnostics() {
+  const editorArea = document.getElementById('editorArea')
+  const lines = []
+
+  if (!editorArea) {
+    diag.innerHTML = '<span class="fail">❌ editorArea 未找到</span>'
+    return
+  }
+
+  const eaStyle = getComputedStyle(editorArea)
+  lines.push(`外层 overflow: <b>${eaStyle.overflow}</b>`)
+  lines.push(`外层 overflow-y: <b>${eaStyle.overflowY}</b>`)
+  lines.push(`外层 height: <b>${editorArea.clientHeight}px</b>`)
+
+  const scrollChild = editorArea.querySelector(mode === 'edit' ? '#cmSimulator' : '#previewSimulator')
+  if (scrollChild) {
+    const cs = getComputedStyle(scrollChild)
+    lines.push(`内层 overflow-y: <b>${cs.overflowY}</b>`)
+    lines.push(`内层 scrollHeight: <b>${scrollChild.scrollHeight}px</b>`)
+    lines.push(`内层 clientHeight: <b>${scrollChild.clientHeight}px</b>`)
+
+    const canScroll = scrollChild.scrollHeight > scrollChild.clientHeight + 2
+    lines.push(canScroll
+      ? '<span class="pass">✅ 可以滚动！(scrollHeight > clientHeight)</span>'
+      : '<span class="fail">❌ 不能滚动！(scrollHeight ≈ clientHeight)</span>'
+    )
+
+    // 实际尝试滚动
+    const before = scrollChild.scrollTop
+    scrollChild.scrollTop = 500
+    const after = scrollChild.scrollTop
+    lines.push(after > before
+      ? `<span class="pass">✅ scrollTop 成功: ${before} → ${after}</span>`
+      : `<span class="fail">❌ scrollTop 未变化: ${before} → ${after}</span>`)
+
+    // 恢复
+    scrollChild.scrollTop = 0
+  } else {
+    lines.push('<span class="fail">❌ 内层滚动元素未找到</span>')
+  }
+
+  diag.innerHTML = lines.map(l => `<span>${l}</span>`).join('')
+}
+
+// 初始诊断
+setTimeout(runDiagnostics, 200)
+
+// 窗口大小变化时重新诊断
+window.addEventListener('resize', () => setTimeout(runDiagnostics, 100))
+
+console.log('🧪 编辑区滚动测试页面已就绪')
+console.log('  - 外层 editor-area 使用 overflow: hidden')
+console.log('  - 内层模拟 CodeMirror 使用 overflow-y: auto')
+console.log('  - 检查底部诊断面板的 ✅/❌ 状态')
+</script>
+</body>
+</html>

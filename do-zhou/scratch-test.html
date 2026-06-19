@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<title>Flex Scroll Test</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html, body { height:100%; background:#1a1a2e; color:#e0e0e0; font-family:monospace; }
+
+  /* 精确模拟 editor-workspace 的 flex 链 */
+  .ws { display:flex; flex-direction:column; height:100vh; background:#1e1e32; }
+  .tb { height:40px; flex-shrink:0; background:#16213e; border-bottom:1px solid #2a2a4a; display:flex; align-items:center; padding:0 12px; }
+  .etb { height:36px; flex-shrink:0; background:#1a1a2e; border-bottom:1px solid #2a2a4a; display:flex; align-items:center; padding:0 12px; gap:8px; }
+  .etb button { background:#2a2a4a; border:1px solid #3a3a5a; color:#ccc; padding:4px 12px; border-radius:3px; cursor:pointer; font-size:12px; }
+
+  /* ★ 修复后的外层: flex-1 flex flex-col min-h-0 */
+  .area { flex:1 1 0%; display:flex; flex-direction:column; min-height:0; background:#1e1e32; }
+
+  /* CodeMirror 模拟: flex-1 w-full min-h-0 */
+  .cm-wrap { flex:1 1 0%; width:100%; min-height:0; }
+  .cm-editor { display:flex !important; flex-direction:column !important; height:100% !important; background:#1e1e32; }
+  .cm-scroller { flex:1 1 auto; overflow-y:auto; font-family:monospace; font-size:14px; line-height:1.6; padding:16px 24px; }
+
+  /* 预览模式: flex-1 min-h-0 overflow-y-auto */
+  .preview { flex:1 1 0%; min-height:0; overflow-y:auto; padding:24px 32px; line-height:1.8; font-size:15px; }
+  .preview-inner { max-width:720px; margin:0 auto; }
+
+  /* 诊断 */
+  .diag { position:fixed; bottom:0; left:0; right:0; background:rgba(0,0,0,0.92); color:#0f0; font-family:monospace; font-size:11px; padding:8px 16px; z-index:999; display:flex; gap:24px; flex-wrap:wrap; }
+  .diag .ok { color:#0f0; }
+  .diag .bad { color:#f00; }
+</style>
+</head>
+<body>
+<div id="root"></div>
+<div id="diag" class="diag"></div>
+
+<script>
+const LONG = Array.from({length:200}, (_,i) =>
+  `<div style="padding:4px 0">第${i+1}行 ── 故事正文内容用于测试滚动的长文本。人物对话和环境描写的段落。</div>`
+).join('')
+
+function editMode() { return `
+<div class="ws">
+  <div class="tb">📝 Tab: outline.md ×</div>
+  <div class="etb">
+    <button style="background:#4a4a6a" id="btnE">✏️ 编辑</button>
+    <button id="btnP">👁 预览</button>
+    <span style="font-size:11px;color:#888;margin-left:auto">flex-1 + min-h-0</span>
+  </div>
+  <div class="area" id="area">
+    <div class="cm-wrap" id="scrollTarget">
+      <div class="cm-editor">
+        <div class="cm-scroller" id="scroller">${LONG}</div>
+      </div>
+    </div>
+  </div>
+</div>` }
+
+function previewMode() { return `
+<div class="ws">
+  <div class="tb">👁 Tab: outline.md ×</div>
+  <div class="etb">
+    <button id="btnE2">✏️ 编辑</button>
+    <button style="background:#4a4a6a" id="btnP2">👁 预览</button>
+    <span style="font-size:11px;color:#888;margin-left:auto">flex-1 + min-h-0</span>
+  </div>
+  <div class="area" id="area">
+    <div class="preview" id="scrollTarget">
+      <div class="preview-inner">${LONG}</div>
+    </div>
+  </div>
+</div>` }
+
+let m = 'edit'
+function render() {
+  document.getElementById('root').innerHTML = m === 'edit' ? editMode() : previewMode()
+  document.getElementById('btnE')?.addEventListener('click', ()=>{m='edit';render()})
+  document.getElementById('btnP')?.addEventListener('click', ()=>{m='preview';render()})
+  document.getElementById('btnE2')?.addEventListener('click', ()=>{m='edit';render()})
+  document.getElementById('btnP2')?.addEventListener('click', ()=>{m='preview';render()})
+  setTimeout(diag, 200)
+}
+render()
+
+function diag() {
+  const a = document.getElementById('area')
+  const s = document.getElementById('scrollTarget')
+  const sc = document.getElementById('scroller') || s
+  const out = []
+
+  if (a) {
+    const cs = getComputedStyle(a)
+    out.push(`area height: <b>${a.clientHeight}px</b>`)
+    out.push(`area overflow-y: <b>${cs.overflowY}</b>`)
+  }
+  if (s) {
+    out.push(`target height: <b>${s.clientHeight}px</b>`)
+    out.push(`target scrollHeight: <b>${s.scrollHeight}px</b>`)
+    out.push(`target clientHeight: <b>${s.clientHeight}px</b>`)
+    const can = s.scrollHeight > s.clientHeight + 2
+    out.push(can ? '<span class="ok">✅ 可滚动</span>' : '<span class="bad">❌ 不可滚动</span>')
+
+    const before = s.scrollTop
+    s.scrollTop = 300
+    const after = s.scrollTop
+    out.push(after > before ? `<span class="ok">✅ scrollTop: ${before}→${after}</span>` : `<span class="bad">❌ scrollTop 不变</span>`)
+    s.scrollTop = 0
+  }
+  if (sc !== s) {
+    out.push(`scroller scrollHeight: <b>${sc.scrollHeight}px</b>`)
+    out.push(`scroller clientHeight: <b>${sc.clientHeight}px</b>`)
+  }
+
+  document.getElementById('diag').innerHTML = out.map(l => `<span>${l}</span>`).join('')
+}
+window.addEventListener('resize', () => setTimeout(diag, 200))
+</script>
+</body>
+</html>
