@@ -370,6 +370,12 @@
     - 有 UI Phase 但宣称"不需要设计帧"→ 🔴 违反反向覆盖门禁
     - `.needs-pen-extract` 标记存在 → design_read_check 不得标记 pass
 
+    **功能完整性门禁**（专业版·所有 Phase）：
+    - traceability 代码覆盖率 < Phase 阈值 → 🔴 阻断 Phase gate
+    - Phase 1-3: 60% | Phase 4-7: 75% | Phase 8+: 90%
+    - 覆盖率 = 可实现 Spec 条目中有代码文件映射的比例
+    - 不检查"产品概述/术语表/场景/技术栈"等非实现章节
+
     **关键路径强制审查**（单人团队替代"双人 CR"）：
     - engine/ / ipc/ / preload/ / services/ / storage/ 变更 → 自动标记 `.needs-critical-review`
     - 标记存在 → `code_review = fail` → Phase gate 阻断

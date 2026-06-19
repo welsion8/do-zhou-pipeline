@@ -662,7 +662,7 @@ function main() {
   const ctx = { PROJECT_ROOT, CLAUDE_DIR, SPEC_FILE, PLAN_FILE, CONFIG, ARGS,
     specContent: project.specContent, planContent: project.planContent,
     designBriefContent: project.designBriefContent, specCompiled, plan,
-    codeScan, codeDir: project.codeDir, project, utils };
+    codeScan, codeDir: project.codeDir, project, currentPhase: project.currentPhase, utils };
 
   const audit = {};
   const moduleLabels = {

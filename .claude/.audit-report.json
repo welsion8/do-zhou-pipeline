@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-19T05:24:27.866Z",
+  "timestamp": "2026-06-19T05:34:02.594Z",
   "projectRoot": "F:/小说桌面端工具",
   "codeDir": "do-zhou",
   "stage": "developing",
@@ -12,9 +12,9 @@
   },
   "penFileEmpty": false,
   "summary": {
-    "red": 1,
+    "red": 3,
     "orange": 30,
-    "yellow": 115,
+    "yellow": 114,
     "green": 256
   },
   "d1_traceability": [
@@ -3421,8 +3421,13 @@
     },
     {
       "check": "可追溯性-概要",
-      "status": "🟡",
-      "detail": "189 条 Spec → 178 条可实现 → 167/189 (88%) 有代码 (19 条未覆盖, 阈值 🔴>25)"
+      "status": "🔴",
+      "detail": "189 条 Spec → 178 条可实现 → 89% 有代码 (Phase 13 阈值 90%, 未覆盖 19 条)"
+    },
+    {
+      "check": "功能完整性门禁",
+      "status": "🔴",
+      "detail": "❌ 代码覆盖率 89% < Phase 13 阈值 90%。缺失 19 条可实现的 Spec 条目未实现。"
     }
   ],
   "token_enforce": [],

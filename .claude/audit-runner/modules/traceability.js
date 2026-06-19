@@ -383,10 +383,26 @@ function check(ctx) {
     });
   }
 
+  // Phase 感知阈值: 后期 Phase 要求更高覆盖率
+  const currentPhase = ctx.currentPhase || 99;
+  const codeCovPct = implItems.length > 0 ? Math.round((implItems.length - noCoverageImpl.length) / implItems.length * 100) : 0;
+  let covThreshold = 60; // Phase 1-3
+  if (currentPhase >= 8) covThreshold = 90;
+  else if (currentPhase >= 4) covThreshold = 75;
+
   results.push({
     check: '可追溯性-概要',
-    status: noCoverageImpl.length > redThreshold ? '🔴' : (noCoverageImpl.length > yellowThreshold ? '🟡' : '🟢'),
-    detail: `${report.summary.totalSpecItems} 条 Spec → ${implItems.length} 条可实现 → ${report.summary.withCode} 有代码 (${noCoverageImpl.length} 条未覆盖, 阈值 🔴>${redThreshold})`,
+    status: codeCovPct < covThreshold ? '🔴' : (codeCovPct < covThreshold + 10 ? '🟡' : '🟢'),
+    detail: `${report.summary.totalSpecItems} 条 Spec → ${implItems.length} 条可实现 → ${codeCovPct}% 有代码 (Phase ${currentPhase} 阈值 ${covThreshold}%, 未覆盖 ${noCoverageImpl.length} 条)`,
+  });
+
+  // 功能完整性门禁
+  results.push({
+    check: '功能完整性门禁',
+    status: codeCovPct >= covThreshold ? '🟢' : '🔴',
+    detail: codeCovPct >= covThreshold
+      ? `代码覆盖率 ${codeCovPct}% ≥ Phase ${currentPhase} 阈值 ${covThreshold}%`
+      : `❌ 代码覆盖率 ${codeCovPct}% < Phase ${currentPhase} 阈值 ${covThreshold}%。缺失 ${noCoverageImpl.length} 条可实现的 Spec 条目未实现。`,
   });
 
   return results;
