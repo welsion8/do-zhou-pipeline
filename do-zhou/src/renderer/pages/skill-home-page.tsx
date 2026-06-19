@@ -61,7 +61,10 @@ export function SkillHomePage({ onOpenProject, onEditSkill, onOpenSettings }: {
   }
 
   const toggleExpand = useCallback((id: string) => {
-    setSkills(prev => prev.map(s => s.id === id ? { ...s, expanded: !s.expanded } : s))
+    // 手风琴模式: 展开一个时自动收起其他
+    setSkills(prev => prev.map(s => s.id === id
+      ? { ...s, expanded: !s.expanded }
+      : { ...s, expanded: false }))
   }, [])
 
   if (loading) {

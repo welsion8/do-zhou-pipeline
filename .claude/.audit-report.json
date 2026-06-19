@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-19T18:11:46.647Z",
+  "timestamp": "2026-06-19T18:42:59.835Z",
   "projectRoot": "F:/小说桌面端工具",
   "codeDir": "do-zhou",
   "stage": "developing",
@@ -287,6 +287,7 @@
             "src/renderer/pages/skill-home-page.tsx",
             "src/renderer/pages/skill-home-page.tsx",
             "src/renderer/pages/skill-home-page.tsx",
+            "src/renderer/pages/skill-home-page.tsx",
             "src/renderer/theme/theme-provider.tsx",
             "src/renderer/theme/theme-provider.tsx",
             "src/renderer/theme/theme-provider.tsx",
@@ -310,6 +311,7 @@
             "src/renderer/components/api-config/provider-card.tsx",
             "src/renderer/components/chat/chat-header.tsx",
             "src/renderer/components/chat/chat-header.tsx",
+            "src/renderer/components/chat/chat-input-bar.tsx",
             "src/renderer/components/chat/chat-input-bar.tsx",
             "src/renderer/components/chat/chat-operation-buttons.tsx",
             "src/renderer/components/chat/chat-operation-buttons.tsx",
@@ -485,6 +487,8 @@
             "src/renderer/components/api-config/provider-card.tsx",
             "src/renderer/components/chat/chat-header.tsx",
             "src/renderer/components/chat/chat-header.tsx",
+            "src/renderer/components/chat/chat-input-bar.tsx",
+            "src/renderer/components/chat/chat-input-bar.tsx",
             "src/renderer/components/chat/chat-input-bar.tsx",
             "src/renderer/components/chat/chat-input-bar.tsx",
             "src/renderer/components/chat/chat-operation-buttons.tsx",
@@ -826,6 +830,8 @@
             "src/renderer/components/api-config/provider-card.tsx",
             "src/renderer/components/chat/chat-header.tsx",
             "src/renderer/components/chat/chat-header.tsx",
+            "src/renderer/components/chat/chat-input-bar.tsx",
+            "src/renderer/components/chat/chat-input-bar.tsx",
             "src/renderer/components/chat/chat-input-bar.tsx",
             "src/renderer/components/chat/chat-input-bar.tsx",
             "src/renderer/components/chat/chat-operation-buttons.tsx",
@@ -3579,7 +3585,7 @@
   ],
   "perf_check": [
     {
-      "check": "Bundle 大小: 1921KB (红线 3000KB)",
+      "check": "Bundle 大小: 1922KB (红线 3000KB)",
       "status": "✅",
       "found": true,
       "detail": "在 P90 预算内"
