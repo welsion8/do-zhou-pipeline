@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-19T17:45:04.724Z",
+  "timestamp": "2026-06-19T18:11:46.647Z",
   "projectRoot": "F:/小说桌面端工具",
   "codeDir": "do-zhou",
   "stage": "developing",
@@ -14,7 +14,7 @@
   "summary": {
     "red": 1,
     "orange": 29,
-    "yellow": 115,
+    "yellow": 116,
     "green": 258
   },
   "d1_traceability": [
@@ -198,6 +198,9 @@
             "src/renderer/components/ui/toggle-switch.tsx",
             "src/renderer/components/window-controls.tsx",
             "src/renderer/components/window-controls.tsx",
+            "src/renderer/components/window-controls.tsx",
+            "src/renderer/hooks/use-ai-state.ts",
+            "src/renderer/hooks/use-ai-state.ts",
             "src/renderer/hooks/use-chat-engine.ts",
             "src/renderer/hooks/use-chat-engine.ts",
             "src/renderer/hooks/use-chat-engine.ts",
@@ -404,6 +407,10 @@
             "src/renderer/components/ui/dropdown-select.tsx",
             "src/renderer/components/ui/dropdown-select.tsx",
             "src/renderer/components/ui/toggle-switch.tsx",
+            "src/renderer/components/window-controls.tsx",
+            "src/renderer/components/window-controls.tsx",
+            "src/renderer/components/window-controls.tsx",
+            "src/renderer/components/window-controls.tsx",
             "src/renderer/components/window-controls.tsx",
             "src/renderer/components/window-controls.tsx",
             "src/renderer/components/window-controls.tsx",
@@ -1430,6 +1437,9 @@
             "src/main/services/__tests__/backup-service.test.ts",
             "src/main/services/__tests__/file-service.test.ts",
             "src/main/services/__tests__/file-service.test.ts",
+            "src/main/services/__tests__/project-service.test.ts",
+            "src/main/services/__tests__/project-service.test.ts",
+            "src/main/services/__tests__/skill-service.test.ts",
             "src/main/updater.ts",
             "src/renderer/App.tsx",
             "src/renderer/App.tsx",
@@ -1708,6 +1718,9 @@
             "src/renderer/components/layout/left-panel.tsx",
             "src/renderer/components/layout/left-panel.tsx",
             "src/renderer/components/layout/left-panel.tsx",
+            "src/renderer/components/window-controls.tsx",
+            "src/renderer/components/window-controls.tsx",
+            "src/renderer/components/window-controls.tsx",
             "src/renderer/pages/api-config-page.tsx",
             "src/renderer/pages/api-config-page.tsx",
             "src/renderer/pages/skill-home-page.tsx",
@@ -2176,7 +2189,8 @@
         "src\\main\\services\\settings-service.ts",
         "src\\main\\services\\skill-service.ts",
         "src\\main\\services\\__tests__\\backup-service.test.ts",
-        "src\\main\\updater.ts",
+        "src\\main\\services\\__tests__\\project-service.test.ts",
+        "src\\main\\services\\__tests__\\skill-service.test.ts",
         "src\\renderer\\App.tsx",
         "src\\renderer\\components\\api-config\\provider-card.tsx",
         "src\\renderer\\components\\chat\\chat-view.tsx",
@@ -3282,6 +3296,11 @@
       "detail": "设计帧未找到: 前往配置 API →。请确认是 Spec 要求增加还是设计帧遗漏。"
     },
     {
+      "check": "window-controls.tsx: 2个代码独有元素",
+      "status": "🟡",
+      "detail": "设计帧未找到: 取消, 确认关闭。请确认是 Spec 要求增加还是设计帧遗漏。"
+    },
+    {
       "check": "api-config-page.tsx: 5个代码独有元素",
       "status": "🟡",
       "detail": "设计帧未找到: ← 返回工作台, ↻ 重试, {l}, 添加, 取消。请确认是 Spec 要求增加还是设计帧遗漏。"
@@ -3489,7 +3508,7 @@
     {
       "check": "a11y: 无障碍属性",
       "status": "🟢",
-      "detail": "36 处 (aria:17 role:2 tabIndex:0 alt:0 label:17) — 12/94 文件 (13%)"
+      "detail": "36 处 (aria:17 role:2 tabIndex:0 alt:0 label:17) — 12/97 文件 (12%)"
     },
     {
       "check": "a11y: 键盘导航",
@@ -3509,7 +3528,7 @@
     {
       "check": "a11y: ARIA 覆盖率",
       "status": "🟠",
-      "detail": "13% 文件使用了 ARIA/role/tabIndex/alt/label 属性（目标 ≥ 30%）"
+      "detail": "12% 文件使用了 ARIA/role/tabIndex/alt/label 属性（目标 ≥ 30%）"
     },
     {
       "check": "a11y: Phase gate 判定",
@@ -3560,7 +3579,7 @@
   ],
   "perf_check": [
     {
-      "check": "Bundle 大小: 1918KB (红线 3000KB)",
+      "check": "Bundle 大小: 1921KB (红线 3000KB)",
       "status": "✅",
       "found": true,
       "detail": "在 P90 预算内"
@@ -4226,6 +4245,6 @@
     "filePathCount": 68
   },
   "code": {
-    "fileCount": 100
+    "fileCount": 103
   }
 }

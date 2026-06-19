@@ -1,4 +1,5 @@
 import { useState, useCallback, useEffect } from 'react'
+import { setAIStreaming } from './use-ai-state'
 
 export interface ChatMessage {
   role: 'system' | 'user' | 'assistant' | 'tool'
@@ -27,6 +28,7 @@ export function useChatEngine() {
 
     setError(null)
     setIsStreaming(true)
+    setAIStreaming(true)
 
     // 获取第一个可用的提供商和模型
     const providers = await api.apiConfig.getAll()
@@ -64,6 +66,7 @@ export function useChatEngine() {
       setError(e instanceof Error ? e.message : '对话失败')
     } finally {
       setIsStreaming(false)
+      setAIStreaming(false)
     }
   }, [messages])
 
