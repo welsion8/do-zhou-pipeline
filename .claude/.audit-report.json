@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-19T19:03:51.688Z",
+  "timestamp": "2026-06-19T19:10:59.729Z",
   "projectRoot": "F:/小说桌面端工具",
   "codeDir": "do-zhou",
   "stage": "developing",
@@ -3549,7 +3549,7 @@
     {
       "check": "a11y: 无障碍属性",
       "status": "🟢",
-      "detail": "36 处 (aria:17 role:2 tabIndex:0 alt:0 label:17) — 12/100 文件 (12%)"
+      "detail": "36 处 (aria:17 role:2 tabIndex:0 alt:0 label:17) — 12/101 文件 (12%)"
     },
     {
       "check": "a11y: 键盘导航",
@@ -4286,6 +4286,6 @@
     "filePathCount": 68
   },
   "code": {
-    "fileCount": 106
+    "fileCount": 107
   }
 }
