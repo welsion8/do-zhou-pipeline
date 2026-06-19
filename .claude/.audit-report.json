@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-19T14:46:37.710Z",
+  "timestamp": "2026-06-19T17:45:04.724Z",
   "projectRoot": "F:/小说桌面端工具",
   "codeDir": "do-zhou",
   "stage": "developing",
@@ -1187,6 +1187,7 @@
             "electron/preload.ts",
             "src/main/ipc/file-ipc.ts",
             "src/main/services/trash-service.ts",
+            "src/main/services/__tests__/file-service.test.ts",
             "src/renderer/components/chat/chat-input-bar.tsx",
             "src/renderer/components/chat/chat-input-bar.tsx",
             "src/renderer/components/chat/chat-input-bar.tsx",
@@ -1426,6 +1427,9 @@
             "src/main/services/skill-service.ts",
             "src/main/services/trash-service.ts",
             "src/main/services/trash-service.ts",
+            "src/main/services/__tests__/backup-service.test.ts",
+            "src/main/services/__tests__/file-service.test.ts",
+            "src/main/services/__tests__/file-service.test.ts",
             "src/main/updater.ts",
             "src/renderer/App.tsx",
             "src/renderer/App.tsx",
@@ -2121,6 +2125,7 @@
         "electron\\preload.ts",
         "src\\main\\ipc\\file-ipc.ts",
         "src\\main\\services\\trash-service.ts",
+        "src\\main\\services\\__tests__\\file-service.test.ts",
         "src\\renderer\\components\\chat\\chat-input-bar.tsx",
         "src\\renderer\\components\\editor\\chapter-index-page-wrapper.tsx",
         "src\\renderer\\components\\editor\\chapter-index-view.tsx",
@@ -2170,6 +2175,7 @@
         "src\\main\\services\\project-service.ts",
         "src\\main\\services\\settings-service.ts",
         "src\\main\\services\\skill-service.ts",
+        "src\\main\\services\\__tests__\\backup-service.test.ts",
         "src\\main\\updater.ts",
         "src\\renderer\\App.tsx",
         "src\\renderer\\components\\api-config\\provider-card.tsx",
@@ -3483,7 +3489,7 @@
     {
       "check": "a11y: 无障碍属性",
       "status": "🟢",
-      "detail": "36 处 (aria:17 role:2 tabIndex:0 alt:0 label:17) — 12/92 文件 (13%)"
+      "detail": "36 处 (aria:17 role:2 tabIndex:0 alt:0 label:17) — 12/94 文件 (13%)"
     },
     {
       "check": "a11y: 键盘导航",
@@ -4220,6 +4226,6 @@
     "filePathCount": 68
   },
   "code": {
-    "fileCount": 98
+    "fileCount": 100
   }
 }
