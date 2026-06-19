@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-19T19:38:02.264Z",
+  "timestamp": "2026-06-19T19:44:09.729Z",
   "projectRoot": "F:/小说桌面端工具",
   "codeDir": "do-zhou",
   "stage": "developing",
@@ -327,6 +327,11 @@
             "src/renderer/components/editor/chapter-index-page-wrapper.tsx",
             "src/renderer/components/editor/chapter-index-page-wrapper.tsx",
             "src/renderer/components/editor/chapter-index-page-wrapper.tsx",
+            "src/renderer/components/editor/chapter-index-row.test.tsx",
+            "src/renderer/components/editor/chapter-index-row.test.tsx",
+            "src/renderer/components/editor/chapter-index-row.test.tsx",
+            "src/renderer/components/editor/chapter-index-row.test.tsx",
+            "src/renderer/components/editor/chapter-index-row.test.tsx",
             "src/renderer/components/editor/chapter-index-row.tsx",
             "src/renderer/components/editor/chapter-index-row.tsx",
             "src/renderer/components/editor/chapter-index-row.tsx",
@@ -3199,7 +3204,7 @@
     {
       "check": "状态: 启用/禁用状态",
       "found": true,
-      "file": "12 文件",
+      "file": "13 文件",
       "status": "✅"
     },
     {
@@ -3561,7 +3566,7 @@
     {
       "check": "a11y: 无障碍属性",
       "status": "🟢",
-      "detail": "36 处 (aria:17 role:2 tabIndex:0 alt:0 label:17) — 12/105 文件 (11%)"
+      "detail": "36 处 (aria:17 role:2 tabIndex:0 alt:0 label:17) — 12/108 文件 (11%)"
     },
     {
       "check": "a11y: 键盘导航",
@@ -3638,7 +3643,7 @@
       "detail": "在 P90 预算内"
     },
     {
-      "check": "编辑器组件: 11文件 936行",
+      "check": "编辑器组件: 12文件 963行",
       "status": "🟡",
       "found": true,
       "detail": "编辑器组件接近 300行/文件 上限，建议拆分。"
@@ -4298,6 +4303,6 @@
     "filePathCount": 68
   },
   "code": {
-    "fileCount": 111
+    "fileCount": 114
   }
 }
