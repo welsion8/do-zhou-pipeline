@@ -66,7 +66,8 @@ function check(ctx) {
   }
 
   try {
-    const checkScript = adapter.isDesktop ? `
+    if (!adapter.isDesktop) { results.push({ check: 'Spec→UI: 平台', status: '🟡', detail: '非桌面平台需启动应用后重试。' }); return results; }
+    const checkScript = `
       const { _electron: electron } = require('@playwright/test');
       (async () => {
         const app = await electron.launch({ executablePath: '${(adapter.getLaunchInfo()?.electronPath || '').replace(/\\/g, '\\\\')}', args: ['${(adapter.getLaunchInfo()?.mainEntry || '').replace(/\\/g, '\\\\')}'] });

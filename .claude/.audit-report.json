@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-19T04:32:30.157Z",
+  "timestamp": "2026-06-19T04:57:16.401Z",
   "projectRoot": "F:/小说桌面端工具",
   "codeDir": "do-zhou",
   "stage": "developing",
@@ -12,10 +12,10 @@
   },
   "penFileEmpty": false,
   "summary": {
-    "red": 1,
-    "orange": 3,
-    "yellow": 65,
-    "green": 211
+    "red": 75,
+    "orange": 103,
+    "yellow": 114,
+    "green": 256
   },
   "d1_traceability": [
     {
@@ -3377,7 +3377,378 @@
       "status": "🟡"
     }
   ],
-  "cross_index": [],
+  "cross_index": [
+    {
+      "check": "交叉索引: 写作工作台: 缺\"左侧导航(240px)\"",
+      "status": "🟠",
+      "detail": "L1↔L2 追溯通过但 L2 结构比对发现此区块缺失——设计与 Spec 要求了但代码未实现"
+    },
+    {
+      "check": "交叉索引: 写作工作台: 缺\"中间编辑区\"",
+      "status": "🟠",
+      "detail": "L1↔L2 追溯通过但 L2 结构比对发现此区块缺失——设计与 Spec 要求了但代码未实现"
+    },
+    {
+      "check": "交叉索引: 写作工作台: 缺\"右侧AI对话区(340px)\"",
+      "status": "🟠",
+      "detail": "L1↔L2 追溯通过但 L2 结构比对发现此区块缺失——设计与 Spec 要求了但代码未实现"
+    },
+    {
+      "check": "交叉索引: 写作工作台: 缺\"模型切换按钮\"",
+      "status": "🟠",
+      "detail": "L1↔L2 追溯通过但 L2 结构比对发现此区块缺失——设计与 Spec 要求了但代码未实现"
+    },
+    {
+      "check": "交叉索引: 设置页面: 缺\"设置内容区\"",
+      "status": "🟠",
+      "detail": "L1↔L2 追溯通过但 L2 结构比对发现此区块缺失——设计与 Spec 要求了但代码未实现"
+    },
+    {
+      "check": "交叉索引: 新建项目弹窗: 缺\"弹窗标题\"",
+      "status": "🟠",
+      "detail": "L1↔L2 追溯通过但 L2 结构比对发现此区块缺失——设计与 Spec 要求了但代码未实现"
+    },
+    {
+      "check": "交叉索引: 新建项目弹窗: 缺\"项目名称输入\"",
+      "status": "🟠",
+      "detail": "L1↔L2 追溯通过但 L2 结构比对发现此区块缺失——设计与 Spec 要求了但代码未实现"
+    },
+    {
+      "check": "交叉索引: 新建项目弹窗: 缺\"Skill下拉选择\"",
+      "status": "🟠",
+      "detail": "L1↔L2 追溯通过但 L2 结构比对发现此区块缺失——设计与 Spec 要求了但代码未实现"
+    },
+    {
+      "check": "交叉索引: 新建项目弹窗: 缺\"取消按钮\"",
+      "status": "🟠",
+      "detail": "L1↔L2 追溯通过但 L2 结构比对发现此区块缺失——设计与 Spec 要求了但代码未实现"
+    },
+    {
+      "check": "交叉索引: 新建项目弹窗: 缺\"创建按钮\"",
+      "status": "🟠",
+      "detail": "L1↔L2 追溯通过但 L2 结构比对发现此区块缺失——设计与 Spec 要求了但代码未实现"
+    },
+    {
+      "check": "交叉索引: 章节目录视图: 缺\"视图标题\"",
+      "status": "🟠",
+      "detail": "L1↔L2 追溯通过但 L2 结构比对发现此区块缺失——设计与 Spec 要求了但代码未实现"
+    },
+    {
+      "check": "交叉索引: 章节目录视图: 缺\"5章索引行\"",
+      "status": "🟠",
+      "detail": "L1↔L2 追溯通过但 L2 结构比对发现此区块缺失——设计与 Spec 要求了但代码未实现"
+    },
+    {
+      "check": "交叉索引: 章节目录视图: 缺\"文件不存在行(灰色+⚠)\"",
+      "status": "🟠",
+      "detail": "L1↔L2 追溯通过但 L2 结构比对发现此区块缺失——设计与 Spec 要求了但代码未实现"
+    },
+    {
+      "check": "交叉索引: 模型下拉面板: 缺\"其他提供商\"",
+      "status": "🟠",
+      "detail": "L1↔L2 追溯通过但 L2 结构比对发现此区块缺失——设计与 Spec 要求了但代码未实现"
+    },
+    {
+      "check": "交叉索引: 模型下拉面板: 缺\"管理API配置入口\"",
+      "status": "🟠",
+      "detail": "L1↔L2 追溯通过但 L2 结构比对发现此区块缺失——设计与 Spec 要求了但代码未实现"
+    },
+    {
+      "check": "交叉索引: AI引导提问态: 缺\"对话标题\"",
+      "status": "🟠",
+      "detail": "L1↔L2 追溯通过但 L2 结构比对发现此区块缺失——设计与 Spec 要求了但代码未实现"
+    },
+    {
+      "check": "交叉索引: AI引导提问态: 缺\"AI引导消息\"",
+      "status": "🟠",
+      "detail": "L1↔L2 追溯通过但 L2 结构比对发现此区块缺失——设计与 Spec 要求了但代码未实现"
+    },
+    {
+      "check": "交叉索引: AI引导提问态: 缺\"发送按钮\"",
+      "status": "🟠",
+      "detail": "L1↔L2 追溯通过但 L2 结构比对发现此区块缺失——设计与 Spec 要求了但代码未实现"
+    },
+    {
+      "check": "交叉索引: 编辑器预览模式: 缺\"预览工具栏\"",
+      "status": "🟠",
+      "detail": "L1↔L2 追溯通过但 L2 结构比对发现此区块缺失——设计与 Spec 要求了但代码未实现"
+    },
+    {
+      "check": "交叉索引: 编辑器预览模式: 缺\"编辑/预览切换\"",
+      "status": "🟠",
+      "detail": "L1↔L2 追溯通过但 L2 结构比对发现此区块缺失——设计与 Spec 要求了但代码未实现"
+    },
+    {
+      "check": "交叉索引: 编辑器预览模式: 缺\"属性卡片\"",
+      "status": "🟠",
+      "detail": "L1↔L2 追溯通过但 L2 结构比对发现此区块缺失——设计与 Spec 要求了但代码未实现"
+    },
+    {
+      "check": "交叉索引: Skill编辑器-模板标签页: 缺\"右侧预览编辑区\"",
+      "status": "🟠",
+      "detail": "L1↔L2 追溯通过但 L2 结构比对发现此区块缺失——设计与 Spec 要求了但代码未实现"
+    },
+    {
+      "check": "交叉索引: Skill编辑器-示例标签页: 缺\"右侧只读预览区\"",
+      "status": "🟠",
+      "detail": "L1↔L2 追溯通过但 L2 结构比对发现此区块缺失——设计与 Spec 要求了但代码未实现"
+    },
+    {
+      "check": "交叉索引: Skill主页-空状态: 缺\"空态图标(48px)\"",
+      "status": "🟠",
+      "detail": "L1↔L2 追溯通过但 L2 结构比对发现此区块缺失——设计与 Spec 要求了但代码未实现"
+    },
+    {
+      "check": "交叉索引: Skill主页-空状态: 缺\"标题文案\"",
+      "status": "🟠",
+      "detail": "L1↔L2 追溯通过但 L2 结构比对发现此区块缺失——设计与 Spec 要求了但代码未实现"
+    },
+    {
+      "check": "交叉索引: Skill主页-空状态: 缺\"描述文案\"",
+      "status": "🟠",
+      "detail": "L1↔L2 追溯通过但 L2 结构比对发现此区块缺失——设计与 Spec 要求了但代码未实现"
+    },
+    {
+      "check": "交叉索引: Skill主页-空状态: 缺\"导入按钮\"",
+      "status": "🟠",
+      "detail": "L1↔L2 追溯通过但 L2 结构比对发现此区块缺失——设计与 Spec 要求了但代码未实现"
+    },
+    {
+      "check": "交叉索引: Skill主页-空状态: 缺\"新建按钮\"",
+      "status": "🟠",
+      "detail": "L1↔L2 追溯通过但 L2 结构比对发现此区块缺失——设计与 Spec 要求了但代码未实现"
+    },
+    {
+      "check": "交叉索引: 弹窗-导入冲突: 缺\"冲突标题\"",
+      "status": "🟠",
+      "detail": "L1↔L2 追溯通过但 L2 结构比对发现此区块缺失——设计与 Spec 要求了但代码未实现"
+    },
+    {
+      "check": "交叉索引: 弹窗-导入冲突: 缺\"说明文案\"",
+      "status": "🟠",
+      "detail": "L1↔L2 追溯通过但 L2 结构比对发现此区块缺失——设计与 Spec 要求了但代码未实现"
+    },
+    {
+      "check": "交叉索引: 弹窗-导入冲突: 缺\"覆盖选项(高亮边框)\"",
+      "status": "🟠",
+      "detail": "L1↔L2 追溯通过但 L2 结构比对发现此区块缺失——设计与 Spec 要求了但代码未实现"
+    },
+    {
+      "check": "交叉索引: 弹窗-导入冲突: 缺\"保留两者选项\"",
+      "status": "🟠",
+      "detail": "L1↔L2 追溯通过但 L2 结构比对发现此区块缺失——设计与 Spec 要求了但代码未实现"
+    },
+    {
+      "check": "交叉索引: 弹窗-导入冲突: 缺\"取消选项\"",
+      "status": "🟠",
+      "detail": "L1↔L2 追溯通过但 L2 结构比对发现此区块缺失——设计与 Spec 要求了但代码未实现"
+    },
+    {
+      "check": "交叉索引: 弹窗-删除Skill警告: 缺\"⚠标题(红色)\"",
+      "status": "🟠",
+      "detail": "L1↔L2 追溯通过但 L2 结构比对发现此区块缺失——设计与 Spec 要求了但代码未实现"
+    },
+    {
+      "check": "交叉索引: 弹窗-删除Skill警告: 缺\"项目数警告文案\"",
+      "status": "🟠",
+      "detail": "L1↔L2 追溯通过但 L2 结构比对发现此区块缺失——设计与 Spec 要求了但代码未实现"
+    },
+    {
+      "check": "交叉索引: 弹窗-删除Skill警告: 缺\"取消按钮\"",
+      "status": "🟠",
+      "detail": "L1↔L2 追溯通过但 L2 结构比对发现此区块缺失——设计与 Spec 要求了但代码未实现"
+    },
+    {
+      "check": "交叉索引: 弹窗-恢复冲突: 缺\"同名说明\"",
+      "status": "🟠",
+      "detail": "L1↔L2 追溯通过但 L2 结构比对发现此区块缺失——设计与 Spec 要求了但代码未实现"
+    },
+    {
+      "check": "交叉索引: 弹窗-恢复冲突: 缺\"覆盖选项\"",
+      "status": "🟠",
+      "detail": "L1↔L2 追溯通过但 L2 结构比对发现此区块缺失——设计与 Spec 要求了但代码未实现"
+    },
+    {
+      "check": "交叉索引: 弹窗-恢复冲突: 缺\"取消选项\"",
+      "status": "🟠",
+      "detail": "L1↔L2 追溯通过但 L2 结构比对发现此区块缺失——设计与 Spec 要求了但代码未实现"
+    },
+    {
+      "check": "交叉索引: 写作工作台-小屏适配: 缺\"窄工具栏\"",
+      "status": "🟠",
+      "detail": "L1↔L2 追溯通过但 L2 结构比对发现此区块缺失——设计与 Spec 要求了但代码未实现"
+    },
+    {
+      "check": "交叉索引: 写作工作台-小屏适配: 缺\"左侧导航(200px)\"",
+      "status": "🟠",
+      "detail": "L1↔L2 追溯通过但 L2 结构比对发现此区块缺失——设计与 Spec 要求了但代码未实现"
+    },
+    {
+      "check": "交叉索引: 写作工作台-小屏适配: 缺\"中间编辑区\"",
+      "status": "🟠",
+      "detail": "L1↔L2 追溯通过但 L2 结构比对发现此区块缺失——设计与 Spec 要求了但代码未实现"
+    },
+    {
+      "check": "交叉索引: 写作工作台-小屏适配: 缺\"AI浮动按钮(44×44)\"",
+      "status": "🟠",
+      "detail": "L1↔L2 追溯通过但 L2 结构比对发现此区块缺失——设计与 Spec 要求了但代码未实现"
+    },
+    {
+      "check": "交叉索引: 弹窗-清空回收站: 缺\"⚠清空回收站标题(红色)\"",
+      "status": "🟠",
+      "detail": "L1↔L2 追溯通过但 L2 结构比对发现此区块缺失——设计与 Spec 要求了但代码未实现"
+    },
+    {
+      "check": "交叉索引: 弹窗-清空回收站: 缺\"项目数警告\"",
+      "status": "🟠",
+      "detail": "L1↔L2 追溯通过但 L2 结构比对发现此区块缺失——设计与 Spec 要求了但代码未实现"
+    },
+    {
+      "check": "交叉索引: 弹窗-清空回收站: 缺\"取消按钮\"",
+      "status": "🟠",
+      "detail": "L1↔L2 追溯通过但 L2 结构比对发现此区块缺失——设计与 Spec 要求了但代码未实现"
+    },
+    {
+      "check": "交叉索引: 弹窗-清空回收站: 缺\"确认清空按钮(红色)\"",
+      "status": "🟠",
+      "detail": "L1↔L2 追溯通过但 L2 结构比对发现此区块缺失——设计与 Spec 要求了但代码未实现"
+    },
+    {
+      "check": "交叉索引: 快捷键参考面板: 缺\"保存/撤销/重做/切换标签/关闭/查找/替换\"",
+      "status": "🟠",
+      "detail": "L1↔L2 追溯通过但 L2 结构比对发现此区块缺失——设计与 Spec 要求了但代码未实现"
+    },
+    {
+      "check": "交叉索引: 右键菜单-文件树: 缺\"🗑删除(红色)\"",
+      "status": "🟠",
+      "detail": "L1↔L2 追溯通过但 L2 结构比对发现此区块缺失——设计与 Spec 要求了但代码未实现"
+    },
+    {
+      "check": "交叉索引: 阶段流程卡片区: 缺\"4个阶段卡片\"",
+      "status": "🟠",
+      "detail": "L1↔L2 追溯通过但 L2 结构比对发现此区块缺失——设计与 Spec 要求了但代码未实现"
+    },
+    {
+      "check": "交叉索引: 阶段流程卡片区: 缺\"项目文件标签\"",
+      "status": "🟠",
+      "detail": "L1↔L2 追溯通过但 L2 结构比对发现此区块缺失——设计与 Spec 要求了但代码未实现"
+    },
+    {
+      "check": "交叉索引: 阶段流程卡片区: 缺\"章节展开列表\"",
+      "status": "🟠",
+      "detail": "L1↔L2 追溯通过但 L2 结构比对发现此区块缺失——设计与 Spec 要求了但代码未实现"
+    },
+    {
+      "check": "交叉索引: 文件树组件: 缺\"项目文件标签\"",
+      "status": "🟠",
+      "detail": "L1↔L2 追溯通过但 L2 结构比对发现此区块缺失——设计与 Spec 要求了但代码未实现"
+    },
+    {
+      "check": "交叉索引: AI对话区完整态: 缺\"对话标题+工具按钮\"",
+      "status": "🟠",
+      "detail": "L1↔L2 追溯通过但 L2 结构比对发现此区块缺失——设计与 Spec 要求了但代码未实现"
+    },
+    {
+      "check": "交叉索引: AI对话区完整态: 缺\"AI消息(左侧蓝线)\"",
+      "status": "🟠",
+      "detail": "L1↔L2 追溯通过但 L2 结构比对发现此区块缺失——设计与 Spec 要求了但代码未实现"
+    },
+    {
+      "check": "交叉索引: AI对话区完整态: 缺\"用户消息(灰底)\"",
+      "status": "🟠",
+      "detail": "L1↔L2 追溯通过但 L2 结构比对发现此区块缺失——设计与 Spec 要求了但代码未实现"
+    },
+    {
+      "check": "交叉索引: AI对话区完整态: 缺\"阶段分隔符\"",
+      "status": "🟠",
+      "detail": "L1↔L2 追溯通过但 L2 结构比对发现此区块缺失——设计与 Spec 要求了但代码未实现"
+    },
+    {
+      "check": "交叉索引: AI对话区完整态: 缺\"输入框+发送按钮\"",
+      "status": "🟠",
+      "detail": "L1↔L2 追溯通过但 L2 结构比对发现此区块缺失——设计与 Spec 要求了但代码未实现"
+    },
+    {
+      "check": "交叉索引: AI对话区完整态: 缺\"跳到底部浮动按钮\"",
+      "status": "🟠",
+      "detail": "L1↔L2 追溯通过但 L2 结构比对发现此区块缺失——设计与 Spec 要求了但代码未实现"
+    },
+    {
+      "check": "交叉索引: 编辑器只读模式: 缺\"只读工具栏(#2A2520)\"",
+      "status": "🟠",
+      "detail": "L1↔L2 追溯通过但 L2 结构比对发现此区块缺失——设计与 Spec 要求了但代码未实现"
+    },
+    {
+      "check": "交叉索引: 编辑器只读模式: 缺\"操作按钮\"",
+      "status": "🟠",
+      "detail": "L1↔L2 追溯通过但 L2 结构比对发现此区块缺失——设计与 Spec 要求了但代码未实现"
+    },
+    {
+      "check": "交叉索引: 章节目录空状态: 缺\"视图标题\"",
+      "status": "🟠",
+      "detail": "L1↔L2 追溯通过但 L2 结构比对发现此区块缺失——设计与 Spec 要求了但代码未实现"
+    },
+    {
+      "check": "交叉索引: 章节目录空状态: 缺\"空态图标(48px)\"",
+      "status": "🟠",
+      "detail": "L1↔L2 追溯通过但 L2 结构比对发现此区块缺失——设计与 Spec 要求了但代码未实现"
+    },
+    {
+      "check": "交叉索引: 章节目录空状态: 缺\"引导文案\"",
+      "status": "🟠",
+      "detail": "L1↔L2 追溯通过但 L2 结构比对发现此区块缺失——设计与 Spec 要求了但代码未实现"
+    },
+    {
+      "check": "交叉索引: 章节目录空状态: 缺\"新建章节按钮\"",
+      "status": "🟠",
+      "detail": "L1↔L2 追溯通过但 L2 结构比对发现此区块缺失——设计与 Spec 要求了但代码未实现"
+    },
+    {
+      "check": "交叉索引: Skill编辑器缺标签页: 缺\"标签区域(空)\"",
+      "status": "🟠",
+      "detail": "L1↔L2 追溯通过但 L2 结构比对发现此区块缺失——设计与 Spec 要求了但代码未实现"
+    },
+    {
+      "check": "交叉索引: 查找替换面板: 缺\"查找输入框\"",
+      "status": "🟠",
+      "detail": "L1↔L2 追溯通过但 L2 结构比对发现此区块缺失——设计与 Spec 要求了但代码未实现"
+    },
+    {
+      "check": "交叉索引: 查找替换面板: 缺\"替换输入框\"",
+      "status": "🟠",
+      "detail": "L1↔L2 追溯通过但 L2 结构比对发现此区块缺失——设计与 Spec 要求了但代码未实现"
+    },
+    {
+      "check": "交叉索引: 查找替换面板: 缺\"操作按钮\"",
+      "status": "🟠",
+      "detail": "L1↔L2 追溯通过但 L2 结构比对发现此区块缺失——设计与 Spec 要求了但代码未实现"
+    },
+    {
+      "check": "交叉索引: 查找替换面板: 缺\"关闭按钮\"",
+      "status": "🟠",
+      "detail": "L1↔L2 追溯通过但 L2 结构比对发现此区块缺失——设计与 Spec 要求了但代码未实现"
+    },
+    {
+      "check": "交叉索引: 章节完成引导: 缺\"引导文案\"",
+      "status": "🟠",
+      "detail": "L1↔L2 追溯通过但 L2 结构比对发现此区块缺失——设计与 Spec 要求了但代码未实现"
+    },
+    {
+      "check": "交叉索引: 章节完成引导: 缺\"操作按钮(w=150,h=28)\"",
+      "status": "🟠",
+      "detail": "L1↔L2 追溯通过但 L2 结构比对发现此区块缺失——设计与 Spec 要求了但代码未实现"
+    },
+    {
+      "check": "交叉索引: API检查连接三态: 缺\"连接成功(#4CAF50)\"",
+      "status": "🟠",
+      "detail": "L1↔L2 追溯通过但 L2 结构比对发现此区块缺失——设计与 Spec 要求了但代码未实现"
+    },
+    {
+      "check": "交叉索引: API检查连接三态: 缺\"连接失败(#E57373)\"",
+      "status": "🟠",
+      "detail": "L1↔L2 追溯通过但 L2 结构比对发现此区块缺失——设计与 Spec 要求了但代码未实现"
+    }
+  ],
   "design_diff": [
     {
       "check": "设计变更检测",
@@ -3520,7 +3891,1081 @@
       "found": true
     }
   ],
-  "l2_pen_check": [],
+  "l2_pen_check": [
+    {
+      "check": ".pen 帧缓存新鲜度",
+      "status": "✅",
+      "found": true,
+      "detail": "缓存是最新的"
+    },
+    {
+      "check": ".pen 帧缓存",
+      "status": "✅",
+      "found": true,
+      "detail": "35 帧"
+    },
+    {
+      "check": "Skill 主页面: fill=#0F0F11",
+      "status": "✅",
+      "found": true,
+      "detail": "→ --bg-base"
+    },
+    {
+      "check": "Skill 主页面: 窗口控制",
+      "status": "✅",
+      "found": true,
+      "detail": "已包含"
+    },
+    {
+      "check": "写作工作台: fill=#0F0F11",
+      "status": "✅",
+      "found": true,
+      "detail": "→ --bg-base"
+    },
+    {
+      "check": "写作工作台: 窗口控制",
+      "status": "✅",
+      "found": true,
+      "detail": "已包含"
+    },
+    {
+      "check": "API模型配置页面: fill=#0F0F11",
+      "status": "✅",
+      "found": true,
+      "detail": "→ --bg-base"
+    },
+    {
+      "check": "API模型配置页面: 窗口控制",
+      "status": "✅",
+      "found": true,
+      "detail": "已包含"
+    },
+    {
+      "check": "设置页面: fill=#0F0F11",
+      "status": "✅",
+      "found": true,
+      "detail": "→ --bg-base"
+    },
+    {
+      "check": "设置页面: 窗口控制",
+      "status": "✅",
+      "found": true,
+      "detail": "已包含"
+    },
+    {
+      "check": "Skill编辑器: fill=#0F0F11",
+      "status": "✅",
+      "found": true,
+      "detail": "→ --bg-base"
+    },
+    {
+      "check": "Skill编辑器: 窗口控制",
+      "status": "✅",
+      "found": true,
+      "detail": "已包含"
+    },
+    {
+      "check": "新建项目弹窗: fill=#161618",
+      "status": "✅",
+      "found": true,
+      "detail": "→ --bg-panel"
+    },
+    {
+      "check": "章节目录视图: fill=#1A1A1D",
+      "status": "✅",
+      "found": true,
+      "detail": "→ --bg-editor"
+    },
+    {
+      "check": "模型下拉面板: fill=#161618",
+      "status": "✅",
+      "found": true,
+      "detail": "→ --bg-panel"
+    },
+    {
+      "check": "AI引导提问态: fill=#161618",
+      "status": "✅",
+      "found": true,
+      "detail": "→ --bg-panel"
+    },
+    {
+      "check": "编辑器预览模式: fill=#1A1A1D",
+      "status": "✅",
+      "found": true,
+      "detail": "→ --bg-editor"
+    },
+    {
+      "check": "Skill编辑器-模板标签页: fill=#0F0F11",
+      "status": "✅",
+      "found": true,
+      "detail": "→ --bg-base"
+    },
+    {
+      "check": "Skill编辑器-示例标签页: fill=#0F0F11",
+      "status": "✅",
+      "found": true,
+      "detail": "→ --bg-base"
+    },
+    {
+      "check": "控件组件库: fill=#0F0F11",
+      "status": "✅",
+      "found": true,
+      "detail": "→ --bg-base"
+    },
+    {
+      "check": "Skill主页-空状态: fill=#0F0F11",
+      "status": "✅",
+      "found": true,
+      "detail": "→ --bg-base"
+    },
+    {
+      "check": "右键菜单-项目: fill=#161618",
+      "status": "✅",
+      "found": true,
+      "detail": "→ --bg-panel"
+    },
+    {
+      "check": "右键菜单-编辑器: fill=#161618",
+      "status": "✅",
+      "found": true,
+      "detail": "→ --bg-panel"
+    },
+    {
+      "check": "弹窗-导入冲突: fill=#161618",
+      "status": "✅",
+      "found": true,
+      "detail": "→ --bg-panel"
+    },
+    {
+      "check": "弹窗-删除Skill警告: fill=#161618",
+      "status": "✅",
+      "found": true,
+      "detail": "→ --bg-panel"
+    },
+    {
+      "check": "弹窗-恢复冲突: fill=#161618",
+      "status": "✅",
+      "found": true,
+      "detail": "→ --bg-panel"
+    },
+    {
+      "check": "写作工作台-小屏适配: fill=#0F0F11",
+      "status": "✅",
+      "found": true,
+      "detail": "→ --bg-base"
+    },
+    {
+      "check": "弹窗-清空回收站: fill=#161618",
+      "status": "✅",
+      "found": true,
+      "detail": "→ --bg-panel"
+    },
+    {
+      "check": "快捷键参考面板: fill=#161618",
+      "status": "✅",
+      "found": true,
+      "detail": "→ --bg-panel"
+    },
+    {
+      "check": "右键菜单-文件树: fill=#161618",
+      "status": "✅",
+      "found": true,
+      "detail": "→ --bg-panel"
+    },
+    {
+      "check": "Toast-错误: fill=#3D2020",
+      "status": "✅",
+      "found": true,
+      "detail": "→ --error-bg"
+    },
+    {
+      "check": "右键菜单-标签页: fill=#161618",
+      "status": "✅",
+      "found": true,
+      "detail": "→ --bg-panel"
+    },
+    {
+      "check": "阶段流程卡片区: fill=#161618",
+      "status": "✅",
+      "found": true,
+      "detail": "→ --bg-panel"
+    },
+    {
+      "check": "文件树组件: fill=#161618",
+      "status": "✅",
+      "found": true,
+      "detail": "→ --bg-panel"
+    },
+    {
+      "check": "编辑器标签栏: fill=#161618",
+      "status": "✅",
+      "found": true,
+      "detail": "→ --bg-panel"
+    },
+    {
+      "check": "AI对话区完整态: fill=#161618",
+      "status": "✅",
+      "found": true,
+      "detail": "→ --bg-panel"
+    },
+    {
+      "check": "编辑器只读模式: fill=#2A2520",
+      "status": "✅",
+      "found": true,
+      "detail": "→ --warning-bg"
+    },
+    {
+      "check": "章节目录空状态: fill=#1A1A1D",
+      "status": "✅",
+      "found": true,
+      "detail": "→ --bg-editor"
+    },
+    {
+      "check": "Skill编辑器缺标签页: fill=#0F0F11",
+      "status": "✅",
+      "found": true,
+      "detail": "→ --bg-base"
+    },
+    {
+      "check": "查找替换面板: fill=#161618",
+      "status": "✅",
+      "found": true,
+      "detail": "→ --bg-panel"
+    },
+    {
+      "check": "章节完成引导: fill=#161618",
+      "status": "✅",
+      "found": true,
+      "detail": "→ --bg-panel"
+    },
+    {
+      "check": "设计帧总览",
+      "status": "✅",
+      "found": true,
+      "detail": "35 帧: 主页面×5, 弹窗×5, 视图×3, 面板×2, 标签页×2, 组件库×1, 状态变体×1, 右键菜单×4, 响应式变体×1, Toast×1, 子组件×10"
+    },
+    {
+      "check": "语义结构比对",
+      "status": "✅",
+      "found": true,
+      "detail": "对 35 帧执行结构树比对"
+    },
+    {
+      "check": "Skill 主页面: 代码文件",
+      "status": "🟡",
+      "detail": "未找到 skill-home-page.tsx"
+    },
+    {
+      "check": "写作工作台: 代码文件",
+      "status": "🟡",
+      "detail": "未找到 app-layout.tsx"
+    },
+    {
+      "check": "API模型配置页面: 代码文件",
+      "status": "🟡",
+      "detail": "未找到 api-config-page.tsx"
+    },
+    {
+      "check": "设置页面: 代码文件",
+      "status": "🟡",
+      "detail": "未找到 settings-page.tsx"
+    },
+    {
+      "check": "Skill编辑器: 代码文件",
+      "status": "🟡",
+      "detail": "未找到 skill-editor-page.tsx"
+    },
+    {
+      "check": "新建项目弹窗: 代码文件",
+      "status": "🟡",
+      "detail": "未找到 skill-home-page.tsx"
+    },
+    {
+      "check": "章节目录视图: 代码文件",
+      "status": "🟡",
+      "detail": "未找到 chapter-index-view.tsx"
+    },
+    {
+      "check": "模型下拉面板: 代码文件",
+      "status": "🟡",
+      "detail": "未找到 model-dropdown.tsx"
+    },
+    {
+      "check": "AI引导提问态: 代码文件",
+      "status": "🟡",
+      "detail": "未找到 right-panel.tsx"
+    },
+    {
+      "check": "编辑器预览模式: 代码文件",
+      "status": "🟡",
+      "detail": "未找到 markdown-preview.tsx"
+    },
+    {
+      "check": "Skill编辑器-模板标签页: 代码文件",
+      "status": "🟡",
+      "detail": "未找到 skill-editor-page.tsx"
+    },
+    {
+      "check": "Skill编辑器-示例标签页: 代码文件",
+      "status": "🟡",
+      "detail": "未找到 skill-editor-page.tsx"
+    },
+    {
+      "check": "控件组件库: 代码文件",
+      "status": "🟡",
+      "detail": "未找到 ui/*.tsx"
+    },
+    {
+      "check": "Skill主页-空状态: 代码文件",
+      "status": "🟡",
+      "detail": "未找到 skill-home-page.tsx"
+    },
+    {
+      "check": "右键菜单-项目: 代码文件",
+      "status": "🟡",
+      "detail": "未找到 left-panel.tsx"
+    },
+    {
+      "check": "右键菜单-编辑器: 代码文件",
+      "status": "🟡",
+      "detail": "未找到 editor-context-menu.tsx"
+    },
+    {
+      "check": "弹窗-导入冲突: 代码文件",
+      "status": "🟡",
+      "detail": "未找到 skill-home-page.tsx"
+    },
+    {
+      "check": "弹窗-删除Skill警告: 代码文件",
+      "status": "🟡",
+      "detail": "未找到 skill-home-page.tsx"
+    },
+    {
+      "check": "弹窗-恢复冲突: 代码文件",
+      "status": "🟡",
+      "detail": "未找到 skill-home-page.tsx"
+    },
+    {
+      "check": "写作工作台-小屏适配: 代码文件",
+      "status": "🟡",
+      "detail": "未找到 app-layout.tsx"
+    },
+    {
+      "check": "弹窗-清空回收站: 代码文件",
+      "status": "🟡",
+      "detail": "未找到 skill-home-page.tsx"
+    },
+    {
+      "check": "快捷键参考面板: 代码文件",
+      "status": "🟡",
+      "detail": "未找到 editor-workspace.tsx"
+    },
+    {
+      "check": "右键菜单-文件树: 代码文件",
+      "status": "🟡",
+      "detail": "未找到 left-panel.tsx"
+    },
+    {
+      "check": "Toast-错误: 代码文件",
+      "status": "🟡",
+      "detail": "未找到 toast.tsx"
+    },
+    {
+      "check": "右键菜单-标签页: 代码文件",
+      "status": "🟡",
+      "detail": "未找到 tab-context-menu.tsx"
+    },
+    {
+      "check": "阶段流程卡片区: 代码文件",
+      "status": "🟡",
+      "detail": "未找到 left-panel.tsx"
+    },
+    {
+      "check": "文件树组件: 代码文件",
+      "status": "🟡",
+      "detail": "未找到 left-panel.tsx"
+    },
+    {
+      "check": "编辑器标签栏: 代码文件",
+      "status": "🟡",
+      "detail": "未找到 editor-tabs.tsx"
+    },
+    {
+      "check": "AI对话区完整态: 代码文件",
+      "status": "🟡",
+      "detail": "未找到 right-panel.tsx"
+    },
+    {
+      "check": "编辑器只读模式: 代码文件",
+      "status": "🟡",
+      "detail": "未找到 editor-workspace.tsx"
+    },
+    {
+      "check": "章节目录空状态: 代码文件",
+      "status": "🟡",
+      "detail": "未找到 chapter-index-view.tsx"
+    },
+    {
+      "check": "Skill编辑器缺标签页: 代码文件",
+      "status": "🟡",
+      "detail": "未找到 skill-editor-page.tsx"
+    },
+    {
+      "check": "查找替换面板: 代码文件",
+      "status": "🟡",
+      "detail": "未找到 editor-workspace.tsx"
+    },
+    {
+      "check": "章节完成引导: 代码文件",
+      "status": "🟡",
+      "detail": "未找到 right-panel.tsx"
+    },
+    {
+      "check": "API检查连接三态: 代码文件",
+      "status": "🟡",
+      "detail": "未找到 api-config-page.tsx"
+    },
+    {
+      "check": "写作工作台: 缺\"左侧导航(240px)\"",
+      "status": "🔴",
+      "detail": "设计帧含\"左侧导航(240px)\"区块，但代码中未找到",
+      "frame": "f7c4Zl"
+    },
+    {
+      "check": "写作工作台: 缺\"中间编辑区\"",
+      "status": "🔴",
+      "detail": "设计帧含\"中间编辑区\"区块，但代码中未找到",
+      "frame": "f7c4Zl"
+    },
+    {
+      "check": "写作工作台: 缺\"右侧AI对话区(340px)\"",
+      "status": "🔴",
+      "detail": "设计帧含\"右侧AI对话区(340px)\"区块，但代码中未找到",
+      "frame": "f7c4Zl"
+    },
+    {
+      "check": "写作工作台: 缺\"模型切换按钮\"",
+      "status": "🔴",
+      "detail": "设计帧含\"模型切换按钮\"区块，但代码中未找到",
+      "frame": "f7c4Zl"
+    },
+    {
+      "check": "设置页面: 缺\"设置内容区\"",
+      "status": "🔴",
+      "detail": "设计帧含\"设置内容区\"区块，但代码中未找到",
+      "frame": "PzN4F"
+    },
+    {
+      "check": "新建项目弹窗: 缺\"弹窗标题\"",
+      "status": "🔴",
+      "detail": "设计帧含\"弹窗标题\"区块，但代码中未找到",
+      "frame": "u7FGO"
+    },
+    {
+      "check": "新建项目弹窗: 缺\"项目名称输入\"",
+      "status": "🔴",
+      "detail": "设计帧含\"项目名称输入\"区块，但代码中未找到",
+      "frame": "u7FGO"
+    },
+    {
+      "check": "新建项目弹窗: 缺\"Skill下拉选择\"",
+      "status": "🔴",
+      "detail": "设计帧含\"Skill下拉选择\"区块，但代码中未找到",
+      "frame": "u7FGO"
+    },
+    {
+      "check": "新建项目弹窗: 缺\"取消按钮\"",
+      "status": "🔴",
+      "detail": "设计帧含\"取消按钮\"区块，但代码中未找到",
+      "frame": "u7FGO"
+    },
+    {
+      "check": "新建项目弹窗: 缺\"创建按钮\"",
+      "status": "🔴",
+      "detail": "设计帧含\"创建按钮\"区块，但代码中未找到",
+      "frame": "u7FGO"
+    },
+    {
+      "check": "章节目录视图: 缺\"视图标题\"",
+      "status": "🔴",
+      "detail": "设计帧含\"视图标题\"区块，但代码中未找到",
+      "frame": "tDH4z"
+    },
+    {
+      "check": "章节目录视图: 缺\"5章索引行\"",
+      "status": "🔴",
+      "detail": "设计帧含\"5章索引行\"区块，但代码中未找到",
+      "frame": "tDH4z"
+    },
+    {
+      "check": "章节目录视图: 缺\"文件不存在行(灰色+⚠)\"",
+      "status": "🔴",
+      "detail": "设计帧含\"文件不存在行(灰色+⚠)\"区块，但代码中未找到",
+      "frame": "tDH4z"
+    },
+    {
+      "check": "模型下拉面板: 缺\"其他提供商\"",
+      "status": "🔴",
+      "detail": "设计帧含\"其他提供商\"区块，但代码中未找到",
+      "frame": "HjIth"
+    },
+    {
+      "check": "模型下拉面板: 缺\"管理API配置入口\"",
+      "status": "🔴",
+      "detail": "设计帧含\"管理API配置入口\"区块，但代码中未找到",
+      "frame": "HjIth"
+    },
+    {
+      "check": "AI引导提问态: 缺\"对话标题\"",
+      "status": "🔴",
+      "detail": "设计帧含\"对话标题\"区块，但代码中未找到",
+      "frame": "KjlGF"
+    },
+    {
+      "check": "AI引导提问态: 缺\"AI引导消息\"",
+      "status": "🔴",
+      "detail": "设计帧含\"AI引导消息\"区块，但代码中未找到",
+      "frame": "KjlGF"
+    },
+    {
+      "check": "AI引导提问态: 缺\"发送按钮\"",
+      "status": "🔴",
+      "detail": "设计帧含\"发送按钮\"区块，但代码中未找到",
+      "frame": "KjlGF"
+    },
+    {
+      "check": "编辑器预览模式: 缺\"预览工具栏\"",
+      "status": "🔴",
+      "detail": "设计帧含\"预览工具栏\"区块，但代码中未找到",
+      "frame": "C0Z3oT"
+    },
+    {
+      "check": "编辑器预览模式: 缺\"编辑/预览切换\"",
+      "status": "🔴",
+      "detail": "设计帧含\"编辑/预览切换\"区块，但代码中未找到",
+      "frame": "C0Z3oT"
+    },
+    {
+      "check": "编辑器预览模式: 缺\"属性卡片\"",
+      "status": "🔴",
+      "detail": "设计帧含\"属性卡片\"区块，但代码中未找到",
+      "frame": "C0Z3oT"
+    },
+    {
+      "check": "Skill编辑器-模板标签页: 缺\"右侧预览编辑区\"",
+      "status": "🔴",
+      "detail": "设计帧含\"右侧预览编辑区\"区块，但代码中未找到",
+      "frame": "KhIbg"
+    },
+    {
+      "check": "Skill编辑器-示例标签页: 缺\"右侧只读预览区\"",
+      "status": "🔴",
+      "detail": "设计帧含\"右侧只读预览区\"区块，但代码中未找到",
+      "frame": "oroCB"
+    },
+    {
+      "check": "Skill主页-空状态: 缺\"空态图标(48px)\"",
+      "status": "🔴",
+      "detail": "设计帧含\"空态图标(48px)\"区块，但代码中未找到",
+      "frame": "c4Jxxw"
+    },
+    {
+      "check": "Skill主页-空状态: 缺\"标题文案\"",
+      "status": "🔴",
+      "detail": "设计帧含\"标题文案\"区块，但代码中未找到",
+      "frame": "c4Jxxw"
+    },
+    {
+      "check": "Skill主页-空状态: 缺\"描述文案\"",
+      "status": "🔴",
+      "detail": "设计帧含\"描述文案\"区块，但代码中未找到",
+      "frame": "c4Jxxw"
+    },
+    {
+      "check": "Skill主页-空状态: 缺\"导入按钮\"",
+      "status": "🔴",
+      "detail": "设计帧含\"导入按钮\"区块，但代码中未找到",
+      "frame": "c4Jxxw"
+    },
+    {
+      "check": "Skill主页-空状态: 缺\"新建按钮\"",
+      "status": "🔴",
+      "detail": "设计帧含\"新建按钮\"区块，但代码中未找到",
+      "frame": "c4Jxxw"
+    },
+    {
+      "check": "弹窗-导入冲突: 缺\"冲突标题\"",
+      "status": "🔴",
+      "detail": "设计帧含\"冲突标题\"区块，但代码中未找到",
+      "frame": "y4jkh"
+    },
+    {
+      "check": "弹窗-导入冲突: 缺\"说明文案\"",
+      "status": "🔴",
+      "detail": "设计帧含\"说明文案\"区块，但代码中未找到",
+      "frame": "y4jkh"
+    },
+    {
+      "check": "弹窗-导入冲突: 缺\"覆盖选项(高亮边框)\"",
+      "status": "🔴",
+      "detail": "设计帧含\"覆盖选项(高亮边框)\"区块，但代码中未找到",
+      "frame": "y4jkh"
+    },
+    {
+      "check": "弹窗-导入冲突: 缺\"保留两者选项\"",
+      "status": "🔴",
+      "detail": "设计帧含\"保留两者选项\"区块，但代码中未找到",
+      "frame": "y4jkh"
+    },
+    {
+      "check": "弹窗-导入冲突: 缺\"取消选项\"",
+      "status": "🔴",
+      "detail": "设计帧含\"取消选项\"区块，但代码中未找到",
+      "frame": "y4jkh"
+    },
+    {
+      "check": "弹窗-删除Skill警告: 缺\"⚠标题(红色)\"",
+      "status": "🔴",
+      "detail": "设计帧含\"⚠标题(红色)\"区块，但代码中未找到",
+      "frame": "NfGnL"
+    },
+    {
+      "check": "弹窗-删除Skill警告: 缺\"项目数警告文案\"",
+      "status": "🔴",
+      "detail": "设计帧含\"项目数警告文案\"区块，但代码中未找到",
+      "frame": "NfGnL"
+    },
+    {
+      "check": "弹窗-删除Skill警告: 缺\"取消按钮\"",
+      "status": "🔴",
+      "detail": "设计帧含\"取消按钮\"区块，但代码中未找到",
+      "frame": "NfGnL"
+    },
+    {
+      "check": "弹窗-恢复冲突: 缺\"同名说明\"",
+      "status": "🔴",
+      "detail": "设计帧含\"同名说明\"区块，但代码中未找到",
+      "frame": "ehJLk"
+    },
+    {
+      "check": "弹窗-恢复冲突: 缺\"覆盖选项\"",
+      "status": "🔴",
+      "detail": "设计帧含\"覆盖选项\"区块，但代码中未找到",
+      "frame": "ehJLk"
+    },
+    {
+      "check": "弹窗-恢复冲突: 缺\"取消选项\"",
+      "status": "🔴",
+      "detail": "设计帧含\"取消选项\"区块，但代码中未找到",
+      "frame": "ehJLk"
+    },
+    {
+      "check": "写作工作台-小屏适配: 缺\"窄工具栏\"",
+      "status": "🔴",
+      "detail": "设计帧含\"窄工具栏\"区块，但代码中未找到",
+      "frame": "JIsNE"
+    },
+    {
+      "check": "写作工作台-小屏适配: 缺\"左侧导航(200px)\"",
+      "status": "🔴",
+      "detail": "设计帧含\"左侧导航(200px)\"区块，但代码中未找到",
+      "frame": "JIsNE"
+    },
+    {
+      "check": "写作工作台-小屏适配: 缺\"中间编辑区\"",
+      "status": "🔴",
+      "detail": "设计帧含\"中间编辑区\"区块，但代码中未找到",
+      "frame": "JIsNE"
+    },
+    {
+      "check": "写作工作台-小屏适配: 缺\"AI浮动按钮(44×44)\"",
+      "status": "🔴",
+      "detail": "设计帧含\"AI浮动按钮(44×44)\"区块，但代码中未找到",
+      "frame": "JIsNE"
+    },
+    {
+      "check": "弹窗-清空回收站: 缺\"⚠清空回收站标题(红色)\"",
+      "status": "🔴",
+      "detail": "设计帧含\"⚠清空回收站标题(红色)\"区块，但代码中未找到",
+      "frame": "sNYdB"
+    },
+    {
+      "check": "弹窗-清空回收站: 缺\"项目数警告\"",
+      "status": "🔴",
+      "detail": "设计帧含\"项目数警告\"区块，但代码中未找到",
+      "frame": "sNYdB"
+    },
+    {
+      "check": "弹窗-清空回收站: 缺\"取消按钮\"",
+      "status": "🔴",
+      "detail": "设计帧含\"取消按钮\"区块，但代码中未找到",
+      "frame": "sNYdB"
+    },
+    {
+      "check": "弹窗-清空回收站: 缺\"确认清空按钮(红色)\"",
+      "status": "🔴",
+      "detail": "设计帧含\"确认清空按钮(红色)\"区块，但代码中未找到",
+      "frame": "sNYdB"
+    },
+    {
+      "check": "快捷键参考面板: 缺\"保存/撤销/重做/切换标签/关闭/查找/替换\"",
+      "status": "🔴",
+      "detail": "设计帧含\"保存/撤销/重做/切换标签/关闭/查找/替换\"区块，但代码中未找到",
+      "frame": "vWwKc"
+    },
+    {
+      "check": "右键菜单-文件树: 缺\"🗑删除(红色)\"",
+      "status": "🔴",
+      "detail": "设计帧含\"🗑删除(红色)\"区块，但代码中未找到",
+      "frame": "c4dNol"
+    },
+    {
+      "check": "阶段流程卡片区: 缺\"4个阶段卡片\"",
+      "status": "🔴",
+      "detail": "设计帧含\"4个阶段卡片\"区块，但代码中未找到",
+      "frame": "R51Ov"
+    },
+    {
+      "check": "阶段流程卡片区: 缺\"项目文件标签\"",
+      "status": "🔴",
+      "detail": "设计帧含\"项目文件标签\"区块，但代码中未找到",
+      "frame": "R51Ov"
+    },
+    {
+      "check": "阶段流程卡片区: 缺\"章节展开列表\"",
+      "status": "🔴",
+      "detail": "设计帧含\"章节展开列表\"区块，但代码中未找到",
+      "frame": "R51Ov"
+    },
+    {
+      "check": "文件树组件: 缺\"项目文件标签\"",
+      "status": "🔴",
+      "detail": "设计帧含\"项目文件标签\"区块，但代码中未找到",
+      "frame": "sNQx7"
+    },
+    {
+      "check": "AI对话区完整态: 缺\"对话标题+工具按钮\"",
+      "status": "🔴",
+      "detail": "设计帧含\"对话标题+工具按钮\"区块，但代码中未找到",
+      "frame": "DIs7H"
+    },
+    {
+      "check": "AI对话区完整态: 缺\"AI消息(左侧蓝线)\"",
+      "status": "🔴",
+      "detail": "设计帧含\"AI消息(左侧蓝线)\"区块，但代码中未找到",
+      "frame": "DIs7H"
+    },
+    {
+      "check": "AI对话区完整态: 缺\"用户消息(灰底)\"",
+      "status": "🔴",
+      "detail": "设计帧含\"用户消息(灰底)\"区块，但代码中未找到",
+      "frame": "DIs7H"
+    },
+    {
+      "check": "AI对话区完整态: 缺\"阶段分隔符\"",
+      "status": "🔴",
+      "detail": "设计帧含\"阶段分隔符\"区块，但代码中未找到",
+      "frame": "DIs7H"
+    },
+    {
+      "check": "AI对话区完整态: 缺\"输入框+发送按钮\"",
+      "status": "🔴",
+      "detail": "设计帧含\"输入框+发送按钮\"区块，但代码中未找到",
+      "frame": "DIs7H"
+    },
+    {
+      "check": "AI对话区完整态: 缺\"跳到底部浮动按钮\"",
+      "status": "🔴",
+      "detail": "设计帧含\"跳到底部浮动按钮\"区块，但代码中未找到",
+      "frame": "DIs7H"
+    },
+    {
+      "check": "编辑器只读模式: 缺\"只读工具栏(#2A2520)\"",
+      "status": "🔴",
+      "detail": "设计帧含\"只读工具栏(#2A2520)\"区块，但代码中未找到",
+      "frame": "JauFw"
+    },
+    {
+      "check": "编辑器只读模式: 缺\"操作按钮\"",
+      "status": "🔴",
+      "detail": "设计帧含\"操作按钮\"区块，但代码中未找到",
+      "frame": "JauFw"
+    },
+    {
+      "check": "章节目录空状态: 缺\"视图标题\"",
+      "status": "🔴",
+      "detail": "设计帧含\"视图标题\"区块，但代码中未找到",
+      "frame": "A77xN"
+    },
+    {
+      "check": "章节目录空状态: 缺\"空态图标(48px)\"",
+      "status": "🔴",
+      "detail": "设计帧含\"空态图标(48px)\"区块，但代码中未找到",
+      "frame": "A77xN"
+    },
+    {
+      "check": "章节目录空状态: 缺\"引导文案\"",
+      "status": "🔴",
+      "detail": "设计帧含\"引导文案\"区块，但代码中未找到",
+      "frame": "A77xN"
+    },
+    {
+      "check": "章节目录空状态: 缺\"新建章节按钮\"",
+      "status": "🔴",
+      "detail": "设计帧含\"新建章节按钮\"区块，但代码中未找到",
+      "frame": "A77xN"
+    },
+    {
+      "check": "Skill编辑器缺标签页: 缺\"标签区域(空)\"",
+      "status": "🔴",
+      "detail": "设计帧含\"标签区域(空)\"区块，但代码中未找到",
+      "frame": "xAiWM"
+    },
+    {
+      "check": "查找替换面板: 缺\"查找输入框\"",
+      "status": "🔴",
+      "detail": "设计帧含\"查找输入框\"区块，但代码中未找到",
+      "frame": "WQCDd"
+    },
+    {
+      "check": "查找替换面板: 缺\"替换输入框\"",
+      "status": "🔴",
+      "detail": "设计帧含\"替换输入框\"区块，但代码中未找到",
+      "frame": "WQCDd"
+    },
+    {
+      "check": "查找替换面板: 缺\"操作按钮\"",
+      "status": "🔴",
+      "detail": "设计帧含\"操作按钮\"区块，但代码中未找到",
+      "frame": "WQCDd"
+    },
+    {
+      "check": "查找替换面板: 缺\"关闭按钮\"",
+      "status": "🔴",
+      "detail": "设计帧含\"关闭按钮\"区块，但代码中未找到",
+      "frame": "WQCDd"
+    },
+    {
+      "check": "章节完成引导: 缺\"引导文案\"",
+      "status": "🔴",
+      "detail": "设计帧含\"引导文案\"区块，但代码中未找到",
+      "frame": "eVRNh"
+    },
+    {
+      "check": "章节完成引导: 缺\"操作按钮(w=150,h=28)\"",
+      "status": "🔴",
+      "detail": "设计帧含\"操作按钮(w=150,h=28)\"区块，但代码中未找到",
+      "frame": "eVRNh"
+    },
+    {
+      "check": "API检查连接三态: 缺\"连接成功(#4CAF50)\"",
+      "status": "🔴",
+      "detail": "设计帧含\"连接成功(#4CAF50)\"区块，但代码中未找到",
+      "frame": "jpMj1"
+    },
+    {
+      "check": "API检查连接三态: 缺\"连接失败(#E57373)\"",
+      "status": "🔴",
+      "detail": "设计帧含\"连接失败(#E57373)\"区块，但代码中未找到",
+      "frame": "jpMj1"
+    },
+    {
+      "check": "Skill 主页面: 缺空状态变体",
+      "status": "🟡",
+      "detail": "未找到对应设计帧"
+    },
+    {
+      "check": "Skill 主页面: 缺错误态变体",
+      "status": "🟡",
+      "detail": "未找到对应设计帧"
+    },
+    {
+      "check": "写作工作台: 缺空状态变体",
+      "status": "🟡",
+      "detail": "未找到对应设计帧"
+    },
+    {
+      "check": "写作工作台: 缺错误态变体",
+      "status": "🟡",
+      "detail": "未找到对应设计帧"
+    },
+    {
+      "check": "API模型配置页面: 缺空状态变体",
+      "status": "🟡",
+      "detail": "未找到对应设计帧"
+    },
+    {
+      "check": "API模型配置页面: 缺错误态变体",
+      "status": "🟡",
+      "detail": "未找到对应设计帧"
+    },
+    {
+      "check": "设置页面: 缺空状态变体",
+      "status": "🟡",
+      "detail": "未找到对应设计帧"
+    },
+    {
+      "check": "设置页面: 缺错误态变体",
+      "status": "🟡",
+      "detail": "未找到对应设计帧"
+    },
+    {
+      "check": "Skill编辑器: 缺空状态变体",
+      "status": "🟡",
+      "detail": "未找到对应设计帧"
+    },
+    {
+      "check": "Skill编辑器: 缺错误态变体",
+      "status": "🟡",
+      "detail": "未找到对应设计帧"
+    },
+    {
+      "check": "像素级数值比对",
+      "status": "✅",
+      "found": true,
+      "detail": "35 帧有布局数据, 35帧含子组件数据"
+    },
+    {
+      "check": "Skill主页: 像素偏差 3处",
+      "status": "🟠",
+      "detail": "width: 设计1200px ≠ 代码1070px (偏差130px); height: 设计800px ≠ 代码52px (偏差748px); padding: 设计32px ≠ 代码24px (偏差8px)"
+    },
+    {
+      "check": "写作工作台: 像素偏差 1处",
+      "status": "🟠",
+      "detail": "width: 设计1200px ≠ 代码240px (偏差960px)"
+    },
+    {
+      "check": "API配置页: 像素偏差 1处",
+      "status": "🟠",
+      "detail": "height: 设计800px ≠ 代码120px (偏差680px)"
+    },
+    {
+      "check": "设置页面: 像素偏差 2处",
+      "status": "🟠",
+      "detail": "width: 设计1200px ≠ 代码480px (偏差720px); height: 设计800px ≠ 代码32px (偏差768px)"
+    },
+    {
+      "check": "Skill编辑器: 像素偏差 2处",
+      "status": "🟠",
+      "detail": "width: 设计1200px ≠ 代码600px (偏差600px); height: 设计800px ≠ 代码400px (偏差400px)"
+    },
+    {
+      "check": "新建项目弹窗: 像素偏差 1处",
+      "status": "🟠",
+      "detail": "height: 设计360px ≠ 代码52px (偏差308px)"
+    },
+    {
+      "check": "模型下拉面板: 像素偏差 1处",
+      "status": "🟠",
+      "detail": "height: 设计380px ≠ 代码400px (偏差20px)"
+    },
+    {
+      "check": "编辑器预览模式: 像素偏差 3处",
+      "status": "🟠",
+      "detail": "width: 设计640px ≠ 代码720px (偏差80px); height: 设计760px ≠ 代码0px (偏差760px); gap: 设计24px ≠ 代码16px (偏差8px)"
+    },
+    {
+      "check": "Skill主页空状态: 像素偏差 3处",
+      "status": "🟠",
+      "detail": "width: 设计800px ≠ 代码1070px (偏差270px); height: 设计460px ≠ 代码52px (偏差408px); gap: 设计24px ≠ 代码16px (偏差8px)"
+    },
+    {
+      "check": "右键菜单项目: 像素偏差 1处",
+      "status": "🟠",
+      "detail": "width: 设计200px ≠ 代码440px (偏差240px)"
+    },
+    {
+      "check": "右键菜单文件树: 像素偏差 1处",
+      "status": "🟠",
+      "detail": "width: 设计180px ≠ 代码440px (偏差260px)"
+    },
+    {
+      "check": "弹窗导入冲突: 像素偏差 1处",
+      "status": "🟠",
+      "detail": "height: 设计320px ≠ 代码52px (偏差268px)"
+    },
+    {
+      "check": "弹窗删除Skill: 像素偏差 1处",
+      "status": "🟠",
+      "detail": "height: 设计270px ≠ 代码52px (偏差218px)"
+    },
+    {
+      "check": "弹窗恢复冲突: 像素偏差 1处",
+      "status": "🟠",
+      "detail": "height: 设计280px ≠ 代码52px (偏差228px)"
+    },
+    {
+      "check": "弹窗清空回收站: 像素偏差 2处",
+      "status": "🟠",
+      "detail": "width: 设计400px ≠ 代码440px (偏差40px); height: 设计200px ≠ 代码52px (偏差148px)"
+    },
+    {
+      "check": "快捷键面板: 像素偏差 1处",
+      "status": "🟠",
+      "detail": "height: 设计280px ≠ 代码0px (偏差280px)"
+    },
+    {
+      "check": "小屏适配: 像素偏差 1处",
+      "status": "🟠",
+      "detail": "width: 设计900px ≠ 代码240px (偏差660px)"
+    },
+    {
+      "check": "Toast错误: 代码文件未找到",
+      "status": "🟡",
+      "detail": "toast.tsx 不在代码目录中，像素比对跳过"
+    },
+    {
+      "check": "阶段流程卡片区: 像素偏差 2处",
+      "status": "🟠",
+      "detail": "width: 设计240px ≠ 代码440px (偏差200px); gap: 设计2px ≠ 代码8px (偏差6px)"
+    },
+    {
+      "check": "文件树组件: 像素偏差 1处",
+      "status": "🟠",
+      "detail": "width: 设计240px ≠ 代码440px (偏差200px)"
+    },
+    {
+      "check": "编辑器标签栏: 代码文件未找到",
+      "status": "🟡",
+      "detail": "editor-tabs.tsx 不在代码目录中，像素比对跳过"
+    },
+    {
+      "check": "编辑器只读模式: 像素偏差 1处",
+      "status": "🟠",
+      "detail": "height: 设计44px ≠ 代码0px (偏差44px)"
+    },
+    {
+      "check": "Skill编辑器缺标签页: 像素偏差 2处",
+      "status": "🟠",
+      "detail": "width: 设计640px ≠ 代码600px (偏差40px); height: 设计420px ≠ 代码400px (偏差20px)"
+    },
+    {
+      "check": "查找替换面板: 像素偏差 1处",
+      "status": "🟠",
+      "detail": "height: 设计44px ≠ 代码0px (偏差44px)"
+    },
+    {
+      "check": "章节完成引导: 像素偏差 1处",
+      "status": "🟠",
+      "detail": "padding: 设计16px ≠ 代码0px (偏差16px)"
+    },
+    {
+      "check": "Skill编辑器-模板标签页: 像素偏差 2处",
+      "status": "🟠",
+      "detail": "width: 设计1200px ≠ 代码600px (偏差600px); height: 设计800px ≠ 代码400px (偏差400px)"
+    },
+    {
+      "check": "Skill编辑器-示例标签页: 像素偏差 2处",
+      "status": "🟠",
+      "detail": "width: 设计1200px ≠ 代码600px (偏差600px); height: 设计800px ≠ 代码400px (偏差400px)"
+    },
+    {
+      "check": "控件组件库: 代码文件未找到",
+      "status": "🟡",
+      "detail": "ui/*.tsx 不在代码目录中，像素比对跳过"
+    }
+  ],
   "phase": 13,
   "spec": {
     "behaviorCount": 27,

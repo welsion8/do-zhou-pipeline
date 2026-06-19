@@ -8,6 +8,7 @@ function check(ctx) {
   const { utils, CONFIG, plan } = ctx;
   const results = [];
   const projectRoot = ctx.PROJECT_ROOT || '.';
+  const codeDir = ctx.codeDir || path.join(projectRoot, 'do-zhou');
   const currentPhase = ctx.project?.currentPhase || 99;
 
   const cachePath = path.join(projectRoot, '.claude', '.pen-frames.json');
@@ -185,8 +186,6 @@ function check(ctx) {
         results.push({ check: `${page.name}: 缺${v}变体`, status: '🟡', detail: '未找到对应设计帧' });
     }
   }
-  return results;
-}
 
 function findFile(codeDir, fileName) {
   const fs = require('fs'); const results = [];
@@ -202,7 +201,7 @@ function findFile(codeDir, fileName) {
     try {
       const layoutData = JSON.parse(layoutCache);
       const frameLayouts = layoutData.frames || {};
-      const framesWithChildren = Object.values(frameLayouts).filter((f: any) => f.childComponents).length;
+      const framesWithChildren = Object.values(frameLayouts).filter(function(f) { return f.childComponents; }).length;
       if (framesWithChildren === 0) hasFullChildData = false;
       results.push({ check: '像素级数值比对', status: '✅', found: true, detail: `${Object.keys(frameLayouts).length} 帧有布局数据, ${framesWithChildren}帧含子组件数据` });
 

@@ -51,6 +51,7 @@ function check(ctx) {
 
   // ── 关键安全依赖（平台自适应）──
   const { getPlatformAdapter } = require('./config-loader.js');
+  const projectRoot = ctx.PROJECT_ROOT || process.cwd();
   const adapter = getPlatformAdapter(projectRoot);
   const securityDeps = adapter.getSecurityDeps();
   const deps = { ...pkg.dependencies, ...pkg.devDependencies };
