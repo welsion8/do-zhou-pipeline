@@ -1,17 +1,17 @@
 {
-  "timestamp": "2026-06-19T14:46:57.202Z",
-  "totalChanged": 43,
+  "timestamp": "2026-06-19T17:45:59.212Z",
+  "totalChanged": 13,
   "criticalChanges": 2,
   "criticalCount": 2,
   "highCount": 0,
   "hits": [
     {
-      "file": "do-zhou/src/main/engine/types.test.ts",
-      "label": "AI 引擎",
+      "file": "do-zhou/src/main/services/__tests__/backup-service.test.ts",
+      "label": "核心服务",
       "risk": "critical"
     },
     {
-      "file": "do-zhou/src/main/services/__tests__/settings-service.test.ts",
+      "file": "do-zhou/src/main/services/__tests__/file-service.test.ts",
       "label": "核心服务",
       "risk": "critical"
     }
