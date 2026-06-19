@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-19T19:25:18.116Z",
+  "timestamp": "2026-06-19T19:27:19.009Z",
   "projectRoot": "F:/小说桌面端工具",
   "codeDir": "do-zhou",
   "stage": "developing",
@@ -1354,6 +1354,7 @@
             "electron/main.ts",
             "electron/main.ts",
             "electron/preload.ts",
+            "electron/__tests__/preload.test.ts",
             "src/common/error-reporting.test.ts",
             "src/common/error-reporting.test.ts",
             "src/common/error-reporting.test.ts",
@@ -3204,7 +3205,7 @@
     {
       "check": "状态: 错误处理",
       "found": true,
-      "file": "47 文件",
+      "file": "48 文件",
       "status": "✅"
     }
   ],
