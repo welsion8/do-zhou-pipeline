@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-19T20:08:30.336Z",
+  "timestamp": "2026-06-19T20:22:18.230Z",
   "projectRoot": "F:/小说桌面端工具",
   "codeDir": "do-zhou",
   "stage": "developing",
@@ -717,6 +717,8 @@
             "src/renderer/components/editor/tab-bar.tsx",
             "src/renderer/components/layout/app-layout.tsx",
             "src/renderer/components/layout/app-layout.tsx",
+            "src/renderer/components/layout/resizable-divider.test.tsx",
+            "src/renderer/components/layout/resizable-divider.test.tsx",
             "src/renderer/components/layout/resizable-divider.tsx",
             "src/renderer/components/layout/resizable-divider.tsx",
             "src/renderer/components/layout/resizable-divider.tsx",
@@ -763,6 +765,10 @@
             "coverage/coverage-final.json",
             "coverage/coverage-final.json",
             "coverage/coverage-final.json",
+            "src/renderer/components/editor/editor-context-menu.test.tsx",
+            "src/renderer/components/editor/editor-context-menu.test.tsx",
+            "src/renderer/components/editor/editor-context-menu.test.tsx",
+            "src/renderer/components/editor/editor-context-menu.test.tsx",
             "src/renderer/components/editor/editor-context-menu.tsx",
             "src/renderer/components/editor/editor-context-menu.tsx",
             "src/renderer/components/editor/editor-context-menu.tsx",
@@ -778,9 +784,16 @@
             "src/renderer/components/editor/tab-bar.tsx",
             "src/renderer/components/editor/tab-bar.tsx",
             "src/renderer/components/editor/tab-bar.tsx",
+            "src/renderer/components/editor/tab-context-menu.test.tsx",
+            "src/renderer/components/editor/tab-context-menu.test.tsx",
+            "src/renderer/components/editor/tab-context-menu.test.tsx",
+            "src/renderer/components/editor/tab-context-menu.test.tsx",
             "src/renderer/components/editor/tab-context-menu.tsx",
             "src/renderer/components/editor/tab-context-menu.tsx",
             "src/renderer/components/editor/tab-context-menu.tsx",
+            "src/renderer/components/file-tree/file-tree-context-menu.test.tsx",
+            "src/renderer/components/file-tree/file-tree-context-menu.test.tsx",
+            "src/renderer/components/file-tree/file-tree-context-menu.test.tsx",
             "src/renderer/components/file-tree/file-tree-context-menu.tsx",
             "src/renderer/components/file-tree/file-tree.tsx",
             "src/renderer/components/file-tree/file-tree.tsx",
@@ -791,6 +804,10 @@
             "src/renderer/components/layout/left-panel.tsx",
             "src/renderer/components/layout/left-panel.tsx",
             "src/renderer/components/layout/left-panel.tsx",
+            "src/renderer/components/navigation/project-context-menu.test.tsx",
+            "src/renderer/components/navigation/project-context-menu.test.tsx",
+            "src/renderer/components/navigation/project-context-menu.test.tsx",
+            "src/renderer/components/navigation/project-context-menu.test.tsx",
             "src/renderer/components/navigation/project-context-menu.tsx",
             "src/renderer/pages/skill-home-page.tsx"
           ]
@@ -3219,7 +3236,7 @@
     {
       "check": "状态: 启用/禁用状态",
       "found": true,
-      "file": "13 文件",
+      "file": "14 文件",
       "status": "✅"
     },
     {
@@ -3581,7 +3598,7 @@
     {
       "check": "a11y: 无障碍属性",
       "status": "🟢",
-      "detail": "38 处 (aria:18 role:2 tabIndex:0 alt:0 label:18) — 13/117 文件 (11%)"
+      "detail": "38 处 (aria:18 role:2 tabIndex:0 alt:0 label:18) — 13/125 文件 (10%)"
     },
     {
       "check": "a11y: 键盘导航",
@@ -3601,7 +3618,7 @@
     {
       "check": "a11y: ARIA 覆盖率",
       "status": "🟠",
-      "detail": "11% 文件使用了 ARIA/role/tabIndex/alt/label 属性（目标 ≥ 30%）"
+      "detail": "10% 文件使用了 ARIA/role/tabIndex/alt/label 属性（目标 ≥ 30%）"
     },
     {
       "check": "a11y: Phase gate 判定",
@@ -3658,7 +3675,7 @@
       "detail": "在 P90 预算内"
     },
     {
-      "check": "编辑器组件: 14文件 1007行",
+      "check": "编辑器组件: 16文件 1049行",
       "status": "🟡",
       "found": true,
       "detail": "编辑器组件接近 300行/文件 上限，建议拆分。"
@@ -4318,6 +4335,6 @@
     "filePathCount": 68
   },
   "code": {
-    "fileCount": 123
+    "fileCount": 131
   }
 }
