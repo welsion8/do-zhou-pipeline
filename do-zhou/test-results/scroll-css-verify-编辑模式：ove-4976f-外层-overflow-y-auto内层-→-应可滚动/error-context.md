@@ -6,8 +6,8 @@
 
 # Test info
 
-- Name: visual-regression\capture.spec.ts >> 视觉回归 >> 写作工作台 — 对比
-- Location: visual-regression\capture.spec.ts:27:9
+- Name: scroll-css-verify.spec.ts >> 编辑模式：overflow-hidden外层 + overflow-y-auto内层 → 应可滚动
+- Location: scroll-css-verify.spec.ts:9:5
 
 # Error details
 
