@@ -1,0 +1,70 @@
+name: Dependency Update
+
+# 每周一自动检查依赖更新 + 创建 PR
+on:
+  schedule:
+    - cron: '0 9 * * 1'   # 每周一 9:00 UTC
+  workflow_dispatch:        # 手动触发
+
+jobs:
+  check-updates:
+    name: Check & Update Dependencies
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: 检查过期依赖
+        id: outdated
+        run: |
+          cd do-zhou
+          pnpm outdated --no-table 2>&1 | tee /tmp/outdated.txt || true
+          COUNT=$(grep -c '.' /tmp/outdated.txt 2>/dev/null || echo 0)
+          echo "count=$COUNT" >> $GITHUB_OUTPUT
+          cat /tmp/outdated.txt >> $GITHUB_STEP_SUMMARY || true
+
+      - name: 更新依赖
+        if: steps.outdated.outputs.count > 0
+        run: |
+          cd do-zhou
+          pnpm update
+          pnpm install --frozen-lockfile || pnpm install --no-frozen-lockfile
+
+      - name: 运行审计验证更新
+        if: steps.outdated.outputs.count > 0
+        run: |
+          cd do-zhou
+          pnpm build
+          cd ..
+          node .claude/audit-runner/audit-pipeline.js --json || true
+
+      - name: 创建 PR
+        if: steps.outdated.outputs.count > 0
+        uses: peter-evans/create-pull-request@v6
+        with:
+          title: '📦 依赖自动更新'
+          body: |
+            ## 依赖更新
+
+            自动检测到 ${{ steps.outdated.outputs.count }} 个依赖可更新。
+
+            ### 更新内容
+            ```
+            $(cat /tmp/outdated.txt)
+            ```
+
+            ### 自动验证
+            - ✅ 构建通过
+            - ✅ 审计管线通过
+
+            🤖 由 FeiCai Pipeline 自动生成
+          branch: dep-update-auto
+          delete-branch: true

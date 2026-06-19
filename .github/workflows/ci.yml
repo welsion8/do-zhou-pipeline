@@ -140,6 +140,22 @@ jobs:
         env:
           CLAUDE_PROJECT_DIR: ${{ github.workspace }}
 
+  # ── Spec 变更影响分析 ──
+  spec-impact:
+    name: Spec Change Impact
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    if: github.event_name == 'pull_request'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: 检测 Spec 变更并标注受影响 Phase
+        run: node .claude/hooks/spec-change-notify.js --base origin/${{ github.base_ref }}
+
   # ── 第3层：构建产物验证（Electron 专属）──
   build-check:
     name: Build Artifact
