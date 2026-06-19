@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-19T19:47:15.490Z",
+  "timestamp": "2026-06-19T19:50:07.355Z",
   "projectRoot": "F:/小说桌面端工具",
   "codeDir": "do-zhou",
   "stage": "developing",
@@ -124,6 +124,8 @@
             "src/renderer/components/editor/editor-context-menu.tsx",
             "src/renderer/components/editor/editor-context-menu.tsx",
             "src/renderer/components/editor/editor-context-menu.tsx",
+            "src/renderer/components/editor/editor-toolbar.test.tsx",
+            "src/renderer/components/editor/editor-toolbar.test.tsx",
             "src/renderer/components/editor/editor-toolbar.tsx",
             "src/renderer/components/editor/editor-toolbar.tsx",
             "src/renderer/components/editor/editor-toolbar.tsx",
@@ -343,6 +345,8 @@
             "src/renderer/components/editor/editor-context-menu.tsx",
             "src/renderer/components/editor/editor-context-menu.tsx",
             "src/renderer/components/editor/editor-context-menu.tsx",
+            "src/renderer/components/editor/editor-toolbar.test.tsx",
+            "src/renderer/components/editor/editor-toolbar.test.tsx",
             "src/renderer/components/editor/editor-toolbar.tsx",
             "src/renderer/components/editor/editor-toolbar.tsx",
             "src/renderer/components/editor/editor-toolbar.tsx",
@@ -3569,7 +3573,7 @@
     {
       "check": "a11y: 无障碍属性",
       "status": "🟢",
-      "detail": "36 处 (aria:17 role:2 tabIndex:0 alt:0 label:17) — 12/110 文件 (11%)"
+      "detail": "36 处 (aria:17 role:2 tabIndex:0 alt:0 label:17) — 12/112 文件 (11%)"
     },
     {
       "check": "a11y: 键盘导航",
@@ -3646,7 +3650,7 @@
       "detail": "在 P90 预算内"
     },
     {
-      "check": "编辑器组件: 12文件 963行",
+      "check": "编辑器组件: 13文件 980行",
       "status": "🟡",
       "found": true,
       "detail": "编辑器组件接近 300行/文件 上限，建议拆分。"
@@ -4306,6 +4310,6 @@
     "filePathCount": 68
   },
   "code": {
-    "fileCount": 116
+    "fileCount": 118
   }
 }
