@@ -1,0 +1,24 @@
+{
+  "_governance": {
+    "maxItems": 15,
+    "maxWildcardDepth": 2,
+    "minPatternLength": 8,
+    "autoExpireDays": 30,
+    "forbiddenPatterns": [".*", ".*.*", "(.*)"],
+    "rule": "每条确认必须匹配具体的模块名+检查项。禁止跨模块通配。30天未更新自动清空。"
+  },
+  "_note": "Agent: 仅添加确认为'已知设计差异'或'跨Phase待实现'的项。每次Phase关闸时confirmation-guard自动审查。",
+  "timestamp": "2026-06-19T00:00:00.000Z",
+  "items": [
+    "reverse_visual.*Key.*toggle",
+    "reverse_visual.*拉取按钮",
+    "reverse_visual.*Tooltip",
+    "全局错误态一致性.*settings",
+    "bound_files.*不存在",
+    "bound_files.*空目录",
+    "d1_traceability.*doubleClick",
+    "d1_traceability.*tooltip",
+    "d1_traceability.*tabNavigation",
+    "perf_check.*Playwright"
+  ]
+}

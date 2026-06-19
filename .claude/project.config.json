@@ -1,0 +1,57 @@
+{
+  "project": {
+    "type": "desktop",
+    "strict": true
+  },
+  "stack": {
+    "framework": "react",
+    "styling": "tailwind",
+    "language": "typescript",
+    "bundler": "electron-vite"
+  },
+  "scanning": {
+    "sourceExtensions": [
+      ".tsx",
+      ".ts",
+      ".css",
+      ".json"
+    ]
+  },
+  "perfBudget": {
+    "enforce": true,
+    "ciRedLine": "p90",
+    "targets": {
+      "appColdStart":   { "p50": 1000, "p90": 2000, "p99": 3000, "unit": "ms" },
+      "editorLoad2k":   { "p50": 50,   "p90": 100,  "p99": 200,  "unit": "ms" },
+      "aiFirstToken":   { "p50": 200,  "p90": 500,  "p99": 1000, "unit": "ms" },
+      "tabSwitch":      { "p50": 10,   "p90": 20,   "p99": 50,   "unit": "ms" },
+      "jsBundleSize":   { "p50": 1500, "p90": 3000, "p99": 5000, "unit": "KB" }
+    }
+  },
+  "traceability": {
+    "redThreshold": 25,
+    "yellowThreshold": 15,
+    "_note": "未覆盖条目超过 redThreshold → 🔴。阈值根据 Spec 规模调整：大项目(>300条)可上调至 40/25。"
+  },
+  "confirmation": {
+    "maxItems": 15,
+    "autoExpireDays": 30,
+    "requireJustification": true,
+    "bindToCommit": true,
+    "trendLog": ".claude/.suppression-trend.json",
+    "_note": "确认系统治理参数。bindToCommit=true 时每条确认绑定 commit hash。"
+  },
+  "checks": {
+    "disabled": []
+  },
+  "testCoverage": {
+    "enforce": false,
+    "_comment": "设为 true 后 Phase Gate 强制检查覆盖率。目标按项目阶段逐步提升。",
+    "targets": {
+      "lines": 60,
+      "branches": 50,
+      "functions": 60,
+      "statements": 60
+    }
+  }
+}

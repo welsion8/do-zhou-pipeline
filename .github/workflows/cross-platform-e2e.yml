@@ -1,0 +1,63 @@
+# 跨平台 E2E 兼容矩阵
+# 面向 Electron Desktop 应用 — 在 Win/Mac/Linux 三平台运行 Playwright E2E
+# 非 Electron 项目 → 此 workflow 不会触发（需在 project.config.json 中声明 type=desktop）
+
+name: Cross-Platform E2E
+
+on:
+  push:
+    branches: [main, release/*]
+  workflow_dispatch:  # 手动触发
+
+jobs:
+  e2e-matrix:
+    name: E2E ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false  # 一个平台挂不影响其他平台继续跑
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'pnpm'
+
+      - run: pnpm install --frozen-lockfile
+
+      - name: 构建 Electron 应用
+        run: pnpm build
+        working-directory: do-zhou
+
+      - name: 安装 Playwright 浏览器
+        run: npx playwright install chromium --with-deps
+
+      - name: 运行跨平台 E2E
+        run: npx playwright test --reporter=html
+        working-directory: do-zhou/e2e
+        env:
+          CI: true
+          # Electron 在 CI 中需要 xvfb（Linux 无头显示）
+          DISPLAY: ${{ runner.os == 'Linux' && ':99' || '' }}
+
+      - name: 上传 E2E 报告
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: e2e-report-${{ matrix.os }}
+          path: do-zhou/e2e/playwright-report/
+          retention-days: 14
+
+      - name: 平台差异标注
+        if: failure()
+        run: |
+          echo "⚠ ${{ matrix.os }} E2E 失败"
+          echo "::warning ::${{ matrix.os }} 平台存在兼容性问题，需排查"

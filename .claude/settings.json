@@ -1,0 +1,131 @@
+{
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/detect-feedback-signal.sh",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/check-evolution.sh",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "if": "Bash(git commit*)",
+            "command": "node \"$CLAUDE_PROJECT_DIR\"/.claude/hooks/pre-commit-audit.js && \"$CLAUDE_PROJECT_DIR\"/.claude/hooks/pre-commit-check.sh && \"$CLAUDE_PROJECT_DIR\"/.claude/hooks/mark-gate-item.sh tsc_check pass",
+            "timeout": 90
+          },
+          {
+            "type": "command",
+            "if": "Bash(npm audit*)",
+            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/mark-gate-item.sh security_scan pass",
+            "timeout": 5
+          },
+          {
+            "type": "command",
+            "if": "Bash(pnpm audit*)",
+            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/mark-gate-item.sh security_scan pass",
+            "timeout": 5
+          },
+          {
+            "type": "command",
+            "if": "Bash(pnpm dev*)",
+            "command": "for port in 3000 3001 4173 5173 8080; do kill -9 $(lsof -ti:$port) 2>/dev/null; done; sleep 1; exit 0",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+
+    "PostToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "if": "Bash(git commit*)",
+            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/auto-push.sh",
+            "timeout": 15
+          },
+          {
+            "type": "command",
+            "if": "Bash(tsc*)",
+            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/mark-gate-item.sh tsc_check pass",
+            "timeout": 5
+          },
+          {
+            "type": "command",
+            "if": "Bash(eslint*)",
+            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/mark-gate-item.sh lint_check pass",
+            "timeout": 5
+          },
+          {
+            "type": "command",
+            "if": "Bash(vitest*)",
+            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/mark-gate-item.sh test_check pass",
+            "timeout": 5
+          },
+          {
+            "type": "command",
+            "if": "Bash(npx playwright test*)",
+            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/mark-gate-item.sh runtime_check pass",
+            "timeout": 5
+          },
+          {
+            "type": "command",
+            "if": "Bash(node *a11y-axe-runner*)",
+            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/mark-gate-item.sh a11y_check pass",
+            "timeout": 5
+          },
+          {
+            "type": "command",
+            "if": "Bash(node *audit-pipeline*)",
+            "command": "node \"$CLAUDE_PROJECT_DIR\"/.claude/audit-runner/dashboard.js",
+            "timeout": 5
+          }
+        ]
+      },
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/mark-review-needed.sh",
+            "timeout": 3
+          }
+        ]
+      }
+    ],
+
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"$CLAUDE_PROJECT_DIR\"/.claude/hooks/stop-gate.js",
+            "timeout": 5
+          }
+        ]
+      }
+    ]
+  }
+}

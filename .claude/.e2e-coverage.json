@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-06-19T01:33:02.634Z",
+  "scenarios": 58,
+  "existingTests": 65,
+  "threshold": 80,
+  "covered": 57,
+  "uncovered": 1,
+  "uncoveredItems": [
+    {
+      "trigger": "`chapter_index.md`",
+      "expected": "打开 Markdown 编辑器模式（可编辑原始内容）"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "timestamp": "2026-06-18T14:54:09.599Z",
+  "totalViolations": 3,
+  "totalCritical": 0,
+  "totalSerious": 1,
+  "totalWeighted": 7,
+  "threshold": 15,
+  "passed": true,
+  "pages": [
+    {
+      "pageName": "应用启动页",
+      "violations": 3,
+      "critical": 0,
+      "serious": 1,
+      "weightedScore": 7,
+      "passes": 28
+    }
+  ]
+}

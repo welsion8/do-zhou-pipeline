@@ -1,0 +1,989 @@
+[
+  {
+    "id": "XJ3UP",
+    "name": "Skill 主页面",
+    "type": "主页面",
+    "w": 1200,
+    "h": 800,
+    "fill": "#0F0F11",
+    "hasWinCtrl": true,
+    "structure": {
+      "children": [
+        "工具栏",
+        "内容区"
+      ],
+      "sub": [
+        "页面标题区",
+        "技能包列表",
+        "回收站面板"
+      ],
+      "codeFile": "skill-home-page.tsx",
+      "phase": 10,
+      "allElements": [
+        "工具栏",
+        "内容区",
+        "页面标题区",
+        "技能包列表",
+        "回收站面板"
+      ]
+    }
+  },
+  {
+    "id": "f7c4Zl",
+    "name": "写作工作台",
+    "type": "主页面",
+    "w": 1200,
+    "h": 800,
+    "fill": "#0F0F11",
+    "hasWinCtrl": true,
+    "structure": {
+      "children": [
+        "工具栏",
+        "主区域",
+        "状态栏"
+      ],
+      "sub": [
+        "左侧导航",
+        "中间编辑区",
+        "右侧AI对话区"
+      ],
+      "codeFile": "app-layout.tsx",
+      "phase": 3,
+      "allElements": [
+        "工具栏",
+        "左侧导航(240px)",
+        "中间编辑区",
+        "右侧AI对话区(340px)",
+        "状态栏",
+        "模型切换按钮"
+      ]
+    }
+  },
+  {
+    "id": "EA2KT",
+    "name": "API模型配置页面",
+    "type": "主页面",
+    "w": 1200,
+    "h": 800,
+    "fill": "#0F0F11",
+    "hasWinCtrl": true,
+    "structure": {
+      "children": [
+        "页头",
+        "API内容区"
+      ],
+      "sub": [
+        "提供商卡片×5",
+        "添加提供商栏"
+      ],
+      "codeFile": "api-config-page.tsx",
+      "phase": 4,
+      "allElements": [
+        "页头",
+        "Anthropic提供商",
+        "DeepSeek提供商",
+        "Kimi提供商",
+        "Qwen提供商",
+        "GLM提供商",
+        "添加提供商栏"
+      ]
+    }
+  },
+  {
+    "id": "PzN4F",
+    "name": "设置页面",
+    "type": "主页面",
+    "w": 1200,
+    "h": 800,
+    "fill": "#0F0F11",
+    "hasWinCtrl": true,
+    "structure": {
+      "children": [
+        "页头",
+        "设置主区域(标签导航+内容)"
+      ],
+      "sub": [
+        "标签导航(200px)",
+        "设置内容区"
+      ],
+      "codeFile": "settings-page.tsx",
+      "phase": 11,
+      "allElements": [
+        "页头",
+        "标签导航",
+        "设置内容区"
+      ]
+    }
+  },
+  {
+    "id": "jjYaS",
+    "name": "Skill编辑器",
+    "type": "主页面",
+    "w": 1200,
+    "h": 800,
+    "fill": "#0F0F11",
+    "hasWinCtrl": true,
+    "structure": {
+      "children": [
+        "SK页头",
+        "SKBody(标签导航+内容)"
+      ],
+      "sub": [
+        "SKTabNav(190px)",
+        "SKTabContent"
+      ],
+      "codeFile": "skill-editor-page.tsx",
+      "phase": 10,
+      "allElements": [
+        "SK页头",
+        "SKTabNav(6标签页)",
+        "SKTabContent"
+      ]
+    }
+  },
+  {
+    "id": "u7FGO",
+    "name": "新建项目弹窗",
+    "type": "弹窗",
+    "w": 440,
+    "h": 360,
+    "fill": "#161618",
+    "hasWinCtrl": false,
+    "structure": {
+      "children": [
+        "DialogHeader",
+        "DialogBody",
+        "DialogFooter"
+      ],
+      "sub": [
+        "NameInput",
+        "SkillSelect",
+        "取消",
+        "创建"
+      ],
+      "codeFile": "skill-home-page.tsx",
+      "phase": 10,
+      "allElements": [
+        "弹窗标题",
+        "项目名称输入",
+        "Skill下拉选择",
+        "取消按钮",
+        "创建按钮"
+      ]
+    }
+  },
+  {
+    "id": "tDH4z",
+    "name": "章节目录视图",
+    "type": "视图",
+    "w": 680,
+    "h": 530,
+    "fill": "#1A1A1D",
+    "hasWinCtrl": false,
+    "structure": {
+      "children": [
+        "ViewHeader",
+        "ChapterList(5章+文件不存在态)"
+      ],
+      "sub": [
+        "第一章~第五章",
+        "章节_文件不存在",
+        "滚动条"
+      ],
+      "codeFile": "chapter-index-view.tsx",
+      "phase": 9,
+      "allElements": [
+        "视图标题",
+        "章节数提示",
+        "5章索引行",
+        "文件不存在行(灰色+⚠)",
+        "分隔线×4",
+        "滚动条"
+      ]
+    }
+  },
+  {
+    "id": "HjIth",
+    "name": "模型下拉面板",
+    "type": "面板",
+    "w": 260,
+    "h": 380,
+    "fill": "#161618",
+    "hasWinCtrl": false,
+    "structure": {
+      "children": [
+        "Claude分组标题",
+        "模型项×3",
+        "分隔线",
+        "其他提供商分组",
+        "模型项×3",
+        "管理API入口"
+      ],
+      "sub": [],
+      "codeFile": "model-dropdown.tsx",
+      "phase": 4,
+      "allElements": [
+        "Claude分组",
+        "Opus/Sonnet/Haiku",
+        "分隔线",
+        "其他提供商",
+        "DeepSeek/Kimi/Qwen",
+        "管理API配置入口"
+      ]
+    }
+  },
+  {
+    "id": "KjlGF",
+    "name": "AI引导提问态",
+    "type": "视图",
+    "w": 360,
+    "h": 480,
+    "fill": "#161618",
+    "hasWinCtrl": false,
+    "structure": {
+      "children": [
+        "GuideChatHeader",
+        "GuideChatBody",
+        "GuideInputBar"
+      ],
+      "sub": [
+        "GuideAIMsg",
+        "GuideInput",
+        "GuideSendBtn"
+      ],
+      "codeFile": "right-panel.tsx",
+      "phase": 7,
+      "allElements": [
+        "对话标题",
+        "AI引导消息",
+        "输入框(disabled=false)",
+        "发送按钮"
+      ]
+    }
+  },
+  {
+    "id": "C0Z3oT",
+    "name": "编辑器预览模式",
+    "type": "视图",
+    "w": 640,
+    "h": 760,
+    "fill": "#1A1A1D",
+    "hasWinCtrl": false,
+    "structure": {
+      "children": [
+        "PreviewToolbar",
+        "PreviewContent"
+      ],
+      "sub": [
+        "ToggleBtn",
+        "H1标题",
+        "正文段落",
+        "H2标题",
+        "属性列表",
+        "滚动条"
+      ],
+      "codeFile": "markdown-preview.tsx",
+      "phase": 6,
+      "allElements": [
+        "预览工具栏",
+        "编辑/预览切换",
+        "Markdown渲染区",
+        "标题H1",
+        "正文",
+        "属性卡片",
+        "滚动条"
+      ]
+    }
+  },
+  {
+    "id": "KhIbg",
+    "name": "Skill编辑器-模板标签页",
+    "type": "标签页",
+    "w": 1200,
+    "h": 725,
+    "fill": "#0F0F11",
+    "hasWinCtrl": false,
+    "structure": {
+      "children": [
+        "THeader",
+        "TBody(左模板列表+右编辑区)"
+      ],
+      "sub": [
+        "TTabNav",
+        "TContent",
+        "滚动条"
+      ],
+      "codeFile": "skill-editor-page.tsx",
+      "phase": 10,
+      "allElements": [
+        "页头",
+        "左侧模板文件列表",
+        "右侧预览编辑区",
+        "滚动条"
+      ]
+    }
+  },
+  {
+    "id": "oroCB",
+    "name": "Skill编辑器-示例标签页",
+    "type": "标签页",
+    "w": 1200,
+    "h": 725,
+    "fill": "#0F0F11",
+    "hasWinCtrl": false,
+    "structure": {
+      "children": [
+        "EHeader",
+        "EBody(左示例列表+右只读预览)"
+      ],
+      "sub": [
+        "ETabNav",
+        "EContent",
+        "滚动条"
+      ],
+      "codeFile": "skill-editor-page.tsx",
+      "phase": 10,
+      "allElements": [
+        "页头",
+        "左侧示例文件列表",
+        "右侧只读预览区",
+        "滚动条"
+      ]
+    }
+  },
+  {
+    "id": "EsbvH",
+    "name": "控件组件库",
+    "type": "组件库",
+    "w": 800,
+    "h": 200,
+    "fill": "#0F0F11",
+    "hasWinCtrl": false,
+    "structure": {
+      "children": [
+        "下拉选择器(2态)",
+        "滑块",
+        "开关(ON/OFF)"
+      ],
+      "sub": [],
+      "codeFile": "ui/*.tsx",
+      "phase": 2,
+      "allElements": [
+        "下拉选择器(Closed/Open)",
+        "滑块",
+        "开关(ON/OFF)"
+      ]
+    }
+  },
+  {
+    "id": "c4Jxxw",
+    "name": "Skill主页-空状态",
+    "type": "状态变体",
+    "w": 800,
+    "h": 460,
+    "fill": "#0F0F11",
+    "hasWinCtrl": true,
+    "structure": {
+      "children": [
+        "EmptyToolbar",
+        "EmptyContent(flex+center)"
+      ],
+      "sub": [
+        "📚图标",
+        "标题+描述",
+        "↑导入+＋新建按钮"
+      ],
+      "codeFile": "skill-home-page.tsx",
+      "phase": 10,
+      "allElements": [
+        "工具栏",
+        "空态图标(48px)",
+        "标题文案",
+        "描述文案",
+        "导入按钮",
+        "新建按钮"
+      ]
+    }
+  },
+  {
+    "id": "cQmYV",
+    "name": "右键菜单-项目",
+    "type": "右键菜单",
+    "w": 200,
+    "h": 210,
+    "fill": "#161618",
+    "hasWinCtrl": false,
+    "structure": {
+      "children": [
+        "打开",
+        "重命名",
+        "置顶",
+        "分隔线",
+        "移入回收站",
+        "彻底删除(红色)"
+      ],
+      "sub": [],
+      "codeFile": "left-panel.tsx",
+      "phase": 10,
+      "allElements": [
+        "📂打开",
+        "✏️重命名",
+        "📌置顶",
+        "分隔线",
+        "🗑移入回收站",
+        "⚠彻底删除(红色)"
+      ]
+    }
+  },
+  {
+    "id": "NFkan",
+    "name": "右键菜单-编辑器",
+    "type": "右键菜单",
+    "w": 200,
+    "h": 210,
+    "fill": "#161618",
+    "hasWinCtrl": false,
+    "structure": {
+      "children": [
+        "复制",
+        "剪切",
+        "粘贴",
+        "分隔线",
+        "AI重写",
+        "AI扩写",
+        "AI润色"
+      ],
+      "sub": [],
+      "codeFile": "editor-context-menu.tsx",
+      "phase": 6,
+      "allElements": [
+        "📋复制",
+        "✂️剪切",
+        "📄粘贴",
+        "分隔线",
+        "🤖AI重写",
+        "✨AI扩写",
+        "🔤AI润色"
+      ]
+    }
+  },
+  {
+    "id": "y4jkh",
+    "name": "弹窗-导入冲突",
+    "type": "弹窗",
+    "w": 440,
+    "h": 320,
+    "fill": "#161618",
+    "hasWinCtrl": false,
+    "structure": {
+      "children": [
+        "DlgHeader",
+        "DlgBody(3选项)"
+      ],
+      "sub": [
+        "覆盖(选中)",
+        "保留两者",
+        "取消"
+      ],
+      "codeFile": "skill-home-page.tsx",
+      "phase": 10,
+      "allElements": [
+        "冲突标题",
+        "说明文案",
+        "覆盖选项(高亮边框)",
+        "保留两者选项",
+        "取消选项"
+      ]
+    }
+  },
+  {
+    "id": "NfGnL",
+    "name": "弹窗-删除Skill警告",
+    "type": "弹窗",
+    "w": 440,
+    "h": 270,
+    "fill": "#161618",
+    "hasWinCtrl": false,
+    "structure": {
+      "children": [
+        "DlgHeader(红色)",
+        "DlgBody",
+        "DlgFooter"
+      ],
+      "sub": [
+        "取消",
+        "确认删除(红色)",
+        "关联项目数"
+      ],
+      "codeFile": "skill-home-page.tsx",
+      "phase": 10,
+      "allElements": [
+        "⚠标题(红色)",
+        "项目数警告文案",
+        "取消按钮",
+        "确认删除按钮(红色背景)"
+      ]
+    }
+  },
+  {
+    "id": "ehJLk",
+    "name": "弹窗-恢复冲突",
+    "type": "弹窗",
+    "w": 440,
+    "h": 280,
+    "fill": "#161618",
+    "hasWinCtrl": false,
+    "structure": {
+      "children": [
+        "DlgHeader",
+        "DlgBody(3选项)"
+      ],
+      "sub": [
+        "覆盖",
+        "自动重命名",
+        "取消"
+      ],
+      "codeFile": "skill-home-page.tsx",
+      "phase": 10,
+      "allElements": [
+        "恢复冲突标题",
+        "同名说明",
+        "覆盖选项",
+        "重命名选项",
+        "取消选项"
+      ]
+    }
+  },
+  {
+    "id": "JIsNE",
+    "name": "写作工作台-小屏适配",
+    "type": "响应式变体",
+    "w": 900,
+    "h": 700,
+    "fill": "#0F0F11",
+    "hasWinCtrl": false,
+    "structure": {
+      "children": [
+        "SmallToolbar",
+        "SmallMain",
+        "AIFAB(浮动)"
+      ],
+      "sub": [
+        "SmallLeft(200px)",
+        "SmallCenter"
+      ],
+      "codeFile": "app-layout.tsx",
+      "phase": 3,
+      "allElements": [
+        "窄工具栏",
+        "左侧导航(200px)",
+        "中间编辑区",
+        "AI浮动按钮(44×44)"
+      ]
+    }
+  },
+  {
+    "id": "sNYdB",
+    "name": "弹窗-清空回收站",
+    "type": "弹窗",
+    "w": 400,
+    "h": 200,
+    "fill": "#161618",
+    "hasWinCtrl": false,
+    "structure": {
+      "children": [
+        "标题(红色)",
+        "警告文案",
+        "按钮区"
+      ],
+      "sub": [
+        "取消",
+        "确认清空(红色)"
+      ],
+      "codeFile": "skill-home-page.tsx",
+      "phase": 10,
+      "allElements": [
+        "⚠清空回收站标题(红色)",
+        "项目数警告",
+        "取消按钮",
+        "确认清空按钮(红色)"
+      ]
+    }
+  },
+  {
+    "id": "vWwKc",
+    "name": "快捷键参考面板",
+    "type": "面板",
+    "w": 320,
+    "h": 280,
+    "fill": "#161618",
+    "hasWinCtrl": false,
+    "structure": {
+      "children": [
+        "标题栏",
+        "快捷键列表(7项)"
+      ],
+      "sub": [
+        "Ctrl+S",
+        "Ctrl+Z",
+        "Ctrl+Shift+Z",
+        "Ctrl+Tab",
+        "Ctrl+W",
+        "Ctrl+F",
+        "Ctrl+H"
+      ],
+      "codeFile": "editor-workspace.tsx",
+      "phase": 6,
+      "allElements": [
+        "⌨快捷键标题",
+        "保存/撤销/重做/切换标签/关闭/查找/替换"
+      ]
+    }
+  },
+  {
+    "id": "c4dNol",
+    "name": "右键菜单-文件树",
+    "type": "右键菜单",
+    "w": 180,
+    "h": 130,
+    "fill": "#161618",
+    "hasWinCtrl": false,
+    "structure": {
+      "children": [
+        "打开",
+        "重命名",
+        "分隔线",
+        "删除(红色)"
+      ],
+      "sub": [],
+      "codeFile": "left-panel.tsx",
+      "phase": 8,
+      "allElements": [
+        "📂打开",
+        "✏️重命名",
+        "分隔线",
+        "🗑删除(红色)"
+      ]
+    }
+  },
+  {
+    "id": "AIbP1",
+    "name": "Toast-错误",
+    "type": "Toast",
+    "w": 360,
+    "h": 44,
+    "fill": "#3D2020",
+    "hasWinCtrl": false,
+    "structure": {
+      "children": [
+        "错误消息",
+        "关闭×"
+      ],
+      "sub": [],
+      "codeFile": "toast.tsx",
+      "phase": 2,
+      "allElements": [
+        "⚠错误消息(浅红)",
+        "×关闭(浅红)"
+      ]
+    }
+  },
+  {
+    "id": "sWr5A",
+    "name": "右键菜单-标签页",
+    "type": "右键菜单",
+    "w": 180,
+    "h": 170,
+    "fill": "#161618",
+    "hasWinCtrl": false,
+    "structure": {
+      "children": [
+        "关闭",
+        "关闭其他",
+        "关闭所有",
+        "分隔线",
+        "复制文件路径"
+      ],
+      "sub": [],
+      "codeFile": "tab-context-menu.tsx",
+      "phase": 6,
+      "allElements": [
+        "关闭",
+        "关闭其他",
+        "关闭所有",
+        "分隔线",
+        "复制文件路径"
+      ]
+    }
+  },
+  {
+    "id": "R51Ov",
+    "name": "阶段流程卡片区",
+    "type": "子组件",
+    "w": 240,
+    "h": "fit",
+    "fill": "#161618",
+    "hasWinCtrl": false,
+    "structure": {
+      "children": [
+        "SectionLabel",
+        "StageCard×4",
+        "Divider",
+        "FileTreeLabel"
+      ],
+      "sub": [
+        "阶段①②③④",
+        "章节子列表",
+        "MoreChapters"
+      ],
+      "codeFile": "left-panel.tsx",
+      "phase": 3,
+      "allElements": [
+        "创作流程标签",
+        "4个阶段卡片",
+        "分隔线",
+        "项目文件标签",
+        "章节展开列表"
+      ]
+    }
+  },
+  {
+    "id": "sNQx7",
+    "name": "文件树组件",
+    "type": "子组件",
+    "w": 240,
+    "h": "fit",
+    "fill": "#161618",
+    "hasWinCtrl": false,
+    "structure": {
+      "children": [
+        "FileTreeLabel",
+        "FileItems",
+        "ChaptersFolder",
+        "Scrollbar"
+      ],
+      "sub": [
+        "outline.md",
+        "character.md",
+        "chapter_index.md",
+        "chapters/"
+      ],
+      "codeFile": "left-panel.tsx",
+      "phase": 3,
+      "allElements": [
+        "项目文件标签",
+        "5个文件项",
+        "chapters文件夹",
+        "滚动条"
+      ]
+    }
+  },
+  {
+    "id": "sjvD0",
+    "name": "编辑器标签栏",
+    "type": "子组件",
+    "w": 680,
+    "h": 36,
+    "fill": "#161618",
+    "hasWinCtrl": false,
+    "structure": {
+      "children": [
+        "Tab×9",
+        "TabDropdown",
+        "TabScrollbar"
+      ],
+      "sub": [
+        "Ch-01.md(active)",
+        "5个inactive标签"
+      ],
+      "codeFile": "editor-tabs.tsx",
+      "phase": 6,
+      "allElements": [
+        "9个标签页",
+        "←目录返回链接",
+        "×关闭按钮",
+        "标签下拉按钮",
+        "横向滚动条"
+      ]
+    }
+  },
+  {
+    "id": "DIs7H",
+    "name": "AI对话区完整态",
+    "type": "子组件",
+    "w": 360,
+    "h": 500,
+    "fill": "#161618",
+    "hasWinCtrl": false,
+    "structure": {
+      "children": [
+        "ChatHeader",
+        "ChatBody",
+        "InputBar",
+        "JumpToBottom"
+      ],
+      "sub": [
+        "AI消息×2",
+        "用户消息×1",
+        "操作按钮组",
+        "AI状态标签"
+      ],
+      "codeFile": "right-panel.tsx",
+      "phase": 7,
+      "allElements": [
+        "对话标题+工具按钮",
+        "AI消息(左侧蓝线)",
+        "用户消息(灰底)",
+        "阶段分隔符",
+        "输入框+发送按钮",
+        "跳到底部浮动按钮"
+      ]
+    }
+  },
+  {
+    "id": "JauFw",
+    "name": "编辑器只读模式",
+    "type": "子组件",
+    "w": 640,
+    "h": 44,
+    "fill": "#2A2520",
+    "hasWinCtrl": false,
+    "structure": {
+      "children": [
+        "ReadOnlyToolbar",
+        "按钮×若干"
+      ],
+      "sub": [],
+      "codeFile": "editor-workspace.tsx",
+      "phase": 6,
+      "allElements": [
+        "只读工具栏(#2A2520)",
+        "操作按钮"
+      ]
+    }
+  },
+  {
+    "id": "A77xN",
+    "name": "章节目录空状态",
+    "type": "子组件",
+    "w": 680,
+    "h": 400,
+    "fill": "#1A1A1D",
+    "hasWinCtrl": false,
+    "structure": {
+      "children": [
+        "Header",
+        "EmptyContent(icon+text+btn)"
+      ],
+      "sub": [
+        "📋图标",
+        "引导文案",
+        "新建章节按钮"
+      ],
+      "codeFile": "chapter-index-view.tsx",
+      "phase": 9,
+      "allElements": [
+        "视图标题",
+        "空态图标(48px)",
+        "引导文案",
+        "新建章节按钮"
+      ]
+    }
+  },
+  {
+    "id": "xAiWM",
+    "name": "Skill编辑器缺标签页",
+    "type": "子组件",
+    "w": 640,
+    "h": 420,
+    "fill": "#0F0F11",
+    "hasWinCtrl": false,
+    "structure": {
+      "children": [
+        "TabArea",
+        "InputField"
+      ],
+      "sub": [],
+      "codeFile": "skill-editor-page.tsx",
+      "phase": 10,
+      "allElements": [
+        "标签区域(空)",
+        "输入框(h=40)"
+      ]
+    }
+  },
+  {
+    "id": "WQCDd",
+    "name": "查找替换面板",
+    "type": "子组件",
+    "w": 500,
+    "h": 44,
+    "fill": "#161618",
+    "hasWinCtrl": false,
+    "structure": {
+      "children": [
+        "FindInput",
+        "ReplaceInput",
+        "ActionBtns"
+      ],
+      "sub": [
+        "查找输入(w=180)",
+        "替换输入(w=160)"
+      ],
+      "codeFile": "editor-workspace.tsx",
+      "phase": 6,
+      "allElements": [
+        "查找输入框",
+        "替换输入框",
+        "操作按钮",
+        "关闭按钮"
+      ]
+    }
+  },
+  {
+    "id": "eVRNh",
+    "name": "章节完成引导",
+    "type": "子组件",
+    "w": 360,
+    "h": "fit",
+    "fill": "#161618",
+    "hasWinCtrl": false,
+    "structure": {
+      "children": [
+        "GuideMsg",
+        "ActionBtn"
+      ],
+      "sub": [],
+      "codeFile": "right-panel.tsx",
+      "phase": 7,
+      "allElements": [
+        "引导文案",
+        "操作按钮(w=150,h=28)"
+      ]
+    }
+  },
+  {
+    "id": "jpMj1",
+    "name": "API检查连接三态",
+    "type": "子组件",
+    "w": "fit",
+    "h": "fit",
+    "fill": "transparent",
+    "hasWinCtrl": false,
+    "structure": {
+      "children": [
+        "Checking态",
+        "Success态",
+        "Fail态"
+      ],
+      "sub": [],
+      "codeFile": "api-config-page.tsx",
+      "phase": 4,
+      "allElements": [
+        "检查中(#6B7A8A)",
+        "连接成功(#4CAF50)",
+        "连接失败(#E57373)"
+      ]
+    }
+  }
+]

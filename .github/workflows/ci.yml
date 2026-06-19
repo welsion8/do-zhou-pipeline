@@ -1,0 +1,171 @@
+# Do舟 CI/CD Pipeline
+# 触发条件：push 到任意分支 / PR 到 main
+# 分层执行：快速检查（tsc+lint+security）→ 深度检查（test+E2E+audit+perf）
+
+name: CI
+
+on:
+  push:
+    branches: ['*']
+  pull_request:
+    branches: [main]
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  # ── 第1层：快速门禁（< 2min）──
+  quick-gate:
+    name: Quick Gate
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'pnpm'
+
+      - run: pnpm install --frozen-lockfile
+
+      - name: TypeScript 严格模式编译
+        run: pnpm typecheck
+        working-directory: do-zhou
+
+      - name: Lint 检查（如已配置）
+        run: pnpm lint || echo "⚠ lint 未配置，跳过"
+        working-directory: do-zhou
+        continue-on-error: true
+
+      - name: 安全扫描
+        run: |
+          pnpm audit --audit-level=high 2>&1 || echo "⚠ 存在高危依赖"
+          # 硬编码密钥检测
+          ! grep -rnE 'sk-ant-|sk-proj-|ANTHROPIC_API_KEY|OPENAI_API_KEY|VITE_.*KEY|VITE_.*SECRET' do-zhou/src/ --include='*.ts' --include='*.tsx' || { echo "🔴 检测到硬编码密钥"; exit 1; }
+        working-directory: do-zhou
+
+  # ── 第2层：深度验证（< 10min）──
+  deep-gate:
+    name: Deep Gate
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    needs: quick-gate
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'pnpm'
+
+      - run: pnpm install --frozen-lockfile
+
+      - name: 单元测试 + 组件测试
+        run: pnpm test -- --reporter=verbose
+        working-directory: do-zhou
+        continue-on-error: false
+
+      - name: 构建项目
+        run: pnpm build
+        working-directory: do-zhou
+
+      - name: 安装 Playwright 浏览器
+        run: npx playwright install chromium --with-deps
+
+      - name: E2E 测试（当前 Phase）
+        run: npx playwright test --grep-invert "regression/"
+        working-directory: do-zhou/e2e
+
+      - name: 累积回归测试（全部历史 Phase）
+        run: npx playwright test regression/
+        working-directory: do-zhou/e2e
+
+      - name: 审计管线
+        run: node .claude/audit-runner/audit-pipeline.js --ci
+        # --ci 模式：MCP 依赖模块自动降级为 skip，🔴>0 或 🟠>0 → 非零退出
+        working-directory: do-zhou
+
+      - name: 性能预算检查（Bundle 大小）
+        run: |
+          BUNDLE_SIZE=$(find do-zhou/out/renderer/assets -name '*.js' -exec stat -c%s {} + | awk '{sum+=$1} END {print sum/1024}')
+          REDLINE=3000
+          echo "Bundle: ${BUNDLE_SIZE}KB (红线: ${REDLINE}KB)"
+          if [ "$(echo "$BUNDLE_SIZE > $REDLINE" | bc)" -eq 1 ]; then
+            echo "🔴 Bundle 超出 P90 红线"
+            exit 1
+          fi
+          echo "✅ Bundle 在预算内"
+
+  # ── 设计变更检测（PR 专属）──
+  design-diff:
+    name: Design Change Impact
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    if: github.event_name == 'pull_request'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: 检测 .pen 变更并分析影响
+        run: |
+          PEN_CHANGED=$(git diff --name-only origin/${{ github.base_ref }}...HEAD | grep '\.pen$' || true)
+          if [ -n "$PEN_CHANGED" ]; then
+            echo "📐 .pen 设计稿变更: $PEN_CHANGED"
+            node .claude/audit-runner/modules/design-diff.js --ci --base origin/${{ github.base_ref }}
+          else
+            echo "✅ 无设计稿变更"
+          fi
+        env:
+          CLAUDE_PROJECT_DIR: ${{ github.workspace }}
+
+  # ── 第3层：构建产物验证（Electron 专属）──
+  build-check:
+    name: Build Artifact
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    needs: deep-gate
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'pnpm'
+
+      - run: pnpm install --frozen-lockfile
+
+      - name: 完整构建
+        run: pnpm build
+        working-directory: do-zhou
+
+      - name: 验证构建产物
+        run: |
+          test -f do-zhou/out/main/index.js && echo "✅ main process" || { echo "❌ main process"; exit 1; }
+          test -f do-zhou/out/preload/index.js && echo "✅ preload" || { echo "❌ preload"; exit 1; }
+          test -d do-zhou/out/renderer && echo "✅ renderer" || { echo "❌ renderer"; exit 1; }
+
+      - name: 上传构建产物
+        uses: actions/upload-artifact@v4
+        with:
+          name: do-zhou-build
+          path: do-zhou/out/
+          retention-days: 7

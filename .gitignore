@@ -1,0 +1,35 @@
+# 规划文档和设计资源
+Product-Spec.md
+Product-Spec-CHANGELOG.md
+Design-Brief.md
+DEV-PLAN.md
+*.pen
+previews/
+
+# 环境变量
+.env
+.env.*
+!.env.example
+
+# 构建产物
+dist/
+build/
+out/
+.next/
+release/
+
+# 依赖
+node_modules/
+
+# 运行时数据
+.claude/.needs-review
+.claude/logs/
+.claude/visual-baselines/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db

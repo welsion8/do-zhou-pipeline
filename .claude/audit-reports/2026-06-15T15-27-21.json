@@ -1,0 +1,3222 @@
+{
+  "timestamp": "2026-06-15T15:27:21.690Z",
+  "projectRoot": "F:\\小说桌面端工具",
+  "codeDir": "do-zhou",
+  "stage": "developing",
+  "layers": {
+    "L1": true,
+    "L2": true,
+    "L3": true,
+    "L4": true,
+    "L5": true
+  },
+  "penFileEmpty": false,
+  "summary": {
+    "red": 2,
+    "orange": 1,
+    "yellow": 3,
+    "green": 265
+  },
+  "d1_traceability": [
+    {
+      "keyword": "collapsible",
+      "description": "折叠/展开交互",
+      "specMentions": [
+        {
+          "line": 68,
+          "text": "- **基本信息标签页**：Skill名称、版本号、题材描述、工作阶段列表。每个阶段配置：阶段名称、绑定文件路径、**阶段指令（prompt_template）"
+        },
+        {
+          "line": 91,
+          "text": "- **左侧（导航区）**：阶段卡片（上方，流程驱动）+ 项目文件树（下方，Binder 式折叠树）。两区之间为可拖拽分隔线，各自独立纵向滚动（`overflo"
+        },
+        {
+          "line": 118,
+          "text": "- 章节写作 → `chapters/` 文件夹（展开为文件列表）"
+        },
+        {
+          "line": 171,
+          "text": "- **对话历史搜索**：对话区顶部提供搜索入口（🔍 图标），点击展开搜索框，输入关键词 → 高亮匹配的对话块 + 上下箭头跳转到上一个/下一个匹配项。对标 "
+        },
+        {
+          "line": 196,
+          "text": "- 内联展开编辑：点击提供商 → 在列表内展开配置面板（API 地址 + Key + 模型列表）。API Key 输入框默认 password 类型掩码显示，右"
+        },
+        {
+          "line": 218,
+          "text": "| 800-1023px | 200px | flex | 收起（点聊天图标弹出） | 两栏，右侧 AI 面板变为浮层 |"
+        },
+        {
+          "line": 219,
+          "text": "| < 800px | 收起（点 ☰ 弹出） | flex | 收起 | 单栏，左侧和右侧均为 overlay |"
+        },
+        {
+          "line": 221,
+          "text": "- 左侧面板收起时，顶部工具栏显示 ☰ 汉堡菜单按钮，点击以 overlay 形式展开左侧面板"
+        },
+        {
+          "line": 222,
+          "text": "- 右侧面板收起时，顶部工具栏显示 💬 聊天图标 + 未读消息红点，点击以 overlay 形式展开"
+        },
+        {
+          "line": 325,
+          "text": "- 右侧：模型快速切换下拉（显示当前提供商图标 + 模型名，点击展开已配置的所有模型列表，底部\"管理 API 配置...\"入口）"
+        },
+        {
+          "line": 332,
+          "text": "- 章节写作卡片展开时显示 `chapters/` 下的文件列表（Ch-01.md ~ Ch-05.md）"
+        },
+        {
+          "line": 336,
+          "text": "- 标题\"📁 项目文件\"，可折叠"
+        },
+        {
+          "line": 410,
+          "text": "2. 点击\"悬疑推理\"Skill（展开）→ \"现言\"Skill 自动收缩"
+        }
+      ],
+      "codeChecks": [
+        {
+          "check": "折叠状态管理",
+          "found": true,
+          "files": [
+            "src/main/services/skill-service.ts",
+            "src/main/services/skill-service.ts",
+            "src/main/services/skill-service.ts",
+            "src/renderer/App.tsx",
+            "src/renderer/App.tsx",
+            "src/renderer/App.tsx",
+            "src/renderer/App.tsx",
+            "src/renderer/App.tsx",
+            "src/renderer/App.tsx",
+            "src/renderer/App.tsx",
+            "src/renderer/App.tsx",
+            "src/renderer/App.tsx",
+            "src/renderer/components/api-config/provider-card.tsx",
+            "src/renderer/components/api-config/provider-card.tsx",
+            "src/renderer/components/api-config/provider-card.tsx",
+            "src/renderer/components/api-config/provider-card.tsx",
+            "src/renderer/components/api-config/provider-card.tsx",
+            "src/renderer/components/api-config/provider-card.tsx",
+            "src/renderer/components/api-config/provider-card.tsx",
+            "src/renderer/components/api-config/provider-card.tsx",
+            "src/renderer/components/api-config/provider-card.tsx",
+            "src/renderer/components/api-config/provider-card.tsx",
+            "src/renderer/components/api-config/provider-card.tsx",
+            "src/renderer/components/api-config/provider-card.tsx",
+            "src/renderer/components/api-config/provider-card.tsx",
+            "src/renderer/components/api-config/provider-card.tsx",
+            "src/renderer/components/api-config/provider-card.tsx",
+            "src/renderer/components/chat/chat-input-bar.tsx",
+            "src/renderer/components/chat/chat-input-bar.tsx",
+            "src/renderer/components/chat/chat-operation-buttons.tsx",
+            "src/renderer/components/chat/chat-operation-buttons.tsx",
+            "src/renderer/components/chat/chat-operation-buttons.tsx",
+            "src/renderer/components/chat/chat-view.tsx",
+            "src/renderer/components/chat/chat-view.tsx",
+            "src/renderer/components/chat/chat-view.tsx",
+            "src/renderer/components/chat/chat-view.tsx",
+            "src/renderer/components/editor/chapter-index-page-wrapper.tsx",
+            "src/renderer/components/editor/chapter-index-page-wrapper.tsx",
+            "src/renderer/components/editor/chapter-index-page-wrapper.tsx",
+            "src/renderer/components/editor/chapter-index-page-wrapper.tsx",
+            "src/renderer/components/editor/editor-context-menu.tsx",
+            "src/renderer/components/editor/editor-context-menu.tsx",
+            "src/renderer/components/editor/editor-context-menu.tsx",
+            "src/renderer/components/editor/editor-toolbar.tsx",
+            "src/renderer/components/editor/editor-toolbar.tsx",
+            "src/renderer/components/editor/editor-toolbar.tsx",
+            "src/renderer/components/editor/editor-workspace.tsx",
+            "src/renderer/components/editor/editor-workspace.tsx",
+            "src/renderer/components/editor/editor-workspace.tsx",
+            "src/renderer/components/editor/editor-workspace.tsx",
+            "src/renderer/components/editor/editor-workspace.tsx",
+            "src/renderer/components/editor/editor-workspace.tsx",
+            "src/renderer/components/editor/editor-workspace.tsx",
+            "src/renderer/components/editor/editor-workspace.tsx",
+            "src/renderer/components/editor/editor-workspace.tsx",
+            "src/renderer/components/editor/editor-workspace.tsx",
+            "src/renderer/components/editor/shortcut-panel.tsx",
+            "src/renderer/components/editor/shortcut-panel.tsx",
+            "src/renderer/components/editor/tab-bar.tsx",
+            "src/renderer/components/editor/tab-bar.tsx",
+            "src/renderer/components/editor/tab-bar.tsx",
+            "src/renderer/components/editor/tab-bar.tsx",
+            "src/renderer/components/file-tree/file-tree.tsx",
+            "src/renderer/components/file-tree/file-tree.tsx",
+            "src/renderer/components/file-tree/file-tree.tsx",
+            "src/renderer/components/file-tree/file-tree.tsx",
+            "src/renderer/components/file-tree/file-tree.tsx",
+            "src/renderer/components/file-tree/file-tree.tsx",
+            "src/renderer/components/file-tree/file-tree.tsx",
+            "src/renderer/components/file-tree/file-tree.tsx",
+            "src/renderer/components/file-tree/file-tree.tsx",
+            "src/renderer/components/file-tree/file-tree.tsx",
+            "src/renderer/components/file-tree/file-tree.tsx",
+            "src/renderer/components/file-tree/file-tree.tsx",
+            "src/renderer/components/file-tree/file-tree.tsx",
+            "src/renderer/components/file-tree/file-tree.tsx",
+            "src/renderer/components/layout/app-layout.tsx",
+            "src/renderer/components/layout/app-layout.tsx",
+            "src/renderer/components/layout/app-layout.tsx",
+            "src/renderer/components/layout/app-layout.tsx",
+            "src/renderer/components/layout/app-layout.tsx",
+            "src/renderer/components/layout/left-panel.tsx",
+            "src/renderer/components/layout/left-panel.tsx",
+            "src/renderer/components/layout/left-panel.tsx",
+            "src/renderer/components/layout/left-panel.tsx",
+            "src/renderer/components/layout/left-panel.tsx",
+            "src/renderer/components/layout/left-panel.tsx",
+            "src/renderer/components/layout/left-panel.tsx",
+            "src/renderer/components/layout/left-panel.tsx",
+            "src/renderer/components/layout/left-panel.tsx",
+            "src/renderer/components/layout/model-dropdown.tsx",
+            "src/renderer/components/layout/model-dropdown.tsx",
+            "src/renderer/components/layout/resizable-divider.tsx",
+            "src/renderer/components/layout/resizable-divider.tsx",
+            "src/renderer/components/layout/resizable-divider.tsx",
+            "src/renderer/components/layout/toolbar.tsx",
+            "src/renderer/components/layout/toolbar.tsx",
+            "src/renderer/components/navigation/stage-card-item.tsx",
+            "src/renderer/components/navigation/stage-card-item.tsx",
+            "src/renderer/components/navigation/stage-card-item.tsx",
+            "src/renderer/components/navigation/stage-cards.tsx",
+            "src/renderer/components/navigation/stage-cards.tsx",
+            "src/renderer/components/navigation/stage-cards.tsx",
+            "src/renderer/components/navigation/stage-cards.tsx",
+            "src/renderer/components/navigation/stage-cards.tsx",
+            "src/renderer/components/navigation/stage-cards.tsx",
+            "src/renderer/components/navigation/stage-cards.tsx",
+            "src/renderer/components/navigation/stage-cards.tsx",
+            "src/renderer/components/navigation/stage-cards.tsx",
+            "src/renderer/components/ui/dropdown-select.tsx",
+            "src/renderer/components/ui/dropdown-select.tsx",
+            "src/renderer/components/ui/toggle-switch.tsx",
+            "src/renderer/components/window-controls.tsx",
+            "src/renderer/components/window-controls.tsx",
+            "src/renderer/hooks/use-chat-engine.ts",
+            "src/renderer/hooks/use-chat-engine.ts",
+            "src/renderer/hooks/use-chat-engine.ts",
+            "src/renderer/hooks/use-chat-engine.ts",
+            "src/renderer/hooks/use-chat-engine.ts",
+            "src/renderer/hooks/use-file-system.ts",
+            "src/renderer/hooks/use-file-system.ts",
+            "src/renderer/hooks/use-file-system.ts",
+            "src/renderer/hooks/use-open-tabs.ts",
+            "src/renderer/hooks/use-open-tabs.ts",
+            "src/renderer/hooks/use-open-tabs.ts",
+            "src/renderer/hooks/use-responsive.ts",
+            "src/renderer/hooks/use-responsive.ts",
+            "src/renderer/hooks/use-stage-navigation.ts",
+            "src/renderer/hooks/use-stage-navigation.ts",
+            "src/renderer/hooks/use-stage-navigation.ts",
+            "src/renderer/hooks/use-stage-navigation.ts",
+            "src/renderer/hooks/use-stage-navigation.ts",
+            "src/renderer/hooks/use-stage-navigation.ts",
+            "src/renderer/hooks/use-stage-navigation.ts",
+            "src/renderer/hooks/use-stage-navigation.ts",
+            "src/renderer/hooks/use-stage-navigation.ts",
+            "src/renderer/hooks/use-stage-navigation.ts",
+            "src/renderer/hooks/use-stage-navigation.ts",
+            "src/renderer/pages/api-config-page.tsx",
+            "src/renderer/pages/api-config-page.tsx",
+            "src/renderer/pages/api-config-page.tsx",
+            "src/renderer/pages/api-config-page.tsx",
+            "src/renderer/pages/api-config-page.tsx",
+            "src/renderer/pages/api-config-page.tsx",
+            "src/renderer/pages/api-config-page.tsx",
+            "src/renderer/pages/api-config-page.tsx",
+            "src/renderer/pages/settings-page.tsx",
+            "src/renderer/pages/settings-page.tsx",
+            "src/renderer/pages/settings-page.tsx",
+            "src/renderer/pages/settings-page.tsx",
+            "src/renderer/pages/settings-page.tsx",
+            "src/renderer/pages/settings-page.tsx",
+            "src/renderer/pages/settings-page.tsx",
+            "src/renderer/pages/settings-page.tsx",
+            "src/renderer/pages/settings-page.tsx",
+            "src/renderer/pages/settings-page.tsx",
+            "src/renderer/pages/settings-page.tsx",
+            "src/renderer/pages/settings-page.tsx",
+            "src/renderer/pages/settings-page.tsx",
+            "src/renderer/pages/settings-page.tsx",
+            "src/renderer/pages/settings-page.tsx",
+            "src/renderer/pages/settings-page.tsx",
+            "src/renderer/pages/settings-page.tsx",
+            "src/renderer/pages/settings-page.tsx",
+            "src/renderer/pages/settings-page.tsx",
+            "src/renderer/pages/skill-editor-page.tsx",
+            "src/renderer/pages/skill-editor-page.tsx",
+            "src/renderer/pages/skill-editor-page.tsx",
+            "src/renderer/pages/skill-editor-page.tsx",
+            "src/renderer/pages/skill-editor-page.tsx",
+            "src/renderer/pages/skill-editor-page.tsx",
+            "src/renderer/pages/skill-editor-page.tsx",
+            "src/renderer/pages/skill-editor-page.tsx",
+            "src/renderer/pages/skill-editor-page.tsx",
+            "src/renderer/pages/skill-editor-page.tsx",
+            "src/renderer/pages/skill-editor-page.tsx",
+            "src/renderer/pages/skill-editor-page.tsx",
+            "src/renderer/pages/skill-editor-page.tsx",
+            "src/renderer/pages/skill-editor-page.tsx",
+            "src/renderer/pages/skill-editor-page.tsx",
+            "src/renderer/pages/skill-home-page.tsx",
+            "src/renderer/pages/skill-home-page.tsx",
+            "src/renderer/pages/skill-home-page.tsx",
+            "src/renderer/pages/skill-home-page.tsx",
+            "src/renderer/pages/skill-home-page.tsx",
+            "src/renderer/pages/skill-home-page.tsx",
+            "src/renderer/pages/skill-home-page.tsx",
+            "src/renderer/pages/skill-home-page.tsx",
+            "src/renderer/pages/skill-home-page.tsx",
+            "src/renderer/pages/skill-home-page.tsx",
+            "src/renderer/pages/skill-home-page.tsx",
+            "src/renderer/pages/skill-home-page.tsx",
+            "src/renderer/pages/skill-home-page.tsx",
+            "src/renderer/pages/skill-home-page.tsx",
+            "src/renderer/pages/skill-home-page.tsx",
+            "src/renderer/pages/skill-home-page.tsx",
+            "src/renderer/pages/skill-home-page.tsx",
+            "src/renderer/pages/skill-home-page.tsx",
+            "src/renderer/pages/skill-home-page.tsx",
+            "src/renderer/pages/skill-home-page.tsx",
+            "src/renderer/theme/theme-provider.tsx",
+            "src/renderer/theme/theme-provider.tsx",
+            "src/renderer/theme/theme-provider.tsx",
+            "src/renderer/theme/theme-provider.tsx",
+            "src/renderer/theme/theme-provider.tsx"
+          ]
+        },
+        {
+          "check": "点击事件处理",
+          "found": true,
+          "files": [
+            "src/renderer/components/api-config/provider-card.tsx",
+            "src/renderer/components/api-config/provider-card.tsx",
+            "src/renderer/components/api-config/provider-card.tsx",
+            "src/renderer/components/api-config/provider-card.tsx",
+            "src/renderer/components/api-config/provider-card.tsx",
+            "src/renderer/components/api-config/provider-card.tsx",
+            "src/renderer/components/api-config/provider-card.tsx",
+            "src/renderer/components/api-config/provider-card.tsx",
+            "src/renderer/components/api-config/provider-card.tsx",
+            "src/renderer/components/api-config/provider-card.tsx",
+            "src/renderer/components/chat/chat-header.tsx",
+            "src/renderer/components/chat/chat-header.tsx",
+            "src/renderer/components/chat/chat-input-bar.tsx",
+            "src/renderer/components/chat/chat-operation-buttons.tsx",
+            "src/renderer/components/chat/chat-operation-buttons.tsx",
+            "src/renderer/components/chat/chat-operation-buttons.tsx",
+            "src/renderer/components/chat/chat-operation-buttons.tsx",
+            "src/renderer/components/chat/chat-view.tsx",
+            "src/renderer/components/chat/chat-view.tsx",
+            "src/renderer/components/chat/chat-view.tsx",
+            "src/renderer/components/chat/chat-view.tsx",
+            "src/renderer/components/chat/chat-view.tsx",
+            "src/renderer/components/editor/chapter-index-page-wrapper.tsx",
+            "src/renderer/components/editor/chapter-index-page-wrapper.tsx",
+            "src/renderer/components/editor/chapter-index-page-wrapper.tsx",
+            "src/renderer/components/editor/chapter-index-page-wrapper.tsx",
+            "src/renderer/components/editor/chapter-index-row.tsx",
+            "src/renderer/components/editor/chapter-index-row.tsx",
+            "src/renderer/components/editor/chapter-index-row.tsx",
+            "src/renderer/components/editor/chapter-index-view.tsx",
+            "src/renderer/components/editor/chapter-index-view.tsx",
+            "src/renderer/components/editor/editor-context-menu.tsx",
+            "src/renderer/components/editor/editor-context-menu.tsx",
+            "src/renderer/components/editor/editor-context-menu.tsx",
+            "src/renderer/components/editor/editor-context-menu.tsx",
+            "src/renderer/components/editor/editor-context-menu.tsx",
+            "src/renderer/components/editor/editor-context-menu.tsx",
+            "src/renderer/components/editor/editor-toolbar.tsx",
+            "src/renderer/components/editor/editor-toolbar.tsx",
+            "src/renderer/components/editor/editor-toolbar.tsx",
+            "src/renderer/components/editor/editor-toolbar.tsx",
+            "src/renderer/components/editor/editor-workspace.tsx",
+            "src/renderer/components/editor/editor-workspace.tsx",
+            "src/renderer/components/editor/shortcut-panel.tsx",
+            "src/renderer/components/editor/shortcut-panel.tsx",
+            "src/renderer/components/editor/shortcut-panel.tsx",
+            "src/renderer/components/editor/shortcut-panel.tsx",
+            "src/renderer/components/editor/tab-bar.tsx",
+            "src/renderer/components/editor/tab-bar.tsx",
+            "src/renderer/components/editor/tab-bar.tsx",
+            "src/renderer/components/editor/tab-bar.tsx",
+            "src/renderer/components/editor/tab-context-menu.tsx",
+            "src/renderer/components/editor/tab-context-menu.tsx",
+            "src/renderer/components/editor/tab-context-menu.tsx",
+            "src/renderer/components/editor/tab-context-menu.tsx",
+            "src/renderer/components/file-tree/file-tree-context-menu.tsx",
+            "src/renderer/components/file-tree/file-tree-context-menu.tsx",
+            "src/renderer/components/file-tree/file-tree-context-menu.tsx",
+            "src/renderer/components/file-tree/file-tree.tsx",
+            "src/renderer/components/file-tree/file-tree.tsx",
+            "src/renderer/components/file-tree/file-tree.tsx",
+            "src/renderer/components/file-tree/file-tree.tsx",
+            "src/renderer/components/file-tree/file-tree.tsx",
+            "src/renderer/components/file-tree/file-tree.tsx",
+            "src/renderer/components/file-tree/file-tree.tsx",
+            "src/renderer/components/file-tree/file-tree.tsx",
+            "src/renderer/components/file-tree/file-tree.tsx",
+            "src/renderer/components/file-tree/file-tree.tsx",
+            "src/renderer/components/file-tree/file-tree.tsx",
+            "src/renderer/components/file-tree/file-tree.tsx",
+            "src/renderer/components/layout/app-layout.tsx",
+            "src/renderer/components/layout/app-layout.tsx",
+            "src/renderer/components/layout/fab-button.tsx",
+            "src/renderer/components/layout/fab-button.tsx",
+            "src/renderer/components/layout/left-panel.tsx",
+            "src/renderer/components/layout/left-panel.tsx",
+            "src/renderer/components/layout/left-panel.tsx",
+            "src/renderer/components/layout/left-panel.tsx",
+            "src/renderer/components/layout/left-panel.tsx",
+            "src/renderer/components/layout/left-panel.tsx",
+            "src/renderer/components/layout/model-dropdown.tsx",
+            "src/renderer/components/layout/model-dropdown.tsx",
+            "src/renderer/components/layout/model-dropdown.tsx",
+            "src/renderer/components/layout/right-panel.tsx",
+            "src/renderer/components/layout/toolbar.tsx",
+            "src/renderer/components/layout/toolbar.tsx",
+            "src/renderer/components/layout/toolbar.tsx",
+            "src/renderer/components/layout/toolbar.tsx",
+            "src/renderer/components/navigation/project-context-menu.tsx",
+            "src/renderer/components/navigation/project-context-menu.tsx",
+            "src/renderer/components/navigation/project-context-menu.tsx",
+            "src/renderer/components/navigation/project-context-menu.tsx",
+            "src/renderer/components/navigation/project-context-menu.tsx",
+            "src/renderer/components/navigation/stage-card-item.tsx",
+            "src/renderer/components/navigation/stage-card-item.tsx",
+            "src/renderer/components/navigation/stage-card-item.tsx",
+            "src/renderer/components/navigation/stage-card-item.tsx",
+            "src/renderer/components/navigation/stage-cards.tsx",
+            "src/renderer/components/navigation/stage-cards.tsx",
+            "src/renderer/components/navigation/stage-cards.tsx",
+            "src/renderer/components/navigation/stage-cards.tsx",
+            "src/renderer/components/navigation/stage-cards.tsx",
+            "src/renderer/components/navigation/stage-cards.tsx",
+            "src/renderer/components/navigation/stage-cards.tsx",
+            "src/renderer/components/ui/dropdown-select.tsx",
+            "src/renderer/components/ui/dropdown-select.tsx",
+            "src/renderer/components/ui/toggle-switch.tsx",
+            "src/renderer/components/window-controls.tsx",
+            "src/renderer/components/window-controls.tsx",
+            "src/renderer/components/window-controls.tsx",
+            "src/renderer/pages/api-config-page.tsx",
+            "src/renderer/pages/api-config-page.tsx",
+            "src/renderer/pages/api-config-page.tsx",
+            "src/renderer/pages/api-config-page.tsx",
+            "src/renderer/pages/api-config-page.tsx",
+            "src/renderer/pages/api-config-page.tsx",
+            "src/renderer/pages/api-config-page.tsx",
+            "src/renderer/pages/api-config-page.tsx",
+            "src/renderer/pages/settings-page.tsx",
+            "src/renderer/pages/settings-page.tsx",
+            "src/renderer/pages/settings-page.tsx",
+            "src/renderer/pages/skill-editor-page.tsx",
+            "src/renderer/pages/skill-editor-page.tsx",
+            "src/renderer/pages/skill-editor-page.tsx",
+            "src/renderer/pages/skill-editor-page.tsx",
+            "src/renderer/pages/skill-editor-page.tsx",
+            "src/renderer/pages/skill-editor-page.tsx",
+            "src/renderer/pages/skill-editor-page.tsx",
+            "src/renderer/pages/skill-home-page.tsx",
+            "src/renderer/pages/skill-home-page.tsx",
+            "src/renderer/pages/skill-home-page.tsx",
+            "src/renderer/pages/skill-home-page.tsx",
+            "src/renderer/pages/skill-home-page.tsx",
+            "src/renderer/pages/skill-home-page.tsx",
+            "src/renderer/pages/skill-home-page.tsx",
+            "src/renderer/pages/skill-home-page.tsx",
+            "src/renderer/pages/skill-home-page.tsx",
+            "src/renderer/pages/skill-home-page.tsx",
+            "src/renderer/pages/skill-home-page.tsx",
+            "src/renderer/pages/skill-home-page.tsx",
+            "src/renderer/pages/skill-home-page.tsx",
+            "src/renderer/pages/skill-home-page.tsx",
+            "src/renderer/pages/skill-home-page.tsx",
+            "src/renderer/pages/skill-home-page.tsx",
+            "src/renderer/pages/skill-home-page.tsx",
+            "src/renderer/pages/skill-home-page.tsx",
+            "src/renderer/pages/skill-home-page.tsx",
+            "src/renderer/pages/skill-home-page.tsx",
+            "src/renderer/pages/skill-home-page.tsx",
+            "src/renderer/pages/skill-home-page.tsx",
+            "src/renderer/pages/skill-home-page.tsx",
+            "src/renderer/pages/skill-home-page.tsx",
+            "src/renderer/pages/skill-home-page.tsx",
+            "src/renderer/pages/skill-home-page.tsx",
+            "src/renderer/pages/skill-home-page.tsx",
+            "src/renderer/pages/skill-home-page.tsx"
+          ]
+        },
+        {
+          "check": "CSS 动画",
+          "found": true,
+          "files": [
+            "src/renderer/components/api-config/provider-card.tsx",
+            "src/renderer/components/api-config/provider-card.tsx",
+            "src/renderer/components/api-config/provider-card.tsx",
+            "src/renderer/components/api-config/provider-card.tsx",
+            "src/renderer/components/api-config/provider-card.tsx",
+            "src/renderer/components/api-config/provider-card.tsx",
+            "src/renderer/components/api-config/provider-card.tsx",
+            "src/renderer/components/api-config/provider-card.tsx",
+            "src/renderer/components/api-config/provider-card.tsx",
+            "src/renderer/components/api-config/provider-card.tsx",
+            "src/renderer/components/api-config/provider-card.tsx",
+            "src/renderer/components/api-config/provider-card.tsx",
+            "src/renderer/components/api-config/provider-card.tsx",
+            "src/renderer/components/api-config/provider-card.tsx",
+            "src/renderer/components/api-config/provider-card.tsx",
+            "src/renderer/components/api-config/provider-card.tsx",
+            "src/renderer/components/chat/chat-header.tsx",
+            "src/renderer/components/chat/chat-header.tsx",
+            "src/renderer/components/chat/chat-input-bar.tsx",
+            "src/renderer/components/chat/chat-input-bar.tsx",
+            "src/renderer/components/chat/chat-operation-buttons.tsx",
+            "src/renderer/components/chat/chat-operation-buttons.tsx",
+            "src/renderer/components/chat/chat-operation-buttons.tsx",
+            "src/renderer/components/chat/chat-operation-buttons.tsx",
+            "src/renderer/components/editor/chapter-index-row.tsx",
+            "src/renderer/components/editor/chapter-index-view.tsx",
+            "src/renderer/components/editor/editor-toolbar.tsx",
+            "src/renderer/components/editor/editor-workspace.tsx",
+            "src/renderer/components/editor/shortcut-panel.tsx",
+            "src/renderer/components/editor/tab-bar.tsx",
+            "src/renderer/components/editor/tab-bar.tsx",
+            "src/renderer/components/file-tree/file-tree.tsx",
+            "src/renderer/components/file-tree/file-tree.tsx",
+            "src/renderer/components/file-tree/file-tree.tsx",
+            "src/renderer/components/file-tree/file-tree.tsx",
+            "src/renderer/components/file-tree/file-tree.tsx",
+            "src/renderer/components/file-tree/file-tree.tsx",
+            "src/renderer/components/file-tree/file-tree.tsx",
+            "src/renderer/components/file-tree/file-tree.tsx",
+            "src/renderer/components/layout/fab-button.tsx",
+            "src/renderer/components/layout/model-dropdown.tsx",
+            "src/renderer/components/layout/model-dropdown.tsx",
+            "src/renderer/components/layout/resizable-divider.tsx",
+            "src/renderer/components/layout/toolbar.tsx",
+            "src/renderer/components/layout/toolbar.tsx",
+            "src/renderer/components/layout/toolbar.tsx",
+            "src/renderer/components/navigation/stage-card-item.tsx",
+            "src/renderer/components/navigation/stage-card-item.tsx",
+            "src/renderer/components/ui/toggle-switch.tsx",
+            "src/renderer/components/ui/toggle-switch.tsx",
+            "src/renderer/components/window-controls.tsx",
+            "src/renderer/pages/api-config-page.tsx",
+            "src/renderer/pages/api-config-page.tsx",
+            "src/renderer/pages/api-config-page.tsx",
+            "src/renderer/pages/api-config-page.tsx",
+            "src/renderer/pages/api-config-page.tsx",
+            "src/renderer/pages/api-config-page.tsx",
+            "src/renderer/pages/settings-page.tsx",
+            "src/renderer/pages/skill-editor-page.tsx",
+            "src/renderer/pages/skill-editor-page.tsx",
+            "src/renderer/pages/skill-home-page.tsx",
+            "src/renderer/pages/skill-home-page.tsx",
+            "src/renderer/pages/skill-home-page.tsx",
+            "src/renderer/pages/skill-home-page.tsx",
+            "src/renderer/pages/skill-home-page.tsx",
+            "src/renderer/pages/skill-home-page.tsx",
+            "src/renderer/styles/globals.css"
+          ]
+        }
+      ],
+      "status": "🟢"
+    },
+    {
+      "keyword": "draggable",
+      "description": "拖拽交互",
+      "specMentions": [
+        {
+          "line": 65,
+          "text": "**Skill 主页**（Skill 列表页）为独立全屏视图（应用内路由）。页头含窗口控制按钮（最小化/最大化/关闭——均为应用内按钮。关闭按钮执行\"退出应用\""
+        },
+        {
+          "line": 76,
+          "text": "- 用户拖拽 Skill 卡片 → **即时视觉反馈**：被拖拽卡片提升 2px 阴影 + 半透明(opacity 0.7)跟随鼠标，目标位置顶部出现 2px "
+        },
+        {
+          "line": 91,
+          "text": "- **左侧（导航区）**：阶段卡片（上方，流程驱动）+ 项目文件树（下方，Binder 式折叠树）。两区之间为可拖拽分隔线，各自独立纵向滚动（`overflo"
+        },
+        {
+          "line": 105,
+          "text": "| 左侧·两区比例 | 纵向拖拽 | 用户拖拽分隔线 | 分隔线 hover 变 3px + `$accent-dim` |"
+        },
+        {
+          "line": 110,
+          "text": "- 左侧两区比例默认 65:35，用户拖拽后可自定义。最小每区 80px（防止拖到消失）"
+        },
+        {
+          "line": 150,
+          "text": "- **标签溢出处理**（对标 Figma / Arc 浏览器）：标签宽度最小 80px（超长文件名截断为 `未命名...`）。标签总宽度超出标签栏时 → 标签"
+        },
+        {
+          "line": 195,
+          "text": "- 提供商列表可拖拽排序（优先级 = 默认选择顺序）"
+        },
+        {
+          "line": 200,
+          "text": "- API 配置页面为独立全屏视图（应用内路由切换，非新窗口），顶部包含窗口控制按钮（最小化/最大化/关闭——均为应用内按钮，与写作工作台工具栏一致。关闭按钮执"
+        },
+        {
+          "line": 223,
+          "text": "- 面板拖拽调整宽度优先于断点规则——用户手动调整后面板宽度会被记住（存储到 settings.json）"
+        },
+        {
+          "line": 234,
+          "text": "设置页面为独立全屏视图（应用内路由）。页头含窗口控制按钮（最小化/最大化/关闭——关闭按钮执行\"返回工作台\"，不退出应用），页头作为可拖拽区域。页面包含 5 个"
+        },
+        {
+          "line": 274,
+          "text": "- 页头/工具栏作为无边框窗口的可拖拽区域（`-webkit-app-region: drag`），按钮需标注 `no-drag`"
+        },
+        {
+          "line": 286,
+          "text": "- ✅ 无边框窗口拖拽使用 `-webkit-app-region: drag`（按钮需标注 `no-drag`）"
+        },
+        {
+          "line": 321,
+          "text": "**三栏比例**：左 240px（默认，最小 180px，最大 400px） / 中 flex（自适应） / 右 340px（默认，最小 280px，最大 50"
+        },
+        {
+          "line": 511,
+          "text": "| 拖拽章节排序 | 章节顺序由 `chapter_index.md` 控制，AI 驱动流程 |"
+        },
+        {
+          "line": 533,
+          "text": "| 面板拖拽调整 | 60fps | 55fps | 30fps | P90 < 30fps 🔴 | requestAnimationFrame 采样 |"
+        }
+      ],
+      "codeChecks": [
+        {
+          "check": "拖拽事件",
+          "found": true,
+          "files": [
+            "src/renderer/components/api-config/provider-card.tsx",
+            "src/renderer/components/api-config/provider-card.tsx",
+            "src/renderer/components/api-config/provider-card.tsx",
+            "src/renderer/components/api-config/provider-card.tsx",
+            "src/renderer/components/api-config/provider-card.tsx",
+            "src/renderer/components/api-config/provider-card.tsx",
+            "src/renderer/components/api-config/provider-card.tsx",
+            "src/renderer/components/api-config/provider-card.tsx",
+            "src/renderer/components/editor/tab-bar.tsx",
+            "src/renderer/components/editor/tab-bar.tsx",
+            "src/renderer/components/editor/tab-bar.tsx",
+            "src/renderer/components/editor/tab-bar.tsx",
+            "src/renderer/components/layout/resizable-divider.tsx",
+            "src/renderer/pages/api-config-page.tsx",
+            "src/renderer/pages/api-config-page.tsx",
+            "src/renderer/pages/api-config-page.tsx",
+            "src/renderer/pages/api-config-page.tsx",
+            "src/renderer/pages/skill-home-page.tsx",
+            "src/renderer/pages/skill-home-page.tsx",
+            "src/renderer/pages/skill-home-page.tsx",
+            "src/renderer/pages/skill-home-page.tsx",
+            "src/renderer/pages/skill-home-page.tsx"
+          ]
+        }
+      ],
+      "status": "🟢"
+    },
+    {
+      "keyword": "resizable",
+      "description": "面板尺寸调整",
+      "specMentions": [
+        {
+          "line": 91,
+          "text": "- **左侧（导航区）**：阶段卡片（上方，流程驱动）+ 项目文件树（下方，Binder 式折叠树）。两区之间为可拖拽分隔线，各自独立纵向滚动（`overflo"
+        },
+        {
+          "line": 105,
+          "text": "| 左侧·两区比例 | 纵向拖拽 | 用户拖拽分隔线 | 分隔线 hover 变 3px + `$accent-dim` |"
+        },
+        {
+          "line": 132,
+          "text": "- 点击\"章节目录\"阶段卡片 → 编辑区切换为**章节索引竖列视图**（非 Markdown 编辑器模式），以竖列形式显示章节索引（章节号 + 标题，分隔线隔开"
+        },
+        {
+          "line": 153,
+          "text": "- 自动保存：编辑内容实时写入磁盘（默认间隔 2 秒，可在设置中调整为 5s/10s/30s/60s）"
+        },
+        {
+          "line": 170,
+          "text": "- 智能联动：修改某阶段内容后，AI 可主动提醒是否需要联动调整后续阶段"
+        },
+        {
+          "line": 321,
+          "text": "**三栏比例**：左 240px（默认，最小 180px，最大 400px） / 中 flex（自适应） / 右 340px（默认，最小 280px，最大 50"
+        },
+        {
+          "line": 355,
+          "text": "- 每行：`第X章 · 标题名称`，分隔线隔开"
+        },
+        {
+          "line": 366,
+          "text": "- **阶段分隔**：Linear 式的时间分隔线——`── 故事大纲 · 14:30 ──` 居中式标签，标记创作阶段切换"
+        },
+        {
+          "line": 373,
+          "text": "- 点击左侧阶段卡片 → 预设指令自动填入并发送 + 对话区自动添加阶段分隔线"
+        },
+        {
+          "line": 397,
+          "text": "9. AI 开始写第 1 章 → 写完后可手动编辑或让 AI 调整"
+        }
+      ],
+      "codeChecks": [
+        {
+          "check": "面板尺寸调整事件",
+          "found": true,
+          "files": [
+            "src/renderer/components/chat/chat-input-bar.tsx",
+            "src/renderer/components/editor/tab-bar.tsx",
+            "src/renderer/components/layout/app-layout.tsx",
+            "src/renderer/components/layout/app-layout.tsx",
+            "src/renderer/components/layout/resizable-divider.tsx",
+            "src/renderer/components/layout/resizable-divider.tsx",
+            "src/renderer/components/layout/resizable-divider.tsx",
+            "src/renderer/components/layout/resizable-divider.tsx",
+            "src/renderer/components/layout/resizable-divider.tsx",
+            "src/renderer/components/layout/resizable-divider.tsx",
+            "src/renderer/hooks/use-responsive.ts",
+            "src/renderer/hooks/use-responsive.ts",
+            "src/renderer/pages/skill-editor-page.tsx",
+            "src/renderer/pages/skill-editor-page.tsx",
+            "src/renderer/pages/skill-editor-page.tsx"
+          ]
+        }
+      ],
+      "status": "🟢"
+    },
+    {
+      "keyword": "contextMenu",
+      "description": "右键菜单",
+      "specMentions": [
+        {
+          "line": 84,
+          "text": "- 用户右键项目名 → 弹出菜单（打开/重命名/置顶/移入回收站/彻底删除）"
+        },
+        {
+          "line": 150,
+          "text": "- **标签溢出处理**（对标 Figma / Arc 浏览器）：标签宽度最小 80px（超长文件名截断为 `未命名...`）。标签总宽度超出标签栏时 → 标签"
+        },
+        {
+          "line": 163,
+          "text": "- **编辑区右键菜单**（选中文本后右键）：复制 / 剪切 / 粘贴 / ── / 🤖 AI 重写选中内容 / ✨ AI 扩写选中段落 / 🔤 AI 润色"
+        },
+        {
+          "line": 619,
+          "text": "| 删除项目文件（在文件树右键删除） | 走 Trash 机制，同时关闭对应标签页 |"
+        }
+      ],
+      "codeChecks": [
+        {
+          "check": "右键菜单实现",
+          "found": true,
+          "files": [
+            "src/renderer/components/editor/editor-context-menu.tsx",
+            "src/renderer/components/editor/editor-context-menu.tsx",
+            "src/renderer/components/editor/editor-context-menu.tsx",
+            "src/renderer/components/editor/editor-workspace.tsx",
+            "src/renderer/components/editor/editor-workspace.tsx",
+            "src/renderer/components/editor/editor-workspace.tsx",
+            "src/renderer/components/editor/editor-workspace.tsx",
+            "src/renderer/components/editor/editor-workspace.tsx",
+            "src/renderer/components/editor/editor-workspace.tsx",
+            "src/renderer/components/editor/editor-workspace.tsx",
+            "src/renderer/components/editor/editor-workspace.tsx",
+            "src/renderer/components/editor/editor-workspace.tsx",
+            "src/renderer/components/editor/tab-bar.tsx",
+            "src/renderer/components/editor/tab-bar.tsx",
+            "src/renderer/components/editor/tab-bar.tsx",
+            "src/renderer/components/editor/tab-context-menu.tsx",
+            "src/renderer/components/editor/tab-context-menu.tsx",
+            "src/renderer/components/editor/tab-context-menu.tsx",
+            "src/renderer/components/file-tree/file-tree-context-menu.tsx",
+            "src/renderer/components/file-tree/file-tree.tsx",
+            "src/renderer/components/file-tree/file-tree.tsx",
+            "src/renderer/components/file-tree/file-tree.tsx",
+            "src/renderer/components/file-tree/file-tree.tsx",
+            "src/renderer/components/file-tree/file-tree.tsx",
+            "src/renderer/components/layout/left-panel.tsx",
+            "src/renderer/components/layout/left-panel.tsx",
+            "src/renderer/components/layout/left-panel.tsx",
+            "src/renderer/components/layout/left-panel.tsx",
+            "src/renderer/components/navigation/project-context-menu.tsx",
+            "src/renderer/pages/skill-home-page.tsx"
+          ]
+        }
+      ],
+      "status": "🟢"
+    },
+    {
+      "keyword": "doubleClick",
+      "description": "双击交互",
+      "specMentions": [
+        {
+          "line": 148,
+          "text": "- 多标签页管理：每个打开的文件一个标签，标签名 = 文件名，右侧 X 按钮关闭。双击标签名 → inline 编辑模式，输入新名称 Enter 确认重命名（同"
+        },
+        {
+          "line": 151,
+          "text": "- **新建空白页面**：编辑区工具栏 `[+ 新建]` 按钮 → 在项目根目录创建空 `.md` 文件 `未命名.md` → 编辑区自动以新标签页打开，光标聚"
+        }
+      ],
+      "codeChecks": [],
+      "status": "🟢",
+      "found": true
+    },
+    {
+      "keyword": "animation",
+      "description": "动画效果",
+      "specMentions": [
+        {
+          "line": 76,
+          "text": "- 用户拖拽 Skill 卡片 → **即时视觉反馈**：被拖拽卡片提升 2px 阴影 + 半透明(opacity 0.7)跟随鼠标，目标位置顶部出现 2px "
+        },
+        {
+          "line": 257,
+          "text": "- 短操作（< 2s）：skeleton 占位（灰色圆角块，脉动动画）"
+        }
+      ],
+      "codeChecks": [
+        {
+          "check": "动画定义",
+          "found": true,
+          "files": [
+            "src/main/updater.ts",
+            "src/renderer/components/api-config/provider-card.tsx",
+            "src/renderer/components/api-config/provider-card.tsx",
+            "src/renderer/components/api-config/provider-card.tsx",
+            "src/renderer/components/api-config/provider-card.tsx",
+            "src/renderer/components/api-config/provider-card.tsx",
+            "src/renderer/components/api-config/provider-card.tsx",
+            "src/renderer/components/api-config/provider-card.tsx",
+            "src/renderer/components/api-config/provider-card.tsx",
+            "src/renderer/components/api-config/provider-card.tsx",
+            "src/renderer/components/api-config/provider-card.tsx",
+            "src/renderer/components/api-config/provider-card.tsx",
+            "src/renderer/components/api-config/provider-card.tsx",
+            "src/renderer/components/api-config/provider-card.tsx",
+            "src/renderer/components/api-config/provider-card.tsx",
+            "src/renderer/components/api-config/provider-card.tsx",
+            "src/renderer/components/api-config/provider-card.tsx",
+            "src/renderer/components/chat/chat-header.tsx",
+            "src/renderer/components/chat/chat-header.tsx",
+            "src/renderer/components/chat/chat-input-bar.tsx",
+            "src/renderer/components/chat/chat-input-bar.tsx",
+            "src/renderer/components/chat/chat-operation-buttons.tsx",
+            "src/renderer/components/chat/chat-operation-buttons.tsx",
+            "src/renderer/components/chat/chat-operation-buttons.tsx",
+            "src/renderer/components/chat/chat-operation-buttons.tsx",
+            "src/renderer/components/editor/chapter-index-row.tsx",
+            "src/renderer/components/editor/chapter-index-view.tsx",
+            "src/renderer/components/editor/editor-toolbar.tsx",
+            "src/renderer/components/editor/editor-workspace.tsx",
+            "src/renderer/components/editor/shortcut-panel.tsx",
+            "src/renderer/components/editor/tab-bar.tsx",
+            "src/renderer/components/editor/tab-bar.tsx",
+            "src/renderer/components/file-tree/file-tree.tsx",
+            "src/renderer/components/file-tree/file-tree.tsx",
+            "src/renderer/components/file-tree/file-tree.tsx",
+            "src/renderer/components/file-tree/file-tree.tsx",
+            "src/renderer/components/file-tree/file-tree.tsx",
+            "src/renderer/components/file-tree/file-tree.tsx",
+            "src/renderer/components/layout/fab-button.tsx",
+            "src/renderer/components/layout/model-dropdown.tsx",
+            "src/renderer/components/layout/model-dropdown.tsx",
+            "src/renderer/components/layout/resizable-divider.tsx",
+            "src/renderer/components/layout/toolbar.tsx",
+            "src/renderer/components/layout/toolbar.tsx",
+            "src/renderer/components/layout/toolbar.tsx",
+            "src/renderer/components/navigation/stage-card-item.tsx",
+            "src/renderer/components/navigation/stage-card-item.tsx",
+            "src/renderer/components/ui/toggle-switch.tsx",
+            "src/renderer/components/ui/toggle-switch.tsx",
+            "src/renderer/components/window-controls.tsx",
+            "src/renderer/pages/api-config-page.tsx",
+            "src/renderer/pages/api-config-page.tsx",
+            "src/renderer/pages/api-config-page.tsx",
+            "src/renderer/pages/api-config-page.tsx",
+            "src/renderer/pages/api-config-page.tsx",
+            "src/renderer/pages/api-config-page.tsx",
+            "src/renderer/pages/settings-page.tsx",
+            "src/renderer/pages/skill-editor-page.tsx",
+            "src/renderer/pages/skill-editor-page.tsx",
+            "src/renderer/pages/skill-home-page.tsx",
+            "src/renderer/pages/skill-home-page.tsx",
+            "src/renderer/pages/skill-home-page.tsx",
+            "src/renderer/pages/skill-home-page.tsx",
+            "src/renderer/pages/skill-home-page.tsx",
+            "src/renderer/pages/skill-home-page.tsx",
+            "src/renderer/styles/globals.css"
+          ]
+        }
+      ],
+      "status": "🟢"
+    },
+    {
+      "keyword": "keyboard",
+      "description": "键盘操作",
+      "specMentions": [
+        {
+          "line": 156,
+          "text": "- **编辑区快捷键**（对标 VS Code / Obsidian）："
+        },
+        {
+          "line": 157,
+          "text": "- `Ctrl+S`：强制保存当前标签页"
+        },
+        {
+          "line": 158,
+          "text": "- `Ctrl+Z` / `Ctrl+Shift+Z`：撤销/重做"
+        },
+        {
+          "line": 159,
+          "text": "- `Ctrl+Tab` / `Ctrl+Shift+Tab`：切换下一个/上一个标签页"
+        },
+        {
+          "line": 160,
+          "text": "- `Ctrl+W`：关闭当前标签页"
+        },
+        {
+          "line": 161,
+          "text": "- `Ctrl+F`：编辑区内查找文本"
+        },
+        {
+          "line": 162,
+          "text": "- `Ctrl+H`：查找并替换"
+        }
+      ],
+      "codeChecks": [
+        {
+          "check": "键盘事件处理",
+          "found": true,
+          "files": [
+            "e2e/phase-10-13-interactions.spec.ts",
+            "e2e/user-stories.spec.ts",
+            "src/renderer/App.tsx",
+            "src/renderer/App.tsx",
+            "src/renderer/App.tsx",
+            "src/renderer/components/chat/chat-input-bar.tsx",
+            "src/renderer/components/chat/chat-input-bar.tsx",
+            "src/renderer/components/chat/chat-operation-buttons.tsx",
+            "src/renderer/components/editor/editor-workspace.tsx",
+            "src/renderer/components/editor/editor-workspace.tsx",
+            "src/renderer/components/editor/editor-workspace.tsx",
+            "src/renderer/components/editor/tab-bar.tsx",
+            "src/renderer/components/file-tree/file-tree.tsx",
+            "src/renderer/components/layout/left-panel.tsx",
+            "src/renderer/components/navigation/stage-card-item.tsx",
+            "src/renderer/hooks/use-autosave.ts",
+            "src/renderer/hooks/use-autosave.ts",
+            "src/renderer/hooks/use-autosave.ts",
+            "src/renderer/pages/skill-editor-page.tsx",
+            "src/renderer/pages/skill-home-page.tsx"
+          ]
+        },
+        {
+          "check": "无障碍属性",
+          "found": true,
+          "files": [
+            "e2e/electron-smoke.spec.ts",
+            "e2e/electron-smoke.spec.ts",
+            "e2e/phase-10-13-interactions.spec.ts",
+            "e2e/user-stories.spec.ts",
+            "e2e/user-stories.spec.ts",
+            "e2e/user-stories.spec.ts",
+            "src/main/engine/types.ts",
+            "src/renderer/components/layout/fab-button.tsx",
+            "src/renderer/components/layout/toolbar.tsx",
+            "src/renderer/components/layout/toolbar.tsx",
+            "src/renderer/components/window-controls.tsx",
+            "src/renderer/components/window-controls.tsx",
+            "src/renderer/components/window-controls.tsx"
+          ]
+        }
+      ],
+      "status": "🟢"
+    },
+    {
+      "keyword": "autosave",
+      "description": "自动保存",
+      "specMentions": [
+        {
+          "line": 153,
+          "text": "- 自动保存：编辑内容实时写入磁盘（默认间隔 2 秒，可在设置中调整为 5s/10s/30s/60s）"
+        },
+        {
+          "line": 227,
+          "text": "- 点击关闭按钮（✕）→ 强制保存所有打开的标签页（不论自动保存间隔）→ 退出应用"
+        },
+        {
+          "line": 234,
+          "text": "设置页面为独立全屏视图（应用内路由）。页头含窗口控制按钮（最小化/最大化/关闭——关闭按钮执行\"返回工作台\"，不退出应用），页头作为可拖拽区域。页面包含 5 个"
+        },
+        {
+          "line": 351,
+          "text": "- 自动保存：编辑内容实时写入磁盘"
+        },
+        {
+          "line": 478,
+          "text": "| 自动保存与 AI 写入竞态 | 用户编辑 + AI 流式写入同一文件 | 编辑区进入只读模式（`aiLocked`），顶部显示\"AI 正在写入\"提示条 + "
+        },
+        {
+          "line": 617,
+          "text": "| 切换到其他标签 | 当前标签内容已自动保存 |"
+        }
+      ],
+      "codeChecks": [
+        {
+          "check": "自动保存逻辑",
+          "found": true,
+          "files": [
+            "src/main/services/settings-service.ts",
+            "src/main/services/settings-service.ts",
+            "src/renderer/components/editor/editor-workspace.tsx",
+            "src/renderer/components/editor/editor-workspace.tsx",
+            "src/renderer/hooks/use-autosave.ts",
+            "src/renderer/hooks/use-autosave.ts",
+            "src/renderer/pages/settings-page.tsx",
+            "src/renderer/pages/settings-page.tsx",
+            "src/renderer/pages/settings-page.tsx",
+            "src/renderer/pages/settings-page.tsx"
+          ]
+        }
+      ],
+      "status": "🟢"
+    },
+    {
+      "keyword": "tooltip",
+      "description": "悬停提示",
+      "specMentions": [
+        {
+          "line": 67,
+          "text": "- 用户点击 [+ 新建] → 系统打开 Skill 编辑区，包含 6 个标签页（基本信息、Agent提示词、写作方法论、输出风格、模板、示例）→ 填写保存后生"
+        },
+        {
+          "line": 69,
+          "text": "- **Agent提示词标签页**：Markdown 编辑器，对应 CLAUDE.md 内容。定义 Agent 角色、任务、工作流、初始化引导提问"
+        },
+        {
+          "line": 87,
+          "text": "- **项目重命名异步流程**：用户发起重命名 → IPC 调用 `project:rename` → 成功 → 更新 UI（乐观更新先行，失败时回退）→ 失败"
+        },
+        {
+          "line": 88,
+          "text": "- **项目列表空状态**：Skill 下无项目时，显示\"暂无项目，点击 [+ 新建项目] 开始创作\"提示"
+        },
+        {
+          "line": 140,
+          "text": "- **容错**：若解析到的章节号在 `chapters/` 下无对应文件 → 章节行显示为灰色不可点击态 + ⚠ 图标，hover 提示\"文件不存在\""
+        },
+        {
+          "line": 144,
+          "text": "- **章节完成引导**：AI 完成一个章节的生成后，对话区显示内联提示 `✅ 第 N 章已完成 [继续写第 N+1 章 →]`，点击后自动触发下一章的 AI "
+        },
+        {
+          "line": 148,
+          "text": "- 多标签页管理：每个打开的文件一个标签，标签名 = 文件名，右侧 X 按钮关闭。双击标签名 → inline 编辑模式，输入新名称 Enter 确认重命名（同"
+        },
+        {
+          "line": 154,
+          "text": "- **并发写入锁策略**：AI 正在流式写入某文件时，该文件的编辑区标签页自动进入**只读模式**（编辑区顶部显示窄条提示\"AI 正在生成内容，暂时无法编辑\""
+        },
+        {
+          "line": 163,
+          "text": "- **编辑区右键菜单**（选中文本后右键）：复制 / 剪切 / 粘贴 / ── / 🤖 AI 重写选中内容 / ✨ AI 扩写选中段落 / 🔤 AI 润色"
+        },
+        {
+          "line": 191,
+          "text": "- `[🔄 重新生成]`：点击 → 若系统检测到用户自上次 AI 写入后手动修改过该文件，提示\"检测到手动修改，重新生成将覆盖你的修改。是否继续？\"；若无手动"
+        },
+        {
+          "line": 229,
+          "text": "- 关闭确认支持\"记住我的选择\"——勾选后下次不再提示，默认行为以第一次选择为准"
+        },
+        {
+          "line": 230,
+          "text": "- 用户可通过设置页面重置\"不再提示\"的偏好"
+        },
+        {
+          "line": 253,
+          "text": "- 模板：`<提示文字>` + `[行动按钮]`（如有明确下一步操作）"
+        },
+        {
+          "line": 383,
+          "text": "1. 启动应用 → 进入 Skill 主页面（空白，提示导入或新建 Skill）"
+        },
+        {
+          "line": 438,
+          "text": "| 上下文智能组装 | AI 根据当前阶段自动读取相关前置文件（如写人物时自动读大纲，写章节时读取全部上下文） | 点击阶段卡片时 | AI 自动判断，由 Ag"
+        },
+        {
+          "line": 478,
+          "text": "| 自动保存与 AI 写入竞态 | 用户编辑 + AI 流式写入同一文件 | 编辑区进入只读模式（`aiLocked`），顶部显示\"AI 正在写入\"提示条 + "
+        },
+        {
+          "line": 618,
+          "text": "| 关闭所有标签 | 编辑区显示空白占位提示 |"
+        },
+        {
+          "line": 658,
+          "text": "- **能力降级提示**：从 Claude Engine 切换到 Universal Engine 时，对话区显示系统消息 `⚠ 已切换至 Universal "
+        }
+      ],
+      "codeChecks": [],
+      "status": "🟢",
+      "found": true
+    },
+    {
+      "keyword": "loading",
+      "description": "加载状态",
+      "specMentions": [
+        {
+          "line": 249,
+          "text": "> 所有界面遵循统一的空态/加载态/错误态设计语言。各功能无需单独定义，引用本节即可。"
+        },
+        {
+          "line": 256,
+          "text": "**加载态**（异步操作进行中）："
+        },
+        {
+          "line": 656,
+          "text": "- **切换中 UI 状态**：导出对话历史 + 新引擎初始化的过程中（通常 < 2 秒），对话区显示临时加载态\"正在切换引擎...\"，输入框暂时禁用。加载完成"
+        }
+      ],
+      "codeChecks": [
+        {
+          "check": "加载态组件",
+          "found": true,
+          "files": [
+            "src/renderer/components/editor/chapter-index-page-wrapper.tsx",
+            "src/renderer/components/editor/chapter-index-page-wrapper.tsx",
+            "src/renderer/components/editor/chapter-index-page-wrapper.tsx",
+            "src/renderer/components/editor/chapter-index-page-wrapper.tsx",
+            "src/renderer/components/editor/chapter-index-page-wrapper.tsx",
+            "src/renderer/components/editor/chapter-index-page-wrapper.tsx",
+            "src/renderer/components/editor/chapter-index-page-wrapper.tsx",
+            "src/renderer/components/editor/chapter-index-page-wrapper.tsx",
+            "src/renderer/components/editor/chapter-index-page-wrapper.tsx",
+            "src/renderer/components/editor/chapter-index-page-wrapper.tsx",
+            "src/renderer/components/file-tree/file-tree.tsx",
+            "src/renderer/components/file-tree/file-tree.tsx",
+            "src/renderer/components/file-tree/file-tree.tsx",
+            "src/renderer/components/layout/left-panel.tsx",
+            "src/renderer/components/layout/left-panel.tsx",
+            "src/renderer/components/layout/left-panel.tsx",
+            "src/renderer/components/layout/left-panel.tsx",
+            "src/renderer/hooks/use-file-system.ts",
+            "src/renderer/hooks/use-file-system.ts",
+            "src/renderer/hooks/use-file-system.ts",
+            "src/renderer/hooks/use-file-system.ts",
+            "src/renderer/hooks/use-file-system.ts",
+            "src/renderer/pages/api-config-page.tsx",
+            "src/renderer/pages/api-config-page.tsx",
+            "src/renderer/pages/api-config-page.tsx",
+            "src/renderer/pages/api-config-page.tsx",
+            "src/renderer/pages/api-config-page.tsx",
+            "src/renderer/pages/api-config-page.tsx",
+            "src/renderer/pages/api-config-page.tsx",
+            "src/renderer/pages/api-config-page.tsx",
+            "src/renderer/pages/skill-home-page.tsx",
+            "src/renderer/pages/skill-home-page.tsx",
+            "src/renderer/pages/skill-home-page.tsx",
+            "src/renderer/pages/skill-home-page.tsx"
+          ]
+        }
+      ],
+      "status": "🟢"
+    },
+    {
+      "keyword": "empty",
+      "description": "空状态",
+      "specMentions": [
+        {
+          "line": 88,
+          "text": "- **项目列表空状态**：Skill 下无项目时，显示\"暂无项目，点击 [+ 新建项目] 开始创作\"提示"
+        },
+        {
+          "line": 135,
+          "text": "- **chapter_index.md 不存在时**：阶段③卡片点击 → 编辑区显示空状态\"尚未创建章节目录。请在文件树中新建 `chapter_index."
+        },
+        {
+          "line": 136,
+          "text": "- **chapter_index.md 存在但为空**：阶段③卡片点击 → 编辑区显示空状态\"章节目录为空。请编辑 `chapter_index.md` 添加"
+        },
+        {
+          "line": 249,
+          "text": "> 所有界面遵循统一的空态/加载态/错误态设计语言。各功能无需单独定义，引用本节即可。"
+        },
+        {
+          "line": 251,
+          "text": "**空态**（数据不存在或未创建时）："
+        }
+      ],
+      "codeChecks": [
+        {
+          "check": "空状态处理",
+          "found": true,
+          "files": [
+            "electron/preload.ts",
+            "src/main/ipc/file-ipc.ts",
+            "src/main/services/trash-service.ts",
+            "src/renderer/components/chat/chat-input-bar.tsx",
+            "src/renderer/components/chat/chat-input-bar.tsx",
+            "src/renderer/components/chat/chat-input-bar.tsx",
+            "src/renderer/components/editor/chapter-index-page-wrapper.tsx",
+            "src/renderer/components/editor/chapter-index-page-wrapper.tsx",
+            "src/renderer/components/editor/chapter-index-page-wrapper.tsx",
+            "src/renderer/components/editor/chapter-index-page-wrapper.tsx",
+            "src/renderer/components/editor/chapter-index-view.tsx",
+            "src/renderer/components/editor/markdown-preview.tsx",
+            "src/renderer/components/layout/left-panel.tsx",
+            "src/renderer/components/layout/left-panel.tsx",
+            "src/renderer/components/layout/model-dropdown.tsx",
+            "src/renderer/components/navigation/stage-card-item.tsx",
+            "src/renderer/pages/skill-home-page.tsx",
+            "src/renderer/pages/skill-home-page.tsx",
+            "src/renderer/types/electron.d.ts"
+          ]
+        }
+      ],
+      "status": "🟢"
+    },
+    {
+      "keyword": "error",
+      "description": "错误状态",
+      "specMentions": [
+        {
+          "line": 87,
+          "text": "- **项目重命名异步流程**：用户发起重命名 → IPC 调用 `project:rename` → 成功 → 更新 UI（乐观更新先行，失败时回退）→ 失败"
+        },
+        {
+          "line": 249,
+          "text": "> 所有界面遵循统一的空态/加载态/错误态设计语言。各功能无需单独定义，引用本节即可。"
+        },
+        {
+          "line": 261,
+          "text": "**错误态**（操作失败或数据异常）："
+        }
+      ],
+      "codeChecks": [
+        {
+          "check": "错误处理",
+          "found": true,
+          "files": [
+            "e2e/electron-smoke.spec.ts",
+            "e2e/electron-smoke.spec.ts",
+            "e2e/electron-smoke.spec.ts",
+            "e2e/electron-smoke.spec.ts",
+            "e2e/electron-smoke.spec.ts",
+            "e2e/electron-smoke.spec.ts",
+            "e2e/electron-smoke.spec.ts",
+            "e2e/electron-smoke.spec.ts",
+            "e2e/electron-smoke.spec.ts",
+            "e2e/electron-smoke.spec.ts",
+            "e2e/electron-smoke.spec.ts",
+            "e2e/electron-smoke.spec.ts",
+            "e2e/electron-smoke.spec.ts",
+            "e2e/electron-smoke.spec.ts",
+            "e2e/electron-smoke.spec.ts",
+            "e2e/electron-smoke.spec.ts",
+            "e2e/phase-10-13-interactions.spec.ts",
+            "e2e/phase-10-13-interactions.spec.ts",
+            "e2e/phase-10-13-interactions.spec.ts",
+            "e2e/phase-10-13-interactions.spec.ts",
+            "e2e/phase-10-13-interactions.spec.ts",
+            "e2e/phase-10-13-interactions.spec.ts",
+            "e2e/phase-10-13-interactions.spec.ts",
+            "e2e/phase-10-13-interactions.spec.ts",
+            "e2e/phase-10-13-interactions.spec.ts",
+            "e2e/phase-10-13-interactions.spec.ts",
+            "e2e/phase-10-13-interactions.spec.ts",
+            "e2e/phase-10-13-interactions.spec.ts",
+            "e2e/user-stories.spec.ts",
+            "e2e/user-stories.spec.ts",
+            "e2e/user-stories.spec.ts",
+            "e2e/user-stories.spec.ts",
+            "e2e/user-stories.spec.ts",
+            "e2e/user-stories.spec.ts",
+            "e2e/user-stories.spec.ts",
+            "e2e/user-stories.spec.ts",
+            "e2e/user-stories.spec.ts",
+            "e2e/user-stories.spec.ts",
+            "e2e/user-stories.spec.ts",
+            "e2e/user-stories.spec.ts",
+            "e2e/user-stories.spec.ts",
+            "e2e/user-stories.spec.ts",
+            "e2e/user-stories.spec.ts",
+            "e2e/user-stories.spec.ts",
+            "e2e/user-stories.spec.ts",
+            "electron/main.ts",
+            "electron/main.ts",
+            "src/common/error-reporting.ts",
+            "src/common/error-reporting.ts",
+            "src/common/error-reporting.ts",
+            "src/common/error-reporting.ts",
+            "src/common/error-reporting.ts",
+            "src/common/error-reporting.ts",
+            "src/common/error-reporting.ts",
+            "src/common/error-reporting.ts",
+            "src/common/error-reporting.ts",
+            "src/common/error-reporting.ts",
+            "src/common/error-reporting.ts",
+            "src/common/error-reporting.ts",
+            "src/common/error-reporting.ts",
+            "src/common/error-reporting.ts",
+            "src/common/error-reporting.ts",
+            "src/common/error-reporting.ts",
+            "src/common/error-reporting.ts",
+            "src/common/error-reporting.ts",
+            "src/common/error-reporting.ts",
+            "src/common/error-reporting.ts",
+            "src/main/engine/claude/claude-engine.ts",
+            "src/main/engine/claude/claude-engine.ts",
+            "src/main/engine/claude/claude-engine.ts",
+            "src/main/engine/claude/claude-engine.ts",
+            "src/main/engine/claude/claude-engine.ts",
+            "src/main/engine/claude/claude-engine.ts",
+            "src/main/engine/claude/claude-engine.ts",
+            "src/main/engine/claude/claude-engine.ts",
+            "src/main/engine/claude/session-bridge.ts",
+            "src/main/engine/claude/session-bridge.ts",
+            "src/main/engine/engine-factory.ts",
+            "src/main/engine/engine-factory.ts",
+            "src/main/engine/engine-factory.ts",
+            "src/main/engine/engine-factory.ts",
+            "src/main/engine/engine-factory.ts",
+            "src/main/engine/engine-factory.ts",
+            "src/main/engine/engine-factory.ts",
+            "src/main/engine/engine-factory.ts",
+            "src/main/engine/engine-factory.ts",
+            "src/main/engine/engine-factory.ts",
+            "src/main/engine/types.ts",
+            "src/main/engine/universal/agent-loop.ts",
+            "src/main/engine/universal/model-router.ts",
+            "src/main/engine/universal/model-router.ts",
+            "src/main/engine/universal/model-router.ts",
+            "src/main/engine/universal/model-router.ts",
+            "src/main/engine/universal/model-router.ts",
+            "src/main/engine/universal/model-router.ts",
+            "src/main/engine/universal/model-router.ts",
+            "src/main/engine/universal/model-router.ts",
+            "src/main/engine/universal/model-router.ts",
+            "src/main/engine/universal/tool-executor.ts",
+            "src/main/engine/universal/tool-executor.ts",
+            "src/main/engine/universal/tool-executor.ts",
+            "src/main/engine/universal/tool-executor.ts",
+            "src/main/engine/universal/tool-executor.ts",
+            "src/main/engine/universal/tool-executor.ts",
+            "src/main/engine/universal/tool-executor.ts",
+            "src/main/engine/universal/tool-executor.ts",
+            "src/main/engine/universal/tool-executor.ts",
+            "src/main/ipc/engine-ipc.ts",
+            "src/main/ipc/engine-ipc.ts",
+            "src/main/ipc/engine-ipc.ts",
+            "src/main/ipc/engine-ipc.ts",
+            "src/main/ipc/engine-ipc.ts",
+            "src/main/ipc/skill-ipc.ts",
+            "src/main/services/api-config-service.ts",
+            "src/main/services/api-config-service.ts",
+            "src/main/services/api-config-service.ts",
+            "src/main/services/api-config-service.ts",
+            "src/main/services/api-config-service.ts",
+            "src/main/services/api-config-service.ts",
+            "src/main/services/backup-service.ts",
+            "src/main/services/file-service.ts",
+            "src/main/services/file-service.ts",
+            "src/main/services/project-service.ts",
+            "src/main/services/project-service.ts",
+            "src/main/services/project-service.ts",
+            "src/main/services/project-service.ts",
+            "src/main/services/settings-service.ts",
+            "src/main/services/skill-service.ts",
+            "src/main/services/skill-service.ts",
+            "src/main/services/skill-service.ts",
+            "src/main/services/skill-service.ts",
+            "src/main/services/skill-service.ts",
+            "src/main/services/skill-service.ts",
+            "src/main/services/skill-service.ts",
+            "src/main/services/trash-service.ts",
+            "src/main/services/trash-service.ts",
+            "src/main/updater.ts",
+            "src/renderer/App.tsx",
+            "src/renderer/App.tsx",
+            "src/renderer/components/api-config/provider-card.tsx",
+            "src/renderer/components/chat/chat-view.tsx",
+            "src/renderer/components/chat/chat-view.tsx",
+            "src/renderer/components/chat/chat-view.tsx",
+            "src/renderer/components/chat/chat-view.tsx",
+            "src/renderer/components/chat/chat-view.tsx",
+            "src/renderer/components/chat/chat-view.tsx",
+            "src/renderer/components/editor/chapter-index-page-wrapper.tsx",
+            "src/renderer/components/editor/chapter-index-page-wrapper.tsx",
+            "src/renderer/components/editor/chapter-index-page-wrapper.tsx",
+            "src/renderer/components/editor/chapter-index-page-wrapper.tsx",
+            "src/renderer/components/editor/chapter-index-page-wrapper.tsx",
+            "src/renderer/components/editor/chapter-index-page-wrapper.tsx",
+            "src/renderer/components/editor/chapter-index-page-wrapper.tsx",
+            "src/renderer/components/editor/chapter-index-page-wrapper.tsx",
+            "src/renderer/components/editor/chapter-index-page-wrapper.tsx",
+            "src/renderer/components/editor/chapter-index-page-wrapper.tsx",
+            "src/renderer/components/editor/chapter-index-page-wrapper.tsx",
+            "src/renderer/components/editor/chapter-index-page-wrapper.tsx",
+            "src/renderer/components/editor/chapter-index-page-wrapper.tsx",
+            "src/renderer/components/editor/chapter-index-page-wrapper.tsx",
+            "src/renderer/components/editor/chapter-index-page-wrapper.tsx",
+            "src/renderer/components/editor/chapter-index-page-wrapper.tsx",
+            "src/renderer/components/editor/chapter-index-page-wrapper.tsx",
+            "src/renderer/components/editor/chapter-index-page-wrapper.tsx",
+            "src/renderer/components/editor/chapter-index-page-wrapper.tsx",
+            "src/renderer/components/editor/chapter-index-page-wrapper.tsx",
+            "src/renderer/components/editor/chapter-index-page-wrapper.tsx",
+            "src/renderer/components/editor/editor-workspace.tsx",
+            "src/renderer/components/editor/editor-workspace.tsx",
+            "src/renderer/components/editor/editor-workspace.tsx",
+            "src/renderer/components/editor/editor-workspace.tsx",
+            "src/renderer/components/editor/tab-context-menu.tsx",
+            "src/renderer/components/file-tree/file-tree.tsx",
+            "src/renderer/components/file-tree/file-tree.tsx",
+            "src/renderer/components/layout/left-panel.tsx",
+            "src/renderer/components/layout/left-panel.tsx",
+            "src/renderer/components/layout/left-panel.tsx",
+            "src/renderer/components/layout/left-panel.tsx",
+            "src/renderer/components/layout/left-panel.tsx",
+            "src/renderer/components/layout/left-panel.tsx",
+            "src/renderer/components/layout/left-panel.tsx",
+            "src/renderer/hooks/use-chat-engine.ts",
+            "src/renderer/hooks/use-chat-engine.ts",
+            "src/renderer/hooks/use-chat-engine.ts",
+            "src/renderer/hooks/use-chat-engine.ts",
+            "src/renderer/hooks/use-chat-engine.ts",
+            "src/renderer/hooks/use-chat-engine.ts",
+            "src/renderer/hooks/use-chat-engine.ts",
+            "src/renderer/hooks/use-chat-engine.ts",
+            "src/renderer/hooks/use-chat-engine.ts",
+            "src/renderer/hooks/use-chat-engine.ts",
+            "src/renderer/hooks/use-chat-engine.ts",
+            "src/renderer/hooks/use-chat-engine.ts",
+            "src/renderer/hooks/use-chat-engine.ts",
+            "src/renderer/hooks/use-file-system.ts",
+            "src/renderer/hooks/use-file-system.ts",
+            "src/renderer/hooks/use-file-system.ts",
+            "src/renderer/hooks/use-file-system.ts",
+            "src/renderer/hooks/use-file-system.ts",
+            "src/renderer/hooks/use-file-system.ts",
+            "src/renderer/hooks/use-file-system.ts",
+            "src/renderer/hooks/use-file-system.ts",
+            "src/renderer/hooks/use-file-system.ts",
+            "src/renderer/hooks/use-file-system.ts",
+            "src/renderer/hooks/use-open-tabs.ts",
+            "src/renderer/hooks/use-stage-navigation.ts",
+            "src/renderer/pages/api-config-page.tsx",
+            "src/renderer/pages/api-config-page.tsx",
+            "src/renderer/pages/api-config-page.tsx",
+            "src/renderer/pages/api-config-page.tsx",
+            "src/renderer/pages/api-config-page.tsx",
+            "src/renderer/pages/api-config-page.tsx",
+            "src/renderer/pages/api-config-page.tsx",
+            "src/renderer/pages/settings-page.tsx",
+            "src/renderer/pages/skill-editor-page.tsx",
+            "src/renderer/pages/skill-editor-page.tsx",
+            "src/renderer/pages/skill-home-page.tsx",
+            "src/renderer/pages/skill-home-page.tsx",
+            "src/renderer/pages/skill-home-page.tsx",
+            "src/renderer/pages/skill-home-page.tsx",
+            "src/renderer/pages/skill-home-page.tsx",
+            "src/renderer/pages/skill-home-page.tsx",
+            "src/renderer/pages/skill-home-page.tsx",
+            "src/renderer/theme/theme-provider.tsx",
+            "src/renderer/types/electron.d.ts"
+          ]
+        }
+      ],
+      "status": "🟢"
+    },
+    {
+      "keyword": "toast",
+      "description": "Toast 通知",
+      "specMentions": [
+        {
+          "line": 191,
+          "text": "- `[🔄 重新生成]`：点击 → 若系统检测到用户自上次 AI 写入后手动修改过该文件，提示\"检测到手动修改，重新生成将覆盖你的修改。是否继续？\"；若无手动"
+        },
+        {
+          "line": 478,
+          "text": "| 自动保存与 AI 写入竞态 | 用户编辑 + AI 流式写入同一文件 | 编辑区进入只读模式（`aiLocked`），顶部显示\"AI 正在写入\"提示条 + "
+        },
+        {
+          "line": 495,
+          "text": "- **系统通知**：AI 生成完成时可通过 Electron 桌面通知提醒用户。"
+        }
+      ],
+      "codeChecks": [
+        {
+          "check": "Toast 组件",
+          "found": true,
+          "files": [
+            "src/renderer/components/chat/chat-view.tsx"
+          ]
+        }
+      ],
+      "status": "🟢"
+    },
+    {
+      "keyword": "modal",
+      "description": "弹窗/对话框",
+      "specMentions": [
+        {
+          "line": 74,
+          "text": "- 用户点击 [↑ 导入] → 选择本地 Skill 文件夹 → 系统自动识别结构。若检测到同名 Skill 已存在 → 弹出三选一对话框：① 覆盖现有（保留同"
+        },
+        {
+          "line": 85,
+          "text": "- 项目删除走三级安全机制：移入回收站（软删除，可恢复）→ 清空回收站（永久删除，二次确认，使用自定义弹窗——Electron 不支持 `window.conf"
+        },
+        {
+          "line": 86,
+          "text": "- **回收站恢复冲突处理**：从回收站恢复项目时，若原始路径已存在同名项目 → 弹出对话框\"已存在同名项目，请选择：① 覆盖现有项目 ② 自动重命名为'项目名"
+        },
+        {
+          "line": 228,
+          "text": "- AI 生成中 + 用户点击关闭 → 弹出确认\"AI 正在生成内容，关闭应用将中断生成。是否退出？\"（使用自定义弹窗——Electron 不支持 `windo"
+        },
+        {
+          "line": 266,
+          "text": "**确认弹窗**（破坏性操作前）："
+        },
+        {
+          "line": 267,
+          "text": "- 使用自定义弹窗（Electron 不支持 `window.confirm()`）"
+        },
+        {
+          "line": 279,
+          "text": "- 非独立页面（章节目录竖列视图、编辑区预览模式、弹窗/对话框）不设窗口控制按钮"
+        },
+        {
+          "line": 283,
+          "text": "- ❌ `window.confirm()` 不可用 → 使用自定义弹窗组件"
+        },
+        {
+          "line": 481,
+          "text": "| Skill 导入同名冲突 | 导入 Skill 文件夹，目标位置已存在同名 Skill | 弹出三选一对话框：覆盖现有/保留两者/取消导入 | ✅ |"
+        },
+        {
+          "line": 482,
+          "text": "| 回收站恢复冲突 | 恢复项目时原始路径已存在同名项目 | 弹出三选一对话框：覆盖/自动重命名/取消恢复 | ✅ |"
+        }
+      ],
+      "codeChecks": [
+        {
+          "check": "弹窗组件",
+          "found": true,
+          "files": [
+            "src/main/ipc/skill-ipc.ts",
+            "src/main/ipc/skill-ipc.ts",
+            "src/main/ipc/skill-ipc.ts",
+            "src/renderer/components/file-tree/file-tree.tsx",
+            "src/renderer/components/file-tree/file-tree.tsx",
+            "src/renderer/components/file-tree/file-tree.tsx",
+            "src/renderer/components/file-tree/file-tree.tsx",
+            "src/renderer/components/file-tree/file-tree.tsx",
+            "src/renderer/components/file-tree/file-tree.tsx",
+            "src/renderer/components/file-tree/file-tree.tsx",
+            "src/renderer/components/file-tree/file-tree.tsx",
+            "src/renderer/components/file-tree/file-tree.tsx",
+            "src/renderer/components/file-tree/file-tree.tsx",
+            "src/renderer/components/file-tree/file-tree.tsx",
+            "src/renderer/components/file-tree/file-tree.tsx"
+          ]
+        }
+      ],
+      "status": "🟢"
+    },
+    {
+      "keyword": "tabNavigation",
+      "description": "标签页切换",
+      "specMentions": [
+        {
+          "line": 37,
+          "text": "| 标签页 | 编辑器内打开的文件标签，每个标签对应一个文件 | 标签（是标签页的简称，同一概念） |"
+        },
+        {
+          "line": 67,
+          "text": "- 用户点击 [+ 新建] → 系统打开 Skill 编辑区，包含 6 个标签页（基本信息、Agent提示词、写作方法论、输出风格、模板、示例）→ 填写保存后生"
+        },
+        {
+          "line": 68,
+          "text": "- **基本信息标签页**：Skill名称、版本号、题材描述、工作阶段列表。每个阶段配置：阶段名称、绑定文件路径、**阶段指令（prompt_template）"
+        },
+        {
+          "line": 69,
+          "text": "- **Agent提示词标签页**：Markdown 编辑器，对应 CLAUDE.md 内容。定义 Agent 角色、任务、工作流、初始化引导提问"
+        },
+        {
+          "line": 70,
+          "text": "- **写作方法论标签页**：Markdown 编辑器，对应 outline-method.md。定义该题材的创作方法论和指导原则"
+        },
+        {
+          "line": 71,
+          "text": "- **输出风格标签页**：Markdown 编辑器，对应 output-style.md。定义写作风格、语言规范、禁忌"
+        },
+        {
+          "line": 72,
+          "text": "- **模板标签页**：双栏布局——左栏模板文件列表（大纲/人物/目录/章节模板），右栏预览和编辑区，支持导入/导出单个 .md 模板文件"
+        },
+        {
+          "line": 73,
+          "text": "- **示例标签页**：双栏布局——左栏示例文件列表（大纲/人物/章节示例），右栏只读预览区"
+        },
+        {
+          "line": 92,
+          "text": "- **中间（编辑区）**：支持多标签页的 Markdown 编辑器（纵向滚动）+ 标签栏（横向溢出滚动），右上角编辑/预览切换按钮"
+        },
+        {
+          "line": 134,
+          "text": "- 点击任一章节行 → 编辑区新建标签页，加载对应 `chapters/Chapter-XX.md` 文件（Markdown 编辑模式）"
+        },
+        {
+          "line": 142,
+          "text": "- **章节点击行为**：点击章节行 → 若章节文件存在且为空 → 新建标签页加载文件 + **自动触发 AI** 生成该章节。若章节文件已有内容 → 仅加载文"
+        },
+        {
+          "line": 143,
+          "text": "- **返回章节目录**：在章节编辑标签页的标签名旁显示 `[← 目录]` 小号文字链接，点击切换回章节目录竖列视图"
+        },
+        {
+          "line": 148,
+          "text": "- 多标签页管理：每个打开的文件一个标签，标签名 = 文件名，右侧 X 按钮关闭。双击标签名 → inline 编辑模式，输入新名称 Enter 确认重命名（同"
+        },
+        {
+          "line": 149,
+          "text": "- 关闭标签 ≠ 删除文件：仅从视图移除标签页，磁盘文件不受影响"
+        },
+        {
+          "line": 151,
+          "text": "- **新建空白页面**：编辑区工具栏 `[+ 新建]` 按钮 → 在项目根目录创建空 `.md` 文件 `未命名.md` → 编辑区自动以新标签页打开，光标聚"
+        },
+        {
+          "line": 154,
+          "text": "- **并发写入锁策略**：AI 正在流式写入某文件时，该文件的编辑区标签页自动进入**只读模式**（编辑区顶部显示窄条提示\"AI 正在生成内容，暂时无法编辑\""
+        },
+        {
+          "line": 155,
+          "text": "- **阶段卡片只读模式**：已完成（✅）的阶段卡片点击时，仅加载文件到编辑区，**不触发 AI**。只有未开始（⏹）或进行中（⟳）的阶段卡片点击时才会自动发送"
+        },
+        {
+          "line": 157,
+          "text": "- `Ctrl+S`：强制保存当前标签页"
+        },
+        {
+          "line": 159,
+          "text": "- `Ctrl+Tab` / `Ctrl+Shift+Tab`：切换下一个/上一个标签页"
+        },
+        {
+          "line": 160,
+          "text": "- `Ctrl+W`：关闭当前标签页"
+        },
+        {
+          "line": 190,
+          "text": "- `[✏️ 手动调整]`：点击 → 若该文件已在编辑区有打开的标签页 → 切换到已有标签页并聚焦；若无 → 新建标签页加载对应文件。对话区不发生任何变化。"
+        },
+        {
+          "line": 227,
+          "text": "- 点击关闭按钮（✕）→ 强制保存所有打开的标签页（不论自动保存间隔）→ 退出应用"
+        },
+        {
+          "line": 234,
+          "text": "设置页面为独立全屏视图（应用内路由）。页头含窗口控制按钮（最小化/最大化/关闭——关闭按钮执行\"返回工作台\"，不退出应用），页头作为可拖拽区域。页面包含 5 个"
+        },
+        {
+          "line": 337,
+          "text": "- 树状显示项目文件结构，点击文件 → 在编辑区打开对应标签页"
+        },
+        {
+          "line": 343,
+          "text": "- 横向排列已打开的标签页，每标签：文件名 + × 关闭按钮"
+        },
+        {
+          "line": 356,
+          "text": "- 每行可点击 → 跳转到对应章节文件（编辑区新建标签页）"
+        },
+        {
+          "line": 366,
+          "text": "- **阶段分隔**：Linear 式的时间分隔线——`── 故事大纲 · 14:30 ──` 居中式标签，标记创作阶段切换"
+        },
+        {
+          "line": 396,
+          "text": "8. 点击\"第一章 · 婚礼上的陌生人\" → 编辑区打开 Chapter-01.md 标签页"
+        },
+        {
+          "line": 480,
+          "text": "| 外部文件删除 | 用户手动删除项目文件（磁盘操作） | 文件树刷新检测，对应标签页关闭 | ⚠ |"
+        },
+        {
+          "line": 532,
+          "text": "| 标签页切换 | < 10ms | < 20ms | < 50ms | P90 > 30ms 🔴 | React Profiler |"
+        },
+        {
+          "line": 612,
+          "text": "### 标签页行为规则"
+        },
+        {
+          "line": 619,
+          "text": "| 删除项目文件（在文件树右键删除） | 走 Trash 机制，同时关闭对应标签页 |"
+        }
+      ],
+      "codeChecks": [],
+      "status": "🟢",
+      "found": true
+    },
+    {
+      "keyword": "dragAndDrop",
+      "description": "拖拽排序",
+      "specMentions": [
+        {
+          "line": 195,
+          "text": "- 提供商列表可拖拽排序（优先级 = 默认选择顺序）"
+        },
+        {
+          "line": 511,
+          "text": "| 拖拽章节排序 | 章节顺序由 `chapter_index.md` 控制，AI 驱动流程 |"
+        }
+      ],
+      "codeChecks": [
+        {
+          "check": "拖拽排序实现",
+          "found": true,
+          "files": [
+            "src/renderer/components/api-config/provider-card.tsx",
+            "src/renderer/components/api-config/provider-card.tsx",
+            "src/renderer/components/api-config/provider-card.tsx",
+            "src/renderer/components/api-config/provider-card.tsx",
+            "src/renderer/components/api-config/provider-card.tsx",
+            "src/renderer/components/editor/tab-bar.tsx",
+            "src/renderer/components/editor/tab-bar.tsx",
+            "src/renderer/pages/api-config-page.tsx",
+            "src/renderer/pages/api-config-page.tsx",
+            "src/renderer/pages/api-config-page.tsx",
+            "src/renderer/pages/skill-home-page.tsx",
+            "src/renderer/pages/skill-home-page.tsx",
+            "src/renderer/pages/skill-home-page.tsx"
+          ]
+        }
+      ],
+      "status": "🟢"
+    },
+    {
+      "keyword": "scrollbar",
+      "description": "滚动条",
+      "specMentions": [
+        {
+          "line": 98,
+          "text": "| 滚动区 | 方向 | 触发条件 | 滚动条 |"
+        },
+        {
+          "line": 103,
+          "text": "| 中间·编辑区 | 纵向 | 文档内容超出编辑区高度 | 对标 CodeMirror 原生滚动条 |"
+        },
+        {
+          "line": 150,
+          "text": "- **标签溢出处理**（对标 Figma / Arc 浏览器）：标签宽度最小 80px（超长文件名截断为 `未命名...`）。标签总宽度超出标签栏时 → 标签"
+        }
+      ],
+      "codeChecks": [
+        {
+          "check": "滚动条样式",
+          "found": true,
+          "files": [
+            "e2e/editor-scroll-verify.spec.ts",
+            "e2e/editor-scroll-verify.spec.ts",
+            "e2e/editor-scroll-verify.spec.ts",
+            "e2e/editor-scroll-verify.spec.ts",
+            "e2e/editor-scroll-verify.spec.ts",
+            "e2e/editor-scroll-verify.spec.ts",
+            "e2e/editor-scroll-verify.spec.ts",
+            "e2e/editor-scroll-verify.spec.ts",
+            "e2e/editor-scroll-verify.spec.ts",
+            "e2e/editor-scroll-verify.spec.ts",
+            "e2e/editor-scroll-verify.spec.ts",
+            "e2e/editor-scroll-verify.spec.ts",
+            "e2e/editor-scroll-verify.spec.ts",
+            "e2e/editor-scroll-verify.spec.ts",
+            "e2e/editor-scroll-verify.spec.ts",
+            "e2e/editor-scroll-verify.spec.ts",
+            "e2e/editor-scroll-verify.spec.ts",
+            "e2e/editor-scroll-verify.spec.ts",
+            "e2e/editor-scroll-verify.spec.ts",
+            "e2e/editor-scroll-verify.spec.ts",
+            "e2e/editor-scroll-verify.spec.ts",
+            "e2e/scroll-css-verify.spec.ts",
+            "e2e/scroll-css-verify.spec.ts",
+            "e2e/scroll-css-verify.spec.ts",
+            "e2e/scroll-css-verify.spec.ts",
+            "e2e/scroll-css-verify.spec.ts",
+            "e2e/scroll-css-verify.spec.ts",
+            "e2e/scroll-css-verify.spec.ts",
+            "e2e/scroll-css-verify.spec.ts",
+            "e2e/scroll-css-verify.spec.ts",
+            "e2e/scroll-css-verify.spec.ts",
+            "e2e/scroll-css-verify.spec.ts",
+            "e2e/scroll-css-verify.spec.ts",
+            "e2e/scroll-css-verify.spec.ts",
+            "e2e/scroll-css-verify.spec.ts",
+            "e2e/scroll-css-verify.spec.ts",
+            "e2e/scroll-css-verify.spec.ts",
+            "e2e/scroll-css-verify.spec.ts",
+            "e2e/scroll-css-verify.spec.ts",
+            "e2e/scroll-css-verify.spec.ts",
+            "e2e/scroll-css-verify.spec.ts",
+            "e2e/scroll-css-verify.spec.ts",
+            "e2e/scroll-css-verify.spec.ts",
+            "e2e/scroll-css-verify.spec.ts",
+            "e2e/scroll-css-verify.spec.ts",
+            "e2e/scroll-css-verify.spec.ts",
+            "e2e/scroll-css-verify.spec.ts",
+            "e2e/scroll-css-verify.spec.ts",
+            "src/renderer/components/api-config/provider-card.tsx",
+            "src/renderer/components/chat/chat-input-bar.tsx",
+            "src/renderer/components/chat/chat-message-ai.tsx",
+            "src/renderer/components/chat/chat-message-ai.tsx",
+            "src/renderer/components/chat/chat-view.tsx",
+            "src/renderer/components/chat/chat-view.tsx",
+            "src/renderer/components/chat/chat-view.tsx",
+            "src/renderer/components/chat/chat-view.tsx",
+            "src/renderer/components/chat/chat-view.tsx",
+            "src/renderer/components/chat/chat-view.tsx",
+            "src/renderer/components/chat/chat-view.tsx",
+            "src/renderer/components/chat/chat-view.tsx",
+            "src/renderer/components/chat/chat-view.tsx",
+            "src/renderer/components/chat/chat-view.tsx",
+            "src/renderer/components/editor/chapter-index-view.tsx",
+            "src/renderer/components/editor/markdown-editor.tsx",
+            "src/renderer/components/editor/markdown-editor.tsx",
+            "src/renderer/components/editor/markdown-editor.tsx",
+            "src/renderer/components/editor/markdown-preview.tsx",
+            "src/renderer/components/editor/tab-bar.tsx",
+            "src/renderer/components/editor/tab-bar.tsx",
+            "src/renderer/components/editor/tab-bar.tsx",
+            "src/renderer/components/file-tree/file-tree.tsx",
+            "src/renderer/components/file-tree/file-tree.tsx",
+            "src/renderer/components/layout/app-layout.tsx",
+            "src/renderer/components/layout/app-layout.tsx",
+            "src/renderer/components/layout/center-panel.tsx",
+            "src/renderer/components/layout/left-panel.tsx",
+            "src/renderer/components/layout/left-panel.tsx",
+            "src/renderer/components/layout/left-panel.tsx",
+            "src/renderer/components/layout/model-dropdown.tsx",
+            "src/renderer/components/layout/right-panel.tsx",
+            "src/renderer/components/ui/dropdown-select.tsx",
+            "src/renderer/pages/api-config-page.tsx",
+            "src/renderer/pages/api-config-page.tsx",
+            "src/renderer/pages/settings-page.tsx",
+            "src/renderer/pages/settings-page.tsx",
+            "src/renderer/pages/settings-page.tsx",
+            "src/renderer/pages/skill-editor-page.tsx",
+            "src/renderer/pages/skill-editor-page.tsx",
+            "src/renderer/pages/skill-editor-page.tsx",
+            "src/renderer/pages/skill-home-page.tsx",
+            "src/renderer/pages/skill-home-page.tsx",
+            "src/renderer/styles/globals.css",
+            "src/renderer/styles/globals.css",
+            "src/renderer/styles/globals.css",
+            "src/renderer/styles/globals.css"
+          ]
+        }
+      ],
+      "status": "🟢"
+    },
+    {
+      "keyword": "responsive",
+      "description": "响应式适配",
+      "specMentions": [
+        {
+          "line": 186,
+          "text": "- 错误块包含 [重试] 按钮 → 点击后从**断点续传**（Claude Engine 支持 SDK resume）或**重新发送完整请求**（Univers"
+        },
+        {
+          "line": 210,
+          "text": "#### 10. 窗口适配规则"
+        },
+        {
+          "line": 212,
+          "text": "应用窗口支持用户自由缩放。以下为各断点的面板行为："
+        },
+        {
+          "line": 223,
+          "text": "- 面板拖拽调整宽度优先于断点规则——用户手动调整后面板宽度会被记住（存储到 settings.json）"
+        },
+        {
+          "line": 514,
+          "text": "| 移动端适配 | v1 专注桌面端体验（Electron 窗口 ≥ 800×600） |"
+        }
+      ],
+      "codeChecks": [
+        {
+          "check": "响应式逻辑",
+          "found": true,
+          "files": [
+            "src/renderer/components/file-tree/file-tree.tsx",
+            "src/renderer/components/file-tree/file-tree.tsx",
+            "src/renderer/components/file-tree/file-tree.tsx",
+            "src/renderer/components/file-tree/file-tree.tsx",
+            "src/renderer/components/file-tree/file-tree.tsx",
+            "src/renderer/components/file-tree/file-tree.tsx",
+            "src/renderer/components/file-tree/file-tree.tsx",
+            "src/renderer/components/file-tree/file-tree.tsx",
+            "src/renderer/components/file-tree/file-tree.tsx",
+            "src/renderer/components/file-tree/file-tree.tsx",
+            "src/renderer/components/file-tree/file-tree.tsx",
+            "src/renderer/components/layout/app-layout.tsx",
+            "src/renderer/components/layout/app-layout.tsx",
+            "src/renderer/components/layout/app-layout.tsx",
+            "src/renderer/components/layout/app-layout.tsx",
+            "src/renderer/hooks/use-responsive.ts",
+            "src/renderer/hooks/use-responsive.ts",
+            "src/renderer/hooks/use-responsive.ts",
+            "src/renderer/hooks/use-responsive.ts",
+            "src/renderer/styles/globals.css",
+            "src/renderer/theme/theme-provider.tsx"
+          ]
+        }
+      ],
+      "status": "🟢"
+    }
+  ],
+  "d2_cross_doc": [
+    {
+      "check": "L1 自洽: 章节编号",
+      "status": "✅",
+      "found": true,
+      "detail": "13 个编号章节连续"
+    },
+    {
+      "check": "L1 自洽: 术语 \"编辑区\" vs \"编辑器\"",
+      "status": "✅",
+      "found": true,
+      "detail": "\"编辑区\"61次, \"编辑器\"17次 — 术语表已定义区分，非混用"
+    },
+    {
+      "check": "L1 自洽: 术语 \"标签页\" vs \"标签\"",
+      "status": "✅",
+      "found": true,
+      "detail": "\"标签页\"34次, \"标签\"69次 — 术语表已定义区分，非混用"
+    },
+    {
+      "check": "L1 自洽: 术语 \"面板\" vs \"区域\"",
+      "status": "✅",
+      "found": true,
+      "detail": "\"面板\"27次, \"区域\"14次 — 术语表已定义区分，非混用"
+    },
+    {
+      "check": "L1 自洽: 术语统一",
+      "status": "✅",
+      "found": true,
+      "detail": "未检测到术语混用（术语表已定义的区分除外）"
+    },
+    {
+      "check": "L1 自洽: 状态矩阵覆盖",
+      "status": "✅",
+      "found": true,
+      "detail": "矩阵含 7 条交互描述, 35 处专项例外标注"
+    }
+  ],
+  "d3_completeness": [
+    {
+      "label": "空状态处理",
+      "specMentions": true,
+      "codeFiles": [
+        "electron\\preload.ts",
+        "src\\main\\ipc\\file-ipc.ts",
+        "src\\main\\services\\trash-service.ts",
+        "src\\renderer\\components\\chat\\chat-input-bar.tsx",
+        "src\\renderer\\components\\editor\\chapter-index-page-wrapper.tsx",
+        "src\\renderer\\components\\editor\\chapter-index-view.tsx",
+        "src\\renderer\\components\\editor\\markdown-preview.tsx",
+        "src\\renderer\\components\\file-tree\\file-tree.tsx",
+        "src\\renderer\\components\\layout\\left-panel.tsx",
+        "src\\renderer\\components\\navigation\\stage-card-item.tsx",
+        "src\\renderer\\pages\\skill-home-page.tsx",
+        "src\\renderer\\types\\electron.d.ts"
+      ],
+      "status": "🟢"
+    },
+    {
+      "label": "加载状态",
+      "specMentions": true,
+      "codeFiles": [
+        "src\\renderer\\components\\editor\\chapter-index-page-wrapper.tsx",
+        "src\\renderer\\components\\file-tree\\file-tree.tsx",
+        "src\\renderer\\components\\layout\\left-panel.tsx",
+        "src\\renderer\\hooks\\use-file-system.ts",
+        "src\\renderer\\pages\\api-config-page.tsx",
+        "src\\renderer\\pages\\skill-home-page.tsx"
+      ],
+      "status": "🟢"
+    },
+    {
+      "label": "错误状态",
+      "specMentions": true,
+      "codeFiles": [
+        "e2e\\electron-smoke.spec.ts",
+        "e2e\\phase-10-13-interactions.spec.ts",
+        "e2e\\user-stories.spec.ts",
+        "electron\\main.ts",
+        "src\\common\\error-reporting.ts",
+        "src\\main\\engine\\claude\\claude-engine.ts",
+        "src\\main\\engine\\claude\\session-bridge.ts",
+        "src\\main\\engine\\engine-factory.ts",
+        "src\\main\\engine\\universal\\agent-loop.ts",
+        "src\\main\\engine\\universal\\model-router.ts",
+        "src\\main\\engine\\universal\\tool-executor.ts",
+        "src\\main\\ipc\\engine-ipc.ts",
+        "src\\main\\ipc\\skill-ipc.ts",
+        "src\\main\\services\\api-config-service.ts",
+        "src\\main\\services\\file-service.ts",
+        "src\\main\\services\\project-service.ts",
+        "src\\main\\services\\settings-service.ts",
+        "src\\main\\services\\skill-service.ts",
+        "src\\main\\updater.ts",
+        "src\\renderer\\App.tsx",
+        "src\\renderer\\components\\api-config\\provider-card.tsx",
+        "src\\renderer\\components\\chat\\chat-view.tsx",
+        "src\\renderer\\components\\editor\\chapter-index-page-wrapper.tsx",
+        "src\\renderer\\components\\editor\\editor-workspace.tsx",
+        "src\\renderer\\components\\editor\\tab-context-menu.tsx",
+        "src\\renderer\\components\\file-tree\\file-tree.tsx",
+        "src\\renderer\\components\\layout\\left-panel.tsx",
+        "src\\renderer\\hooks\\use-chat-engine.ts",
+        "src\\renderer\\hooks\\use-file-system.ts",
+        "src\\renderer\\hooks\\use-open-tabs.ts",
+        "src\\renderer\\hooks\\use-stage-navigation.ts",
+        "src\\renderer\\pages\\api-config-page.tsx",
+        "src\\renderer\\pages\\settings-page.tsx",
+        "src\\renderer\\pages\\skill-editor-page.tsx",
+        "src\\renderer\\pages\\skill-home-page.tsx",
+        "src\\renderer\\theme\\theme-provider.tsx",
+        "src\\renderer\\types\\electron.d.ts"
+      ],
+      "status": "🟢"
+    },
+    {
+      "label": "无障碍属性",
+      "specMentions": false,
+      "codeFiles": [
+        "e2e\\electron-smoke.spec.ts",
+        "e2e\\phase-10-13-interactions.spec.ts",
+        "e2e\\user-stories.spec.ts",
+        "src\\main\\engine\\types.ts",
+        "src\\renderer\\components\\chat\\chat-input-bar.tsx",
+        "src\\renderer\\components\\chat\\chat-operation-buttons.tsx",
+        "src\\renderer\\components\\editor\\tab-bar.tsx",
+        "src\\renderer\\components\\file-tree\\file-tree.tsx",
+        "src\\renderer\\components\\layout\\fab-button.tsx",
+        "src\\renderer\\components\\layout\\left-panel.tsx",
+        "src\\renderer\\components\\layout\\toolbar.tsx",
+        "src\\renderer\\components\\navigation\\stage-card-item.tsx",
+        "src\\renderer\\components\\window-controls.tsx",
+        "src\\renderer\\pages\\skill-editor-page.tsx"
+      ],
+      "status": "🟢",
+      "found": true
+    },
+    {
+      "label": "溢出防护 (overflow/scroll)",
+      "specMentions": true,
+      "codeFiles": [
+        "e2e\\editor-scroll-verify.spec.ts",
+        "e2e\\scroll-css-verify.spec.ts",
+        "src\\renderer\\components\\api-config\\provider-card.tsx",
+        "src\\renderer\\components\\chat\\chat-input-bar.tsx",
+        "src\\renderer\\components\\chat\\chat-message-ai.tsx",
+        "src\\renderer\\components\\chat\\chat-view.tsx",
+        "src\\renderer\\components\\editor\\chapter-index-view.tsx",
+        "src\\renderer\\components\\editor\\markdown-editor.tsx",
+        "src\\renderer\\components\\editor\\markdown-preview.tsx",
+        "src\\renderer\\components\\editor\\tab-bar.tsx",
+        "src\\renderer\\components\\file-tree\\file-tree.tsx",
+        "src\\renderer\\components\\layout\\app-layout.tsx",
+        "src\\renderer\\components\\layout\\center-panel.tsx",
+        "src\\renderer\\components\\layout\\left-panel.tsx",
+        "src\\renderer\\components\\layout\\model-dropdown.tsx",
+        "src\\renderer\\components\\layout\\right-panel.tsx",
+        "src\\renderer\\components\\ui\\dropdown-select.tsx",
+        "src\\renderer\\pages\\api-config-page.tsx",
+        "src\\renderer\\pages\\settings-page.tsx",
+        "src\\renderer\\pages\\skill-editor-page.tsx",
+        "src\\renderer\\pages\\skill-home-page.tsx"
+      ],
+      "status": "🟢"
+    },
+    {
+      "check": "全局空态一致性",
+      "status": "✅",
+      "found": true,
+      "detail": "8 页均符合空态模板"
+    },
+    {
+      "check": "全局错误态一致性: 1页偏离",
+      "status": "🟢",
+      "detail": "偏离页面: settings-page。模板要求 #2A2520/#F0A060 错误语义配色",
+      "found": true
+    },
+    {
+      "check": "全局加载态一致性: 3页偏离",
+      "status": "🟢",
+      "detail": "偏离页面: chat-view, settings-page, skill-editor-page。模板要求 spinner 或 skeleton 实现",
+      "found": true
+    },
+    {
+      "check": "Token 用量精度",
+      "status": "✅",
+      "found": true,
+      "detail": "4 项精度子项均已定义"
+    }
+  ],
+  "d4_references": {
+    "total": 68,
+    "found": 68,
+    "missing": 0,
+    "details": [
+      {
+        "file": "src/renderer/App.tsx",
+        "planLine": 59,
+        "phase": 1,
+        "exists": true,
+        "status": "✅"
+      },
+      {
+        "file": "src/renderer/theme/theme-provider.tsx",
+        "planLine": 60,
+        "phase": 1,
+        "exists": true,
+        "status": "✅"
+      },
+      {
+        "file": "src/renderer/styles/globals.css",
+        "planLine": 61,
+        "phase": 1,
+        "exists": true,
+        "status": "✅"
+      },
+      {
+        "file": "src/renderer/components/layout/app-layout.tsx",
+        "planLine": 92,
+        "phase": 2,
+        "exists": true,
+        "status": "✅"
+      },
+      {
+        "file": "src/renderer/components/layout/toolbar.tsx",
+        "planLine": 93,
+        "phase": 2,
+        "exists": true,
+        "status": "✅"
+      },
+      {
+        "file": "src/renderer/components/layout/left-panel.tsx",
+        "planLine": 94,
+        "phase": 2,
+        "exists": true,
+        "status": "✅"
+      },
+      {
+        "file": "src/renderer/components/layout/center-panel.tsx",
+        "planLine": 95,
+        "phase": 2,
+        "exists": true,
+        "status": "✅"
+      },
+      {
+        "file": "src/renderer/components/layout/right-panel.tsx",
+        "planLine": 96,
+        "phase": 2,
+        "exists": true,
+        "status": "✅"
+      },
+      {
+        "file": "src/renderer/components/layout/status-bar.tsx",
+        "planLine": 97,
+        "phase": 2,
+        "exists": true,
+        "status": "✅"
+      },
+      {
+        "file": "src/renderer/components/layout/resizable-divider.tsx",
+        "planLine": 98,
+        "phase": 2,
+        "exists": true,
+        "status": "✅"
+      },
+      {
+        "file": "src/renderer/components/window-controls.tsx",
+        "planLine": 99,
+        "phase": 2,
+        "exists": true,
+        "status": "✅"
+      },
+      {
+        "file": "src/renderer/components/layout/fab-button.tsx",
+        "planLine": 100,
+        "phase": 2,
+        "exists": true,
+        "status": "✅"
+      },
+      {
+        "file": "src/renderer/hooks/use-responsive.ts",
+        "planLine": 101,
+        "phase": 2,
+        "exists": true,
+        "status": "✅"
+      },
+      {
+        "file": "src/main/services/file-service.ts",
+        "planLine": 130,
+        "phase": 3,
+        "exists": true,
+        "status": "✅"
+      },
+      {
+        "file": "src/main/services/project-service.ts",
+        "planLine": 131,
+        "phase": 3,
+        "exists": true,
+        "status": "✅"
+      },
+      {
+        "file": "src/main/services/trash-service.ts",
+        "planLine": 132,
+        "phase": 3,
+        "exists": true,
+        "status": "✅"
+      },
+      {
+        "file": "src/main/ipc/file-ipc.ts",
+        "planLine": 133,
+        "phase": 3,
+        "exists": true,
+        "status": "✅"
+      },
+      {
+        "file": "src/renderer/components/file-tree/file-tree.tsx",
+        "planLine": 134,
+        "phase": 3,
+        "exists": true,
+        "status": "✅"
+      },
+      {
+        "file": "src/renderer/components/file-tree/file-tree-context-menu.tsx",
+        "planLine": 135,
+        "phase": 3,
+        "exists": true,
+        "status": "✅"
+      },
+      {
+        "file": "src/renderer/hooks/use-file-system.ts",
+        "planLine": 136,
+        "phase": 3,
+        "exists": true,
+        "status": "✅"
+      },
+      {
+        "file": "src/renderer/components/editor/markdown-editor.tsx",
+        "planLine": 177,
+        "phase": 4,
+        "exists": true,
+        "status": "✅"
+      },
+      {
+        "file": "src/renderer/components/editor/markdown-preview.tsx",
+        "planLine": 178,
+        "phase": 4,
+        "exists": true,
+        "status": "✅"
+      },
+      {
+        "file": "src/renderer/components/editor/tab-bar.tsx",
+        "planLine": 179,
+        "phase": 4,
+        "exists": true,
+        "status": "✅"
+      },
+      {
+        "file": "src/renderer/components/editor/editor-toolbar.tsx",
+        "planLine": 180,
+        "phase": 4,
+        "exists": true,
+        "status": "✅"
+      },
+      {
+        "file": "src/renderer/components/editor/editor-context-menu.tsx",
+        "planLine": 181,
+        "phase": 4,
+        "exists": true,
+        "status": "✅"
+      },
+      {
+        "file": "src/renderer/components/editor/editor-workspace.tsx",
+        "planLine": 182,
+        "phase": 4,
+        "exists": true,
+        "status": "✅"
+      },
+      {
+        "file": "src/renderer/hooks/use-open-tabs.ts",
+        "planLine": 183,
+        "phase": 4,
+        "exists": true,
+        "status": "✅"
+      },
+      {
+        "file": "src/renderer/hooks/use-autosave.ts",
+        "planLine": 184,
+        "phase": 4,
+        "exists": true,
+        "status": "✅"
+      },
+      {
+        "file": "src/main/services/api-config-service.ts",
+        "planLine": 221,
+        "phase": 5,
+        "exists": true,
+        "status": "✅"
+      },
+      {
+        "file": "src/main/ipc/api-config-ipc.ts",
+        "planLine": 222,
+        "phase": 5,
+        "exists": true,
+        "status": "✅"
+      },
+      {
+        "file": "src/renderer/pages/api-config-page.tsx",
+        "planLine": 223,
+        "phase": 5,
+        "exists": true,
+        "status": "✅"
+      },
+      {
+        "file": "src/renderer/components/api-config/provider-card.tsx",
+        "planLine": 224,
+        "phase": 5,
+        "exists": true,
+        "status": "✅"
+      },
+      {
+        "file": "src/main/engine/types.ts",
+        "planLine": 245,
+        "phase": 6,
+        "exists": true,
+        "status": "✅"
+      },
+      {
+        "file": "src/main/engine/universal/agent-loop.ts",
+        "planLine": 246,
+        "phase": 6,
+        "exists": true,
+        "status": "✅"
+      },
+      {
+        "file": "src/main/engine/universal/tool-executor.ts",
+        "planLine": 247,
+        "phase": 6,
+        "exists": true,
+        "status": "✅"
+      },
+      {
+        "file": "src/main/engine/universal/session-store.ts",
+        "planLine": 248,
+        "phase": 6,
+        "exists": true,
+        "status": "✅"
+      },
+      {
+        "file": "src/main/engine/universal/model-router.ts",
+        "planLine": 249,
+        "phase": 6,
+        "exists": true,
+        "status": "✅"
+      },
+      {
+        "file": "src/main/ipc/engine-ipc.ts",
+        "planLine": 250,
+        "phase": 6,
+        "exists": true,
+        "status": "✅"
+      },
+      {
+        "file": "src/renderer/components/chat/chat-view.tsx",
+        "planLine": 287,
+        "phase": 7,
+        "exists": true,
+        "status": "✅"
+      },
+      {
+        "file": "src/renderer/components/chat/chat-message-ai.tsx",
+        "planLine": 288,
+        "phase": 7,
+        "exists": true,
+        "status": "✅"
+      },
+      {
+        "file": "src/renderer/components/chat/chat-message-user.tsx",
+        "planLine": 289,
+        "phase": 7,
+        "exists": true,
+        "status": "✅"
+      },
+      {
+        "file": "src/renderer/components/chat/chat-system-message.tsx",
+        "planLine": 290,
+        "phase": 7,
+        "exists": true,
+        "status": "✅"
+      },
+      {
+        "file": "src/renderer/components/chat/chat-header.tsx",
+        "planLine": 291,
+        "phase": 7,
+        "exists": true,
+        "status": "✅"
+      },
+      {
+        "file": "src/renderer/components/chat/chat-input-bar.tsx",
+        "planLine": 292,
+        "phase": 7,
+        "exists": true,
+        "status": "✅"
+      },
+      {
+        "file": "src/renderer/components/chat/chat-operation-buttons.tsx",
+        "planLine": 293,
+        "phase": 7,
+        "exists": true,
+        "status": "✅"
+      },
+      {
+        "file": "src/renderer/hooks/use-chat-engine.ts",
+        "planLine": 294,
+        "phase": 7,
+        "exists": true,
+        "status": "✅"
+      },
+      {
+        "file": "src/renderer/components/navigation/stage-cards.tsx",
+        "planLine": 326,
+        "phase": 8,
+        "exists": true,
+        "status": "✅"
+      },
+      {
+        "file": "src/renderer/components/navigation/stage-card-item.tsx",
+        "planLine": 327,
+        "phase": 8,
+        "exists": true,
+        "status": "✅"
+      },
+      {
+        "file": "src/renderer/components/navigation/project-context-menu.tsx",
+        "planLine": 328,
+        "phase": 8,
+        "exists": true,
+        "status": "✅"
+      },
+      {
+        "file": "src/renderer/hooks/use-stage-navigation.ts",
+        "planLine": 329,
+        "phase": 8,
+        "exists": true,
+        "status": "✅"
+      },
+      {
+        "file": "src/renderer/services/chapter-parser.ts",
+        "planLine": 363,
+        "phase": 9,
+        "exists": true,
+        "status": "✅"
+      },
+      {
+        "file": "src/renderer/components/editor/chapter-index-view.tsx",
+        "planLine": 364,
+        "phase": 9,
+        "exists": true,
+        "status": "✅"
+      },
+      {
+        "file": "src/renderer/components/editor/chapter-index-row.tsx",
+        "planLine": 365,
+        "phase": 9,
+        "exists": true,
+        "status": "✅"
+      },
+      {
+        "file": "src/main/services/skill-service.ts",
+        "planLine": 401,
+        "phase": 10,
+        "exists": true,
+        "status": "✅"
+      },
+      {
+        "file": "src/main/ipc/skill-ipc.ts",
+        "planLine": 402,
+        "phase": 10,
+        "exists": true,
+        "status": "✅"
+      },
+      {
+        "file": "src/renderer/pages/skill-home-page.tsx",
+        "planLine": 403,
+        "phase": 10,
+        "exists": true,
+        "status": "✅"
+      },
+      {
+        "file": "src/renderer/pages/skill-editor-page.tsx",
+        "planLine": 404,
+        "phase": 10,
+        "exists": true,
+        "status": "✅"
+      },
+      {
+        "file": "src/main/engine/claude/claude-engine.ts",
+        "planLine": 425,
+        "phase": 11,
+        "exists": true,
+        "status": "✅"
+      },
+      {
+        "file": "src/main/engine/claude/session-bridge.ts",
+        "planLine": 426,
+        "phase": 11,
+        "exists": true,
+        "status": "✅"
+      },
+      {
+        "file": "src/main/engine/engine-factory.ts",
+        "planLine": 427,
+        "phase": 11,
+        "exists": true,
+        "status": "✅"
+      },
+      {
+        "file": "src/renderer/pages/settings-page.tsx",
+        "planLine": 464,
+        "phase": 12,
+        "exists": true,
+        "status": "✅"
+      },
+      {
+        "file": "src/renderer/components/ui/dropdown-select.tsx",
+        "planLine": 465,
+        "phase": 12,
+        "exists": true,
+        "status": "✅"
+      },
+      {
+        "file": "src/renderer/components/ui/slider.tsx",
+        "planLine": 466,
+        "phase": 12,
+        "exists": true,
+        "status": "✅"
+      },
+      {
+        "file": "src/renderer/components/ui/toggle-switch.tsx",
+        "planLine": 467,
+        "phase": 12,
+        "exists": true,
+        "status": "✅"
+      },
+      {
+        "file": "src/main/services/settings-service.ts",
+        "planLine": 468,
+        "phase": 12,
+        "exists": true,
+        "status": "✅"
+      },
+      {
+        "file": "src/main/services/backup-service.ts",
+        "planLine": 469,
+        "phase": 12,
+        "exists": true,
+        "status": "✅"
+      },
+      {
+        "file": "src/common/error-reporting.ts",
+        "planLine": 494,
+        "phase": 13,
+        "exists": true,
+        "status": "✅"
+      },
+      {
+        "file": "src/main/updater.ts",
+        "planLine": 495,
+        "phase": 13,
+        "exists": true,
+        "status": "✅"
+      }
+    ]
+  },
+  "d5_concurrency": [
+    {
+      "check": "D5 风险策略: 8 项",
+      "status": "✅",
+      "found": true,
+      "detail": "8 个风险项已定义"
+    }
+  ],
+  "visual_L5_L2": [
+    {
+      "check": "工具栏 height=48px",
+      "found": true,
+      "file": "src\\renderer\\components\\layout\\toolbar.tsx",
+      "status": "✅"
+    },
+    {
+      "check": "左面板 width=240px",
+      "found": true,
+      "file": "src\\renderer\\components\\layout\\app-layout.tsx",
+      "status": "✅"
+    },
+    {
+      "check": "右面板 width=340px",
+      "found": true,
+      "file": "src\\renderer\\components\\layout\\app-layout.tsx (常量)",
+      "status": "✅"
+    },
+    {
+      "check": "状态栏 height=22px",
+      "found": true,
+      "file": "src\\renderer\\components\\layout\\status-bar.tsx",
+      "status": "✅"
+    },
+    {
+      "check": "小屏工具栏 height=44px",
+      "found": true,
+      "file": "src\\renderer\\components\\layout\\fab-button.tsx",
+      "status": "✅"
+    },
+    {
+      "check": "FAB generic=44px",
+      "found": true,
+      "file": "src\\renderer\\components\\layout\\fab-button.tsx",
+      "status": "✅"
+    },
+    {
+      "check": "文件树：纯文字层级缩进，fontSize generic=11px",
+      "found": true,
+      "file": "src\\renderer\\components\\api-config\\provider-card.tsx",
+      "status": "✅"
+    },
+    {
+      "check": "右键菜单 width=180px",
+      "found": true,
+      "file": "src\\renderer\\components\\editor\\tab-context-menu.tsx",
+      "status": "✅"
+    },
+    {
+      "check": "fontSize generic=13px",
+      "found": true,
+      "file": "src\\renderer\\components\\editor\\chapter-index-page-wrapper.tsx",
+      "status": "✅"
+    },
+    {
+      "check": "标签栏 height=36px",
+      "found": true,
+      "file": "src\\renderer\\components\\editor\\tab-bar.tsx",
+      "status": "✅"
+    },
+    {
+      "check": "gap generic=8px",
+      "found": true,
+      "file": "src\\renderer\\components\\api-config\\provider-card.tsx",
+      "status": "✅"
+    },
+    {
+      "check": "border-right generic=1px",
+      "found": true,
+      "file": "src\\renderer\\components\\chat\\chat-message-ai.tsx",
+      "status": "✅"
+    },
+    {
+      "check": "标签底部 generic=3px",
+      "found": true,
+      "file": "src\\renderer\\components\\api-config\\provider-card.tsx",
+      "status": "✅"
+    },
+    {
+      "check": "width generic=16px",
+      "found": true,
+      "file": "src\\renderer\\components\\api-config\\provider-card.tsx",
+      "status": "✅"
+    },
+    {
+      "check": "gap generic=8px",
+      "found": true,
+      "file": "src\\renderer\\components\\api-config\\provider-card.tsx",
+      "status": "✅"
+    },
+    {
+      "check": "gap generic=4px",
+      "found": true,
+      "file": "src\\renderer\\components\\api-config\\provider-card.tsx",
+      "status": "✅"
+    },
+    {
+      "check": "fontSize generic=22px",
+      "found": true,
+      "file": "src\\renderer\\components\\editor\\markdown-preview.tsx",
+      "status": "✅"
+    },
+    {
+      "check": "fontSize generic=15px",
+      "found": true,
+      "file": "src\\renderer\\components\\editor\\chapter-index-page-wrapper.tsx",
+      "status": "✅"
+    },
+    {
+      "check": "右键菜单-编辑器 width=200px",
+      "found": true,
+      "file": "src\\renderer\\components\\editor\\editor-context-menu.tsx",
+      "status": "✅"
+    },
+    {
+      "check": "右键菜单-标签页 width=180px",
+      "found": true,
+      "file": "src\\renderer\\components\\editor\\tab-context-menu.tsx",
+      "status": "✅"
+    },
+    {
+      "check": "border-bottom generic=1px",
+      "found": true,
+      "file": "src\\renderer\\components\\chat\\chat-message-ai.tsx",
+      "status": "✅"
+    },
+    {
+      "check": "padding generic=16px",
+      "found": true,
+      "file": "src\\renderer\\components\\api-config\\provider-card.tsx",
+      "status": "✅"
+    },
+    {
+      "check": "模型下拉面板 width=260px",
+      "found": true,
+      "file": "src\\renderer\\components\\layout\\model-dropdown.tsx",
+      "status": "✅"
+    },
+    {
+      "check": "gap generic=8px",
+      "found": true,
+      "file": "src\\renderer\\components\\api-config\\provider-card.tsx",
+      "status": "✅"
+    },
+    {
+      "check": "border-top generic=1px",
+      "found": true,
+      "file": "src\\renderer\\components\\chat\\chat-message-ai.tsx",
+      "status": "✅"
+    },
+    {
+      "check": "border-bottom generic=1px",
+      "found": true,
+      "file": "src\\renderer\\components\\chat\\chat-message-ai.tsx",
+      "status": "✅"
+    },
+    {
+      "check": "lineHeight generic=1px",
+      "found": true,
+      "file": "src\\renderer\\components\\chat\\chat-message-ai.tsx",
+      "status": "✅"
+    },
+    {
+      "check": "lineHeight generic=1px",
+      "found": true,
+      "file": "src\\renderer\\components\\chat\\chat-message-ai.tsx",
+      "status": "✅"
+    },
+    {
+      "check": "fontSize generic=11px",
+      "found": true,
+      "file": "src\\renderer\\components\\api-config\\provider-card.tsx",
+      "status": "✅"
+    },
+    {
+      "check": "border-top generic=1px",
+      "found": true,
+      "file": "src\\renderer\\components\\chat\\chat-message-ai.tsx",
+      "status": "✅"
+    },
+    {
+      "check": "border generic=1px",
+      "found": true,
+      "file": "src\\renderer\\components\\chat\\chat-message-ai.tsx",
+      "status": "✅"
+    },
+    {
+      "check": "height generic=44px",
+      "found": true,
+      "file": "src\\renderer\\components\\layout\\fab-button.tsx",
+      "status": "✅"
+    },
+    {
+      "check": "gap generic=2px",
+      "found": true,
+      "file": "src\\renderer\\components\\api-config\\provider-card.tsx",
+      "status": "✅"
+    },
+    {
+      "check": "阶段列表-文件树分隔线 generic=3px",
+      "found": true,
+      "file": "src\\renderer\\components\\api-config\\provider-card.tsx",
+      "status": "✅"
+    },
+    {
+      "check": "border-bottom generic=1px",
+      "found": true,
+      "file": "src\\renderer\\components\\chat\\chat-message-ai.tsx",
+      "status": "✅"
+    },
+    {
+      "check": "gap generic=24px",
+      "found": true,
+      "file": "src\\renderer\\components\\api-config\\provider-card.tsx",
+      "status": "✅"
+    },
+    {
+      "check": "章节号 width=80px",
+      "found": true,
+      "file": "src\\renderer\\components\\editor\\chapter-index-row.tsx",
+      "status": "✅"
+    },
+    {
+      "check": "fontSize generic=16px",
+      "found": true,
+      "file": "src\\renderer\\components\\api-config\\provider-card.tsx",
+      "status": "✅"
+    },
+    {
+      "check": "分隔线 generic=1px",
+      "found": true,
+      "file": "src\\renderer\\components\\chat\\chat-message-ai.tsx",
+      "status": "✅"
+    },
+    {
+      "check": "主页工具栏 height=52px",
+      "found": true,
+      "file": "src\\renderer\\pages\\skill-home-page.tsx",
+      "status": "✅"
+    },
+    {
+      "check": "padding generic=16px",
+      "found": true,
+      "file": "src\\renderer\\components\\api-config\\provider-card.tsx",
+      "status": "✅"
+    },
+    {
+      "check": "编辑器标签导航 width=190px",
+      "found": true,
+      "file": "src\\renderer\\pages\\skill-editor-page.tsx",
+      "status": "✅"
+    },
+    {
+      "check": "label generic=12px",
+      "found": true,
+      "file": "src\\renderer\\components\\api-config\\provider-card.tsx",
+      "status": "✅"
+    },
+    {
+      "check": "弹窗通用 width=440px",
+      "found": true,
+      "file": "src\\renderer\\components\\file-tree\\file-tree.tsx",
+      "status": "✅"
+    },
+    {
+      "check": "padding generic=24px",
+      "found": true,
+      "file": "src\\renderer\\components\\api-config\\provider-card.tsx",
+      "status": "✅"
+    },
+    {
+      "check": "padding generic=24px",
+      "found": true,
+      "file": "src\\renderer\\components\\api-config\\provider-card.tsx",
+      "status": "✅"
+    },
+    {
+      "check": "右键菜单-项目 width=200px",
+      "found": true,
+      "file": "src\\renderer\\components\\editor\\editor-context-menu.tsx",
+      "status": "✅"
+    },
+    {
+      "check": "设置标签导航 width=200px",
+      "found": true,
+      "file": "src\\renderer\\components\\editor\\editor-context-menu.tsx",
+      "status": "✅"
+    },
+    {
+      "check": "fontSize generic=13px",
+      "found": true,
+      "file": "src\\renderer\\components\\editor\\chapter-index-page-wrapper.tsx",
+      "status": "✅"
+    },
+    {
+      "check": "border-bottom generic=1px",
+      "found": true,
+      "file": "src\\renderer\\components\\chat\\chat-message-ai.tsx",
+      "status": "✅"
+    },
+    {
+      "check": "fontSize generic=13px",
+      "found": true,
+      "file": "src\\renderer\\components\\editor\\chapter-index-page-wrapper.tsx",
+      "status": "✅"
+    },
+    {
+      "check": "border generic=1px",
+      "found": true,
+      "file": "src\\renderer\\components\\chat\\chat-message-ai.tsx",
+      "status": "✅"
+    },
+    {
+      "check": "滑块 width=16px",
+      "found": true,
+      "file": "src\\renderer\\components\\navigation\\stage-card-item.tsx",
+      "status": "✅"
+    },
+    {
+      "check": "滑块 height=16px",
+      "found": true,
+      "file": "src\\renderer\\components\\ui\\toggle-switch.tsx",
+      "status": "✅"
+    },
+    {
+      "check": "radius generic=10px",
+      "found": true,
+      "file": "src\\renderer\\components\\api-config\\provider-card.tsx",
+      "status": "✅"
+    },
+    {
+      "check": "gap generic=8px",
+      "found": true,
+      "file": "src\\renderer\\components\\api-config\\provider-card.tsx",
+      "status": "✅"
+    },
+    {
+      "check": "快捷键面板 width=320px",
+      "found": true,
+      "file": "src\\renderer\\components\\editor\\shortcut-panel.tsx",
+      "status": "✅"
+    },
+    {
+      "check": "自定义滚动条样式",
+      "found": true,
+      "file": "src\\renderer\\components\\editor\\tab-bar.tsx",
+      "status": "✅"
+    },
+    {
+      "check": "状态: 展开/收缩状态",
+      "found": true,
+      "file": "7 文件",
+      "status": "✅"
+    },
+    {
+      "check": "状态: 折叠状态",
+      "found": true,
+      "file": "1 文件",
+      "status": "✅"
+    },
+    {
+      "check": "状态: 启用/禁用状态",
+      "found": true,
+      "file": "11 文件",
+      "status": "✅"
+    },
+    {
+      "check": "状态: 加载中状态",
+      "found": true,
+      "file": "7 文件",
+      "status": "✅"
+    },
+    {
+      "check": "状态: 错误处理",
+      "found": true,
+      "file": "40 文件",
+      "status": "✅"
+    }
+  ],
+  "interaction_behavior": [
+    {
+      "label": "保存按钮行为: 点击后是否保持当前展开状态",
+      "instruction": "Agent 需确认：点击保存后界面停留在展开态而非自动关闭",
+      "status": "🟢",
+      "found": true
+    },
+    {
+      "label": "取消按钮行为: 是否回退到操作前状态",
+      "instruction": "Agent 需确认：取消后恢复原状态，不留半截数据",
+      "status": "🟢",
+      "found": true
+    },
+    {
+      "label": "删除按钮行为: 是否有二次确认",
+      "instruction": "Agent 需确认：破坏性操作有确认弹窗",
+      "status": "🟢",
+      "found": true
+    },
+    {
+      "label": "展开/折叠行为: 展开后是否可再次点击折叠",
+      "instruction": "Agent 需确认：展开和折叠操作对称",
+      "status": "🟢",
+      "found": true
+    },
+    {
+      "label": "拖拽行为: 拖拽后列表是否保持新顺序",
+      "instruction": "Agent 需确认：拖拽后顺序保存，刷新不丢",
+      "status": "🟢",
+      "found": true
+    },
+    {
+      "label": "输入行为: 输入框中是否有默认值/placeholder",
+      "instruction": "Agent 需确认：所有输入框有明确的提示或初始值",
+      "status": "🟢",
+      "found": true
+    }
+  ],
+  "navigation_closure": [
+    {
+      "page": "API 配置页面",
+      "hasBackPath": true,
+      "status": "✅",
+      "detail": "存在返回路径"
+    },
+    {
+      "page": "设置页面",
+      "hasBackPath": true,
+      "status": "✅",
+      "detail": "存在返回路径"
+    },
+    {
+      "page": "Skill 编辑器",
+      "hasBackPath": true,
+      "status": "✅",
+      "detail": "存在返回路径"
+    },
+    {
+      "page": "新建项目弹窗",
+      "hasBackPath": true,
+      "status": "✅",
+      "detail": "存在返回路径"
+    }
+  ],
+  "ipc_bridge": [],
+  "secure_storage": [
+    {
+      "file": "src\\main\\services\\api-config-service.ts",
+      "label": "已使用 safeStorage 加密",
+      "status": "✅"
+    }
+  ],
+  "component_imports": [],
+  "reverse_visual": [
+    {
+      "label": "Key 输入框 eye toggle",
+      "codeFile": "src\\renderer\\components\\api-config\\provider-card.tsx",
+      "specMentions": true,
+      "instruction": "Agent 需确认：设计帧中 Key 行是否有显示/隐藏切换按钮",
+      "status": "🟢",
+      "found": true
+    },
+    {
+      "label": "API 地址行拉取按钮",
+      "codeFile": "electron\\preload.ts",
+      "specMentions": true,
+      "instruction": "Agent 需确认：设计帧 API 地址行是否仅包含\"检查\"按钮，无\"拉取\"按钮",
+      "status": "🟢",
+      "found": true
+    },
+    {
+      "label": "复制到剪贴板",
+      "codeFile": "src\\main\\services\\backup-service.ts",
+      "specMentions": true,
+      "instruction": "Agent 需确认：此交互元素在设计帧中是否有对应",
+      "status": "🟢",
+      "found": true
+    },
+    {
+      "label": "双击交互",
+      "codeFile": "src\\renderer\\components\\editor\\tab-bar.tsx",
+      "specMentions": true,
+      "instruction": "Agent 需确认：Spec 中是否明确要求双击行为",
+      "status": "🟢",
+      "found": true
+    },
+    {
+      "label": "Tooltip 提示",
+      "codeFile": "src\\renderer\\components\\editor\\editor-workspace.tsx",
+      "specMentions": true,
+      "instruction": "Agent 需确认：此 tooltip 是否在 Spec 或设计帧中定义",
+      "status": "🟢",
+      "found": true
+    }
+  ],
+  "cross_phase": [
+    {
+      "name": "ElectronAPI",
+      "file": "electron\\preload.ts",
+      "type": "type",
+      "status": "🟢",
+      "found": true
+    },
+    {
+      "name": "ErrorReport",
+      "file": "src\\common\\error-reporting.ts",
+      "type": "interface",
+      "status": "🟢",
+      "found": true
+    },
+    {
+      "name": "initErrorReporting",
+      "file": "src\\common\\error-reporting.ts",
+      "type": "function",
+      "status": "🟢",
+      "found": true
+    },
+    {
+      "name": "reportRendererError",
+      "file": "src\\common\\error-reporting.ts",
+      "type": "function",
+      "status": "🟢",
+      "found": true
+    },
+    {
+      "name": "ClaudeEngineConfig",
+      "file": "src\\main\\engine\\claude\\claude-engine.ts",
+      "type": "interface",
+      "status": "🟢",
+      "found": true
+    },
+    {
+      "name": "ToolDef",
+      "file": "src\\main\\engine\\claude\\claude-engine.ts",
+      "type": "interface",
+      "status": "🟢",
+      "found": true
+    },
+    {
+      "name": "StreamEvent",
+      "file": "src\\main\\engine\\claude\\claude-engine.ts",
+      "type": "interface",
+      "status": "🟢",
+      "found": true
+    },
+    {
+      "name": "BridgeMessage",
+      "file": "src\\main\\engine\\claude\\session-bridge.ts",
+      "type": "interface",
+      "status": "🟢",
+      "found": true
+    },
+    {
+      "name": "loadConversation",
+      "file": "src\\main\\engine\\claude\\session-bridge.ts",
+      "type": "function",
+      "status": "🟢",
+      "found": true
+    },
+    {
+      "name": "saveConversation",
+      "file": "src\\main\\engine\\claude\\session-bridge.ts",
+      "type": "function",
+      "status": "🟢",
+      "found": true
+    },
+    {
+      "name": "toUniversalFormat",
+      "file": "src\\main\\engine\\claude\\session-bridge.ts",
+      "type": "function",
+      "status": "🟢",
+      "found": true
+    },
+    {
+      "name": "EngineType",
+      "file": "src\\main\\engine\\engine-factory.ts",
+      "type": "type",
+      "status": "🟢",
+      "found": true
+    },
+    {
+      "name": "EngineMode",
+      "file": "src\\main\\engine\\engine-factory.ts",
+      "type": "type",
+      "status": "🟢",
+      "found": true
+    },
+    {
+      "name": "EngineRequest",
+      "file": "src\\main\\engine\\engine-factory.ts",
+      "type": "interface",
+      "status": "🟢",
+      "found": true
+    },
+    {
+      "name": "EngineResult",
+      "file": "src\\main\\engine\\engine-factory.ts",
+      "type": "interface",
+      "status": "🟢",
+      "found": true
+    },
+    {
+      "name": "Message",
+      "file": "src\\main\\engine\\types.ts",
+      "type": "interface",
+      "status": "🟢",
+      "found": true
+    },
+    {
+      "name": "ToolCall",
+      "file": "src\\main\\engine\\types.ts",
+      "type": "interface",
+      "status": "🟢",
+      "found": true
+    },
+    {
+      "name": "SessionRecord",
+      "file": "src\\main\\engine\\types.ts",
+      "type": "interface",
+      "status": "🟢",
+      "found": true
+    },
+    {
+      "name": "EngineConfig",
+      "file": "src\\main\\engine\\types.ts",
+      "type": "interface",
+      "status": "🟢",
+      "found": true
+    },
+    {
+      "name": "ToolResult",
+      "file": "src\\main\\engine\\types.ts",
+      "type": "interface",
+      "status": "🟢",
+      "found": true
+    }
+  ],
+  "cross_index": [],
+  "phase": 13,
+  "spec": {
+    "behaviorCount": 27,
+    "featureCount": 1
+  },
+  "plan": {
+    "phaseCount": 13,
+    "filePathCount": 68
+  },
+  "code": {
+    "fileCount": 88
+  }
+}

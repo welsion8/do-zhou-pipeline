@@ -1,0 +1,148 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "feicai-design-data-v1",
+  "title": "FeiCai Design Data Schema",
+  "description": "工具无关的设计数据中间层格式。适配器负责从各设计工具（Pencil/Figma/Sketch）转换为本格式，下游工具统一消费。",
+
+  "type": "object",
+  "required": ["version", "frames", "tokens"],
+  "properties": {
+    "version": {
+      "type": "string",
+      "const": "1.0",
+      "description": "Schema 版本。用于兼容性检查。"
+    },
+    "source": {
+      "type": "object",
+      "description": "设计工具元数据",
+      "properties": {
+        "tool": { "type": "string", "enum": ["pencil", "figma", "sketch", "penpot", "custom"], "description": "源设计工具" },
+        "file": { "type": "string", "description": "源文件路径" },
+        "extractedAt": { "type": "string", "format": "date-time" },
+        "adapterVersion": { "type": "string" }
+      }
+    },
+    "frames": {
+      "type": "object",
+      "description": "设计帧 → 布局数值。key=帧ID, value=帧数据",
+      "additionalProperties": {
+        "type": "object",
+        "required": ["name", "width", "height"],
+        "properties": {
+          "name": { "type": "string" },
+          "width": { "type": "number" },
+          "height": { "type": "number" },
+          "fill": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6,8}$" },
+          "cornerRadius": { "type": "number" },
+          "childComponents": {
+            "type": "object",
+            "description": "子组件布局值。key=组件名, value=设计token数值",
+            "additionalProperties": { "type": "object" }
+          }
+        }
+      }
+    },
+    "tokens": {
+      "type": "object",
+      "description": "设计 Token → 代码变量映射",
+      "required": ["colors", "typography", "spacing"],
+      "properties": {
+        "colors": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "required": ["value"],
+            "properties": {
+              "value": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6,8}$" },
+              "cssVar": { "type": "string", "pattern": "^--[\\w-]+$" },
+              "tailwindClass": { "type": "string" },
+              "contrastRatio": { "type": "number", "description": "WCAG AA 对比度" }
+            }
+          }
+        },
+        "typography": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "fontFamily": { "type": "string" },
+              "fontSize": { "type": "number" },
+              "fontWeight": { "type": ["number", "string"] },
+              "lineHeight": { "type": "number" },
+              "letterSpacing": { "type": "number" }
+            }
+          }
+        },
+        "spacing": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "value": { "type": "number" },
+              "cssVar": { "type": "string" }
+            }
+          }
+        },
+        "breakpoints": {
+          "type": "object",
+          "description": "响应式断点",
+          "additionalProperties": { "type": "number" }
+        },
+        "motion": {
+          "type": "object",
+          "description": "动效语义",
+          "properties": {
+            "reducedMotion": { "type": "boolean", "default": true }
+          }
+        }
+      }
+    },
+    "interactions": {
+      "type": "array",
+      "description": "交互定义（可选，由设计工具提供）",
+      "items": {
+        "type": "object",
+        "properties": {
+          "trigger": { "type": "string" },
+          "action": { "type": "string" },
+          "target": { "type": "string" },
+          "animation": { "type": "string" }
+        }
+      }
+    }
+  },
+
+  "examples": {
+    "minimalFrame": {
+      "name": "Skill主页",
+      "width": 1200,
+      "height": 800,
+      "fill": "#0F0F11",
+      "childComponents": {
+        "toolbar": { "h": 52, "fill": "#161618" }
+      }
+    },
+    "colorToken": {
+      "bg-base": {
+        "value": "#0F0F11",
+        "cssVar": "--bg-base",
+        "tailwindClass": "bg-bg-base",
+        "contrastRatio": 15.2
+      }
+    }
+  },
+
+  "adapters": {
+    "description": "适配器签名规范。每个设计工具对应一个适配器模块。",
+    "signature": {
+      "extract": "(sourceFilePath: string) → DesignData",
+      "validate": "(data: DesignData) → ValidationReport",
+      "diff": "(oldData: DesignData, newData: DesignData) → DiffReport"
+    },
+    "existingAdapters": {
+      "pencil": ".claude/audit-runner/modules/pen-extract.js",
+      "figma": "待实现 — 从 Figma REST API 读取并转换为 DesignData",
+      "sketch": "待实现 — 从 Sketch 文件读取并转换为 DesignData"
+    }
+  }
+}

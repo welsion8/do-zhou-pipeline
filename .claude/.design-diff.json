@@ -1,0 +1,2555 @@
+{
+  "timestamp": "2026-06-19T01:33:02.664Z",
+  "summary": {
+    "totalChanges": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 0,
+    "affectedFiles": 0
+  },
+  "changes": [],
+  "fileImpact": {},
+  "snapshot": {
+    "_note": "MCP resolveVariables=true 读取的精确数值。供像素级比对使用。共35帧（25顶层+10子组件）。",
+    "frames": {
+      "XJ3UP": {
+        "name": "Skill主页",
+        "width": 1200,
+        "height": 800,
+        "toolbarH": 52,
+        "toolbarPad": [
+          0,
+          150,
+          0,
+          24
+        ],
+        "gap": 16,
+        "padding": 32,
+        "titleFontSize": 16,
+        "bgFill": "#0F0F11",
+        "panelFill": "#161618",
+        "childComponents": {
+          "toolbar": {
+            "AppTitle": {
+              "fontSize": 16,
+              "fontWeight": 600,
+              "fontFamily": "Inter"
+            },
+            "ImportBtn": {
+              "padding": [
+                6,
+                14
+              ],
+              "cornerRadius": 4,
+              "gap": 6,
+              "fontSize": 13
+            },
+            "NewBtn": {
+              "padding": [
+                6,
+                14
+              ],
+              "cornerRadius": 4,
+              "gap": 6,
+              "fontSize": 13
+            },
+            "SettingsBtn": {
+              "padding": [
+                6,
+                10
+              ],
+              "cornerRadius": 4
+            },
+            "WinCtrl": {
+              "x": 1060,
+              "y": 0,
+              "padding": [
+                0,
+                16
+              ],
+              "fontSize": 12,
+              "btnPad": [
+                4,
+                12
+              ]
+            }
+          },
+          "contentArea": {
+            "gap": 16,
+            "padding": 32
+          },
+          "pageTitle": {
+            "fontSize": 18,
+            "fontWeight": 600
+          },
+          "skillCard": {
+            "cornerRadius": 8,
+            "padding": 16,
+            "gap": 8
+          },
+          "cardHeader": {
+            "skillNameFS": 15,
+            "skillNameFW": 600,
+            "metaFS": 12,
+            "gap": 2
+          },
+          "projectRow": {
+            "padding": [
+              8,
+              16
+            ],
+            "cornerRadius": 4,
+            "gap": 8,
+            "projectFS": 13,
+            "statusFS": 11
+          },
+          "cardFooter": {
+            "gap": 4,
+            "btnPad": [
+              4,
+              10
+            ],
+            "btnFS": 11
+          },
+          "recyclePanel": {
+            "cornerRadius": 8,
+            "padding": 16,
+            "gap": 8
+          },
+          "recycleHeader": {
+            "titleFS": 13,
+            "titleFW": 600
+          },
+          "recycleItem": {
+            "padding": [
+              4,
+              16
+            ],
+            "cornerRadius": 4,
+            "fs": 12
+          }
+        }
+      },
+      "f7c4Zl": {
+        "name": "写作工作台",
+        "width": 1200,
+        "height": 800,
+        "toolbarH": 48,
+        "toolbarPad": [
+          0,
+          150,
+          0,
+          16
+        ],
+        "leftW": 240,
+        "rightW": 340,
+        "bgFill": "#0F0F11",
+        "statusBarH": 22,
+        "childComponents": {
+          "toolbar": {
+            "fill": "#161618",
+            "h": 48,
+            "gap": 16,
+            "padding": [
+              0,
+              150,
+              0,
+              16
+            ],
+            "strokeBottom": {
+              "color": "#FFFFFF14",
+              "width": 1
+            },
+            "homeBtn": {
+              "icon": "house",
+              "lib": "lucide",
+              "fill": "#8B8A8E",
+              "size": 16
+            },
+            "breadcrumb": {
+              "gap": 4,
+              "skillFS": 13,
+              "skillFill": "#6B7A8A",
+              "skillFW": "normal",
+              "sepFS": 13,
+              "sepFill": "#5C5B60",
+              "projectFS": 13,
+              "projectFill": "#8B8A8E"
+            },
+            "modelSwitchBtn": {
+              "cornerRadius": 4,
+              "gap": 6,
+              "padding": [
+                5,
+                10
+              ],
+              "stroke": "#FFFFFF14",
+              "strokeWidth": 1,
+              "fill": "#00000000",
+              "iconFS": 11,
+              "iconFill": "#F0EEE8",
+              "nameFS": 12,
+              "nameFill": "#8B8A8E",
+              "arrowFS": 8,
+              "arrowFill": "#5C5B60"
+            },
+            "winCtrl": {
+              "x": 1060,
+              "y": 0,
+              "padding": [
+                0,
+                16
+              ],
+              "btnPad": [
+                4,
+                12
+              ]
+            }
+          },
+          "leftNav": {
+            "w": 240,
+            "fill": "#161618",
+            "strokeRight": {
+              "color": "#FFFFFF14",
+              "width": 1
+            },
+            "stageFlow": {
+              "padding": [
+                16,
+                16,
+                8,
+                16
+              ],
+              "sectionLabelFS": 11,
+              "sectionLabelFW": 600,
+              "sectionLabelFill": "#5C5B60"
+            },
+            "stageCard": {
+              "padding": [
+                4,
+                16
+              ],
+              "gap": 2,
+              "cornerRadius": 4,
+              "nameFS": 13,
+              "nameFill": "#8B8A8E",
+              "nameFW": "normal",
+              "activeNameFS": 13,
+              "activeNameFW": 600,
+              "activeNameFill": "#F0EEE8",
+              "statusFS": 11,
+              "statusFill": "#5C5B60",
+              "activeStroke": {
+                "color": "#3D4852",
+                "width": 2,
+                "side": "left"
+              },
+              "activeFill": "#252528"
+            },
+            "divider": {
+              "h": 3,
+              "fill": "#3D4852"
+            },
+            "fileTree": {
+              "padding": [
+                4,
+                16
+              ],
+              "sectionLabelFS": 11,
+              "sectionLabelFW": 600,
+              "sectionLabelFill": "#5C5B60",
+              "fileActiveFS": 11,
+              "fileActiveFW": 600,
+              "fileActiveFill": "#F0EEE8",
+              "fileInactiveFS": 11,
+              "fileInactiveFill": "#8B8A8E",
+              "folderFS": 11,
+              "folderFill": "#8B8A8E"
+            },
+            "chapterSubList": {
+              "padding": [
+                2,
+                0,
+                2,
+                24
+              ],
+              "gap": 8,
+              "cornerRadius": 4,
+              "fill": "#252528",
+              "chNumFS": 12,
+              "chNumFW": 600,
+              "chNumFill": "#8B8A8E",
+              "chNumW": 38,
+              "chTitleFS": 12,
+              "chTitleFill": "#5C5B60"
+            }
+          },
+          "centerEditor": {
+            "fill": "#1A1A1D",
+            "tabBar": {
+              "h": 36,
+              "fill": "#161618",
+              "strokeBottom": {
+                "color": "#FFFFFF14",
+                "width": 1
+              },
+              "tab": {
+                "padding": [
+                  8,
+                  14
+                ],
+                "gap": 8,
+                "activeFill": "#1A1A1D",
+                "inactiveFill": "#00000000",
+                "nameFS": 12,
+                "nameFill": "#F0EEE8",
+                "inactiveNameFill": "#5C5B60",
+                "closeFS": 14,
+                "closeFill": "#5C5B60",
+                "returnLinkFS": 10,
+                "returnLinkFill": "#6B7A8A",
+                "strokeRight": {
+                  "color": "#FFFFFF14",
+                  "width": 1
+                }
+              }
+            },
+            "editorToolbar": {
+              "gap": 8,
+              "justifyContent": "end",
+              "padding": [
+                4,
+                16
+              ],
+              "strokeBottom": {
+                "color": "#FFFFFF14",
+                "width": 1
+              },
+              "fill": "#161618"
+            },
+            "editorContent": {
+              "gap": 16,
+              "padding": 32
+            }
+          },
+          "rightPanel": {
+            "w": 340,
+            "fill": "#161618",
+            "strokeLeft": {
+              "color": "#FFFFFF14",
+              "width": 1
+            },
+            "chatHeader": {
+              "padding": [
+                8,
+                16
+              ],
+              "justifyContent": "space_between",
+              "strokeBottom": {
+                "color": "#FFFFFF14",
+                "width": 1
+              },
+              "titleFS": 12,
+              "titleFW": 600,
+              "titleFill": "#8B8A8E",
+              "btnPadding": [
+                2,
+                8
+              ],
+              "btnCornerRadius": 4,
+              "btnFill": "#00000000",
+              "btnStroke": "#FFFFFF14",
+              "btnStrokeW": 1,
+              "btnFS": 10,
+              "btnFillText": "#5C5B60",
+              "tokenCountFS": 10,
+              "tokenCountFill": "#5C5B60"
+            },
+            "chatBody": {
+              "gap": 16,
+              "padding": 16
+            },
+            "aiMsg": {
+              "strokeLeft": {
+                "color": "#3D4852",
+                "width": 2
+              },
+              "padding": [
+                0,
+                0,
+                0,
+                8
+              ],
+              "textFS": 12,
+              "textFill": "#8B8A8E",
+              "lineHeight": 1.7,
+              "actionBtn": {
+                "cornerRadius": 4,
+                "padding": [
+                  3,
+                  8
+                ],
+                "fill": "#00000000",
+                "stroke": "#FFFFFF14",
+                "strokeW": 1
+              }
+            },
+            "userMsg": {
+              "cornerRadius": 4,
+              "fill": "#252528",
+              "padding": 8,
+              "textFS": 12,
+              "textFill": "#F0EEE8",
+              "lineHeight": 1.6
+            },
+            "stageSeparator": {
+              "fs": 10,
+              "fill": "#5C5B60"
+            },
+            "separator": {
+              "fs": 9,
+              "fill": "#FFFFFF14"
+            },
+            "statusLabel": {
+              "gap": 8,
+              "padding": [
+                4,
+                0
+              ],
+              "dotFill": "#6B7A8A",
+              "textFS": 11,
+              "textFill": "#5C5B60"
+            },
+            "inputBar": {
+              "gap": 8,
+              "padding": 16,
+              "strokeTop": {
+                "color": "#FFFFFF14",
+                "width": 1
+              },
+              "input": {
+                "cornerRadius": 4,
+                "fill": "#252528",
+                "padding": [
+                  8,
+                  16
+                ],
+                "stroke": "#FFFFFF14",
+                "strokeW": 1,
+                "placeholderFS": 12,
+                "placeholderFill": "#5C5B60"
+              },
+              "sendBtn": {
+                "cornerRadius": 4,
+                "fill": "#00000000",
+                "padding": [
+                  8,
+                  16
+                ],
+                "stroke": "#FFFFFF14",
+                "strokeW": 1,
+                "labelFS": 12,
+                "labelFill": "#8B8A8E"
+              }
+            }
+          },
+          "statusBar": {
+            "h": 22,
+            "fill": "#161618",
+            "padding": [
+              0,
+              16
+            ],
+            "justifyContent": "space_between",
+            "strokeTop": {
+              "color": "#FFFFFF14",
+              "width": 1
+            },
+            "textFS": 10,
+            "textFill": "#5C5B60"
+          }
+        }
+      },
+      "EA2KT": {
+        "name": "API配置页",
+        "width": 1200,
+        "height": 800,
+        "headerPad": [
+          24,
+          32
+        ],
+        "contentPad": 32,
+        "gap": 16,
+        "bgFill": "#0F0F11",
+        "scrollTrackW": 6,
+        "scrollTrackX": 1178,
+        "childComponents": {
+          "pageHeader": {
+            "padding": [
+              24,
+              32
+            ],
+            "strokeBottom": {
+              "color": "#FFFFFF14",
+              "width": 1
+            },
+            "titleFS": 16,
+            "titleFW": 600,
+            "titleFill": "#F0EEE8",
+            "hintFS": 12,
+            "hintFill": "#5C5B60",
+            "winCtrl": {
+              "x": 1060,
+              "y": 0,
+              "padding": [
+                0,
+                16
+              ],
+              "btnPad": [
+                4,
+                12
+              ]
+            }
+          },
+          "providerCard": {
+            "cornerRadius": 8,
+            "gap": 8,
+            "padding": 16,
+            "stroke": "#FFFFFF14",
+            "strokeW": 1,
+            "headerJustify": "space_between",
+            "expandEdit": {
+              "gap": 8,
+              "padding": [
+                8,
+                0,
+                0,
+                24
+              ]
+            }
+          },
+          "addProviderBar": {
+            "gap": 8,
+            "padding": [
+              8,
+              0
+            ],
+            "strokeTop": {
+              "color": "#FFFFFF14",
+              "width": 1
+            },
+            "addLabelFS": 12,
+            "addLabelFill": "#5C5B60",
+            "tagBtn": {
+              "cornerRadius": 4,
+              "padding": [
+                3,
+                10
+              ],
+              "stroke": "#FFFFFF14",
+              "strokeW": 1,
+              "fill": "#00000000"
+            }
+          },
+          "scrollbar": {
+            "cornerRadius": 3,
+            "trackFill": "#FFFFFF14",
+            "thumbFill": "#5C5B60",
+            "w": 6
+          }
+        }
+      },
+      "PzN4F": {
+        "name": "设置页面",
+        "width": 1200,
+        "height": 800,
+        "headerPad": [
+          24,
+          32
+        ],
+        "navW": 200,
+        "contentPad": 32,
+        "bgFill": "#0F0F11",
+        "childComponents": {
+          "pageHeader": {
+            "fill": "#161618",
+            "padding": [
+              24,
+              32
+            ],
+            "strokeBottom": {
+              "color": "#FFFFFF14",
+              "width": 1
+            },
+            "justifyContent": "space_between",
+            "titleFS": 16,
+            "titleFW": 600,
+            "titleFill": "#F0EEE8",
+            "winCtrl": {
+              "x": 1060,
+              "y": 0,
+              "padding": [
+                0,
+                16
+              ],
+              "btnPad": [
+                4,
+                12
+              ]
+            }
+          },
+          "navTab": {
+            "w": 200,
+            "fill": "#161618",
+            "padding": 24,
+            "gap": 2,
+            "strokeRight": {
+              "color": "#FFFFFF14",
+              "width": 1
+            },
+            "tabItem": {
+              "cornerRadius": 4,
+              "padding": [
+                8,
+                16
+              ],
+              "width": "fill_container"
+            },
+            "tabActiveFill": "#252528",
+            "tabInactiveFill": "#00000000",
+            "closeBtn": {
+              "padding": [
+                4,
+                16
+              ],
+              "stroke": "#FFFFFF14",
+              "strokeW": 1,
+              "cornerRadius": 4
+            }
+          },
+          "contentArea": {
+            "gap": 24,
+            "padding": 32,
+            "sectionTitleFS": 18,
+            "sectionTitleFW": 600,
+            "sectionTitleFill": "#F0EEE8",
+            "settingRow": {
+              "justifyContent": "space_between",
+              "padding": [
+                8,
+                0
+              ],
+              "strokeBottom": {
+                "color": "#FFFFFF14",
+                "width": 1
+              }
+            },
+            "footerBtns": {
+              "justifyContent": "end",
+              "gap": 8,
+              "padding": [
+                16,
+                0,
+                0,
+                0
+              ],
+              "strokeTop": {
+                "color": "#FFFFFF14",
+                "width": 1
+              }
+            }
+          }
+        }
+      },
+      "jjYaS": {
+        "name": "Skill编辑器",
+        "width": 1200,
+        "height": 800,
+        "headerPad": [
+          24,
+          32
+        ],
+        "tabNavW": 190,
+        "tabNavPad": 16,
+        "bgFill": "#0F0F11",
+        "childComponents": {
+          "pageHeader": {
+            "fill": "#161618",
+            "padding": [
+              24,
+              32
+            ],
+            "strokeBottom": {
+              "color": "#FFFFFF14",
+              "width": 1
+            },
+            "justifyContent": "space_between",
+            "titleFS": 15,
+            "titleFW": 600,
+            "titleFill": "#F0EEE8",
+            "headerBtns": {
+              "gap": 8
+            },
+            "cancelBtn": {
+              "cornerRadius": 4,
+              "fill": "#00000000",
+              "padding": [
+                5,
+                14
+              ],
+              "stroke": "#FFFFFF14",
+              "strokeW": 1
+            },
+            "saveBtn": {
+              "cornerRadius": 4,
+              "fill": "#252528",
+              "padding": [
+                5,
+                14
+              ],
+              "stroke": "#FFFFFF22",
+              "strokeW": 1
+            },
+            "winCtrl": {
+              "x": 1060,
+              "y": 0,
+              "padding": [
+                0,
+                16
+              ],
+              "btnPad": [
+                4,
+                12
+              ]
+            }
+          },
+          "tabNav": {
+            "w": 190,
+            "fill": "#161618",
+            "padding": 16,
+            "gap": 2,
+            "strokeRight": {
+              "color": "#FFFFFF14",
+              "width": 1
+            },
+            "tabItem": {
+              "cornerRadius": 4,
+              "padding": [
+                8,
+                16
+              ],
+              "width": "fill_container"
+            },
+            "tabActiveFill": "#252528",
+            "tabInactiveFill": "#00000000"
+          },
+          "tabContent": {
+            "gap": 24,
+            "padding": [
+              24,
+              0,
+              16,
+              32
+            ],
+            "clip": true,
+            "sectionTitleFS": 16,
+            "sectionTitleFW": 600,
+            "sectionTitleFill": "#F0EEE8",
+            "fieldGap": 4,
+            "scrollbar": {
+              "cornerRadius": 3,
+              "fill": "#FFFFFF14",
+              "w": 6
+            }
+          }
+        }
+      },
+      "u7FGO": {
+        "name": "新建项目弹窗",
+        "width": 440,
+        "height": 360,
+        "cornerRadius": 12,
+        "headerPad": 24,
+        "bodyPad": 24,
+        "gap": 16,
+        "btnPad": [
+          6,
+          16
+        ],
+        "bgFill": "#161618",
+        "childComponents": {
+          "dialogHeader": {
+            "padding": 24,
+            "strokeBottom": {
+              "color": "#FFFFFF14",
+              "width": 1
+            },
+            "justifyContent": "space_between",
+            "titleFS": 15,
+            "titleFW": 600,
+            "titleFill": "#F0EEE8",
+            "closeFS": 14,
+            "closeFill": "#5C5B60"
+          },
+          "dialogBody": {
+            "gap": 16,
+            "padding": 24,
+            "fieldLabelFS": 12,
+            "fieldLabelFill": "#5C5B60",
+            "nameInput": {
+              "cornerRadius": 4,
+              "fill": "#252528",
+              "padding": [
+                8,
+                16
+              ],
+              "stroke": "#FFFFFF14",
+              "strokeW": 1,
+              "placeholderFS": 13,
+              "placeholderFill": "#8B8A8E"
+            },
+            "skillSelect": {
+              "cornerRadius": 4,
+              "fill": "#252528",
+              "padding": [
+                8,
+                16
+              ],
+              "stroke": "#FFFFFF14",
+              "strokeW": 1,
+              "selectedFS": 13,
+              "selectedFill": "#F0EEE8",
+              "arrowFS": 10,
+              "arrowFill": "#5C5B60"
+            }
+          },
+          "dialogFooter": {
+            "justifyContent": "end",
+            "gap": 8,
+            "padding": 24,
+            "strokeTop": {
+              "color": "#FFFFFF14",
+              "width": 1
+            },
+            "cancelBtn": {
+              "cornerRadius": 4,
+              "fill": "#00000000",
+              "padding": [
+                6,
+                16
+              ],
+              "stroke": "#FFFFFF14",
+              "strokeW": 1,
+              "labelFS": 13,
+              "labelFill": "#8B8A8E"
+            },
+            "createBtn": {
+              "cornerRadius": 4,
+              "fill": "#252528",
+              "padding": [
+                6,
+                16
+              ],
+              "stroke": "#FFFFFF22",
+              "strokeW": 1,
+              "labelFS": 13,
+              "labelFill": "#F0EEE8"
+            }
+          }
+        }
+      },
+      "tDH4z": {
+        "name": "章节目录视图",
+        "width": 680,
+        "height": 530,
+        "headerPad": [
+          16,
+          32
+        ],
+        "listPad": 32,
+        "gap": 24,
+        "bgFill": "#1A1A1D",
+        "childComponents": {
+          "viewHeader": {
+            "padding": [
+              16,
+              32
+            ],
+            "strokeBottom": {
+              "color": "#FFFFFF14",
+              "width": 1
+            },
+            "justifyContent": "space_between",
+            "titleFS": 15,
+            "titleFW": 600,
+            "titleFill": "#F0EEE8",
+            "hintFS": 11,
+            "hintFill": "#5C5B60"
+          },
+          "chapterRow": {
+            "gap": 24,
+            "padding": [
+              16,
+              0
+            ],
+            "chNum": {
+              "layout": "vertical",
+              "w": 80
+            },
+            "chInfo": {
+              "gap": 2,
+              "width": "fill_container"
+            },
+            "arrowFS": 14,
+            "arrowFill": "#5C5B60"
+          },
+          "divider": {
+            "h": 1,
+            "fill": "#FFFFFF14"
+          },
+          "missingChRow": {
+            "gap": 24,
+            "padding": [
+              16,
+              0
+            ],
+            "iconFS": 14,
+            "textFS": 14,
+            "fill": "#5C5B60"
+          },
+          "scrollbar": {
+            "cornerRadius": 3,
+            "trackFill": "#FFFFFF14",
+            "thumbFill": "#5C5B60",
+            "w": 6
+          }
+        }
+      },
+      "HjIth": {
+        "name": "模型下拉面板",
+        "width": 260,
+        "height": 380,
+        "cornerRadius": 8,
+        "itemPad": [
+          8,
+          16
+        ],
+        "sectionPad": [
+          8,
+          16,
+          2,
+          16
+        ],
+        "scrollTrackW": 6,
+        "bgFill": "#161618",
+        "childComponents": {
+          "sectionHeader": {
+            "padding": [
+              8,
+              16,
+              2,
+              16
+            ],
+            "titleFS": 10,
+            "titleFW": 600,
+            "titleFill": "#5C5B60"
+          },
+          "modelItem": {
+            "gap": 8,
+            "padding": [
+              8,
+              16
+            ],
+            "activeFill": "#252528",
+            "inactiveFill": "#00000000",
+            "radioDotFS": 8,
+            "radioActiveFill": "#6B7A8A",
+            "radioInactiveFill": "#5C5B60",
+            "modelNameFS": 13,
+            "modelNameFill": "#F0EEE8",
+            "modelDescFS": 11,
+            "modelDescFill": "#5C5B60",
+            "infoGap": 1
+          },
+          "divider": {
+            "h": 1,
+            "fill": "#FFFFFF14"
+          },
+          "manageEntry": {
+            "gap": 8,
+            "padding": [
+              8,
+              16
+            ],
+            "iconSize": 13,
+            "iconFill": "#5C5B60",
+            "labelFS": 12,
+            "labelFill": "#8B8A8E"
+          },
+          "scrollbar": {
+            "cornerRadius": 3,
+            "trackFill": "#FFFFFF14",
+            "thumbFill": "#5C5B60",
+            "w": 6
+          }
+        }
+      },
+      "KjlGF": {
+        "name": "AI引导提问态",
+        "width": 360,
+        "height": 480,
+        "headerPad": [
+          8,
+          16
+        ],
+        "bodyPad": 16,
+        "inputPad": [
+          8,
+          16
+        ],
+        "accentStrokeW": 2,
+        "bgFill": "#161618",
+        "childComponents": {
+          "chatHeader": {
+            "padding": [
+              8,
+              16
+            ],
+            "strokeBottom": {
+              "color": "#FFFFFF14",
+              "width": 1
+            },
+            "titleFS": 12,
+            "titleFW": 600,
+            "titleFill": "#8B8A8E"
+          },
+          "chatBody": {
+            "gap": 16,
+            "padding": 16
+          },
+          "guideMsg": {
+            "strokeLeft": {
+              "color": "#3D4852",
+              "width": 2
+            },
+            "padding": [
+              0,
+              0,
+              0,
+              8
+            ],
+            "greetingFS": 12,
+            "greetingFill": "#F0EEE8",
+            "lineHeight": 1.6,
+            "questionGap": 4,
+            "shortcutGuide": {
+              "padding": [
+                16,
+                0,
+                0,
+                0
+              ]
+            }
+          },
+          "inputBar": {
+            "gap": 8,
+            "padding": 16,
+            "strokeTop": {
+              "color": "#FFFFFF14",
+              "width": 1
+            },
+            "input": {
+              "cornerRadius": 4,
+              "fill": "#252528",
+              "padding": [
+                8,
+                16
+              ],
+              "stroke": "#FFFFFF14",
+              "strokeW": 1,
+              "placeholderFS": 12,
+              "placeholderFill": "#5C5B60"
+            },
+            "sendBtn": {
+              "cornerRadius": 4,
+              "fill": "#00000000",
+              "padding": [
+                8,
+                16
+              ],
+              "stroke": "#FFFFFF14",
+              "strokeW": 1,
+              "labelFS": 12,
+              "labelFill": "#8B8A8E"
+            }
+          }
+        }
+      },
+      "C0Z3oT": {
+        "name": "编辑器预览模式",
+        "width": 640,
+        "height": 760,
+        "toolbarPad": [
+          4,
+          16
+        ],
+        "contentPad": 32,
+        "gap": 24,
+        "scrollTrackW": 6,
+        "bgFill": "#1A1A1D",
+        "childComponents": {
+          "previewToolbar": {
+            "fill": "#161618",
+            "padding": [
+              4,
+              16
+            ],
+            "strokeBottom": {
+              "color": "#FFFFFF14",
+              "width": 1
+            },
+            "justifyContent": "end",
+            "toggleBtn": {
+              "cornerRadius": 4,
+              "fill": "#00000000",
+              "gap": 4,
+              "padding": [
+                3,
+                10
+              ],
+              "stroke": "#FFFFFF14",
+              "strokeW": 1,
+              "iconFS": 11,
+              "textFS": 11,
+              "textFill": "#8B8A8E"
+            }
+          },
+          "previewContent": {
+            "gap": 24,
+            "padding": 32,
+            "h1FS": 24,
+            "h1FW": 700,
+            "h1Fill": "#F0EEE8",
+            "h1Font": "Noto Serif SC",
+            "h2FS": 20,
+            "h2FW": 600,
+            "h2Fill": "#F0EEE8",
+            "h2Font": "Noto Serif SC",
+            "bodyFS": 16,
+            "bodyFill": "#F0EEE8",
+            "bodyFont": "Noto Serif SC",
+            "bodyLineH": 1.9,
+            "divider": {
+              "h": 1,
+              "fill": "#FFFFFF14"
+            },
+            "propertyList": {
+              "cornerRadius": 8,
+              "fill": "#252528",
+              "gap": 8,
+              "padding": 16
+            },
+            "propRow": {
+              "gap": 8
+            }
+          },
+          "scrollbar": {
+            "cornerRadius": 3,
+            "trackFill": "#FFFFFF14",
+            "thumbFill": "#5C5B60",
+            "w": 6
+          }
+        }
+      },
+      "c4Jxxw": {
+        "name": "Skill主页空状态",
+        "width": 800,
+        "height": 460,
+        "toolbarH": 52,
+        "iconSize": 48,
+        "gap": 24,
+        "bgFill": "#0F0F11",
+        "childComponents": {
+          "toolbar": {
+            "h": 52,
+            "fill": "#161618",
+            "padding": [
+              0,
+              150,
+              0,
+              24
+            ],
+            "strokeBottom": {
+              "color": "#FFFFFF14",
+              "width": 1
+            },
+            "justifyContent": "space_between",
+            "titleFS": 16,
+            "titleFW": 600,
+            "titleFill": "#F0EEE8",
+            "winCtrl": {
+              "x": 660,
+              "y": 0,
+              "padding": [
+                0,
+                16
+              ],
+              "btnPad": [
+                4,
+                12
+              ]
+            }
+          },
+          "emptyContent": {
+            "justifyContent": "center",
+            "alignItems": "center",
+            "layout": "vertical",
+            "gap": 24,
+            "iconFS": 48,
+            "iconFill": "#F0EEE8",
+            "mainTextFS": 18,
+            "mainTextFW": 600,
+            "mainTextFill": "#F0EEE8",
+            "subTextFS": 13,
+            "subTextFill": "#5C5B60",
+            "textGap": 8,
+            "buttons": {
+              "gap": 8
+            },
+            "importBtn": {
+              "cornerRadius": 4,
+              "fill": "#00000000",
+              "gap": 6,
+              "padding": [
+                8,
+                20
+              ],
+              "stroke": "#FFFFFF14",
+              "strokeW": 1
+            },
+            "newBtn": {
+              "cornerRadius": 4,
+              "fill": "#252528",
+              "gap": 6,
+              "padding": [
+                8,
+                20
+              ],
+              "stroke": "#FFFFFF22",
+              "strokeW": 1
+            }
+          }
+        }
+      },
+      "cQmYV": {
+        "name": "右键菜单项目",
+        "width": 200,
+        "cornerRadius": 8,
+        "itemPad": [
+          8,
+          16
+        ],
+        "bgFill": "#161618",
+        "childComponents": {
+          "menuItem": {
+            "padding": [
+              8,
+              16
+            ],
+            "labelFS": 13,
+            "labelFill": "#F0EEE8",
+            "labelFW": "normal"
+          },
+          "divider": {
+            "h": 1,
+            "fill": "#FFFFFF14"
+          },
+          "dangerItem": {
+            "padding": [
+              8,
+              16
+            ],
+            "labelFS": 13,
+            "labelFill": "#E57373",
+            "labelFW": "normal"
+          },
+          "mutedItem": {
+            "padding": [
+              8,
+              16
+            ],
+            "labelFS": 13,
+            "labelFill": "#8B8A8E",
+            "labelFW": "normal"
+          }
+        }
+      },
+      "NFkan": {
+        "name": "右键菜单编辑器",
+        "width": 200,
+        "cornerRadius": 8,
+        "itemPad": [
+          8,
+          16
+        ],
+        "bgFill": "#161618",
+        "childComponents": {
+          "menuItem": {
+            "padding": [
+              8,
+              16
+            ],
+            "labelFS": 12,
+            "labelFill": "#F0EEE8",
+            "labelFW": "normal"
+          },
+          "divider": {
+            "h": 1,
+            "fill": "#FFFFFF14"
+          },
+          "aiItem": {
+            "padding": [
+              8,
+              16
+            ],
+            "labelFS": 12,
+            "labelFill": "#6B7A8A",
+            "labelFW": "normal"
+          }
+        }
+      },
+      "c4dNol": {
+        "name": "右键菜单文件树",
+        "width": 180,
+        "cornerRadius": 8,
+        "itemPad": [
+          8,
+          16
+        ],
+        "bgFill": "#161618",
+        "childComponents": {
+          "menuItem": {
+            "padding": [
+              8,
+              16
+            ],
+            "labelFS": 12,
+            "labelFill": "#F0EEE8",
+            "labelFW": "normal"
+          },
+          "divider": {
+            "h": 1,
+            "fill": "#FFFFFF14"
+          },
+          "dangerItem": {
+            "padding": [
+              8,
+              16
+            ],
+            "labelFS": 12,
+            "labelFill": "#E57373",
+            "labelFW": "normal"
+          }
+        }
+      },
+      "sWr5A": {
+        "name": "右键菜单标签页",
+        "width": 180,
+        "cornerRadius": 8,
+        "itemPad": [
+          8,
+          16
+        ],
+        "bgFill": "#161618",
+        "childComponents": {
+          "menuItem": {
+            "padding": [
+              8,
+              16
+            ],
+            "labelFS": 12,
+            "labelFill": "#F0EEE8",
+            "labelFW": "normal"
+          },
+          "divider": {
+            "h": 1,
+            "fill": "#FFFFFF14"
+          },
+          "mutedItem": {
+            "padding": [
+              8,
+              16
+            ],
+            "labelFS": 12,
+            "labelFill": "#8B8A8E",
+            "labelFW": "normal"
+          }
+        }
+      },
+      "y4jkh": {
+        "name": "弹窗导入冲突",
+        "width": 440,
+        "height": 320,
+        "cornerRadius": 12,
+        "headerPad": 24,
+        "bodyPad": 24,
+        "bgFill": "#161618",
+        "childComponents": {
+          "dialogHeader": {
+            "padding": 24,
+            "strokeBottom": {
+              "color": "#FFFFFF14",
+              "width": 1
+            },
+            "justifyContent": "space_between",
+            "titleFS": 15,
+            "titleFW": 600,
+            "titleFill": "#F0EEE8"
+          },
+          "dialogBody": {
+            "gap": 16,
+            "padding": 24,
+            "msgFS": 13,
+            "msgFill": "#8B8A8E",
+            "msgLineH": 1.6
+          },
+          "optionRow": {
+            "cornerRadius": 4,
+            "gap": 8,
+            "padding": 8,
+            "labelFS": 13,
+            "selectedFill": "#252528",
+            "selectedStroke": {
+              "color": "#FFFFFF22",
+              "width": 1
+            },
+            "selectedLabelFill": "#F0EEE8",
+            "unselectedFill": "#00000000",
+            "unselectedStroke": {
+              "color": "#FFFFFF14",
+              "width": 1
+            },
+            "unselectedLabelFill": "#8B8A8E"
+          }
+        }
+      },
+      "NfGnL": {
+        "name": "弹窗删除Skill",
+        "width": 440,
+        "height": 270,
+        "cornerRadius": 12,
+        "headerPad": 24,
+        "bodyPad": 24,
+        "btnPad": [
+          6,
+          16
+        ],
+        "bgFill": "#161618",
+        "childComponents": {
+          "dialogHeader": {
+            "padding": 24,
+            "strokeBottom": {
+              "color": "#FFFFFF14",
+              "width": 1
+            },
+            "justifyContent": "space_between",
+            "titleFS": 15,
+            "titleFW": 600,
+            "titleFill": "#E57373"
+          },
+          "dialogBody": {
+            "gap": 16,
+            "padding": 24,
+            "msgFS": 13,
+            "msgFill": "#8B8A8E",
+            "msgLineH": 1.6
+          },
+          "dialogFooter": {
+            "justifyContent": "end",
+            "gap": 8,
+            "padding": 24,
+            "strokeTop": {
+              "color": "#FFFFFF14",
+              "width": 1
+            }
+          },
+          "cancelBtn": {
+            "cornerRadius": 4,
+            "fill": "#00000000",
+            "padding": [
+              6,
+              16
+            ],
+            "stroke": "#FFFFFF14",
+            "strokeW": 1,
+            "labelFS": 13,
+            "labelFill": "#8B8A8E"
+          },
+          "confirmBtn": {
+            "cornerRadius": 4,
+            "fill": "#3D2020",
+            "padding": [
+              6,
+              16
+            ],
+            "stroke": "#E57373",
+            "strokeW": 1,
+            "labelFS": 13,
+            "labelFill": "#E57373"
+          }
+        }
+      },
+      "ehJLk": {
+        "name": "弹窗恢复冲突",
+        "width": 440,
+        "height": 280,
+        "cornerRadius": 12,
+        "headerPad": 24,
+        "bodyPad": 24,
+        "bgFill": "#161618",
+        "childComponents": {
+          "dialogHeader": {
+            "padding": 24,
+            "strokeBottom": {
+              "color": "#FFFFFF14",
+              "width": 1
+            },
+            "justifyContent": "space_between",
+            "titleFS": 15,
+            "titleFW": 600,
+            "titleFill": "#F0EEE8"
+          },
+          "dialogBody": {
+            "gap": 16,
+            "padding": 24,
+            "msgFS": 13,
+            "msgFill": "#8B8A8E",
+            "optionsGap": 8
+          },
+          "optionRow": {
+            "cornerRadius": 4,
+            "gap": 8,
+            "padding": 8,
+            "selectedFill": "#252528",
+            "selectedStroke": {
+              "color": "#FFFFFF22",
+              "width": 1
+            },
+            "unselectedFill": "#00000000",
+            "unselectedStroke": {
+              "color": "#FFFFFF14",
+              "width": 1
+            }
+          }
+        }
+      },
+      "sNYdB": {
+        "name": "弹窗清空回收站",
+        "width": 400,
+        "height": 200,
+        "cornerRadius": 12,
+        "padding": 24,
+        "bgFill": "#161618",
+        "childComponents": {
+          "dialogHeader": {
+            "padding": 24,
+            "strokeBottom": {
+              "color": "#FFFFFF14",
+              "width": 1
+            },
+            "justifyContent": "space_between",
+            "titleFS": 15,
+            "titleFW": 600,
+            "titleFill": "#E57373"
+          },
+          "dialogBody": {
+            "gap": 16,
+            "padding": 24,
+            "msgFS": 13,
+            "msgFill": "#8B8A8E",
+            "msgLineH": 1.6
+          },
+          "dialogFooter": {
+            "justifyContent": "end",
+            "gap": 8,
+            "padding": 24,
+            "strokeTop": {
+              "color": "#FFFFFF14",
+              "width": 1
+            }
+          },
+          "cancelBtn": {
+            "cornerRadius": 4,
+            "fill": "#00000000",
+            "padding": [
+              6,
+              16
+            ],
+            "stroke": "#FFFFFF14",
+            "strokeW": 1,
+            "labelFS": 13,
+            "labelFill": "#8B8A8E"
+          },
+          "confirmBtn": {
+            "cornerRadius": 4,
+            "fill": "#3D2020",
+            "padding": [
+              6,
+              16
+            ],
+            "stroke": "#E57373",
+            "strokeW": 1,
+            "labelFS": 13,
+            "labelFill": "#E57373"
+          }
+        }
+      },
+      "vWwKc": {
+        "name": "快捷键面板",
+        "width": 320,
+        "height": 280,
+        "cornerRadius": 8,
+        "headerPad": [
+          8,
+          16
+        ],
+        "bgFill": "#161618",
+        "childComponents": {
+          "header": {
+            "padding": [
+              8,
+              16
+            ],
+            "strokeBottom": {
+              "color": "#FFFFFF14",
+              "width": 1
+            },
+            "justifyContent": "space_between",
+            "titleFS": 12,
+            "titleFW": 600,
+            "titleFill": "#F0EEE8"
+          },
+          "shortcutList": {
+            "gap": 2,
+            "padding": 8
+          },
+          "shortcutRow": {
+            "justifyContent": "space_between",
+            "padding": [
+              4,
+              8
+            ]
+          },
+          "keyFS": 11,
+          "keyFW": 600,
+          "keyFill": "#6B7A8A",
+          "keyW": 130,
+          "descFS": 11,
+          "descFill": "#8B8A8E"
+        }
+      },
+      "JIsNE": {
+        "name": "小屏适配",
+        "width": 900,
+        "height": 700,
+        "leftW": 200,
+        "fabBtnSize": 44,
+        "fabBtnCorner": 22,
+        "bgFill": "#0F0F11",
+        "childComponents": {
+          "toolbar": {
+            "h": 44,
+            "fill": "#161618",
+            "padding": [
+              0,
+              16
+            ],
+            "strokeBottom": {
+              "color": "#FFFFFF14",
+              "width": 1
+            },
+            "justifyContent": "space_between",
+            "breadcrumbFS": 12,
+            "breadcrumbFill": "#8B8A8E",
+            "toolRight": {
+              "gap": 8
+            },
+            "chatIconFS": 13,
+            "chatIconFill": "#F0EEE8",
+            "modelSwitchFS": 11,
+            "modelSwitchFill": "#8B8A8E",
+            "winCtrlFS": 10,
+            "winCtrlFill": "#5C5B60"
+          },
+          "leftNav": {
+            "w": 200,
+            "fill": "#161618",
+            "strokeRight": {
+              "color": "#FFFFFF14",
+              "width": 1
+            },
+            "flowLabel": {
+              "padding": [
+                8,
+                16
+              ]
+            },
+            "stageItem": {
+              "padding": [
+                4,
+                16
+              ]
+            },
+            "activeStageStroke": {
+              "color": "#3D4852",
+              "width": 2,
+              "side": "left"
+            },
+            "divider": {
+              "h": 2,
+              "fill": "#3D4852"
+            }
+          },
+          "centerEditor": {
+            "fill": "#1A1A1D",
+            "tabs": {
+              "h": 32,
+              "fill": "#161618",
+              "padding": [
+                0,
+                8
+              ],
+              "strokeBottom": {
+                "color": "#FFFFFF14",
+                "width": 1
+              }
+            },
+            "editorContent": {
+              "padding": 16
+            }
+          },
+          "fabBtn": {
+            "cornerRadius": 22,
+            "fill": "#3D4852",
+            "h": 44,
+            "w": 44,
+            "x": 840,
+            "y": 640,
+            "stroke": "#FFFFFF22",
+            "strokeW": 1,
+            "justifyContent": "center",
+            "iconFS": 18,
+            "iconFill": "#F0EEE8"
+          }
+        }
+      },
+      "AIbP1": {
+        "name": "Toast错误",
+        "width": 360,
+        "height": 44,
+        "cornerRadius": 8,
+        "pad": [
+          0,
+          16
+        ],
+        "bgFill": "#3D2020",
+        "strokeColor": "#E57373",
+        "childComponents": {
+          "messageFS": 12,
+          "messageFill": "#EF9A9A",
+          "messageFW": "normal",
+          "closeFS": 14,
+          "closeFill": "#EF9A9A",
+          "justifyContent": "space_between",
+          "alignItems": "center"
+        }
+      },
+      "R51Ov": {
+        "name": "阶段流程卡片区",
+        "width": 240,
+        "gap": 2,
+        "padding": [
+          16,
+          16,
+          8,
+          16
+        ],
+        "cardH": 32,
+        "cardPad": [
+          4,
+          16
+        ],
+        "cardGap": 2,
+        "cardRadius": 4,
+        "childComponents": {
+          "sectionLabel": {
+            "fs": 11,
+            "fw": 600,
+            "fill": "#5C5B60"
+          },
+          "stageCard": {
+            "padding": [
+              4,
+              16
+            ],
+            "gap": 2,
+            "cornerRadius": 4,
+            "justifyContent": "space_between",
+            "nameFS": 13,
+            "nameFill_inactive": "#8B8A8E",
+            "nameFill_active": "#F0EEE8",
+            "nameFW_active": 600,
+            "statusFS": 11,
+            "statusFill": "#5C5B60",
+            "activeFill": "#252528",
+            "activeStroke": {
+              "color": "#3D4852",
+              "width": 2,
+              "side": "left"
+            },
+            "inactiveFill": "#00000000"
+          },
+          "expandMoreFS": 11,
+          "expandMoreFill": "#6B7A8A"
+        }
+      },
+      "sNQx7": {
+        "name": "文件树组件",
+        "width": 240,
+        "fileH": 28,
+        "filePad": [
+          4,
+          8,
+          4,
+          28
+        ],
+        "folderPad": [
+          4,
+          8
+        ],
+        "gap": 6,
+        "dividerH": 3,
+        "childComponents": {
+          "sectionLabel": {
+            "fs": 11,
+            "fw": 600,
+            "fill": "#5C5B60"
+          },
+          "activeFile": {
+            "fs": 11,
+            "fw": 600,
+            "fill": "#F0EEE8"
+          },
+          "inactiveFile": {
+            "fs": 11,
+            "fw": "normal",
+            "fill": "#8B8A8E"
+          },
+          "folderLabel": {
+            "fs": 11,
+            "fw": "normal",
+            "fill": "#8B8A8E"
+          },
+          "divider": {
+            "h": 3,
+            "fill": "#3D4852"
+          },
+          "scrollbar": {
+            "cornerRadius": 3,
+            "trackFill": "#FFFFFF14",
+            "thumbFill": "#5C5B60",
+            "w": 6
+          }
+        }
+      },
+      "sjvD0": {
+        "name": "编辑器标签栏",
+        "width": 680,
+        "tabH": 36,
+        "tabPad": [
+          8,
+          14
+        ],
+        "tabGap": 8,
+        "toolbarH": 40,
+        "toolbarPad": [
+          4,
+          16
+        ],
+        "childComponents": {
+          "tab": {
+            "h": 36,
+            "padding": [
+              8,
+              14
+            ],
+            "gap": 8,
+            "activeFill": "#1A1A1D",
+            "inactiveFill": "#00000000",
+            "nameFS": 12,
+            "nameFill_active": "#F0EEE8",
+            "nameFill_inactive": "#5C5B60",
+            "closeFS": 14,
+            "closeFill": "#5C5B60",
+            "returnLinkFS": 10,
+            "returnLinkFill": "#6B7A8A",
+            "strokeRight": {
+              "color": "#FFFFFF14",
+              "width": 1
+            }
+          },
+          "dropdownBtn": {
+            "fill": "#161618",
+            "h": 36,
+            "w": 16,
+            "justifyContent": "center",
+            "iconFS": 7,
+            "iconFill": "#5C5B60"
+          },
+          "scrollbar": {
+            "cornerRadius": 2,
+            "trackFill": "#FFFFFF14",
+            "h": 3
+          }
+        }
+      },
+      "DIs7H": {
+        "name": "AI对话区完整态",
+        "width": 360,
+        "height": 500,
+        "headerH": 40,
+        "headerPad": [
+          0,
+          16
+        ],
+        "bodyPad": 16,
+        "bodyGap": 16,
+        "inputBarH": 48,
+        "inputPad": [
+          8,
+          16
+        ],
+        "inputH": 32,
+        "sendBtnW": 32,
+        "childComponents": {
+          "chatHeader": {
+            "padding": [
+              8,
+              16
+            ],
+            "justifyContent": "space_between",
+            "strokeBottom": {
+              "color": "#FFFFFF14",
+              "width": 1
+            },
+            "titleFS": 12,
+            "titleFW": 600,
+            "titleFill": "#8B8A8E",
+            "rightGroup": {
+              "gap": 16
+            },
+            "btnPadding": [
+              2,
+              8
+            ],
+            "btnCornerRadius": 4,
+            "btnFill": "#00000000",
+            "btnStroke": "#FFFFFF14",
+            "btnStrokeW": 1,
+            "btnFS": 10,
+            "btnFillText": "#5C5B60",
+            "searchIconFS": 11,
+            "searchIconFill": "#5C5B60",
+            "exportFS": 10,
+            "exportFill": "#5C5B60",
+            "tokenCountFS": 10,
+            "tokenCountFill": "#5C5B60"
+          },
+          "chatBody": {
+            "gap": 16,
+            "padding": 16
+          },
+          "stageSeparator": {
+            "fs": 10,
+            "fill": "#5C5B60"
+          },
+          "aiMsg": {
+            "strokeLeft": {
+              "color": "#3D4852",
+              "width": 2
+            },
+            "padding": [
+              0,
+              0,
+              0,
+              8
+            ],
+            "gap": 8,
+            "textFS": 12,
+            "textFill": "#8B8A8E",
+            "lineHeight": 1.7,
+            "actionBtnGroup": {
+              "gap": 4
+            },
+            "actionBtn": {
+              "cornerRadius": 4,
+              "fill": "#00000000",
+              "padding": [
+                3,
+                8
+              ],
+              "stroke": "#FFFFFF14",
+              "strokeW": 1
+            }
+          },
+          "userMsg": {
+            "cornerRadius": 4,
+            "fill": "#252528",
+            "padding": 8,
+            "textFS": 12,
+            "textFill": "#F0EEE8",
+            "lineHeight": 1.6
+          },
+          "thinSeparator": {
+            "fs": 9,
+            "fill": "#FFFFFF14"
+          },
+          "statusLabel": {
+            "gap": 8,
+            "padding": [
+              4,
+              0
+            ],
+            "dotFill": "#6B7A8A",
+            "dotFS": 10,
+            "textFS": 11,
+            "textFill": "#5C5B60"
+          },
+          "inputBar": {
+            "gap": 8,
+            "padding": 16,
+            "strokeTop": {
+              "color": "#FFFFFF14",
+              "width": 1
+            },
+            "input": {
+              "cornerRadius": 4,
+              "fill": "#252528",
+              "padding": [
+                8,
+                16
+              ],
+              "stroke": "#FFFFFF14",
+              "strokeW": 1,
+              "placeholderFS": 12,
+              "placeholderFill": "#5C5B60"
+            },
+            "sendBtn": {
+              "cornerRadius": 4,
+              "fill": "#00000000",
+              "padding": [
+                8,
+                16
+              ],
+              "stroke": "#FFFFFF14",
+              "strokeW": 1,
+              "labelFS": 12,
+              "labelFill": "#8B8A8E"
+            }
+          },
+          "jumpToBottom": {
+            "cornerRadius": 16,
+            "fill": "#252528",
+            "w": 32,
+            "h": 32,
+            "stroke": "#FFFFFF14",
+            "strokeW": 1,
+            "justifyContent": "center"
+          }
+        }
+      },
+      "JauFw": {
+        "name": "编辑器只读模式",
+        "width": 640,
+        "height": 44,
+        "pad": [
+          0,
+          16
+        ],
+        "gap": 8,
+        "btnW": 120,
+        "btnH": 28,
+        "btnPad": [
+          4,
+          12
+        ],
+        "bgFill": "#2A2520",
+        "childComponents": {
+          "toolbar": {
+            "fill": "#2A2520",
+            "padding": [
+              4,
+              16
+            ],
+            "strokeBottom": {
+              "color": "#FFFFFF14",
+              "width": 1
+            },
+            "justifyContent": "end",
+            "gap": 8
+          },
+          "btn": {
+            "cornerRadius": 4,
+            "fill": "#00000000",
+            "padding": [
+              4,
+              12
+            ],
+            "stroke": "#FFFFFF14",
+            "strokeW": 1,
+            "h": 28,
+            "w": 120
+          }
+        }
+      },
+      "A77xN": {
+        "name": "章节目录空状态",
+        "width": 680,
+        "height": 400,
+        "headerH": 48,
+        "iconSize": 48,
+        "gap": 16,
+        "btnH": 36,
+        "btnW": 180,
+        "childComponents": {
+          "header": {
+            "h": 48,
+            "padding": [
+              16,
+              32
+            ],
+            "strokeBottom": {
+              "color": "#FFFFFF14",
+              "width": 1
+            },
+            "justifyContent": "space_between"
+          },
+          "emptyContent": {
+            "justifyContent": "center",
+            "alignItems": "center",
+            "layout": "vertical",
+            "gap": 16
+          },
+          "iconFS": 48,
+          "iconFill": "#F0EEE8",
+          "mainTextFS": 18,
+          "mainTextFW": 600,
+          "subTextFS": 13,
+          "subTextFill": "#5C5B60",
+          "actionBtn": {
+            "h": 36,
+            "w": 180,
+            "cornerRadius": 4
+          }
+        }
+      },
+      "xAiWM": {
+        "name": "Skill编辑器缺标签页",
+        "width": 640,
+        "height": 420,
+        "tabPad": 24,
+        "tabGap": 12,
+        "inputH": 40,
+        "inputPad": [
+          0,
+          16
+        ],
+        "childComponents": {
+          "tabArea": {
+            "padding": 24,
+            "gap": 12
+          },
+          "input": {
+            "h": 40,
+            "padding": [
+              0,
+              16
+            ],
+            "cornerRadius": 4,
+            "fill": "#252528",
+            "stroke": "#FFFFFF14",
+            "strokeW": 1
+          }
+        }
+      },
+      "WQCDd": {
+        "name": "查找替换面板",
+        "width": 500,
+        "height": 44,
+        "cornerRadius": 6,
+        "pad": [
+          0,
+          12
+        ],
+        "gap": 8,
+        "inputH": 28,
+        "findInputW": 180,
+        "replaceInputW": 160,
+        "childComponents": {
+          "panel": {
+            "cornerRadius": 6,
+            "padding": [
+              0,
+              12
+            ],
+            "gap": 8,
+            "alignItems": "center"
+          },
+          "findInput": {
+            "h": 28,
+            "w": 180,
+            "cornerRadius": 3,
+            "fill": "#252528",
+            "stroke": "#FFFFFF14",
+            "strokeW": 1
+          },
+          "replaceInput": {
+            "h": 28,
+            "w": 160,
+            "cornerRadius": 3,
+            "fill": "#252528",
+            "stroke": "#FFFFFF14",
+            "strokeW": 1
+          }
+        }
+      },
+      "eVRNh": {
+        "name": "章节完成引导",
+        "width": 360,
+        "cornerRadius": 8,
+        "padding": 16,
+        "gap": 8,
+        "btnW": 150,
+        "btnH": 28,
+        "btnPad": [
+          6,
+          14
+        ],
+        "childComponents": {
+          "panel": {
+            "cornerRadius": 8,
+            "padding": 16,
+            "gap": 8,
+            "layout": "vertical"
+          },
+          "actionBtn": {
+            "cornerRadius": 4,
+            "w": 150,
+            "h": 28,
+            "padding": [
+              6,
+              14
+            ],
+            "fill": "#252528",
+            "stroke": "#FFFFFF22",
+            "strokeW": 1
+          }
+        }
+      },
+      "jpMj1": {
+        "name": "API检查连接三态",
+        "gap": 12,
+        "btnPad": [
+          6,
+          14
+        ],
+        "btnRadius": 4,
+        "childComponents": {
+          "states": {
+            "gap": 12
+          },
+          "btn": {
+            "cornerRadius": 4,
+            "padding": [
+              6,
+              14
+            ]
+          },
+          "statusColors": {
+            "checking": "#6B7A8A",
+            "success": "#4CAF50",
+            "fail": "#E57373"
+          }
+        }
+      },
+      "KhIbg": {
+        "name": "Skill编辑器-模板标签页",
+        "width": 1200,
+        "height": 800,
+        "headerPad": [
+          24,
+          32
+        ],
+        "tabNavW": 180,
+        "tabNavPad": 16,
+        "bgFill": "#0F0F11",
+        "childComponents": {
+          "header": {
+            "fill": "#161618",
+            "padding": [
+              24,
+              32
+            ],
+            "strokeBottom": {
+              "color": "#FFFFFF14",
+              "width": 1
+            },
+            "justifyContent": "space_between",
+            "titleFS": 15,
+            "titleFW": 600,
+            "titleFill": "#F0EEE8",
+            "cancelBtn": {
+              "cornerRadius": 4,
+              "fill": "#00000000",
+              "padding": [
+                5,
+                14
+              ],
+              "stroke": "#FFFFFF14",
+              "strokeW": 1
+            },
+            "saveBtn": {
+              "cornerRadius": 4,
+              "fill": "#252528",
+              "padding": [
+                5,
+                14
+              ],
+              "stroke": "#FFFFFF22",
+              "strokeW": 1
+            }
+          },
+          "tabNav": {
+            "w": 180,
+            "fill": "#161618",
+            "padding": 16,
+            "gap": 2,
+            "strokeRight": {
+              "color": "#FFFFFF14",
+              "width": 1
+            },
+            "tabItem": {
+              "cornerRadius": 4,
+              "padding": [
+                8,
+                16
+              ],
+              "width": "fill_container"
+            },
+            "tabActiveFill": "#252528",
+            "tabInactiveFill": "#00000000"
+          },
+          "templateList": {
+            "w": 220,
+            "gap": 2,
+            "padding": 16,
+            "strokeRight": {
+              "color": "#FFFFFF14",
+              "width": 1
+            }
+          },
+          "templatePreview": {
+            "gap": 8,
+            "padding": 24
+          },
+          "scrollbar": {
+            "cornerRadius": 3,
+            "trackFill": "#FFFFFF14",
+            "thumbFill": "#5C5B60",
+            "w": 6
+          }
+        }
+      },
+      "oroCB": {
+        "name": "Skill编辑器-示例标签页",
+        "width": 1200,
+        "height": 800,
+        "headerPad": [
+          24,
+          32
+        ],
+        "tabNavW": 180,
+        "tabNavPad": 16,
+        "bgFill": "#0F0F11",
+        "childComponents": {
+          "header": {
+            "fill": "#161618",
+            "padding": [
+              24,
+              32
+            ],
+            "strokeBottom": {
+              "color": "#FFFFFF14",
+              "width": 1
+            },
+            "justifyContent": "space_between",
+            "titleFS": 15,
+            "titleFW": 600,
+            "titleFill": "#F0EEE8",
+            "cancelBtn": {
+              "cornerRadius": 4,
+              "fill": "#00000000",
+              "padding": [
+                5,
+                14
+              ],
+              "stroke": "#FFFFFF14",
+              "strokeW": 1
+            },
+            "saveBtn": {
+              "cornerRadius": 4,
+              "fill": "#252528",
+              "padding": [
+                5,
+                14
+              ],
+              "stroke": "#FFFFFF22",
+              "strokeW": 1
+            }
+          },
+          "tabNav": {
+            "w": 180,
+            "fill": "#161618",
+            "padding": 16,
+            "gap": 2,
+            "strokeRight": {
+              "color": "#FFFFFF14",
+              "width": 1
+            },
+            "tabItem": {
+              "cornerRadius": 4,
+              "padding": [
+                8,
+                16
+              ],
+              "width": "fill_container"
+            },
+            "tabActiveFill": "#252528",
+            "tabInactiveFill": "#00000000"
+          },
+          "exampleList": {
+            "w": 220,
+            "gap": 2,
+            "padding": 16,
+            "strokeRight": {
+              "color": "#FFFFFF14",
+              "width": 1
+            }
+          },
+          "examplePreview": {
+            "gap": 8,
+            "padding": 24
+          },
+          "scrollbar": {
+            "cornerRadius": 3,
+            "trackFill": "#FFFFFF14",
+            "thumbFill": "#5C5B60",
+            "w": 6
+          }
+        }
+      },
+      "EsbvH": {
+        "name": "控件组件库",
+        "width": 800,
+        "height": 200,
+        "fill": "#0F0F11",
+        "padding": 32,
+        "gap": 32,
+        "childComponents": {
+          "dropdown": {
+            "gap": 8,
+            "layout": "vertical",
+            "labelFS": 11,
+            "labelFill": "#5C5B60",
+            "closedState": {
+              "cornerRadius": 4,
+              "fill": "#252528",
+              "padding": [
+                8,
+                16
+              ],
+              "stroke": "#FFFFFF14",
+              "strokeW": 1,
+              "justifyContent": "space_between",
+              "w": 200,
+              "selectedFS": 13,
+              "selectedFill": "#F0EEE8",
+              "chevronFS": 8,
+              "chevronFill": "#5C5B60"
+            },
+            "openState": {
+              "cornerRadius": 4,
+              "fill": "#161618",
+              "stroke": "#FFFFFF22",
+              "strokeW": 1,
+              "w": 200,
+              "clip": true,
+              "layout": "vertical"
+            },
+            "option": {
+              "padding": [
+                8,
+                16
+              ],
+              "labelFS": 13
+            },
+            "optionActiveFill": "#252528",
+            "optionInactiveFill": "#00000000"
+          },
+          "slider": {
+            "gap": 8,
+            "layout": "vertical",
+            "labelFS": 11,
+            "labelFill": "#5C5B60",
+            "control": {
+              "gap": 16,
+              "alignItems": "center",
+              "w": 250
+            },
+            "minMaxFS": 11,
+            "minMaxFill": "#5C5B60",
+            "track": {
+              "cornerRadius": 2,
+              "fill": "#FFFFFF14",
+              "h": 4,
+              "w": 160
+            }
+          },
+          "toggle": {
+            "gap": 8,
+            "layout": "vertical",
+            "labelFS": 11,
+            "labelFill": "#5C5B60",
+            "onState": {
+              "gap": 8,
+              "alignItems": "center"
+            },
+            "trackOn": {
+              "cornerRadius": 10,
+              "fill": "#3D4852",
+              "h": 20,
+              "w": 36,
+              "justifyContent": "end"
+            },
+            "offState": {
+              "gap": 8,
+              "layout": "vertical"
+            },
+            "stateLabelFS": 12,
+            "stateLabelFill": "#8B8A8E"
+          }
+        }
+      }
+    }
+  }
+}
