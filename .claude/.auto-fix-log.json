@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-18T17:16:08.073Z",
+  "timestamp": "2026-06-19T02:59:44.003Z",
   "dryRun": false,
   "rounds": [
     {
@@ -7,18 +7,15 @@
       "results": {
         "applied": [
           {
-            "module": "_meta",
-            "check": "dashboard-refresh",
-            "detail": "",
-            "status": "🟢",
-            "rule": "dashboard-refresh",
-            "category": "meta",
+            "module": "traceability",
+            "check": "可追溯性-未覆盖",
+            "detail": "19 条可实现条目无代码/设计/测试覆盖 (阈值: 🔴>25 🟡>15)",
+            "status": "🟡",
+            "rule": "e2e-missing",
+            "category": "test",
             "needsAgent": false,
-            "message": "刷新管线仪表板"
-          }
-        ],
-        "skipped": [],
-        "failed": [
+            "message": "运行 spec-to-e2e --generate 生成测试骨架"
+          },
           {
             "module": "traceability",
             "check": "可追溯性-缺代码",
@@ -27,7 +24,7 @@
             "rule": "traceability-update",
             "category": "trace",
             "needsAgent": false,
-            "error": "Command failed: CLAUDE_PROJECT_DIR=\"F:\\小说桌面端工具\" node \"F:\\小说桌面端工具\\.claude\\audit-runner\\modules\\traceability.js\"\n'CLAUDE_PROJECT_DIR' �����ڲ����ⲿ���Ҳ���ǿ����еĳ���\r\n���������ļ���\r\n"
+            "message": "重新生成 traceability.json"
           },
           {
             "module": "traceability",
@@ -37,7 +34,17 @@
             "rule": "traceability-update",
             "category": "trace",
             "needsAgent": false,
-            "error": "Command failed: CLAUDE_PROJECT_DIR=\"F:\\小说桌面端工具\" node \"F:\\小说桌面端工具\\.claude\\audit-runner\\modules\\traceability.js\"\n'CLAUDE_PROJECT_DIR' �����ڲ����ⲿ���Ҳ���ǿ����еĳ���\r\n���������ļ���\r\n"
+            "message": "重新生成 traceability.json"
+          },
+          {
+            "module": "traceability",
+            "check": "可追溯性-概要",
+            "detail": "187 条 Spec → 176 条可实现 → 165/187 (88%) 有代码 (19 条未覆盖, 阈值 🔴>25)",
+            "status": "🟡",
+            "rule": "e2e-missing",
+            "category": "test",
+            "needsAgent": false,
+            "message": "运行 spec-to-e2e --generate 生成测试骨架"
           },
           {
             "module": "spec_to_e2e",
@@ -47,67 +54,8 @@
             "rule": "e2e-missing",
             "category": "test",
             "needsAgent": false,
-            "error": "Command failed: CLAUDE_PROJECT_DIR=\"F:\\小说桌面端工具\" node \"F:\\小说桌面端工具\\.claude\\audit-runner\\modules\\spec-to-e2e.js\" --generate\n'CLAUDE_PROJECT_DIR' �����ڲ����ⲿ���Ҳ���ǿ����еĳ���\r\n���������ļ���\r\n"
-          }
-        ],
-        "agentNeeded": []
-      }
-    },
-    {
-      "round": 2,
-      "results": {
-        "applied": [
-          {
-            "module": "_meta",
-            "check": "dashboard-refresh",
-            "detail": "",
-            "status": "🟢",
-            "rule": "dashboard-refresh",
-            "category": "meta",
-            "needsAgent": false,
-            "message": "刷新管线仪表板"
-          }
-        ],
-        "skipped": [],
-        "failed": [
-          {
-            "module": "traceability",
-            "check": "可追溯性-缺代码",
-            "detail": "21 条可实现条目无对应代码文件",
-            "status": "🟡",
-            "rule": "traceability-update",
-            "category": "trace",
-            "needsAgent": false,
-            "error": "Command failed: CLAUDE_PROJECT_DIR=\"F:\\小说桌面端工具\" node \"F:\\小说桌面端工具\\.claude\\audit-runner\\modules\\traceability.js\"\n'CLAUDE_PROJECT_DIR' �����ڲ����ⲿ���Ҳ���ǿ����еĳ���\r\n���������ļ���\r\n"
+            "message": "运行 spec-to-e2e --generate 生成测试骨架"
           },
-          {
-            "module": "traceability",
-            "check": "可追溯性-缺测试",
-            "detail": "67 条已实现条目缺 E2E 测试",
-            "status": "🟡",
-            "rule": "traceability-update",
-            "category": "trace",
-            "needsAgent": false,
-            "error": "Command failed: CLAUDE_PROJECT_DIR=\"F:\\小说桌面端工具\" node \"F:\\小说桌面端工具\\.claude\\audit-runner\\modules\\traceability.js\"\n'CLAUDE_PROJECT_DIR' �����ڲ����ⲿ���Ҳ���ǿ����еĳ���\r\n���������ļ���\r\n"
-          },
-          {
-            "module": "spec_to_e2e",
-            "check": "📋 待覆盖: `chapter_index.md`",
-            "detail": "→ 打开 Markdown 编辑器模式（可编辑原始内容） | 运行 spec-to-e2e --generate 自动生成",
-            "status": "⏳",
-            "rule": "e2e-missing",
-            "category": "test",
-            "needsAgent": false,
-            "error": "Command failed: CLAUDE_PROJECT_DIR=\"F:\\小说桌面端工具\" node \"F:\\小说桌面端工具\\.claude\\audit-runner\\modules\\spec-to-e2e.js\" --generate\n'CLAUDE_PROJECT_DIR' �����ڲ����ⲿ���Ҳ���ǿ����еĳ���\r\n���������ļ���\r\n"
-          }
-        ],
-        "agentNeeded": []
-      }
-    },
-    {
-      "round": 3,
-      "results": {
-        "applied": [
           {
             "module": "_meta",
             "check": "dashboard-refresh",
@@ -120,46 +68,15 @@
           }
         ],
         "skipped": [],
-        "failed": [
-          {
-            "module": "traceability",
-            "check": "可追溯性-缺代码",
-            "detail": "21 条可实现条目无对应代码文件",
-            "status": "🟡",
-            "rule": "traceability-update",
-            "category": "trace",
-            "needsAgent": false,
-            "error": "Command failed: CLAUDE_PROJECT_DIR=\"F:\\小说桌面端工具\" node \"F:\\小说桌面端工具\\.claude\\audit-runner\\modules\\traceability.js\"\n'CLAUDE_PROJECT_DIR' �����ڲ����ⲿ���Ҳ���ǿ����еĳ���\r\n���������ļ���\r\n"
-          },
-          {
-            "module": "traceability",
-            "check": "可追溯性-缺测试",
-            "detail": "67 条已实现条目缺 E2E 测试",
-            "status": "🟡",
-            "rule": "traceability-update",
-            "category": "trace",
-            "needsAgent": false,
-            "error": "Command failed: CLAUDE_PROJECT_DIR=\"F:\\小说桌面端工具\" node \"F:\\小说桌面端工具\\.claude\\audit-runner\\modules\\traceability.js\"\n'CLAUDE_PROJECT_DIR' �����ڲ����ⲿ���Ҳ���ǿ����еĳ���\r\n���������ļ���\r\n"
-          },
-          {
-            "module": "spec_to_e2e",
-            "check": "📋 待覆盖: `chapter_index.md`",
-            "detail": "→ 打开 Markdown 编辑器模式（可编辑原始内容） | 运行 spec-to-e2e --generate 自动生成",
-            "status": "⏳",
-            "rule": "e2e-missing",
-            "category": "test",
-            "needsAgent": false,
-            "error": "Command failed: CLAUDE_PROJECT_DIR=\"F:\\小说桌面端工具\" node \"F:\\小说桌面端工具\\.claude\\audit-runner\\modules\\spec-to-e2e.js\" --generate\n'CLAUDE_PROJECT_DIR' �����ڲ����ⲿ���Ҳ���ǿ����еĳ���\r\n���������ļ���\r\n"
-          }
-        ],
+        "failed": [],
         "agentNeeded": []
       }
     }
   ],
   "finalReport": {
-    "red": 4,
+    "red": 2,
     "orange": 2,
-    "yellow": 63,
-    "green": 212
+    "yellow": 65,
+    "green": 211
   }
 }

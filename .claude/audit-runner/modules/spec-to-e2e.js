@@ -374,14 +374,17 @@ function generateTestFile(scenarios, outputPath) {
   code += ` */\n`;
   // 平台适配: desktop→Electron / web→chromium / cli→exec
   const { getPlatformAdapter } = require('./config-loader.js');
-  const adapter = getPlatformAdapter(outputPath ? path.dirname(path.dirname(outputPath)) : '.');
+  // outputPath = <projectRoot>/<codeDir>/e2e/spec-generated.spec.ts
+  // projectRoot = outputPath 往上两级
+  const projectRoot = outputPath ? path.dirname(path.dirname(path.dirname(outputPath))) : '.';
+  const adapter = getPlatformAdapter(projectRoot);
   const template = adapter.getE2ETemplate();
 
+  const hasPathImport = template.imports.includes('import path');
   code += `${template.imports}\n`;
-  if (adapter.isDesktop) code += `import path from 'path';\n`;
+  if (adapter.isDesktop && !hasPathImport) code += `import path from 'path';\n`;
   code += `\n`;
-  if (adapter.isDesktop) code += `${template.launchCode}\n\n`;
-  else if (adapter.isWeb) code += `${template.launchCode}\n\n`;
+  if (adapter.isDesktop || adapter.isWeb) code += `${template.launchCode}\n\n`;
 
   // 测试数据工厂（条件分支场景需要预填充数据）
   code += `\n// 测试数据工厂: 预填充 Skill/项目/章节，让条件分支场景可触发\n`;

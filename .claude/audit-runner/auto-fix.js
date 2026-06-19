@@ -42,7 +42,7 @@ const FIX_RULES = [
     severity: ['🟡', '🟠'],
     match: (item) => /硬编码|Token|token|hex|#[0-9A-Fa-f]{6}/.test(item.check + (item.detail || '')),
     fix: () => {
-      execSync(`node "${path.join(CLAUDE_DIR, 'audit-runner', 'modules', 'token-gen.js')}" --fix`, { cwd: PROJECT_ROOT, stdio: 'pipe', timeout: 30000 });
+      execSync(`node "${path.join(CLAUDE_DIR, 'audit-runner', 'modules', 'token-gen.js')}" --fix`, { cwd: PROJECT_ROOT, stdio: 'pipe', timeout: 30000, env: { ...process.env, CLAUDE_PROJECT_DIR: PROJECT_ROOT } });
       return '运行 token-gen --fix 替换硬编码颜色';
     },
   },
@@ -53,7 +53,7 @@ const FIX_RULES = [
     severity: ['🟡', '⏳'],
     match: (item) => /待覆盖|未覆盖|generate|生成测试/.test(item.check + (item.detail || '')),
     fix: () => {
-      execSync(`CLAUDE_PROJECT_DIR="${PROJECT_ROOT}" node "${path.join(CLAUDE_DIR, 'audit-runner', 'modules', 'spec-to-e2e.js')}" --generate`, { cwd: PROJECT_ROOT, stdio: 'pipe', timeout: 30000 });
+      execSync(`node "${path.join(CLAUDE_DIR, 'audit-runner', 'modules', 'spec-to-e2e.js')}" --generate`, { cwd: PROJECT_ROOT, stdio: 'pipe', timeout: 30000, env: { ...process.env, CLAUDE_PROJECT_DIR: PROJECT_ROOT } });
       return '运行 spec-to-e2e --generate 生成测试骨架';
     },
   },
@@ -82,7 +82,7 @@ const FIX_RULES = [
     severity: ['🟡', '⏳'],
     match: (item) => /可追溯|traceability|无代码|无测试|缺代码|缺测试/.test(item.check + (item.detail || '')),
     fix: () => {
-      execSync(`CLAUDE_PROJECT_DIR="${PROJECT_ROOT}" node "${path.join(CLAUDE_DIR, 'audit-runner', 'modules', 'traceability.js')}"`, { cwd: PROJECT_ROOT, stdio: 'pipe', timeout: 30000 });
+      execSync(`node "${path.join(CLAUDE_DIR, 'audit-runner', 'modules', 'traceability.js')}"`, { cwd: PROJECT_ROOT, stdio: 'pipe', timeout: 30000, env: { ...process.env, CLAUDE_PROJECT_DIR: PROJECT_ROOT } });
       return '重新生成 traceability.json';
     },
   },
@@ -112,7 +112,7 @@ const FIX_RULES = [
     severity: ['🟢', '🟡', '🟠', '🔴'],
     match: (item) => false, // 不自动匹配，每轮结束时触发
     fix: () => {
-      execSync(`node "${path.join(CLAUDE_DIR, 'audit-runner', 'dashboard.js')}"`, { cwd: PROJECT_ROOT, stdio: 'pipe', timeout: 10000 });
+      execSync(`node "${path.join(CLAUDE_DIR, 'audit-runner', 'dashboard.js')}"`, { cwd: PROJECT_ROOT, stdio: 'pipe', timeout: 10000, env: { ...process.env, CLAUDE_PROJECT_DIR: PROJECT_ROOT } });
       return '刷新管线仪表板';
     },
     always: true,
@@ -123,7 +123,7 @@ const FIX_RULES = [
 
 function runAudit() {
   try {
-    execSync(`node "${PIPELINE}" --json`, { cwd: PROJECT_ROOT, stdio: 'pipe', timeout: 120000 });
+    execSync(`node "${PIPELINE}" --json`, { cwd: PROJECT_ROOT, stdio: 'pipe', timeout: 120000, env: { ...process.env, CLAUDE_PROJECT_DIR: PROJECT_ROOT } });
   } catch (_) { /* 管线有 🔴 时退出 1，正常 */ }
   try { return JSON.parse(fs.readFileSync(REPORT_FILE, 'utf-8')); }
   catch (_) { return null; }

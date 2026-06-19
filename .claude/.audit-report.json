@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-19T02:33:28.381Z",
+  "timestamp": "2026-06-19T03:20:46.959Z",
   "projectRoot": "F:/小说桌面端工具",
   "codeDir": "do-zhou",
   "stage": "developing",
@@ -928,7 +928,6 @@
             "e2e/electron-smoke.spec.ts",
             "e2e/electron-smoke.spec.ts",
             "e2e/phase-10-13-interactions.spec.ts",
-            "e2e/spec-generated.spec.ts",
             "e2e/user-stories.spec.ts",
             "e2e/user-stories.spec.ts",
             "e2e/user-stories.spec.ts",
@@ -1243,7 +1242,6 @@
             "e2e/phase-10-13-interactions.spec.ts",
             "e2e/phase-10-13-interactions.spec.ts",
             "e2e/phase-10-13-interactions.spec.ts",
-            "e2e/spec-generated.spec.ts",
             "e2e/spec-generated.spec.ts",
             "e2e/spec-generated.spec.ts",
             "e2e/spec-generated.spec.ts",
@@ -2138,7 +2136,6 @@
       "codeFiles": [
         "e2e\\electron-smoke.spec.ts",
         "e2e\\phase-10-13-interactions.spec.ts",
-        "e2e\\spec-generated.spec.ts",
         "e2e\\user-stories.spec.ts",
         "src\\main\\engine\\types.ts",
         "src\\renderer\\components\\chat\\chat-input-bar.tsx",
@@ -3410,7 +3407,7 @@
     {
       "check": "a11y: 无障碍属性",
       "status": "🟢",
-      "detail": "30 处 (aria:14 role:2 tabIndex:0 alt:0 label:14) — 10/87 文件 (11%)"
+      "detail": "28 处 (aria:13 role:2 tabIndex:0 alt:0 label:13) — 9/87 文件 (10%)"
     },
     {
       "check": "a11y: 键盘导航",
@@ -3430,7 +3427,7 @@
     {
       "check": "a11y: ARIA 覆盖率",
       "status": "🟠",
-      "detail": "11% 文件使用了 ARIA/role/tabIndex/alt/label 属性（目标 ≥ 30%）"
+      "detail": "10% 文件使用了 ARIA/role/tabIndex/alt/label 属性（目标 ≥ 30%）"
     },
     {
       "check": "a11y: Phase gate 判定",
@@ -3455,9 +3452,9 @@
       "detail": "6 个测试文件, 65 条 test()"
     },
     {
-      "check": "Spec→E2E: 加权覆盖率 98% [阈值 80%] (原始 98%)",
+      "check": "Spec→E2E: 加权覆盖率 97% [阈值 80%] (原始 98%)",
       "status": "🟢",
-      "detail": "57/58 场景 | 🟢🟢57 🟢0 🟡0"
+      "detail": "57/58 场景 | 🟢🟢55 🟢2 🟡0"
     },
     {
       "check": "📋 待覆盖: `chapter_index.md`",
