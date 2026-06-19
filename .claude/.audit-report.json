@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-19T18:53:35.871Z",
+  "timestamp": "2026-06-19T19:03:51.688Z",
   "projectRoot": "F:/小说桌面端工具",
   "codeDir": "do-zhou",
   "stage": "developing",
@@ -1201,6 +1201,8 @@
             "src/main/ipc/file-ipc.ts",
             "src/main/services/trash-service.ts",
             "src/main/services/__tests__/file-service.test.ts",
+            "src/main/services/__tests__/trash-service.test.ts",
+            "src/main/services/__tests__/trash-service.test.ts",
             "src/renderer/components/chat/chat-input-bar.tsx",
             "src/renderer/components/chat/chat-input-bar.tsx",
             "src/renderer/components/chat/chat-input-bar.tsx",
@@ -1446,12 +1448,15 @@
             "src/main/services/skill-service.ts",
             "src/main/services/trash-service.ts",
             "src/main/services/trash-service.ts",
+            "src/main/services/__tests__/api-config-service.test.ts",
+            "src/main/services/__tests__/api-config-service.test.ts",
             "src/main/services/__tests__/backup-service.test.ts",
             "src/main/services/__tests__/file-service.test.ts",
             "src/main/services/__tests__/file-service.test.ts",
             "src/main/services/__tests__/project-service.test.ts",
             "src/main/services/__tests__/project-service.test.ts",
             "src/main/services/__tests__/skill-service.test.ts",
+            "src/main/services/__tests__/trash-service.test.ts",
             "src/main/updater.ts",
             "src/renderer/App.tsx",
             "src/renderer/App.tsx",
@@ -1574,6 +1579,7 @@
           "check": "Toast 组件",
           "found": true,
           "files": [
+            "coverage/coverage-final.json",
             "e2e/spec-generated.spec.ts",
             "e2e/spec-generated.spec.ts",
             "e2e/spec-generated.spec.ts",
@@ -2160,6 +2166,7 @@
         "src\\main\\ipc\\file-ipc.ts",
         "src\\main\\services\\trash-service.ts",
         "src\\main\\services\\__tests__\\file-service.test.ts",
+        "src\\main\\services\\__tests__\\trash-service.test.ts",
         "src\\renderer\\components\\chat\\chat-input-bar.tsx",
         "src\\renderer\\components\\editor\\chapter-index-page-wrapper.tsx",
         "src\\renderer\\components\\editor\\chapter-index-view.tsx",
@@ -2210,9 +2217,11 @@
         "src\\main\\services\\project-service.ts",
         "src\\main\\services\\settings-service.ts",
         "src\\main\\services\\skill-service.ts",
-        "src\\main\\services\\__tests__\\backup-service.test.ts",
+        "src\\main\\services\\__tests__\\api-config-service.test.ts",
+        "src\\main\\services\\__tests__\\file-service.test.ts",
         "src\\main\\services\\__tests__\\project-service.test.ts",
         "src\\main\\services\\__tests__\\skill-service.test.ts",
+        "src\\main\\services\\__tests__\\trash-service.test.ts",
         "src\\renderer\\App.tsx",
         "src\\renderer\\components\\api-config\\provider-card.tsx",
         "src\\renderer\\components\\chat\\chat-view.tsx",
@@ -3177,7 +3186,7 @@
     {
       "check": "状态: 错误处理",
       "found": true,
-      "file": "44 文件",
+      "file": "45 文件",
       "status": "✅"
     }
   ],
@@ -3540,7 +3549,7 @@
     {
       "check": "a11y: 无障碍属性",
       "status": "🟢",
-      "detail": "36 处 (aria:17 role:2 tabIndex:0 alt:0 label:17) — 12/98 文件 (12%)"
+      "detail": "36 处 (aria:17 role:2 tabIndex:0 alt:0 label:17) — 12/100 文件 (12%)"
     },
     {
       "check": "a11y: 键盘导航",
@@ -4277,6 +4286,6 @@
     "filePathCount": 68
   },
   "code": {
-    "fileCount": 104
+    "fileCount": 106
   }
 }

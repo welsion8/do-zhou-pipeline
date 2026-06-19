@@ -1,17 +1,12 @@
 {
-  "timestamp": "2026-06-19T18:53:42.574Z",
-  "totalChanged": 43,
-  "criticalChanges": 2,
-  "criticalCount": 2,
+  "timestamp": "2026-06-19T18:59:37.422Z",
+  "totalChanged": 10,
+  "criticalChanges": 1,
+  "criticalCount": 1,
   "highCount": 0,
   "hits": [
     {
-      "file": "do-zhou/src/main/ipc/engine-ipc.ts",
-      "label": "IPC 通道",
-      "risk": "critical"
-    },
-    {
-      "file": "do-zhou/src/main/services/notification-service.ts",
+      "file": "do-zhou/src/main/services/__tests__/api-config-service.test.ts",
       "label": "核心服务",
       "risk": "critical"
     }
