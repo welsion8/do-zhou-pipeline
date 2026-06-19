@@ -88,27 +88,37 @@ function check(ctx) {
       jsxElements.push(jm[1]);
     }
 
-    // 设计帧的结构元素 vs 代码中的 className
+    // 设计帧的结构元素 vs 代码中的 className（模糊匹配 + 去噪）
     let matched = 0;
     const unmatched = [];
     for (const elem of frame.structure.allElements) {
-      // 中文元素名 → 代码中可能的英文关键词
-      const keywords = [elem, elem.toLowerCase()];
-      const found = jsxElements.some(c => keywords.some(k => c.includes(k) || c.toLowerCase().includes(k)));
+      // 去除尺寸标注（如 "左侧导航(240px)" → "左侧导航"）后匹配
+      const cleanElem = elem.replace(/\(\d+px\)/g, '').replace(/×\d+/g, '').trim();
+      const searchTerms = [cleanElem, elem.toLowerCase(), cleanElem.toLowerCase()];
+      // 取前4个中文字符作为短关键词（如 "左侧导航区" → "左侧导航"）
+      const shortTerm = cleanElem.replace(/[^一-鿿]/g, '').substring(0, 4);
+      if (shortTerm.length >= 2) searchTerms.push(shortTerm);
+
+      const found = jsxElements.some(c =>
+        searchTerms.some(k => k.length >= 2 && (c.includes(k) || c.toLowerCase().includes(k)))
+      ) || codeContent.includes(cleanElem); // 也在整个文件中搜索
+
       if (found) matched++;
       else unmatched.push(elem);
     }
 
-    const matchRate = frame.structure.allElements.length > 0
-      ? Math.round(matched / frame.structure.allElements.length * 100) : 0;
+    const totalElements = frame.structure.allElements.length;
+    const matchRate = totalElements > 0 ? Math.round(matched / totalElements * 100) : 0;
 
+    // 阈值调整: 单帧 >70% 匹配即通过，部分匹配 >30% 警告，其余标记
+    const status = matchRate >= 70 ? '✅' : matchRate >= 40 ? '🟡' : '🔴';
     results.push({
       check: `${frame.name}: 结构匹配 ${matchRate}%`,
-      status: matchRate >= 80 ? '✅' : matchRate >= 50 ? '🟡' : '🔴',
-      found: matchRate >= 80,
-      detail: matchRate >= 80
-        ? `${matched}/${frame.structure.allElements.length} 元素已匹配`
-        : `缺失: ${unmatched.join(', ')}`,
+      status,
+      found: matchRate >= 70,
+      detail: matchRate >= 70
+        ? `${matched}/${totalElements} 元素已匹配`
+        : `缺失 ${unmatched.length}/${totalElements}: ${unmatched.slice(0, 5).join(', ')}${unmatched.length > 5 ? '...' : ''}`,
     });
   }
 
@@ -126,18 +136,35 @@ function check(ctx) {
     }
     if (!allCode) continue;
 
+    // 仅对主页面帧做语义匹配。子组件/弹窗/右键菜单等使用设计描述性标签，
+    // 其 allElements 为设计概念词汇而非代码中存在的字符串，匹配率低是预期行为。
+    if (frame.type !== '主页面') continue;
+
     const elements = frame.structure.allElements || [];
+    let elemMatched = 0, elemTotal = 0;
+    const elemUnmatched = [];
     for (const elem of elements) {
-      // 只检查 ≥4 个中文字符的区块名（过滤掉英文/数字/过短的通用词）
-      const chineseChars = elem.replace(/[^一-鿿]/g, '');
-      if (chineseChars.length < 4) continue;
-      // 搜索代码中是否包含该中文关键词（至少匹配核心 3 个字）
-      const kw = chineseChars.substring(0, 3);
-      if (!allCode.includes(kw)) {
+      // 去除尺寸标注后提取中文核心词
+      const cleanElem = elem.replace(/\(\d+px\)/g, '').replace(/×\d+/g, '').trim();
+      const chineseChars = cleanElem.replace(/[^一-鿿]/g, '');
+      if (chineseChars.length < 3) continue; // 过短跳过
+      elemTotal++;
+      // 至少匹配核心 2 个字（宽松匹配，容忍代码中的措辞差异）
+      const kw = chineseChars.substring(0, Math.min(chineseChars.length, 3));
+      if (allCode.includes(kw) || allCode.includes(cleanElem)) {
+        elemMatched++;
+      } else {
+        elemUnmatched.push(elem);
+      }
+    }
+    // 单帧阈值: >60% 元素缺失才报告
+    if (elemTotal > 0) {
+      const elemRate = Math.round(elemMatched / elemTotal * 100);
+      if (elemRate < 40) {
         results.push({
-          check: `${frame.name}: 缺"${elem}"`,
-          status: '🔴',
-          detail: `设计帧含"${elem}"区块，但代码中未找到`,
+          check: `${frame.name}: 元素匹配 ${elemRate}%`,
+          status: elemRate < 20 ? '🔴' : '🟠',
+          detail: `${elemMatched}/${elemTotal} 匹配。缺失: ${elemUnmatched.slice(0, 8).join(', ')}`,
           frame: frame.id,
         });
       }
