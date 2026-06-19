@@ -88,10 +88,15 @@ test.describe('用户故事验证', function() {
   })
 
   test('故事5: 导航后页面有内容', async function() {
-    var homeBtn = page.locator('button[aria-label="主页"]')
-    if (await homeBtn.isVisible().catch(function() { return false })) { await homeBtn.click(); await page.waitForTimeout(3000) }
+    // 清理可能的残留状态：关闭弹窗、按 Escape、等待渲染
+    await page.keyboard.press('Escape').catch(function() {})
+    await page.waitForTimeout(1000)
+    // 多重回退：主页按钮 → data-testid → 直接检查
+    var homeBtn = page.locator('button[aria-label="主页"], [data-testid="btn-home"]')
+    if (await homeBtn.isVisible({ timeout: 5000 }).catch(function() { return false })) {
+      await homeBtn.click(); await page.waitForTimeout(3000)
+    }
     var body = await page.locator('body').innerText().catch(function() { return '' })
-    // 不论在哪个页面，body应有内容
     expect(body.length).toBeGreaterThan(30)
   })
 })
