@@ -293,11 +293,14 @@ function extractKeywords(description) {
     'safeStorage': ['secure-storage'], '加密': ['secure-storage'],
     '拖拽.*反馈': ['skill-home'], '视觉反馈': ['skill-home'],
     '中断.*恢复': ['chat'], '中断AI': ['chat'],
-    // 已实现但 traceability 仍漏检
-    'safeStorage': ['secure-storage'], 'API Key.*存储': ['secure-storage'],
-    '阶段.*卡片.*✅': ['stage-card'], '高亮.*⟳': ['stage-card'],
+    // 已实现但 traceability 仍漏检（最后一批）
+    'safeStorage': ['secure-storage', 'api-config'], 'API Key.*存储': ['secure-storage', 'api-config'],
+    '阶段.*卡片': ['stage-card'], '高亮.*⟳': ['stage-card'],
     '🏠': ['app-layout', 'toolbar'], 'Skill.*主页': ['skill-home'],
     '关闭.*AI.*生成': ['window-controls'],
+    '内置提供商': ['api-config'], '提供商.*入口': ['api-config'],
+    '自动打开': ['stage-navigation', 'editor'], 'AI.*生成.*后.*打开': ['stage-navigation'],
+    '系统通知': ['notification'], '桌面通知': ['notification'],
   };
 
   const keywords = [];

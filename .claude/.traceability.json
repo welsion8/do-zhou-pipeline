@@ -1,13 +1,13 @@
 {
-  "timestamp": "2026-06-19T19:16:03.042Z",
+  "timestamp": "2026-06-19T19:20:25.126Z",
   "summary": {
     "totalSpecItems": 189,
-    "implemented": 171,
-    "withCode": "170/189 (90%)",
+    "implemented": 172,
+    "withCode": "172/189 (91%)",
     "withDesign": "71/189 (38%)",
-    "withTest": "117/189 (62%)",
+    "withTest": "118/189 (62%)",
     "fullCoverage": "47/189",
-    "noCoverage": 10
+    "noCoverage": 8
   },
   "items": [
     {
@@ -2687,16 +2687,21 @@
       "subsection": "核心功能",
       "description": "7 种内置提供商入口 + 自定义：Anthropic Claude（含订阅登录 + API Key 双认证）、Kimi、GLM、MiniMax、DeepSeek、Qwen、OpenRouter、自定义 API",
       "specLine": 199,
-      "codeFiles": [],
+      "codeFiles": [
+        "src/main/services/api-config-service.ts",
+        "src/main/ipc/api-config-ipc.ts",
+        "src/renderer/pages/api-config-page.tsx",
+        "src/renderer/components/api-config/provider-card.tsx"
+      ],
       "designFrames": [],
       "e2eTests": [],
-      "phase": null,
+      "phase": 5,
       "status": "in_progress",
       "coverage": {
-        "hasCode": false,
+        "hasCode": true,
         "hasDesign": false,
         "hasTest": false,
-        "score": 0
+        "score": 1
       }
     },
     {
@@ -6710,16 +6715,29 @@
       "subsection": "入口×行为矩阵",
       "description": "**AI 生成内容后自动打开**",
       "specLine": 637,
-      "codeFiles": [],
+      "codeFiles": [
+        "src/renderer/components/editor/markdown-editor.tsx",
+        "src/renderer/components/editor/markdown-preview.tsx",
+        "src/renderer/components/editor/tab-bar.tsx",
+        "src/renderer/components/editor/editor-toolbar.tsx",
+        "src/renderer/components/editor/editor-context-menu.tsx",
+        "src/renderer/components/editor/editor-workspace.tsx",
+        "src/renderer/hooks/use-stage-navigation.ts",
+        "src/renderer/components/editor/chapter-index-view.tsx",
+        "src/renderer/components/editor/chapter-index-row.tsx",
+        "src/renderer/pages/skill-editor-page.tsx"
+      ],
       "designFrames": [],
-      "e2eTests": [],
-      "phase": null,
-      "status": "unknown",
+      "e2eTests": [
+        "editor-scroll-verify.spec.ts"
+      ],
+      "phase": 4,
+      "status": "implemented",
       "coverage": {
-        "hasCode": false,
+        "hasCode": true,
         "hasDesign": false,
-        "hasTest": false,
-        "score": 0
+        "hasTest": true,
+        "score": 2
       }
     },
     {
