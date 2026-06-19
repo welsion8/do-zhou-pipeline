@@ -130,6 +130,13 @@ jobs:
           else
             echo "✅ 无设计稿变更"
           fi
+
+      - name: PR Comment 设计影响报告
+        if: github.event_name == 'pull_request'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: node .claude/hooks/pr-comment.js
         env:
           CLAUDE_PROJECT_DIR: ${{ github.workspace }}
 
