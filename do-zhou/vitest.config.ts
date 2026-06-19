@@ -5,12 +5,12 @@ export default defineConfig({
   test: {
     globals: true,
     environment: 'node',
-    include: ['src/**/*.{test,spec}.{ts,tsx}'],
+    include: ['src/**/*.{test,spec}.{ts,tsx}', 'electron/**/*.{test,spec}.{ts,tsx}'],
     exclude: ['node_modules', 'out', 'dist'],
     coverage: {
       provider: 'istanbul',
       reporter: ['text', 'json'],
-      include: ['src/**/*.{ts,tsx}'],
+      include: ['src/**/*.{ts,tsx}', 'electron/**/*.{ts,tsx}'],
       exclude: ['src/**/*.{test,spec}.{ts,tsx}'],
     },
   },
