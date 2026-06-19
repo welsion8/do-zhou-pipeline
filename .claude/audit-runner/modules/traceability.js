@@ -396,13 +396,24 @@ function check(ctx) {
     detail: `${report.summary.totalSpecItems} 条 Spec → ${implItems.length} 条可实现 → ${codeCovPct}% 有代码 (Phase ${currentPhase} 阈值 ${covThreshold}%, 未覆盖 ${noCoverageImpl.length} 条)`,
   });
 
-  // 功能完整性门禁
+  // 三维覆盖率门禁
+  const designCovPct = implItems.length > 0 ? Math.round(implItems.filter(t => t.coverage.hasDesign).length / implItems.length * 100) : 0;
+  const testCovPct = implItems.length > 0 ? Math.round(implItems.filter(t => t.coverage.hasTest).length / implItems.length * 100) : 0;
+  const covThresholds = currentPhase >= 8 ? { code: 90, design: 50, test: 60 }
+    : currentPhase >= 4 ? { code: 75, design: 35, test: 45 }
+    : { code: 60, design: 20, test: 30 };
+
+  const failures = [];
+  if (codeCovPct < covThresholds.code) failures.push(`代码覆盖率 ${codeCovPct}% < ${covThresholds.code}%`);
+  if (designCovPct < covThresholds.design) failures.push(`设计覆盖率 ${designCovPct}% < ${covThresholds.design}%`);
+  if (testCovPct < covThresholds.test) failures.push(`E2E覆盖率 ${testCovPct}% < ${covThresholds.test}%`);
+
   results.push({
     check: '功能完整性门禁',
-    status: codeCovPct >= covThreshold ? '🟢' : '🔴',
-    detail: codeCovPct >= covThreshold
-      ? `代码覆盖率 ${codeCovPct}% ≥ Phase ${currentPhase} 阈值 ${covThreshold}%`
-      : `❌ 代码覆盖率 ${codeCovPct}% < Phase ${currentPhase} 阈值 ${covThreshold}%。缺失 ${noCoverageImpl.length} 条可实现的 Spec 条目未实现。`,
+    status: failures.length === 0 ? '🟢' : '🔴',
+    detail: failures.length === 0
+      ? `✅ 代码${codeCovPct}% 设计${designCovPct}% E2E${testCovPct}% — 全部达标`
+      : `❌ ${failures.join(' | ')}。缺口: ${noCoverageImpl.length} 条 Spec 未实现, ${implItems.filter(t=>!t.coverage.hasDesign).length} 条缺设计, ${implItems.filter(t=>!t.coverage.hasTest&&t.coverage.hasCode).length} 条缺E2E`,
   });
 
   return results;

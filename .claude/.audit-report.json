@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-19T05:34:02.594Z",
+  "timestamp": "2026-06-19T05:46:04.478Z",
   "projectRoot": "F:/小说桌面端工具",
   "codeDir": "do-zhou",
   "stage": "developing",
@@ -3427,7 +3427,7 @@
     {
       "check": "功能完整性门禁",
       "status": "🔴",
-      "detail": "❌ 代码覆盖率 89% < Phase 13 阈值 90%。缺失 19 条可实现的 Spec 条目未实现。"
+      "detail": "❌ 代码覆盖率 89% < 90% | 设计覆盖率 37% < 50% | E2E覆盖率 52% < 60%。缺口: 19 条 Spec 未实现, 113 条缺设计, 65 条缺E2E"
     }
   ],
   "token_enforce": [],
