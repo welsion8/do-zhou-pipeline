@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-19T19:44:09.729Z",
+  "timestamp": "2026-06-19T19:47:15.490Z",
   "projectRoot": "F:/小说桌面端工具",
   "codeDir": "do-zhou",
   "stage": "developing",
@@ -1025,6 +1025,8 @@
             "src/main/services/settings-service.ts",
             "src/renderer/components/editor/editor-workspace.tsx",
             "src/renderer/components/editor/editor-workspace.tsx",
+            "src/renderer/components/layout/status-bar.test.tsx",
+            "src/renderer/components/layout/status-bar.test.tsx",
             "src/renderer/hooks/use-autosave.ts",
             "src/renderer/hooks/use-autosave.ts",
             "src/renderer/pages/settings-page.tsx",
@@ -2283,6 +2285,7 @@
         "e2e\\user-stories.spec.ts",
         "src\\main\\engine\\types.ts",
         "src\\renderer\\components\\api-config\\provider-card.tsx",
+        "src\\renderer\\components\\chat\\chat-header.tsx",
         "src\\renderer\\components\\chat\\chat-input-bar.tsx",
         "src\\renderer\\components\\chat\\chat-operation-buttons.tsx",
         "src\\renderer\\components\\editor\\tab-bar.tsx",
@@ -3566,7 +3569,7 @@
     {
       "check": "a11y: 无障碍属性",
       "status": "🟢",
-      "detail": "36 处 (aria:17 role:2 tabIndex:0 alt:0 label:17) — 12/108 文件 (11%)"
+      "detail": "36 处 (aria:17 role:2 tabIndex:0 alt:0 label:17) — 12/110 文件 (11%)"
     },
     {
       "check": "a11y: 键盘导航",
@@ -4303,6 +4306,6 @@
     "filePathCount": 68
   },
   "code": {
-    "fileCount": 114
+    "fileCount": 116
   }
 }
