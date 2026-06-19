@@ -128,11 +128,21 @@ function check(ctx) {
     const phase = frame.structure.phase || 99;
     if (phase > currentPhase) continue; // Phase 感知：跳过未来帧
 
-    const codeFiles = [frame.structure.codeFile].filter(Boolean);
+    // 主页面元素分散在多个子组件中 → 搜索整个代码目录
+    const isMainPage = frame.type === '主页面';
     let allCode = '';
-    for (const cf of codeFiles) {
-      const fp = findFile(codeDir, cf);
-      if (fp) allCode += (utils.readFile(fp) || '') + '\n';
+    if (isMainPage) {
+      // 搜索所有源文件（主页面元素散布在多个组件中）
+      const allSrcFiles = utils.findFiles(codeDir, ['.tsx'], CONFIG?.ignoreDirs || ['node_modules','out','dist','.git']);
+      for (const sf of (allSrcFiles || [])) {
+        allCode += (utils.readFile(sf) || '') + '\n';
+      }
+    } else {
+      const codeFiles = [frame.structure.codeFile].filter(Boolean);
+      for (const cf of codeFiles) {
+        const fp = findFile(codeDir, cf);
+        if (fp) allCode += (utils.readFile(fp) || '') + '\n';
+      }
     }
     if (!allCode) continue;
 

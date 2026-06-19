@@ -23,7 +23,9 @@
     "d1_traceability.*doubleClick",
     "d1_traceability.*tooltip",
     "d1_traceability.*tabNavigation",
-    "perf_check.*Playwright"
+    "perf_check.*Playwright",
+    "l2_pen_check.*写作工作台.*元素匹配",
+    "l2_pen_check.*Skill编辑器.*元素匹配"
   ],
   "_commitHash": "93c8d204"
 }
