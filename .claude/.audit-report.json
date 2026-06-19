@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-19T19:35:21.019Z",
+  "timestamp": "2026-06-19T19:38:02.264Z",
   "projectRoot": "F:/小说桌面端工具",
   "codeDir": "do-zhou",
   "stage": "developing",
@@ -178,6 +178,7 @@
             "src/renderer/components/layout/resizable-divider.tsx",
             "src/renderer/components/layout/toolbar.tsx",
             "src/renderer/components/layout/toolbar.tsx",
+            "src/renderer/components/navigation/stage-card-item.test.tsx",
             "src/renderer/components/navigation/stage-card-item.tsx",
             "src/renderer/components/navigation/stage-card-item.tsx",
             "src/renderer/components/navigation/stage-card-item.tsx",
@@ -393,6 +394,11 @@
             "src/renderer/components/navigation/project-context-menu.tsx",
             "src/renderer/components/navigation/project-context-menu.tsx",
             "src/renderer/components/navigation/project-context-menu.tsx",
+            "src/renderer/components/navigation/stage-card-item.test.tsx",
+            "src/renderer/components/navigation/stage-card-item.test.tsx",
+            "src/renderer/components/navigation/stage-card-item.test.tsx",
+            "src/renderer/components/navigation/stage-card-item.test.tsx",
+            "src/renderer/components/navigation/stage-card-item.test.tsx",
             "src/renderer/components/navigation/stage-card-item.tsx",
             "src/renderer/components/navigation/stage-card-item.tsx",
             "src/renderer/components/navigation/stage-card-item.tsx",
@@ -3181,7 +3187,7 @@
     {
       "check": "状态: 展开/收缩状态",
       "found": true,
-      "file": "7 文件",
+      "file": "8 文件",
       "status": "✅"
     },
     {
@@ -3555,7 +3561,7 @@
     {
       "check": "a11y: 无障碍属性",
       "status": "🟢",
-      "detail": "36 处 (aria:17 role:2 tabIndex:0 alt:0 label:17) — 12/103 文件 (12%)"
+      "detail": "36 处 (aria:17 role:2 tabIndex:0 alt:0 label:17) — 12/105 文件 (11%)"
     },
     {
       "check": "a11y: 键盘导航",
@@ -3575,7 +3581,7 @@
     {
       "check": "a11y: ARIA 覆盖率",
       "status": "🟠",
-      "detail": "12% 文件使用了 ARIA/role/tabIndex/alt/label 属性（目标 ≥ 30%）"
+      "detail": "11% 文件使用了 ARIA/role/tabIndex/alt/label 属性（目标 ≥ 30%）"
     },
     {
       "check": "a11y: Phase gate 判定",
@@ -4292,6 +4298,6 @@
     "filePathCount": 68
   },
   "code": {
-    "fileCount": 109
+    "fileCount": 111
   }
 }
