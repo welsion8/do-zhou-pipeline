@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-19T13:54:36.199Z",
+  "timestamp": "2026-06-19T14:27:24.817Z",
   "projectRoot": "F:/小说桌面端工具",
   "codeDir": "do-zhou",
   "stage": "developing",
@@ -14,8 +14,8 @@
   "summary": {
     "red": 1,
     "orange": 29,
-    "yellow": 114,
-    "green": 259
+    "yellow": 115,
+    "green": 258
   },
   "d1_traceability": [
     {
@@ -1225,6 +1225,7 @@
           "check": "错误处理",
           "found": true,
           "files": [
+            "coverage/coverage-final.json",
             "e2e/electron-smoke.spec.ts",
             "e2e/electron-smoke.spec.ts",
             "e2e/electron-smoke.spec.ts",
@@ -4211,6 +4212,6 @@
     "filePathCount": 68
   },
   "code": {
-    "fileCount": 94
+    "fileCount": 95
   }
 }
