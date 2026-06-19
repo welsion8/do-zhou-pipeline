@@ -1,9 +1,9 @@
 {
-  "timestamp": "2026-06-19T05:46:00.682Z",
-  "scenarios": 60,
-  "existingTests": 67,
+  "timestamp": "2026-06-19T06:02:50.741Z",
+  "scenarios": 74,
+  "existingTests": 81,
   "threshold": 80,
-  "covered": 59,
+  "covered": 73,
   "uncovered": 1,
   "uncoveredItems": [
     {

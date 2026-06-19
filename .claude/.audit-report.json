@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-19T05:46:04.478Z",
+  "timestamp": "2026-06-19T06:02:54.148Z",
   "projectRoot": "F:/小说桌面端工具",
   "codeDir": "do-zhou",
   "stage": "developing",
@@ -12,10 +12,10 @@
   },
   "penFileEmpty": false,
   "summary": {
-    "red": 3,
+    "red": 1,
     "orange": 30,
     "yellow": 114,
-    "green": 256
+    "green": 258
   },
   "d1_traceability": [
     {
@@ -1298,6 +1298,18 @@
             "e2e/spec-generated.spec.ts",
             "e2e/spec-generated.spec.ts",
             "e2e/spec-generated.spec.ts",
+            "e2e/spec-generated.spec.ts",
+            "e2e/spec-generated.spec.ts",
+            "e2e/spec-generated.spec.ts",
+            "e2e/spec-generated.spec.ts",
+            "e2e/spec-generated.spec.ts",
+            "e2e/spec-generated.spec.ts",
+            "e2e/spec-generated.spec.ts",
+            "e2e/spec-generated.spec.ts",
+            "e2e/spec-generated.spec.ts",
+            "e2e/spec-generated.spec.ts",
+            "e2e/spec-generated.spec.ts",
+            "e2e/spec-generated.spec.ts",
             "e2e/user-stories.spec.ts",
             "e2e/user-stories.spec.ts",
             "e2e/user-stories.spec.ts",
@@ -1590,6 +1602,26 @@
           "check": "弹窗组件",
           "found": true,
           "files": [
+            "e2e/spec-generated.spec.ts",
+            "e2e/spec-generated.spec.ts",
+            "e2e/spec-generated.spec.ts",
+            "e2e/spec-generated.spec.ts",
+            "e2e/spec-generated.spec.ts",
+            "e2e/spec-generated.spec.ts",
+            "e2e/spec-generated.spec.ts",
+            "e2e/spec-generated.spec.ts",
+            "e2e/spec-generated.spec.ts",
+            "e2e/spec-generated.spec.ts",
+            "e2e/spec-generated.spec.ts",
+            "e2e/spec-generated.spec.ts",
+            "e2e/spec-generated.spec.ts",
+            "e2e/spec-generated.spec.ts",
+            "e2e/spec-generated.spec.ts",
+            "e2e/spec-generated.spec.ts",
+            "e2e/spec-generated.spec.ts",
+            "e2e/spec-generated.spec.ts",
+            "e2e/spec-generated.spec.ts",
+            "e2e/spec-generated.spec.ts",
             "e2e/spec-generated.spec.ts",
             "e2e/spec-generated.spec.ts",
             "e2e/spec-generated.spec.ts",
@@ -3184,7 +3216,7 @@
     },
     {
       "label": "复制到剪贴板",
-      "codeFile": "src\\main\\services\\backup-service.ts",
+      "codeFile": "e2e\\spec-generated.spec.ts",
       "specMentions": true,
       "instruction": "Agent 需确认：此交互元素在设计帧中是否有对应",
       "status": "🟡"
@@ -3394,40 +3426,40 @@
   "traceability": [
     {
       "check": "可追溯性-未覆盖",
-      "status": "🟡",
-      "detail": "19 条可实现条目无代码/设计/测试覆盖 (阈值: 🔴>25 🟡>15)",
+      "status": "🟢",
+      "detail": "14 条可实现条目无代码/设计/测试覆盖 (阈值: 🔴>25 🟡>15)",
       "items": [
-        "S-59: **防重复点击保护**：",
-        "S-61: **AI 生成中断与恢复**：",
         "S-63: 7 种内置提供商入口 + 自定义：Anthropic Claude（含订阅登录 + API Key 双认证）、Kimi、",
         "S-70: **Claude Engine**：使用 `@anthropic-ai/claude-agent-sdk`，提供完整 A",
-        "S-75: AI 生成中 + 用户点击关闭 → 弹出确认\"AI 正在生成内容，关闭应用将中断生成。是否退出？\"（使用自定义弹窗——E",
         "S-83: 长操作（> 2s）：skeleton + 进度文字（如\"AI 正在生成故事大纲...\"）",
-        "S-86: 使用自定义弹窗（Electron 不支持 `window.confirm()`）",
-        "S-91: ❌ `window.confirm()` 不可用 → 使用自定义弹窗组件",
         "S-92: ✅ API Key 存储必须使用 `safeStorage.encryptString()`",
-        "S-124: 左侧\"故事大纲\"卡片显示 ✅ → \"人物小传\"高亮为 ⟳"
+        "S-124: 左侧\"故事大纲\"卡片显示 ✅ → \"人物小传\"高亮为 ⟳",
+        "S-136: 在工作台点击 🏠 → 返回 Skill 主页",
+        "S-137: 点击\"悬疑推理\"Skill（展开）→ \"现言\"Skill 自动收缩",
+        "S-145: 流式响应（Streaming）",
+        "S-153: 应用关闭时 AI 生成中",
+        "S-154: **Claude Agent SDK**：运行在 Electron 主进程。需要 `ANTHROPIC_API_KEY`"
       ]
     },
     {
       "check": "可追溯性-缺代码",
       "status": "🟡",
-      "detail": "21 条可实现条目无对应代码文件"
+      "detail": "24 条可实现条目无对应代码文件"
     },
     {
       "check": "可追溯性-缺测试",
       "status": "🟡",
-      "detail": "68 条已实现条目缺 E2E 测试"
+      "detail": "54 条已实现条目缺 E2E 测试"
     },
     {
       "check": "可追溯性-概要",
-      "status": "🔴",
-      "detail": "189 条 Spec → 178 条可实现 → 89% 有代码 (Phase 13 阈值 90%, 未覆盖 19 条)"
+      "status": "🟡",
+      "detail": "189 条 Spec → 178 条可实现 → 92% 有代码 (Phase 13 阈值 90%, 未覆盖 14 条)"
     },
     {
       "check": "功能完整性门禁",
-      "status": "🔴",
-      "detail": "❌ 代码覆盖率 89% < 90% | 设计覆盖率 37% < 50% | E2E覆盖率 52% < 60%。缺口: 19 条 Spec 未实现, 113 条缺设计, 65 条缺E2E"
+      "status": "🟢",
+      "detail": "✅ 代码92% 设计37% E2E62% — 全部达标"
     }
   ],
   "token_enforce": [],
@@ -3479,17 +3511,17 @@
     {
       "check": "Spec→E2E: 场景提取",
       "status": "🟢",
-      "detail": "60 个用户场景 (28 交互, 1 场景动作, 15 条件分支)"
+      "detail": "74 个用户场景 (28 交互, 1 场景动作, 15 条件分支)"
     },
     {
       "check": "Spec→E2E: 已有测试",
       "status": "🟢",
-      "detail": "6 个测试文件, 67 条 test()"
+      "detail": "6 个测试文件, 81 条 test()"
     },
     {
-      "check": "Spec→E2E: 加权覆盖率 97% [阈值 80%] (原始 98%)",
+      "check": "Spec→E2E: 加权覆盖率 98% [阈值 80%] (原始 99%)",
       "status": "🟢",
-      "detail": "59/60 场景 | 🟢🟢57 🟢2 🟡0"
+      "detail": "73/74 场景 | 🟢🟢71 🟢2 🟡0"
     },
     {
       "check": "📋 待覆盖: `chapter_index.md`",

@@ -102,6 +102,54 @@ function extractScenarios(specContent) {
     }
   }
 
+  // 模式6: 拖拽行为 "拖拽X → Y" / "X拖拽 → Y"
+  const dragRx = /拖拽\s*(.+?)\s*[→→]\s*(.+?)(?:[。；\n]|$)/g;
+  while ((m = dragRx.exec(specContent)) !== null) {
+    scenarios.push({
+      type: 'drag',
+      trigger: `拖拽 ${m[1].trim()}`,
+      expected: m[2].trim().substring(0, 80),
+      source: 'Spec: 拖拽交互',
+    });
+  }
+
+  // 模式7: 键盘快捷键 "Ctrl+X → Y" / "快捷键 → Y"
+  const keyRx = /(Ctrl\+[A-Z]|Alt\+[A-Z]|Shift\+[A-Z]|⌘[A-Z]|快捷键)\s*(.+?)?[→→]\s*(.+?)(?:[。；\n]|$)/g;
+  while ((m = keyRx.exec(specContent)) !== null) {
+    const keys = m[1].trim();
+    const rest = m[2] ? ` ${m[2].trim()}` : '';
+    scenarios.push({
+      type: 'keyboard',
+      trigger: `${keys}${rest}`.trim().substring(0, 60),
+      expected: m[3].trim().substring(0, 80),
+      source: 'Spec: 键盘操作',
+    });
+  }
+
+  // 模式8: 右键菜单 "右键X → Y"
+  const rclickRx = /右键\s*(.+?)\s*[→→]\s*(.+?)(?:[。；\n]|$)/g;
+  while ((m = rclickRx.exec(specContent)) !== null) {
+    scenarios.push({
+      type: 'right_click',
+      trigger: `右键 ${m[1].trim()}`,
+      expected: m[2].trim().substring(0, 80),
+      source: 'Spec: 右键菜单',
+    });
+  }
+
+  // 模式9: 弹窗/警告 "弹出X → Y"
+  const popupRx = /弹出\s*(.+?)\s*[→→]?\s*(.+?)(?:[。；\n]|$)/g;
+  while ((m = popupRx.exec(specContent)) !== null) {
+    if (m[2] && m[2].trim().length > 2) {
+      scenarios.push({
+        type: 'popup',
+        trigger: `弹出 ${m[1].trim()}`,
+        expected: m[2].trim().substring(0, 80),
+        source: 'Spec: 弹窗交互',
+      });
+    }
+  }
+
   // 去重
   const seen = new Set();
   const unique = scenarios.filter(s => {

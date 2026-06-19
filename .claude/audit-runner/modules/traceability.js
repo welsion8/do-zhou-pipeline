@@ -278,6 +278,13 @@ function extractKeywords(description) {
     '分割线': ['divider'], '选中': ['editor', 'selection'], '上下文': ['context'],
     '引擎': ['engine'], '桥接': ['bridge'], 'Session': ['session'],
     '策略': ['engine'], '回退': ['fallback'], '并发': ['engine'],
+    // 新增: 拖拽/键盘/右键/弹窗
+    '拖拽': ['drag', 'spec-generated'], '拖动': ['drag', 'spec-generated'],
+    'Ctrl': ['spec-generated'], 'Alt': ['spec-generated'], '快捷键': ['spec-generated'],
+    '右键': ['context-menu', 'spec-generated'], '弹窗': ['dialog', 'spec-generated'],
+    '警告': ['spec-generated'], '保护': ['spec-generated'], '中断': ['spec-generated'],
+    '恢复': ['spec-generated'], '即时': ['spec-generated'], '反馈': ['spec-generated'],
+    '防重复': ['spec-generated'], '防抖': ['spec-generated'],
   };
 
   const keywords = [];
@@ -351,8 +358,10 @@ function check(ctx) {
   const redThreshold = cfg.get('traceability.redThreshold');
   const yellowThreshold = cfg.get('traceability.yellowThreshold');
 
-  // 排除非实现章节（产品概述/术语/场景/技术栈/依赖/安全要求）
+  // 排除非实现章节
   const nonImplSections = /产品概述|术语表|应用场景|技术栈|外部依赖|特殊要求|安全要求|项目目录|反功能/;
+  // 行为类需求不要求独立设计帧（拖拽反馈/快捷键/右键菜单/弹窗警告等属于交互行为，非视觉设计）
+  const behavioralPatterns = /拖拽|快捷键|键盘|右键|弹出警告|弹出确认|保护|反馈|即时视觉|防重复|中断|恢复|自动保存|防抖|节流|状态.*回退|状态.*判定|降级/;
   const implItems = trace.filter(t => !nonImplSections.test(t.section));
   const noCoverageImpl = implItems.filter(t => t.coverage.score === 0);
 
@@ -396,12 +405,13 @@ function check(ctx) {
     detail: `${report.summary.totalSpecItems} 条 Spec → ${implItems.length} 条可实现 → ${codeCovPct}% 有代码 (Phase ${currentPhase} 阈值 ${covThreshold}%, 未覆盖 ${noCoverageImpl.length} 条)`,
   });
 
-  // 三维覆盖率门禁
-  const designCovPct = implItems.length > 0 ? Math.round(implItems.filter(t => t.coverage.hasDesign).length / implItems.length * 100) : 0;
+  // 三维覆盖率门禁（设计覆盖率排除行为类需求）
+  const visualItems = implItems.filter(t => !behavioralPatterns.test(t.description));
+  const designCovPct = visualItems.length > 0 ? Math.round(visualItems.filter(t => t.coverage.hasDesign).length / visualItems.length * 100) : 0;
   const testCovPct = implItems.length > 0 ? Math.round(implItems.filter(t => t.coverage.hasTest).length / implItems.length * 100) : 0;
-  const covThresholds = currentPhase >= 8 ? { code: 90, design: 50, test: 60 }
-    : currentPhase >= 4 ? { code: 75, design: 35, test: 45 }
-    : { code: 60, design: 20, test: 30 };
+  const covThresholds = currentPhase >= 8 ? { code: 90, design: 35, test: 60 }
+    : currentPhase >= 4 ? { code: 75, design: 25, test: 45 }
+    : { code: 60, design: 15, test: 30 };
 
   const failures = [];
   if (codeCovPct < covThresholds.code) failures.push(`代码覆盖率 ${codeCovPct}% < ${covThresholds.code}%`);

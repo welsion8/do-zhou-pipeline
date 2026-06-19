@@ -1,13 +1,13 @@
 {
-  "timestamp": "2026-06-19T05:46:00.754Z",
+  "timestamp": "2026-06-19T06:02:50.805Z",
   "summary": {
     "totalSpecItems": 189,
-    "implemented": 168,
-    "withCode": "167/189 (88%)",
+    "implemented": 166,
+    "withCode": "164/189 (87%)",
     "withDesign": "69/189 (37%)",
-    "withTest": "99/189 (52%)",
-    "fullCoverage": "44/189",
-    "noCoverage": 20
+    "withTest": "117/189 (62%)",
+    "fullCoverage": "46/189",
+    "noCoverage": 15
   },
   "items": [
     {
@@ -503,9 +503,7 @@
       "subsection": "核心功能",
       "description": "用户拖拽 Skill 卡片 → **即时视觉反馈**：被拖拽卡片提升 2px 阴影 + 半透明(opacity 0.7)跟随鼠标，目标位置顶部出现 2px `$accent-dim` 插入指示线。释放后卡片落入新位置，150ms ease-",
       "specLine": 76,
-      "codeFiles": [
-        "src/renderer/components/layout/left-panel.tsx"
-      ],
+      "codeFiles": [],
       "designFrames": [
         "XJ3UP",
         "jjYaS",
@@ -514,13 +512,15 @@
         "c4Jxxw",
         "xAiWM"
       ],
-      "e2eTests": [],
-      "phase": 2,
-      "status": "implemented",
+      "e2eTests": [
+        "spec-generated.spec.ts"
+      ],
+      "phase": null,
+      "status": "unknown",
       "coverage": {
-        "hasCode": true,
+        "hasCode": false,
         "hasDesign": true,
-        "hasTest": false,
+        "hasTest": true,
         "score": 2
       }
     },
@@ -549,14 +549,16 @@
         "c4Jxxw",
         "xAiWM"
       ],
-      "e2eTests": [],
+      "e2eTests": [
+        "spec-generated.spec.ts"
+      ],
       "phase": 2,
       "status": "implemented",
       "coverage": {
         "hasCode": true,
         "hasDesign": true,
-        "hasTest": false,
-        "score": 2
+        "hasTest": true,
+        "score": 3
       }
     },
     {
@@ -697,14 +699,16 @@
         "src/renderer/pages/skill-home-page.tsx"
       ],
       "designFrames": [],
-      "e2eTests": [],
+      "e2eTests": [
+        "spec-generated.spec.ts"
+      ],
       "phase": 3,
       "status": "implemented",
       "coverage": {
         "hasCode": true,
         "hasDesign": false,
-        "hasTest": false,
-        "score": 1
+        "hasTest": true,
+        "score": 2
       }
     },
     {
@@ -719,14 +723,16 @@
         "src/renderer/pages/skill-home-page.tsx"
       ],
       "designFrames": [],
-      "e2eTests": [],
+      "e2eTests": [
+        "spec-generated.spec.ts"
+      ],
       "phase": 3,
       "status": "implemented",
       "coverage": {
         "hasCode": true,
         "hasDesign": false,
-        "hasTest": false,
-        "score": 1
+        "hasTest": true,
+        "score": 2
       }
     },
     {
@@ -807,14 +813,16 @@
       "designFrames": [
         "AIbP1"
       ],
-      "e2eTests": [],
+      "e2eTests": [
+        "spec-generated.spec.ts"
+      ],
       "phase": 2,
       "status": "implemented",
       "coverage": {
         "hasCode": true,
         "hasDesign": true,
-        "hasTest": false,
-        "score": 2
+        "hasTest": true,
+        "score": 3
       }
     },
     {
@@ -871,7 +879,8 @@
       "designFrames": [],
       "e2eTests": [
         "editor-scroll-verify.spec.ts",
-        "scroll-css-verify.spec.ts"
+        "scroll-css-verify.spec.ts",
+        "spec-generated.spec.ts"
       ],
       "phase": 2,
       "status": "implemented",
@@ -1125,17 +1134,17 @@
       "subsection": "核心功能",
       "description": "左侧两区比例默认 65:35，用户拖拽后可自定义。最小每区 80px（防止拖到消失）",
       "specLine": 115,
-      "codeFiles": [
-        "src/renderer/components/layout/left-panel.tsx"
-      ],
+      "codeFiles": [],
       "designFrames": [],
-      "e2eTests": [],
-      "phase": 2,
-      "status": "implemented",
+      "e2eTests": [
+        "spec-generated.spec.ts"
+      ],
+      "phase": null,
+      "status": "unknown",
       "coverage": {
-        "hasCode": true,
+        "hasCode": false,
         "hasDesign": false,
-        "hasTest": false,
+        "hasTest": true,
         "score": 1
       }
     },
@@ -1857,7 +1866,8 @@
       "designFrames": [],
       "e2eTests": [
         "editor-scroll-verify.spec.ts",
-        "scroll-css-verify.spec.ts"
+        "scroll-css-verify.spec.ts",
+        "spec-generated.spec.ts"
       ],
       "phase": 2,
       "status": "implemented",
@@ -2032,7 +2042,8 @@
         "AIbP1"
       ],
       "e2eTests": [
-        "editor-scroll-verify.spec.ts"
+        "editor-scroll-verify.spec.ts",
+        "spec-generated.spec.ts"
       ],
       "phase": 2,
       "status": "implemented",
@@ -2132,7 +2143,8 @@
       ],
       "designFrames": [],
       "e2eTests": [
-        "editor-scroll-verify.spec.ts"
+        "editor-scroll-verify.spec.ts",
+        "spec-generated.spec.ts"
       ],
       "phase": 4,
       "status": "implemented",
@@ -2554,14 +2566,16 @@
       "specLine": 179,
       "codeFiles": [],
       "designFrames": [],
-      "e2eTests": [],
+      "e2eTests": [
+        "spec-generated.spec.ts"
+      ],
       "phase": null,
       "status": "unknown",
       "coverage": {
         "hasCode": false,
         "hasDesign": false,
-        "hasTest": false,
-        "score": 0
+        "hasTest": true,
+        "score": 1
       }
     },
     {
@@ -2597,14 +2611,16 @@
       "specLine": 186,
       "codeFiles": [],
       "designFrames": [],
-      "e2eTests": [],
+      "e2eTests": [
+        "spec-generated.spec.ts"
+      ],
       "phase": null,
       "status": "implemented",
       "coverage": {
         "hasCode": false,
         "hasDesign": false,
-        "hasTest": false,
-        "score": 0
+        "hasTest": true,
+        "score": 1
       }
     },
     {
@@ -2687,17 +2703,17 @@
       "subsection": "核心功能",
       "description": "提供商列表可拖拽排序（优先级 = 默认选择顺序）",
       "specLine": 200,
-      "codeFiles": [
-        "src/renderer/components/layout/left-panel.tsx"
-      ],
+      "codeFiles": [],
       "designFrames": [],
-      "e2eTests": [],
-      "phase": 2,
+      "e2eTests": [
+        "spec-generated.spec.ts"
+      ],
+      "phase": null,
       "status": "in_progress",
       "coverage": {
-        "hasCode": true,
+        "hasCode": false,
         "hasDesign": false,
-        "hasTest": false,
+        "hasTest": true,
         "score": 1
       }
     },
@@ -3017,7 +3033,8 @@
       ],
       "designFrames": [],
       "e2eTests": [
-        "editor-scroll-verify.spec.ts"
+        "editor-scroll-verify.spec.ts",
+        "spec-generated.spec.ts"
       ],
       "phase": 2,
       "status": "implemented",
@@ -3071,14 +3088,16 @@
       "specLine": 233,
       "codeFiles": [],
       "designFrames": [],
-      "e2eTests": [],
+      "e2eTests": [
+        "spec-generated.spec.ts"
+      ],
       "phase": null,
       "status": "unknown",
       "coverage": {
         "hasCode": false,
         "hasDesign": false,
-        "hasTest": false,
-        "score": 0
+        "hasTest": true,
+        "score": 1
       }
     },
     {
@@ -3226,14 +3245,16 @@
         "src/renderer/pages/skill-home-page.tsx"
       ],
       "designFrames": [],
-      "e2eTests": [],
+      "e2eTests": [
+        "spec-generated.spec.ts"
+      ],
       "phase": 3,
       "status": "implemented",
       "coverage": {
         "hasCode": true,
         "hasDesign": false,
-        "hasTest": false,
-        "score": 1
+        "hasTest": true,
+        "score": 2
       }
     },
     {
@@ -3364,14 +3385,16 @@
       "specLine": 272,
       "codeFiles": [],
       "designFrames": [],
-      "e2eTests": [],
+      "e2eTests": [
+        "spec-generated.spec.ts"
+      ],
       "phase": null,
       "status": "unknown",
       "coverage": {
         "hasCode": false,
         "hasDesign": false,
-        "hasTest": false,
-        "score": 0
+        "hasTest": true,
+        "score": 1
       }
     },
     {
@@ -3461,21 +3484,22 @@
       "codeFiles": [
         "src/renderer/components/layout/app-layout.tsx",
         "src/renderer/components/layout/toolbar.tsx",
-        "src/renderer/components/layout/left-panel.tsx",
         "src/renderer/components/window-controls.tsx",
         "src/renderer/components/layout/fab-button.tsx",
         "src/renderer/components/editor/editor-toolbar.tsx",
         "src/renderer/components/chat/chat-operation-buttons.tsx"
       ],
       "designFrames": [],
-      "e2eTests": [],
+      "e2eTests": [
+        "spec-generated.spec.ts"
+      ],
       "phase": 2,
       "status": "implemented",
       "coverage": {
         "hasCode": true,
         "hasDesign": false,
-        "hasTest": false,
-        "score": 1
+        "hasTest": true,
+        "score": 2
       }
     },
     {
@@ -3574,14 +3598,16 @@
       "specLine": 288,
       "codeFiles": [],
       "designFrames": [],
-      "e2eTests": [],
+      "e2eTests": [
+        "spec-generated.spec.ts"
+      ],
       "phase": null,
       "status": "implemented",
       "coverage": {
         "hasCode": false,
         "hasDesign": false,
-        "hasTest": false,
-        "score": 0
+        "hasTest": true,
+        "score": 1
       }
     },
     {
@@ -3611,21 +3637,22 @@
       "codeFiles": [
         "src/renderer/components/layout/app-layout.tsx",
         "src/renderer/components/layout/toolbar.tsx",
-        "src/renderer/components/layout/left-panel.tsx",
         "src/renderer/components/window-controls.tsx",
         "src/renderer/components/layout/fab-button.tsx",
         "src/renderer/components/editor/editor-toolbar.tsx",
         "src/renderer/components/chat/chat-operation-buttons.tsx"
       ],
       "designFrames": [],
-      "e2eTests": [],
+      "e2eTests": [
+        "spec-generated.spec.ts"
+      ],
       "phase": 2,
       "status": "implemented",
       "coverage": {
         "hasCode": true,
         "hasDesign": false,
-        "hasTest": false,
-        "score": 1
+        "hasTest": true,
+        "score": 2
       }
     },
     {
@@ -5623,14 +5650,16 @@
         "src/main/engine/engine-factory.ts"
       ],
       "designFrames": [],
-      "e2eTests": [],
+      "e2eTests": [
+        "spec-generated.spec.ts"
+      ],
       "phase": 2,
       "status": "implemented",
       "coverage": {
         "hasCode": true,
         "hasDesign": false,
-        "hasTest": false,
-        "score": 1
+        "hasTest": true,
+        "score": 2
       }
     },
     {
@@ -5977,7 +6006,6 @@
       "description": "拖拽章节排序",
       "specLine": 516,
       "codeFiles": [
-        "src/renderer/components/layout/left-panel.tsx",
         "src/renderer/services/chapter-parser.ts",
         "src/renderer/components/editor/chapter-index-view.tsx",
         "src/renderer/components/editor/chapter-index-row.tsx"
@@ -5986,7 +6014,7 @@
       "e2eTests": [
         "spec-generated.spec.ts"
       ],
-      "phase": 2,
+      "phase": 9,
       "status": "implemented",
       "coverage": {
         "hasCode": true,
@@ -6196,14 +6224,16 @@
         "src/renderer/components/layout/right-panel.tsx"
       ],
       "designFrames": [],
-      "e2eTests": [],
+      "e2eTests": [
+        "spec-generated.spec.ts"
+      ],
       "phase": 2,
       "status": "implemented",
       "coverage": {
         "hasCode": true,
         "hasDesign": false,
-        "hasTest": false,
-        "score": 1
+        "hasTest": true,
+        "score": 2
       }
     },
     {
@@ -6440,14 +6470,16 @@
         "src/renderer/pages/skill-home-page.tsx"
       ],
       "designFrames": [],
-      "e2eTests": [],
+      "e2eTests": [
+        "spec-generated.spec.ts"
+      ],
       "phase": 2,
       "status": "implemented",
       "coverage": {
         "hasCode": true,
         "hasDesign": false,
-        "hasTest": false,
-        "score": 1
+        "hasTest": true,
+        "score": 2
       }
     },
     {
