@@ -370,6 +370,12 @@
     - 有 UI Phase 但宣称"不需要设计帧"→ 🔴 违反反向覆盖门禁
     - `.needs-pen-extract` 标记存在 → design_read_check 不得标记 pass
 
+    **代码覆盖率门禁**（专业版·所有 Phase）：
+    - `project.config.json` 中 `testCoverage.enforce=true` 时启用
+    - vitest coverage: lines≥60% branches≥50% functions≥60% statements≥60%
+    - 不达标 → 🔴 阻断 Phase
+    - 纯配置文件/基础设施 Phase → 豁免
+
     **功能完整性门禁**（专业版·所有 Phase）：
     - traceability 代码覆盖率 < Phase 阈值 → 🔴 阻断 Phase gate
     - Phase 1-3: 60% | Phase 4-7: 75% | Phase 8+: 90%

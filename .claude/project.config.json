@@ -134,8 +134,8 @@
     }
   },
   "testCoverage": {
-    "enforce": false,
-    "_comment": "设为 true 后 Phase Gate 强制检查覆盖率。",
+    "enforce": true,
+    "_comment": "vitest coverage → Phase Gate 强制。需修复 vitest.config.ts 模块解析。临时: pnpm add -D @vitest/coverage-v8",
     "targets": {
       "lines": 60,
       "branches": 50,
