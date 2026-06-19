@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-19T19:55:18.517Z",
+  "timestamp": "2026-06-19T20:08:30.336Z",
   "projectRoot": "F:/小说桌面端工具",
   "codeDir": "do-zhou",
   "stage": "developing",
@@ -2214,6 +2214,7 @@
         "src\\renderer\\components\\editor\\markdown-preview.tsx",
         "src\\renderer\\components\\file-tree\\file-tree.tsx",
         "src\\renderer\\components\\layout\\left-panel.tsx",
+        "src\\renderer\\components\\layout\\model-dropdown.tsx",
         "src\\renderer\\components\\navigation\\stage-card-item.tsx",
         "src\\renderer\\pages\\skill-home-page.tsx",
         "src\\renderer\\types\\electron.d.ts"
@@ -3580,7 +3581,7 @@
     {
       "check": "a11y: 无障碍属性",
       "status": "🟢",
-      "detail": "38 处 (aria:18 role:2 tabIndex:0 alt:0 label:18) — 13/116 文件 (11%)"
+      "detail": "38 处 (aria:18 role:2 tabIndex:0 alt:0 label:18) — 13/117 文件 (11%)"
     },
     {
       "check": "a11y: 键盘导航",
@@ -4317,6 +4318,6 @@
     "filePathCount": 68
   },
   "code": {
-    "fileCount": 122
+    "fileCount": 123
   }
 }
