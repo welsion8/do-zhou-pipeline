@@ -4,7 +4,7 @@
  * design_read_check 自动化核心。消除"Agent 手工 MCP 读帧"的最后一块盲区。
  *
  * 机制:
- *   1. 检测 .pen 文件 vs .pen-layout-values.json 的同步状态
+ *   1. 检测 设计源文件 vs .pen-layout-values.json 的同步状态
  *   2. .pen 更新但 JSON 未同步 → 写 .needs-pen-extract 标记
  *   3. Agent 检测到标记 → 必须调用 MCP batch_get → pen-extract --merge
  *   4. 同步完成后 → 自动标记 design_read_check pass
@@ -19,7 +19,7 @@
  *   .needs-pen-extract 存在 → design_read_check = pending/fail
  *   .needs-pen-extract 不存在 → design_read_check = pass
  *
- * 通用性: 检测项目根目录下 *.pen 文件。换产品 → 换 .pen → 自动适配。
+ * 通用性: 检测项目根目录下 *设计源文件。换产品 → 换 .pen → 自动适配。
  */
 
 const fs = require('fs');
@@ -32,15 +32,28 @@ const LAYOUT_VALUES = path.join(CLAUDE_DIR, '.pen-layout-values.json');
 const PEN_FRAMES = path.join(CLAUDE_DIR, '.pen-frames.json');
 
 /**
- * 查找项目中的 .pen 文件
+ * 查找项目中的设计源文件（Pencil .pen 或 Figma .json）
  */
-function findPenFile() {
+function findDesignSource() {
   try {
     const entries = fs.readdirSync(PROJECT_ROOT);
-    return entries.find(f => f.endsWith('.pen') && !f.startsWith('.'));
+    const penFile = entries.find(f => f.endsWith('.pen') && !f.startsWith('.'));
+    if (penFile) return { type: 'pencil', file: penFile };
+    const figmaFile = entries.find(f => f.startsWith('figma') && f.endsWith('.json') && !f.startsWith('.'));
+    if (figmaFile) return { type: 'figma', file: figmaFile };
+    // 也检查 .claude 目录下的 Figma 数据
+    const figmaDataFile = path.join(CLAUDE_DIR, '.figma-design-data.json');
+    if (fs.existsSync(figmaDataFile)) return { type: 'figma', file: '.claude/.figma-design-data.json' };
+    return null;
   } catch (_) {
     return null;
   }
+}
+
+/** @deprecated 使用 findDesignSource() 替代 */
+function findPenFile() {
+  const source = findDesignSource();
+  return source?.type === 'pencil' ? source.file : null;
 }
 
 /**
@@ -48,36 +61,38 @@ function findPenFile() {
  * @returns {Object} { synced: boolean, penFile: string|null, penMtime: number, layoutMtime: number, reason: string }
  */
 function checkSync() {
-  const penFile = findPenFile();
+  const designSource = findDesignSource();
 
-  if (!penFile) {
-    return { synced: true, penFile: null, penMtime: 0, layoutMtime: 0, reason: '无 .pen 文件。纯后端/CLI 项目自动跳过。', skip: true };
+  if (!designSource) {
+    return { synced: true, designSource: null, penMtime: 0, layoutMtime: 0, reason: '无设计源文件（.pen 或 Figma JSON）。纯后端/CLI 项目自动跳过。', skip: true };
   }
 
-  const penPath = path.join(PROJECT_ROOT, penFile);
+  const sourcePath = designSource.file.includes('.claude/')
+    ? path.join(PROJECT_ROOT, designSource.file)
+    : path.join(PROJECT_ROOT, designSource.file);
 
-  // .pen 文件为空 → 设计稿生成中断
+  // 设计源文件为空 → 设计稿生成中断
   try {
-    if (fs.statSync(penPath).size === 0) {
-      return { synced: false, penFile, penMtime: 0, layoutMtime: 0, reason: '.pen 文件为空(0字节)。设计稿生成中断，需重新运行 design-maker。', empty: true };
+    if (fs.statSync(sourcePath).size === 0) {
+      return { synced: false, designSource, penMtime: 0, layoutMtime: 0, reason: `${designSource.type} 文件为空(0字节)。设计稿生成中断。`, empty: true };
     }
   } catch (_) {}
 
-  const penMtime = fs.statSync(penPath).mtimeMs;
+  const sourceMtime = fs.statSync(sourcePath).mtimeMs;
 
   // .pen-layout-values.json 不存在
   if (!fs.existsSync(LAYOUT_VALUES)) {
-    return { synced: false, penFile, penMtime, layoutMtime: 0, reason: '.pen-layout-values.json 不存在。运行 pen-extract 首次提取。' };
+    return { synced: false, designSource, penMtime: sourceMtime, layoutMtime: 0, reason: '.pen-layout-values.json 不存在。运行适配器首次提取。' };
   }
 
   const layoutMtime = fs.statSync(LAYOUT_VALUES).mtimeMs;
 
   // .pen 比 JSON 新 → 设计稿更新了但数据未同步
-  if (penMtime > layoutMtime) {
-    const diffMinutes = Math.round((penMtime - layoutMtime) / 60000);
+  if (sourceMtime > layoutMtime) {
+    const diffMinutes = Math.round((sourceMtime - layoutMtime) / 60000);
     return {
-      synced: false, penFile, penMtime, layoutMtime,
-      reason: `.pen 文件 ${diffMinutes} 分钟前更新，.pen-layout-values.json 未同步。`,
+      synced: false, designSource, penMtime: sourceMtime, layoutMtime,
+      reason: `设计源文件 ${diffMinutes} 分钟前更新，.pen-layout-values.json 未同步。`,
       stale: true, diffMinutes
     };
   }
@@ -91,7 +106,7 @@ function checkSync() {
       const layoutCount = Object.keys(layout.frames || {}).length;
       if (frameCount > layoutCount) {
         return {
-          synced: false, penFile, penMtime, layoutMtime,
+          synced: false, designSource, penMtime: sourceMtime, layoutMtime,
           reason: `.pen-frames.json (${frameCount}帧) > .pen-layout-values.json (${layoutCount}帧)。提取不完整。`,
           frameMismatch: true, frameCount, layoutCount
         };
@@ -99,7 +114,7 @@ function checkSync() {
     } catch (_) {}
   }
 
-  return { synced: true, penFile, penMtime, layoutMtime, reason: '同步' };
+  return { synced: true, designSource, penMtime: sourceMtime || layoutMtime, layoutMtime, reason: '同步' };
 }
 
 /**
@@ -155,7 +170,7 @@ function check(ctx) {
   }
 
   if (result.empty) {
-    results.push({ check: 'design_read: .pen 文件', status: '🔴', detail: result.reason });
+    results.push({ check: 'design_read: 设计源文件', status: '🔴', detail: result.reason });
     return results;
   }
 

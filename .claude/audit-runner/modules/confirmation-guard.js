@@ -26,26 +26,30 @@ const FORBIDDEN_PATTERNS = [/^\.\*$/, /^\.\*[a-zA-Z]*\.\*/, /^\.[*+]$/, /^\(\.\*
 
 function isGitRepo(projectRoot) {
   try {
-    execSync('git rev-parse --git-dir 2>/dev/null', { cwd: projectRoot, stdio: 'pipe' });
-    return true;
+    const result = execSync('git rev-parse --git-dir', { cwd: projectRoot, stdio: 'pipe', timeout: 5000 });
+    return result.toString().trim().length > 0;
   } catch (_) { return false; }
 }
 
 function getCommitHash(projectRoot) {
   if (!isGitRepo(projectRoot)) return null;
   try {
-    return execSync('git rev-parse HEAD', { cwd: projectRoot, stdio: 'pipe' }).toString().trim().substring(0, 8);
+    return execSync('git rev-parse HEAD', { cwd: projectRoot, stdio: 'pipe', timeout: 5000 }).toString().trim().substring(0, 8);
   } catch (_) { return null; }
 }
 
 function loadConfig(projectRoot) {
-  try {
-    const configPath = path.join(projectRoot, '.claude', 'project.config.json');
-    if (fs.existsSync(configPath)) {
-      return JSON.parse(fs.readFileSync(configPath, 'utf-8')).confirmation || {};
-    }
-  } catch (_) {}
-  return {};
+  const cfg = require('./config-loader.js').load(projectRoot);
+  return {
+    maxItems: cfg.get('confirmation.maxItems'),
+    autoExpireDays: cfg.get('confirmation.autoExpireDays'),
+    maxWildcardDepth: cfg.get('confirmation.maxWildcardDepth'),
+    minPatternLength: cfg.get('confirmation.minPatternLength'),
+    bindToCommit: true,
+    trendLog: '.claude/.suppression-trend.json',
+    trendDeltaRed: cfg.get('confirmation.trendDeltaRed'),
+    trendDeltaYellow: cfg.get('confirmation.trendDeltaYellow'),
+  };
 }
 
 // ── 趋势追踪 ──
@@ -78,7 +82,7 @@ function getTrendAnalysis(projectRoot) {
     const first = trend[0];
     const last = trend[trend.length - 1];
     const delta = last.rate - first.rate;
-    const direction = delta > 5 ? '📈 上升' : delta < -5 ? '📉 下降' : '➡ 平稳';
+    const direction = delta > cfg.trendDeltaRed ? '📈 上升' : delta < -cfg.trendDeltaRed ? '📉 下降' : '➡ 平稳';
 
     return { records: trend.length, firstRate: first.rate, lastRate: last.rate, delta, direction };
   } catch (_) { return null; }
@@ -96,10 +100,13 @@ function findStaleConfirmations(projectRoot, confirmedFile) {
     if (!confirmed._commitHash) return stale;
 
     // 检查自确认后哪些文件变更了
-    const changedFiles = execSync(
-      `git diff --name-only ${confirmed._commitHash} HEAD -- .claude/ src/ 2>/dev/null || true`,
-      { cwd: projectRoot, stdio: 'pipe' }
-    ).toString().trim();
+    let changedFiles = '';
+    try {
+      changedFiles = execSync(
+        `git diff --name-only ${confirmed._commitHash} HEAD -- .claude/ src/`,
+        { cwd: projectRoot, stdio: 'pipe', timeout: 10000 }
+      ).toString().trim();
+    } catch (_) { changedFiles = ''; }
 
     if (changedFiles) {
       // 有变更 → 可能某些确认已过时
@@ -276,7 +283,7 @@ function check(ctx) {
   if (trend) {
     results.push({
       check: '确认治理: 趋势',
-      status: trend.delta > 5 ? '🟠' : (trend.delta > 2 ? '🟡' : '🟢'),
+      status: trend.delta > cfg.trendDeltaRed ? '🟠' : (trend.delta > cfg.trendDeltaYellow ? '🟡' : '🟢'),
       detail: `${trend.direction} ${trend.firstRate}% → ${trend.lastRate}% (${trend.records} 天记录)`,
     });
   }

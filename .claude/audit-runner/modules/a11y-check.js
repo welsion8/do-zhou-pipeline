@@ -65,12 +65,17 @@ function check(ctx) {
   const a11yPct = Math.round(coveredFiles / Math.max(1, totalFiles) * 100);
 
   // ── 综合得分 ──
+  const cfg = require('./config-loader.js').load(projectRoot);
+  const attrGreenMin = cfg.get('a11y.attrGreenMin');
+  const attrYellowMin = cfg.get('a11y.attrYellowMin');
+  const ariaTarget = cfg.get('a11y.ariaCoverageTarget');
+  const focusRingMin = cfg.get('a11y.focusRingMinFiles');
+
   const totalAttr = totalAria + totalRole + totalTabIndex + totalAlt + totalLabel;
-  // data-testid 已在上面的 totalAria 中计入
 
   results.push({
     check: `a11y: 无障碍属性`,
-    status: totalAttr > 15 ? '🟢' : (totalAttr > 5 ? '🟡' : '🔴'),
+    status: totalAttr > attrGreenMin ? '🟢' : (totalAttr > attrYellowMin ? '🟡' : '🔴'),
     detail: `${totalAttr} 处 (aria:${totalAria} role:${totalRole} tabIndex:${totalTabIndex} alt:${totalAlt} label:${totalLabel}) — ${coveredFiles}/${totalFiles} 文件 (${a11yPct}%)`,
   });
 
@@ -100,7 +105,7 @@ function check(ctx) {
   } else {
     results.push({
       check: 'a11y: Focus 可见样式',
-      status: focusRingFiles.size >= 3 ? '🟢' : '🟡',
+      status: focusRingFiles.size >= focusRingMin ? '🟢' : '🟡',
       detail: `${focusRingFiles.size} 个文件包含 focus 样式`,
     });
   }
@@ -115,7 +120,7 @@ function check(ctx) {
   });
 
   // ARIA 覆盖率
-  const ariaCoverageStatus = a11yPct >= 30 ? '🟢' : (a11yPct >= 10 ? '🟡' : '🟠');
+  const ariaCoverageStatus = a11yPct >= ariaTarget ? '🟢' : (a11yPct >= ariaTarget * 0.5 ? '🟡' : '🟠');
   results.push({
     check: 'a11y: ARIA 覆盖率',
     status: ariaCoverageStatus,

@@ -141,7 +141,7 @@
     },
     "existingAdapters": {
       "pencil": ".claude/audit-runner/modules/pen-extract.js",
-      "figma": "待实现 — 从 Figma REST API 读取并转换为 DesignData",
+      "figma": ".claude/audit-runner/modules/figma-adapter.js",
       "sketch": "待实现 — 从 Sketch 文件读取并转换为 DesignData"
     }
   }

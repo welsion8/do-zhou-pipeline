@@ -47,22 +47,29 @@ function check(ctx) {
   const keywords = extractKeywords(specContent);
   if (keywords.length === 0) { results.push({ check: 'Spec→UI: 关键词', status: '🟡', detail: '未提取到关键词' }); return results; }
 
-  // 尝试通过 Playwright 检查应用
-  const codeDir = ctx.codeDir || path.join(ctx.PROJECT_ROOT || '.', 'do-zhou');
-  const outDir = path.join(codeDir, 'out', 'main', 'index.js');
+  // 平台适配
+  const { getPlatformAdapter } = require('./config-loader.js');
+  const projectRoot = ctx.PROJECT_ROOT || '.';
+  const adapter = getPlatformAdapter(projectRoot);
+  const codeDir = ctx.codeDir || path.join(projectRoot, adapter.codeDir);
   const utils = ctx.utils || require('./_utils.js');
 
-  if (!utils.fileExists(outDir)) {
-    results.push({ check: 'Spec→UI: 构建产物', status: '🟡', detail: 'Electron 未构建。运行 pnpm build 后重试。' });
+  if (adapter.isCLI) {
+    results.push({ check: 'Spec→UI: 平台', status: 'skip', detail: 'CLI 项目，跳过 UI 检查。' });
+    return results;
+  }
+
+  const buildCheck = adapter.getBuildCheckPath();
+  if (!buildCheck || !utils.fileExists(buildCheck)) {
+    results.push({ check: 'Spec→UI: 构建产物', status: '🟡', detail: `${adapter.platform} 未构建。运行 pnpm build 后重试。` });
     return results;
   }
 
   try {
-    // 构建快速检查脚本
-    const checkScript = `
+    const checkScript = adapter.isDesktop ? `
       const { _electron: electron } = require('@playwright/test');
       (async () => {
-        const app = await electron.launch({ executablePath: '${path.join(codeDir, 'node_modules', 'electron', 'dist', 'electron.exe').replace(/\\/g, '\\\\')}', args: ['${outDir.replace(/\\/g, '\\\\')}'] });
+        const app = await electron.launch({ executablePath: '${(adapter.getLaunchInfo()?.electronPath || '').replace(/\\/g, '\\\\')}', args: ['${(adapter.getLaunchInfo()?.mainEntry || '').replace(/\\/g, '\\\\')}'] });
         const page = await app.firstWindow();
         await page.waitForTimeout(5000);
         // 等 body 有内容

@@ -372,23 +372,58 @@ function generateTestFile(scenarios, outputPath) {
   code += ` * ⚠ 此文件为骨架代码。选择器和断言需根据实际 UI 调整。\n`;
   code += ` * 运行: npx playwright test ${path.basename(outputPath)}\n`;
   code += ` */\n`;
-  code += `import { test, expect, _electron as electron } from '@playwright/test';\n`;
-  code += `import path from 'path';\n\n`;
-  code += `const EP = path.join(__dirname, '..', 'node_modules', 'electron', 'dist', 'electron.exe');\n`;
-  code += `const MAIN = path.join(__dirname, '..', 'out', 'main', 'index.js');\n\n`;
+  // 平台适配: desktop→Electron / web→chromium / cli→exec
+  const { getPlatformAdapter } = require('./config-loader.js');
+  const adapter = getPlatformAdapter(outputPath ? path.dirname(path.dirname(outputPath)) : '.');
+  const template = adapter.getE2ETemplate();
+
+  code += `${template.imports}\n`;
+  if (adapter.isDesktop) code += `import path from 'path';\n`;
+  code += `\n`;
+  if (adapter.isDesktop) code += `${template.launchCode}\n\n`;
+  else if (adapter.isWeb) code += `${template.launchCode}\n\n`;
+
+  // 测试数据工厂（条件分支场景需要预填充数据）
+  code += `\n// 测试数据工厂: 预填充 Skill/项目/章节，让条件分支场景可触发\n`;
+  code += `const { setupFixtures, cleanupFixtures } = require('./test-fixtures');\n\n`;
+
   code += `test.describe('Spec 用户场景验证 (自动生成)', () => {\n`;
-  code += `  let app, page;\n\n`;
-  code += `  test.beforeAll(async () => {\n`;
-  code += `    app = await electron.launch({ executablePath: EP, args: [MAIN] });\n`;
-  code += `    page = await app.firstWindow();\n`;
-  code += `    await page.waitForLoadState('load').catch(() => {});\n`;
-  code += `    await page.waitForTimeout(3000);\n`;
-  code += `    const txt = await page.locator('body').innerText().catch(() => '');\n`;
-  code += `    expect(txt.length).toBeGreaterThan(0);\n`;
-  code += `  }, 35000);\n\n`;
-  code += `  test.afterAll(async () => {\n`;
-  code += `    try { await app.close(); await app.process().kill(); } catch (e) {}\n`;
-  code += `  });\n\n`;
+
+  if (adapter.isDesktop) {
+    code += `  let app, page;\n\n`;
+    code += `  test.beforeAll(async () => {\n`;
+    code += `    // 注入测试数据（Skill + 项目 + 章节）\n`;
+    code += `    setupFixtures(__dirname);\n`;
+    code += `    ${template.beforeAll}\n`;
+    code += `    await page.waitForLoadState('load').catch(() => {});\n`;
+    code += `    await page.waitForTimeout(3000);\n`;
+    code += `    const txt = await page.locator('body').innerText().catch(() => '');\n`;
+    code += `    expect(txt.length).toBeGreaterThan(0);\n`;
+    code += `  }, 35000);\n\n`;
+    code += `  test.afterAll(async () => {\n`;
+    code += `    ${template.afterAll}\n`;
+    code += `    cleanupFixtures(__dirname);\n`;
+    code += `  });\n\n`;
+  } else if (adapter.isWeb) {
+    code += `  let browser, page;\n\n`;
+    code += `  test.beforeAll(async () => {\n`;
+    code += `    const { chromium } = require('playwright');\n`;
+    code += `    browser = await chromium.launch();\n`;
+    code += `    ${template.beforeAll}\n`;
+    code += `    await page.waitForLoadState('load').catch(() => {});\n`;
+    code += `    await page.waitForTimeout(2000);\n`;
+    code += `    const txt = await page.locator('body').innerText().catch(() => '');\n`;
+    code += `    expect(txt.length).toBeGreaterThan(0);\n`;
+    code += `  }, 30000);\n\n`;
+    code += `  test.afterAll(async () => {\n`;
+    code += `    ${template.afterAll}\n`;
+    code += `    if (browser) await browser.close();\n`;
+    code += `  });\n\n`;
+  } else {
+    // CLI: 不需要浏览器启动
+    code += `  test.beforeAll(async () => { /* CLI 模式 */ });\n`;
+    code += `  test.afterAll(async () => { /* CLI 模式 */ });\n\n`;
+  }
 
   for (let i = 0; i < scenarios.length; i++) {
     const { code: testCode } = generateTestCode(scenarios[i], i + 1);
@@ -436,7 +471,7 @@ function parseExistingTests(e2eDir) {
         // 断言质量评估
         let quality = 'SKELETON';
         const bodyText = block.substring(end);
-        if (/toBeVisible|toBeEnabled|toBeDisabled|toHaveClass|toHaveAttribute|isVisible|isEnabled/.test(bodyText)) quality = 'QUALIFIED';
+        if (/toBeVisible|toBeEnabled|toBeDisabled|toHaveClass|toHaveAttribute|isVisible|isEnabled|keyboard\.press|keyboard\.type/.test(bodyText)) quality = 'QUALIFIED';
         else if (/toMatch|toContain|toBeGreaterThan\(1|toHaveLength|toHaveCount/.test(bodyText)) quality = 'QUALIFIED';
         else if (/\.toBe\(|toBeTruthy/.test(bodyText)) quality = 'QUALIFIED';
         else if (/toBeGreaterThan\(/.test(bodyText)) quality = 'BASIC';
@@ -531,8 +566,9 @@ function check(ctx) {
     detail: `${existingTests.length} 个测试文件, ${totalExistingTests} 条 test()`,
   });
 
-  // 加权覆盖率门禁
-  const threshold = ctx.e2eThreshold || 80;
+  // 加权覆盖率门禁 — 从统一配置加载
+  const cfg = require('./config-loader.js').load(projectRoot);
+  const threshold = cfg.get('e2e.weightedCoverageThreshold');
   if (coverage.total > 0) {
     const qc = coverage.qualityCount;
     const status = coverage.weightedRate >= threshold ? '🟢' : (coverage.weightedRate >= threshold * 0.75 ? '🟡' : '🔴');

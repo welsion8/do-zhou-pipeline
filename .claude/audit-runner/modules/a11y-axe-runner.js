@@ -141,19 +141,39 @@ async function main() {
   let totalViolations = 0, totalCritical = 0, totalSerious = 0, totalWeighted = 0;
   const allResults = [];
 
-  // 启动 Electron（playwright 安装在代码目录的 node_modules）
-  const playwrightPath = path.join(PROJECT_ROOT, CODE_DIR, 'node_modules', 'playwright');
-  if (!fs.existsSync(playwrightPath)) {
-    console.log('🟡 Playwright 未安装。运行: cd do-zhou && pnpm add -D @playwright/test && npx playwright install chromium');
+  // 平台适配: desktop→Electron / web→chromium / cli→skip
+  const { getPlatformAdapter } = require('./config-loader.js');
+  const adapter = getPlatformAdapter(PROJECT_ROOT);
+
+  if (adapter.isCLI) {
+    console.log('🟡 CLI 项目，跳过运行时 a11y 扫描。静态检查已由 a11y-check.js 完成。');
     process.exit(0);
   }
-  const { _electron: electron } = require(playwrightPath);
-  const EP = path.join(PROJECT_ROOT, CODE_DIR, 'node_modules', 'electron', 'dist', 'electron.exe');
-  const MAIN = path.join(OUT_DIR, 'main', 'index.js');
 
-  console.log('🚀 启动应用...');
-  const app = await electron.launch({ executablePath: EP, args: [MAIN] });
-  const page = await app.firstWindow();
+  const playwrightPath = path.join(PROJECT_ROOT, adapter.codeDir, 'node_modules', 'playwright');
+  if (!fs.existsSync(playwrightPath)) {
+    console.log(`🟡 Playwright 未安装。运行: cd ${adapter.codeDir} && pnpm add -D @playwright/test && npx playwright install chromium`);
+    process.exit(0);
+  }
+
+  let page;
+  let app;
+
+  if (adapter.isDesktop) {
+    const launchInfo = adapter.getLaunchInfo();
+    console.log('🚀 启动 Electron 应用...');
+    const { _electron: electron } = require(playwrightPath);
+    app = await electron.launch({ executablePath: launchInfo.electronPath, args: [launchInfo.mainEntry] });
+    page = await app.firstWindow();
+  } else {
+    const webInfo = adapter.getWebInfo();
+    console.log(`🚀 启动浏览器: ${webInfo.devServer}`);
+    const { chromium } = require(playwrightPath);
+    const browser = await chromium.launch();
+    page = await browser.newPage();
+    await page.goto(webInfo.devServer);
+  }
+
   await page.waitForLoadState('load').catch(() => {});
   await page.waitForTimeout(3000);
 
@@ -178,7 +198,9 @@ async function main() {
     }
   }
 
-  await app.close();
+  // 平台适配清理
+  if (adapter.isDesktop && app) await app.close();
+  else if (page) await page.close();
 
   // ── 判定 ──
   console.log('\n' + '═'.repeat(50));

@@ -370,6 +370,13 @@
     - 有 UI Phase 但宣称"不需要设计帧"→ 🔴 违反反向覆盖门禁
     - `.needs-pen-extract` 标记存在 → design_read_check 不得标记 pass
 
+    **关键路径强制审查**（单人团队替代"双人 CR"）：
+    - engine/ / ipc/ / preload/ / services/ / storage/ 变更 → 自动标记 `.needs-critical-review`
+    - 标记存在 → `code_review = fail` → Phase gate 阻断
+    - Agent 必须执行双审（标准+严格模式），通过后 `mark-gate-item.sh code_review pass`
+    - 非 Git 项目降级为 🟡 提醒，不阻断
+    - 首次提交（无历史对比）→ 全量审查
+
     **确认系统治理**（防 suppression 腐化）：
     - `.audit-confirmed.json` 用于抑制已知设计差异。不是"让 gate 通过的捷径"
     - 每条确认必须匹配具体模块名+检查项。`.*` 等宽通配符被 confirmation-guard.js 自动拒绝

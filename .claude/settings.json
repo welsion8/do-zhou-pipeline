@@ -101,6 +101,12 @@
             "if": "Bash(node *audit-pipeline*)",
             "command": "node \"$CLAUDE_PROJECT_DIR\"/.claude/audit-runner/dashboard.js",
             "timeout": 5
+          },
+          {
+            "type": "command",
+            "if": "Bash(git commit*)",
+            "command": "node \"$CLAUDE_PROJECT_DIR\"/.claude/hooks/critical-path-guard.js",
+            "timeout": 10
           }
         ]
       },

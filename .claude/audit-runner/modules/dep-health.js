@@ -49,8 +49,10 @@ function check(ctx) {
     results.push({ check: '依赖过期', status: '🟡', detail: '无法检查（离线或 pnpm 不可用）' });
   }
 
-  // ── 关键安全依赖 ──
-  const securityDeps = ['electron', 'vite', 'react', 'react-dom', 'tailwindcss', 'playwright'];
+  // ── 关键安全依赖（平台自适应）──
+  const { getPlatformAdapter } = require('./config-loader.js');
+  const adapter = getPlatformAdapter(projectRoot);
+  const securityDeps = adapter.getSecurityDeps();
   const deps = { ...pkg.dependencies, ...pkg.devDependencies };
   const outdatedSecurity = [];
 

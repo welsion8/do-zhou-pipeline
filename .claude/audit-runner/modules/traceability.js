@@ -346,18 +346,10 @@ function check(ctx) {
   fs.writeFileSync(outputPath, JSON.stringify(report, null, 2));
 
   // 判定
-  // 从 project.config.json 读取阈值
-  let redThreshold = 25, yellowThreshold = 15;
-  try {
-    const configPath = path.join(projectRoot, '.claude', 'project.config.json');
-    if (fs.existsSync(configPath)) {
-      const config = JSON.parse(fs.readFileSync(configPath, 'utf-8'));
-      if (config.traceability) {
-        redThreshold = config.traceability.redThreshold || 25;
-        yellowThreshold = config.traceability.yellowThreshold || 15;
-      }
-    }
-  } catch (_) {}
+  // 从统一配置加载器读取阈值
+  const cfg = require('./config-loader.js').load(projectRoot);
+  const redThreshold = cfg.get('traceability.redThreshold');
+  const yellowThreshold = cfg.get('traceability.yellowThreshold');
 
   // 排除非实现章节（产品概述/术语/场景/技术栈/依赖/安全要求）
   const nonImplSections = /产品概述|术语表|应用场景|技术栈|外部依赖|特殊要求|安全要求|项目目录|反功能/;

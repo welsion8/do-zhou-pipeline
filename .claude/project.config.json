@@ -1,7 +1,10 @@
 {
+  "_schema": "feicai-project-config-v2",
+  "_note": "所有阈值集中管理。换产品 → 改此文件 → 30 模块自动适配。",
   "project": {
     "type": "desktop",
-    "strict": true
+    "strict": true,
+    "codeDir": "do-zhou"
   },
   "stack": {
     "framework": "react",
@@ -17,41 +20,130 @@
       ".json"
     ]
   },
+  "thresholds": {
+    "_doc": "各模块判定阈值。每个阈值有默认值+边界校验。设为 -1 表示禁用该检查。",
+    "traceability": {
+      "redThreshold": 25,
+      "yellowThreshold": 15,
+      "_doc": "未覆盖可实现条目数。autoCalibrate: 按 specItems*0.15 自动推荐。",
+      "_bounds": {
+        "redMin": 3,
+        "redMax": 100,
+        "yellowMin": 2,
+        "yellowMax": 50
+      },
+      "_autoCalibrate": "specItems > 300 ? {red:40, yellow:25} : specItems > 100 ? {red:25, yellow:15} : {red:8, yellow:4}"
+    },
+    "e2e": {
+      "weightedCoverageThreshold": 80,
+      "_doc": "加权覆盖率目标(%)。专业版 80，标准版 50。",
+      "_bounds": {
+        "min": 20,
+        "max": 100
+      }
+    },
+    "a11y": {
+      "ariaCoverageTarget": 30,
+      "focusRingMinFiles": 3,
+      "attrGreenMin": 15,
+      "attrYellowMin": 5,
+      "axeWeightedThreshold": 10,
+      "_doc": "无障碍检查阈值。ariaCoverageTarget: ARIA 覆盖率目标(%)。axeWeightedThreshold: axe-core 加权分上限。",
+      "_bounds": {
+        "ariaCoverageMin": 5,
+        "ariaCoverageMax": 80,
+        "axeThresholdMin": 3,
+        "axeThresholdMax": 50
+      }
+    },
+    "confirmation": {
+      "maxItems": 15,
+      "autoExpireDays": 30,
+      "maxWildcardDepth": 2,
+      "minPatternLength": 8,
+      "trendDeltaRed": 5,
+      "trendDeltaYellow": 2,
+      "_doc": "确认系统治理。趋势 delta: 抑制率月度变化超过此值 → 告警。"
+    },
+    "visualRegression": {
+      "deviationRed": 5,
+      "deviationOrange": 2,
+      "baselineExpireDays": 7,
+      "_doc": "视觉回归 pixelmatch 偏差率(%)。>red → 🔴 >orange → 🟠。",
+      "_bounds": {
+        "redMin": 1,
+        "redMax": 20,
+        "orangeMin": 0.5,
+        "orangeMax": 10
+      }
+    },
+    "perf": {
+      "bundleRedlineKB": 3000,
+      "enforce": true,
+      "ciRedLine": "p90",
+      "_doc": "性能预算。bundleRedlineKB: Bundle 大小上限。"
+    },
+    "boundFiles": {
+      "coverageTarget": 80,
+      "maxEmptyDirs": 5,
+      "_doc": "绑定文件检查。coverageTarget: 关键词覆盖率目标(%)。"
+    },
+    "designDiff": {
+      "highChangeBlockThreshold": 3,
+      "_doc": "设计变更检测。high 影响变更超过此数 → 阻断。"
+    },
+    "autoFix": {
+      "maxRounds": 3,
+      "_doc": "自动修复最大轮次。防止无限循环。"
+    }
+  },
   "perfBudget": {
     "enforce": true,
     "ciRedLine": "p90",
     "targets": {
-      "appColdStart":   { "p50": 1000, "p90": 2000, "p99": 3000, "unit": "ms" },
-      "editorLoad2k":   { "p50": 50,   "p90": 100,  "p99": 200,  "unit": "ms" },
-      "aiFirstToken":   { "p50": 200,  "p90": 500,  "p99": 1000, "unit": "ms" },
-      "tabSwitch":      { "p50": 10,   "p90": 20,   "p99": 50,   "unit": "ms" },
-      "jsBundleSize":   { "p50": 1500, "p90": 3000, "p99": 5000, "unit": "KB" }
+      "appColdStart": {
+        "p50": 1000,
+        "p90": 2000,
+        "p99": 3000,
+        "unit": "ms"
+      },
+      "editorLoad2k": {
+        "p50": 50,
+        "p90": 100,
+        "p99": 200,
+        "unit": "ms"
+      },
+      "aiFirstToken": {
+        "p50": 200,
+        "p90": 500,
+        "p99": 1000,
+        "unit": "ms"
+      },
+      "tabSwitch": {
+        "p50": 10,
+        "p90": 20,
+        "p99": 50,
+        "unit": "ms"
+      },
+      "jsBundleSize": {
+        "p50": 1500,
+        "p90": 3000,
+        "p99": 5000,
+        "unit": "KB"
+      }
     }
-  },
-  "traceability": {
-    "redThreshold": 25,
-    "yellowThreshold": 15,
-    "_note": "未覆盖条目超过 redThreshold → 🔴。阈值根据 Spec 规模调整：大项目(>300条)可上调至 40/25。"
-  },
-  "confirmation": {
-    "maxItems": 15,
-    "autoExpireDays": 30,
-    "requireJustification": true,
-    "bindToCommit": true,
-    "trendLog": ".claude/.suppression-trend.json",
-    "_note": "确认系统治理参数。bindToCommit=true 时每条确认绑定 commit hash。"
-  },
-  "checks": {
-    "disabled": []
   },
   "testCoverage": {
     "enforce": false,
-    "_comment": "设为 true 后 Phase Gate 强制检查覆盖率。目标按项目阶段逐步提升。",
+    "_comment": "设为 true 后 Phase Gate 强制检查覆盖率。",
     "targets": {
       "lines": 60,
       "branches": 50,
       "functions": 60,
       "statements": 60
     }
+  },
+  "checks": {
+    "disabled": []
   }
 }
