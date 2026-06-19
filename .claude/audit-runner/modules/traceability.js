@@ -285,6 +285,14 @@ function extractKeywords(description) {
     '警告': ['spec-generated'], '保护': ['spec-generated'], '中断': ['spec-generated'],
     '恢复': ['spec-generated'], '即时': ['spec-generated'], '反馈': ['spec-generated'],
     '防重复': ['spec-generated'], '防抖': ['spec-generated'],
+    // 已实现但漏检的功能
+    '手风琴': ['skill-home'], '收缩': ['skill-home'], '展开.*收缩': ['skill-home'],
+    '流式': ['chat', 'streaming'], 'Streaming': ['chat'],
+    '桌面通知': ['notification'], '通知': ['notification'],
+    'skeleton': ['chat', 'progress'], '骨架': ['chat', 'progress'],
+    'safeStorage': ['secure-storage'], '加密': ['secure-storage'],
+    '拖拽.*反馈': ['skill-home'], '视觉反馈': ['skill-home'],
+    '中断.*恢复': ['chat'], '中断AI': ['chat'],
   };
 
   const keywords = [];

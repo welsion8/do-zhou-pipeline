@@ -1,13 +1,13 @@
 {
-  "timestamp": "2026-06-19T18:42:56.725Z",
+  "timestamp": "2026-06-19T18:46:27.332Z",
   "summary": {
     "totalSpecItems": 189,
-    "implemented": 166,
-    "withCode": "164/189 (87%)",
-    "withDesign": "69/189 (37%)",
+    "implemented": 170,
+    "withCode": "169/189 (89%)",
+    "withDesign": "70/189 (37%)",
     "withTest": "117/189 (62%)",
-    "fullCoverage": "46/189",
-    "noCoverage": 15
+    "fullCoverage": "47/189",
+    "noCoverage": 11
   },
   "items": [
     {
@@ -503,7 +503,9 @@
       "subsection": "核心功能",
       "description": "用户拖拽 Skill 卡片 → **即时视觉反馈**：被拖拽卡片提升 2px 阴影 + 半透明(opacity 0.7)跟随鼠标，目标位置顶部出现 2px `$accent-dim` 插入指示线。释放后卡片落入新位置，150ms ease-",
       "specLine": 76,
-      "codeFiles": [],
+      "codeFiles": [
+        "src/renderer/pages/skill-home-page.tsx"
+      ],
       "designFrames": [
         "XJ3UP",
         "jjYaS",
@@ -515,13 +517,13 @@
       "e2eTests": [
         "spec-generated.spec.ts"
       ],
-      "phase": null,
-      "status": "unknown",
+      "phase": 10,
+      "status": "implemented",
       "coverage": {
-        "hasCode": false,
+        "hasCode": true,
         "hasDesign": true,
         "hasTest": true,
-        "score": 2
+        "score": 3
       }
     },
     {
@@ -3316,16 +3318,25 @@
       "subsection": "辅助功能",
       "description": "长操作（> 2s）：skeleton + 进度文字（如\"AI 正在生成故事大纲...\"）",
       "specLine": 263,
-      "codeFiles": [],
+      "codeFiles": [
+        "src/renderer/components/chat/chat-view.tsx",
+        "src/renderer/components/chat/chat-message-ai.tsx",
+        "src/renderer/components/chat/chat-message-user.tsx",
+        "src/renderer/components/chat/chat-system-message.tsx",
+        "src/renderer/components/chat/chat-header.tsx",
+        "src/renderer/components/chat/chat-input-bar.tsx",
+        "src/renderer/components/chat/chat-operation-buttons.tsx",
+        "src/renderer/hooks/use-chat-engine.ts"
+      ],
       "designFrames": [],
       "e2eTests": [],
-      "phase": null,
+      "phase": 7,
       "status": "in_progress",
       "coverage": {
-        "hasCode": false,
+        "hasCode": true,
         "hasDesign": false,
         "hasTest": false,
-        "score": 0
+        "score": 1
       }
     },
     {
@@ -4771,6 +4782,14 @@
         "src/renderer/components/editor/editor-toolbar.tsx",
         "src/renderer/components/editor/editor-context-menu.tsx",
         "src/renderer/components/editor/editor-workspace.tsx",
+        "src/renderer/components/chat/chat-view.tsx",
+        "src/renderer/components/chat/chat-message-ai.tsx",
+        "src/renderer/components/chat/chat-message-user.tsx",
+        "src/renderer/components/chat/chat-system-message.tsx",
+        "src/renderer/components/chat/chat-header.tsx",
+        "src/renderer/components/chat/chat-input-bar.tsx",
+        "src/renderer/components/chat/chat-operation-buttons.tsx",
+        "src/renderer/hooks/use-chat-engine.ts",
         "src/renderer/components/editor/chapter-index-view.tsx",
         "src/renderer/components/editor/chapter-index-row.tsx",
         "src/renderer/pages/skill-editor-page.tsx"
@@ -5257,16 +5276,25 @@
       "subsection": "切换题材",
       "description": "点击\"悬疑推理\"Skill（展开）→ \"现言\"Skill 自动收缩",
       "specLine": 415,
-      "codeFiles": [],
-      "designFrames": [],
+      "codeFiles": [
+        "src/renderer/pages/skill-home-page.tsx"
+      ],
+      "designFrames": [
+        "XJ3UP",
+        "jjYaS",
+        "KhIbg",
+        "oroCB",
+        "c4Jxxw",
+        "xAiWM"
+      ],
       "e2eTests": [],
-      "phase": null,
-      "status": "unknown",
+      "phase": 10,
+      "status": "implemented",
       "coverage": {
-        "hasCode": false,
-        "hasDesign": false,
+        "hasCode": true,
+        "hasDesign": true,
         "hasTest": false,
-        "score": 0
+        "score": 2
       }
     },
     {
@@ -5525,16 +5553,25 @@
       "subsection": "导出 Skill",
       "description": "流式响应（Streaming）",
       "specLine": 440,
-      "codeFiles": [],
+      "codeFiles": [
+        "src/renderer/components/chat/chat-view.tsx",
+        "src/renderer/components/chat/chat-message-ai.tsx",
+        "src/renderer/components/chat/chat-message-user.tsx",
+        "src/renderer/components/chat/chat-system-message.tsx",
+        "src/renderer/components/chat/chat-header.tsx",
+        "src/renderer/components/chat/chat-input-bar.tsx",
+        "src/renderer/components/chat/chat-operation-buttons.tsx",
+        "src/renderer/hooks/use-chat-engine.ts"
+      ],
       "designFrames": [],
       "e2eTests": [],
-      "phase": null,
-      "status": "unknown",
+      "phase": 7,
+      "status": "implemented",
       "coverage": {
-        "hasCode": false,
+        "hasCode": true,
         "hasDesign": false,
         "hasTest": false,
-        "score": 0
+        "score": 1
       }
     },
     {
@@ -5769,16 +5806,25 @@
       "subsection": "外部依赖",
       "description": "**Claude Agent SDK**：运行在 Electron 主进程。需要 `ANTHROPIC_API_KEY` 环境变量或 `claude login` 认证。`query()` 异步迭代器流式返回消息。`resume: sess",
       "specLine": 493,
-      "codeFiles": [],
+      "codeFiles": [
+        "src/renderer/components/chat/chat-view.tsx",
+        "src/renderer/components/chat/chat-message-ai.tsx",
+        "src/renderer/components/chat/chat-message-user.tsx",
+        "src/renderer/components/chat/chat-system-message.tsx",
+        "src/renderer/components/chat/chat-header.tsx",
+        "src/renderer/components/chat/chat-input-bar.tsx",
+        "src/renderer/components/chat/chat-operation-buttons.tsx",
+        "src/renderer/hooks/use-chat-engine.ts"
+      ],
       "designFrames": [],
       "e2eTests": [],
-      "phase": null,
-      "status": "unknown",
+      "phase": 7,
+      "status": "implemented",
       "coverage": {
-        "hasCode": false,
+        "hasCode": true,
         "hasDesign": false,
         "hasTest": false,
-        "score": 0
+        "score": 1
       }
     },
     {
@@ -5964,6 +6010,14 @@
         "src/renderer/components/editor/editor-toolbar.tsx",
         "src/renderer/components/editor/editor-context-menu.tsx",
         "src/renderer/components/editor/editor-workspace.tsx",
+        "src/renderer/components/chat/chat-view.tsx",
+        "src/renderer/components/chat/chat-message-ai.tsx",
+        "src/renderer/components/chat/chat-message-user.tsx",
+        "src/renderer/components/chat/chat-system-message.tsx",
+        "src/renderer/components/chat/chat-header.tsx",
+        "src/renderer/components/chat/chat-input-bar.tsx",
+        "src/renderer/components/chat/chat-operation-buttons.tsx",
+        "src/renderer/hooks/use-chat-engine.ts",
         "src/renderer/components/editor/chapter-index-view.tsx",
         "src/renderer/components/editor/chapter-index-row.tsx",
         "src/renderer/pages/skill-editor-page.tsx"
