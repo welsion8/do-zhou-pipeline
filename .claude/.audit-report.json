@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-19T19:50:07.355Z",
+  "timestamp": "2026-06-19T19:53:07.190Z",
   "projectRoot": "F:/小说桌面端工具",
   "codeDir": "do-zhou",
   "stage": "developing",
@@ -13,9 +13,9 @@
   "penFileEmpty": false,
   "summary": {
     "red": 1,
-    "orange": 29,
+    "orange": 30,
     "yellow": 116,
-    "green": 258
+    "green": 257
   },
   "d1_traceability": [
     {
@@ -382,6 +382,7 @@
             "src/renderer/components/file-tree/file-tree.tsx",
             "src/renderer/components/layout/app-layout.tsx",
             "src/renderer/components/layout/app-layout.tsx",
+            "src/renderer/components/layout/fab-button.test.tsx",
             "src/renderer/components/layout/fab-button.tsx",
             "src/renderer/components/layout/fab-button.tsx",
             "src/renderer/components/layout/left-panel.tsx",
@@ -978,6 +979,7 @@
             "src/renderer/components/chat/chat-header.tsx",
             "src/renderer/components/chat/chat-input-bar.tsx",
             "src/renderer/components/editor/tab-bar.tsx",
+            "src/renderer/components/layout/fab-button.test.tsx",
             "src/renderer/components/layout/fab-button.tsx",
             "src/renderer/components/layout/toolbar.tsx",
             "src/renderer/components/layout/toolbar.tsx",
@@ -2294,6 +2296,7 @@
         "src\\renderer\\components\\chat\\chat-operation-buttons.tsx",
         "src\\renderer\\components\\editor\\tab-bar.tsx",
         "src\\renderer\\components\\file-tree\\file-tree.tsx",
+        "src\\renderer\\components\\layout\\fab-button.test.tsx",
         "src\\renderer\\components\\layout\\fab-button.tsx",
         "src\\renderer\\components\\layout\\left-panel.tsx",
         "src\\renderer\\components\\layout\\toolbar.tsx",
@@ -2333,10 +2336,9 @@
       "status": "🟢"
     },
     {
-      "check": "全局空态一致性",
-      "status": "✅",
-      "found": true,
-      "detail": "8 页均符合空态模板"
+      "check": "全局空态一致性: 1页偏离",
+      "status": "🟠",
+      "detail": "偏离页面: chapter-index-view.test。模板要求 flex+items-center+justify-center 布局"
     },
     {
       "check": "全局错误态一致性: 1页偏离",
@@ -3573,7 +3575,7 @@
     {
       "check": "a11y: 无障碍属性",
       "status": "🟢",
-      "detail": "36 处 (aria:17 role:2 tabIndex:0 alt:0 label:17) — 12/112 文件 (11%)"
+      "detail": "38 处 (aria:18 role:2 tabIndex:0 alt:0 label:18) — 13/114 文件 (11%)"
     },
     {
       "check": "a11y: 键盘导航",
@@ -3650,7 +3652,7 @@
       "detail": "在 P90 预算内"
     },
     {
-      "check": "编辑器组件: 13文件 980行",
+      "check": "编辑器组件: 14文件 1007行",
       "status": "🟡",
       "found": true,
       "detail": "编辑器组件接近 300行/文件 上限，建议拆分。"
@@ -4310,6 +4312,6 @@
     "filePathCount": 68
   },
   "code": {
-    "fileCount": 118
+    "fileCount": 120
   }
 }
