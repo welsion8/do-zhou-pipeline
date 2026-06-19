@@ -60,4 +60,12 @@ export function registerEngineIpc(dataRoot: string) {
   ipcMain.handle('engine:loadSession', (_e, sessionId: string) => sessionStore.load(sessionId))
   ipcMain.handle('engine:listSessions', () => sessionStore.list())
   ipcMain.handle('engine:deleteSession', (_e, sessionId: string) => { sessionStore.delete(sessionId) })
+
+  // 桌面通知
+  ipcMain.handle('notify:complete', (_e, title: string, body: string) => {
+    try { require('../services/notification-service').notificationService.notifyComplete(title, body) } catch (_) {}
+  })
+  ipcMain.handle('notify:error', (_e, title: string, body: string) => {
+    try { require('../services/notification-service').notificationService.notifyError(title, body) } catch (_) {}
+  })
 }

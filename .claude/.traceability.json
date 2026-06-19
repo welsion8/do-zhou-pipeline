@@ -1,13 +1,13 @@
 {
-  "timestamp": "2026-06-19T18:46:27.332Z",
+  "timestamp": "2026-06-19T18:53:32.609Z",
   "summary": {
     "totalSpecItems": 189,
-    "implemented": 170,
-    "withCode": "169/189 (89%)",
-    "withDesign": "70/189 (37%)",
+    "implemented": 171,
+    "withCode": "170/189 (90%)",
+    "withDesign": "71/189 (38%)",
     "withTest": "117/189 (62%)",
     "fullCoverage": "47/189",
-    "noCoverage": 11
+    "noCoverage": 10
   },
   "items": [
     {
@@ -5258,16 +5258,27 @@
       "subsection": "切换题材",
       "description": "在工作台点击 🏠 → 返回 Skill 主页",
       "specLine": 414,
-      "codeFiles": [],
-      "designFrames": [],
+      "codeFiles": [
+        "src/renderer/components/layout/app-layout.tsx",
+        "src/renderer/components/layout/toolbar.tsx",
+        "src/renderer/components/editor/editor-toolbar.tsx"
+      ],
+      "designFrames": [
+        "XJ3UP",
+        "jjYaS",
+        "KhIbg",
+        "oroCB",
+        "c4Jxxw",
+        "xAiWM"
+      ],
       "e2eTests": [],
-      "phase": null,
-      "status": "unknown",
+      "phase": 2,
+      "status": "implemented",
       "coverage": {
-        "hasCode": false,
-        "hasDesign": false,
+        "hasCode": true,
+        "hasDesign": true,
         "hasTest": false,
-        "score": 0
+        "score": 2
       }
     },
     {
