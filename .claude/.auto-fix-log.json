@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-19T03:48:37.573Z",
+  "timestamp": "2026-06-19T04:26:27.780Z",
   "dryRun": false,
   "rounds": [
     {
@@ -29,7 +29,7 @@
           {
             "module": "traceability",
             "check": "可追溯性-缺测试",
-            "detail": "67 条已实现条目缺 E2E 测试",
+            "detail": "68 条已实现条目缺 E2E 测试",
             "status": "🟡",
             "rule": "traceability-update",
             "category": "trace",
@@ -39,8 +39,18 @@
           {
             "module": "traceability",
             "check": "可追溯性-概要",
-            "detail": "187 条 Spec → 176 条可实现 → 165/187 (88%) 有代码 (19 条未覆盖, 阈值 🔴>25)",
+            "detail": "189 条 Spec → 178 条可实现 → 167/189 (88%) 有代码 (19 条未覆盖, 阈值 🔴>25)",
             "status": "🟡",
+            "rule": "e2e-missing",
+            "category": "test",
+            "needsAgent": false,
+            "message": "运行 spec-to-e2e --generate 生成测试骨架"
+          },
+          {
+            "module": "spec_to_e2e",
+            "check": "📋 待覆盖: 最近项目行",
+            "detail": "→ 直接进入工作台，加载该项目 | 运行 spec-to-e2e --generate 自动生成",
+            "status": "⏳",
             "rule": "e2e-missing",
             "category": "test",
             "needsAgent": false,
@@ -50,6 +60,16 @@
             "module": "spec_to_e2e",
             "check": "📋 待覆盖: `chapter_index.md`",
             "detail": "→ 打开 Markdown 编辑器模式（可编辑原始内容） | 运行 spec-to-e2e --generate 自动生成",
+            "status": "⏳",
+            "rule": "e2e-missing",
+            "category": "test",
+            "needsAgent": false,
+            "message": "运行 spec-to-e2e --generate 生成测试骨架"
+          },
+          {
+            "module": "spec_to_e2e",
+            "check": "📋 待覆盖: 若 项目已被删除或移动",
+            "detail": "→ 行显示 ⚠ + \"项目不存在\" 灰色文字 | 运行 spec-to-e2e --generate 自动生成",
             "status": "⏳",
             "rule": "e2e-missing",
             "category": "test",
@@ -75,8 +95,8 @@
   ],
   "finalReport": {
     "red": 2,
-    "orange": 2,
+    "orange": 3,
     "yellow": 65,
-    "green": 211
+    "green": 210
   }
 }

@@ -1,12 +1,12 @@
 {
-  "timestamp": "2026-06-19T04:20:12.356Z",
+  "timestamp": "2026-06-19T04:32:28.732Z",
   "summary": {
-    "totalSpecItems": 187,
-    "implemented": 166,
-    "withCode": "165/187 (88%)",
-    "withDesign": "68/187 (36%)",
-    "withTest": "98/187 (52%)",
-    "fullCoverage": "44/187",
+    "totalSpecItems": 189,
+    "implemented": 168,
+    "withCode": "167/189 (88%)",
+    "withDesign": "69/189 (37%)",
+    "withTest": "99/189 (52%)",
+    "fullCoverage": "44/189",
     "noCoverage": 20
   },
   "items": [
@@ -608,8 +608,86 @@
       "id": "S-14",
       "section": "功能需求",
       "subsection": "核心功能",
+      "description": "**最近打开的项目**：Skill 主页的项目列表上方显示\"最近打开\"分区（最多 5 项），按最后打开时间倒序排列。点击最近项目行 → 直接进入工作台，加载该项目。若项目已被删除或移动 → 行显示 ⚠ + \"项目不存在\" 灰色文字，点击无效",
+      "specLine": 82,
+      "codeFiles": [
+        "src/main/services/project-service.ts",
+        "src/renderer/components/navigation/project-context-menu.tsx",
+        "src/renderer/pages/skill-home-page.tsx"
+      ],
+      "designFrames": [
+        "XJ3UP",
+        "jjYaS",
+        "KhIbg",
+        "oroCB",
+        "c4Jxxw",
+        "xAiWM"
+      ],
+      "e2eTests": [],
+      "phase": 3,
+      "status": "implemented",
+      "coverage": {
+        "hasCode": true,
+        "hasDesign": true,
+        "hasTest": false,
+        "score": 2
+      }
+    },
+    {
+      "id": "S-15",
+      "section": "功能需求",
+      "subsection": "核心功能",
+      "description": "用户可手动从最近列表中移除单个条目（悬停显示 ✕ 按钮），不删除项目文件。",
+      "specLine": 83,
+      "codeFiles": [
+        "src/renderer/components/layout/toolbar.tsx",
+        "src/renderer/components/layout/left-panel.tsx",
+        "src/renderer/components/layout/fab-button.tsx",
+        "src/main/services/file-service.ts",
+        "src/main/services/project-service.ts",
+        "src/main/ipc/file-ipc.ts",
+        "src/renderer/components/file-tree/file-tree.tsx",
+        "src/renderer/components/file-tree/file-tree-context-menu.tsx",
+        "src/renderer/hooks/use-file-system.ts",
+        "src/renderer/components/editor/markdown-editor.tsx",
+        "src/renderer/components/editor/markdown-preview.tsx",
+        "src/renderer/components/editor/tab-bar.tsx",
+        "src/renderer/components/editor/editor-toolbar.tsx",
+        "src/renderer/components/editor/editor-context-menu.tsx",
+        "src/renderer/components/editor/editor-workspace.tsx",
+        "src/renderer/components/chat/chat-view.tsx",
+        "src/renderer/components/chat/chat-message-ai.tsx",
+        "src/renderer/components/chat/chat-message-user.tsx",
+        "src/renderer/components/chat/chat-system-message.tsx",
+        "src/renderer/components/chat/chat-header.tsx",
+        "src/renderer/components/chat/chat-input-bar.tsx",
+        "src/renderer/components/chat/chat-operation-buttons.tsx",
+        "src/renderer/hooks/use-chat-engine.ts",
+        "src/renderer/components/navigation/project-context-menu.tsx",
+        "src/renderer/components/editor/chapter-index-view.tsx",
+        "src/renderer/components/editor/chapter-index-row.tsx",
+        "src/renderer/pages/skill-home-page.tsx",
+        "src/renderer/pages/skill-editor-page.tsx"
+      ],
+      "designFrames": [],
+      "e2eTests": [
+        "editor-scroll-verify.spec.ts"
+      ],
+      "phase": 2,
+      "status": "implemented",
+      "coverage": {
+        "hasCode": true,
+        "hasDesign": false,
+        "hasTest": true,
+        "score": 2
+      }
+    },
+    {
+      "id": "S-16",
+      "section": "功能需求",
+      "subsection": "核心功能",
       "description": "用户右键项目名 → 弹出菜单（打开/重命名/置顶/移入回收站/彻底删除）",
-      "specLine": 84,
+      "specLine": 89,
       "codeFiles": [
         "src/main/services/project-service.ts",
         "src/renderer/components/file-tree/file-tree.tsx",
@@ -630,11 +708,11 @@
       }
     },
     {
-      "id": "S-15",
+      "id": "S-17",
       "section": "功能需求",
       "subsection": "核心功能",
       "description": "项目删除走三级安全机制：移入回收站（软删除，可恢复）→ 清空回收站（永久删除，二次确认，使用自定义弹窗——Electron 不支持 `window.confirm()`）→ 自动备份兜底",
-      "specLine": 85,
+      "specLine": 90,
       "codeFiles": [
         "src/main/services/project-service.ts",
         "src/renderer/components/navigation/project-context-menu.tsx",
@@ -652,11 +730,11 @@
       }
     },
     {
-      "id": "S-16",
+      "id": "S-18",
       "section": "功能需求",
       "subsection": "核心功能",
       "description": "**回收站恢复冲突处理**：从回收站恢复项目时，若原始路径已存在同名项目 → 弹出对话框\"已存在同名项目，请选择：① 覆盖现有项目 ② 自动重命名为'项目名 (恢复)' ③ 取消恢复\"",
-      "specLine": 86,
+      "specLine": 91,
       "codeFiles": [
         "src/renderer/components/layout/right-panel.tsx",
         "src/main/services/file-service.ts",
@@ -709,11 +787,11 @@
       }
     },
     {
-      "id": "S-17",
+      "id": "S-19",
       "section": "功能需求",
       "subsection": "核心功能",
       "description": "**项目重命名异步流程**：用户发起重命名 → IPC 调用 `project:rename` → 成功 → 更新 UI（乐观更新先行，失败时回退）→ 失败（权限不足/文件名冲突）→ 显示内联错误提示，恢复原名称",
-      "specLine": 87,
+      "specLine": 92,
       "codeFiles": [
         "src/renderer/components/layout/left-panel.tsx",
         "src/main/services/file-service.ts",
@@ -740,11 +818,11 @@
       }
     },
     {
-      "id": "S-18",
+      "id": "S-20",
       "section": "功能需求",
       "subsection": "核心功能",
       "description": "**项目列表空状态**：Skill 下无项目时，显示\"暂无项目，点击 [+ 新建项目] 开始创作\"提示",
-      "specLine": 88,
+      "specLine": 93,
       "codeFiles": [
         "src/renderer/components/layout/status-bar.tsx",
         "src/main/services/project-service.ts",
@@ -771,11 +849,11 @@
       }
     },
     {
-      "id": "S-19",
+      "id": "S-21",
       "section": "功能需求",
       "subsection": "核心功能",
       "description": "**左侧（导航区）**：阶段卡片（上方，流程驱动）+ 项目文件树（下方，Binder 式折叠树）。两区之间为可拖拽分隔线，各自独立纵向滚动（`overflow-y: auto`）",
-      "specLine": 91,
+      "specLine": 96,
       "codeFiles": [
         "src/renderer/components/layout/left-panel.tsx",
         "src/main/services/file-service.ts",
@@ -805,11 +883,11 @@
       }
     },
     {
-      "id": "S-20",
+      "id": "S-22",
       "section": "功能需求",
       "subsection": "核心功能",
       "description": "**中间（编辑区）**：支持多标签页的 Markdown 编辑器（纵向滚动）+ 标签栏（横向溢出滚动），右上角编辑/预览切换按钮",
-      "specLine": 92,
+      "specLine": 97,
       "codeFiles": [
         "src/renderer/components/layout/app-layout.tsx",
         "src/renderer/components/layout/toolbar.tsx",
@@ -846,11 +924,11 @@
       }
     },
     {
-      "id": "S-21",
+      "id": "S-23",
       "section": "功能需求",
       "subsection": "核心功能",
       "description": "**右侧（AI 对话区）**：持久化对话窗口，流式显示 AI 回复。对话内容区纵向滚动，底部输入栏固定",
-      "specLine": 93,
+      "specLine": 98,
       "codeFiles": [
         "src/renderer/components/layout/app-layout.tsx",
         "src/renderer/components/layout/right-panel.tsx",
@@ -903,11 +981,11 @@
       }
     },
     {
-      "id": "S-22",
+      "id": "S-24",
       "section": "功能需求",
       "subsection": "核心功能",
       "description": "滚动区",
-      "specLine": 98,
+      "specLine": 103,
       "codeFiles": [],
       "designFrames": [],
       "e2eTests": [
@@ -924,11 +1002,11 @@
       }
     },
     {
-      "id": "S-23",
+      "id": "S-25",
       "section": "功能需求",
       "subsection": "核心功能",
       "description": "中间·编辑区",
-      "specLine": 103,
+      "specLine": 108,
       "codeFiles": [
         "src/renderer/components/editor/markdown-editor.tsx",
         "src/renderer/components/editor/markdown-preview.tsx",
@@ -954,11 +1032,11 @@
       }
     },
     {
-      "id": "S-24",
+      "id": "S-26",
       "section": "功能需求",
       "subsection": "核心功能",
       "description": "面板内滚动使用 `overflow-y: auto`，面板容器使用 `overflow: hidden` 阻断页面级滚动",
-      "specLine": 108,
+      "specLine": 113,
       "codeFiles": [
         "src/renderer/components/layout/left-panel.tsx",
         "src/renderer/components/layout/right-panel.tsx"
@@ -978,11 +1056,11 @@
       }
     },
     {
-      "id": "S-25",
+      "id": "S-27",
       "section": "功能需求",
       "subsection": "核心功能",
       "description": "AI 流式输出时，对话区自动滚到底部（`scroll-behavior: smooth`）。但若用户手动向上滚动了 > 50px（正在读历史消息），则**不强制滚回**——避免打断阅读。流式输出结束后恢复自动滚底",
-      "specLine": 109,
+      "specLine": 114,
       "codeFiles": [
         "src/renderer/components/layout/right-panel.tsx",
         "src/main/services/file-service.ts",
@@ -1042,11 +1120,11 @@
       }
     },
     {
-      "id": "S-26",
+      "id": "S-28",
       "section": "功能需求",
       "subsection": "核心功能",
       "description": "左侧两区比例默认 65:35，用户拖拽后可自定义。最小每区 80px（防止拖到消失）",
-      "specLine": 110,
+      "specLine": 115,
       "codeFiles": [
         "src/renderer/components/layout/left-panel.tsx"
       ],
@@ -1062,11 +1140,11 @@
       }
     },
     {
-      "id": "S-27",
+      "id": "S-29",
       "section": "功能需求",
       "subsection": "核心功能",
       "description": "每张卡片绑定固定文件路径（在 Skill 编辑区中可配置）：",
-      "specLine": 114,
+      "specLine": 119,
       "codeFiles": [
         "src/renderer/components/layout/left-panel.tsx",
         "src/main/services/file-service.ts",
@@ -1111,11 +1189,11 @@
       }
     },
     {
-      "id": "S-28",
+      "id": "S-30",
       "section": "绑定文件结构清单",
       "subsection": "核心功能",
       "description": "点击阶段卡片 → 编辑区加载对应文件 + AI 对话区自动发送该阶段预设指令（**例外**：已完成✅阶段仅加载文件不触发 AI；阶段③章节目录专用竖列视图——详见 §4 状态标识规则和 §5 章节目录）",
-      "specLine": 129,
+      "specLine": 134,
       "codeFiles": [
         "src/renderer/components/layout/left-panel.tsx",
         "src/renderer/components/layout/right-panel.tsx",
@@ -1182,11 +1260,11 @@
       }
     },
     {
-      "id": "S-29",
+      "id": "S-31",
       "section": "绑定文件结构清单",
       "subsection": "核心功能",
       "description": "点击\"章节目录\"阶段卡片 → 编辑区切换为**章节索引竖列视图**（非 Markdown 编辑器模式），以竖列形式显示章节索引（章节号 + 标题，分隔线隔开）",
-      "specLine": 132,
+      "specLine": 137,
       "codeFiles": [
         "src/renderer/components/layout/app-layout.tsx",
         "src/renderer/components/layout/toolbar.tsx",
@@ -1224,11 +1302,11 @@
       }
     },
     {
-      "id": "S-30",
+      "id": "S-32",
       "section": "绑定文件结构清单",
       "subsection": "核心功能",
       "description": "从文件树点击 `chapter_index.md` → 打开 Markdown 编辑器模式（可编辑原始内容）",
-      "specLine": 133,
+      "specLine": 138,
       "codeFiles": [
         "src/renderer/components/layout/left-panel.tsx",
         "src/main/services/file-service.ts",
@@ -1260,11 +1338,11 @@
       }
     },
     {
-      "id": "S-31",
+      "id": "S-33",
       "section": "绑定文件结构清单",
       "subsection": "核心功能",
       "description": "点击任一章节行 → 编辑区新建标签页，加载对应 `chapters/Chapter-XX.md` 文件（Markdown 编辑模式）",
-      "specLine": 134,
+      "specLine": 139,
       "codeFiles": [
         "src/renderer/components/layout/left-panel.tsx",
         "src/main/services/file-service.ts",
@@ -1299,11 +1377,11 @@
       }
     },
     {
-      "id": "S-32",
+      "id": "S-34",
       "section": "绑定文件结构清单",
       "subsection": "核心功能",
       "description": "**chapter_index.md 不存在时**：阶段③卡片点击 → 编辑区显示空状态\"尚未创建章节目录。请在文件树中新建 `chapter_index.md`，或在 AI 对话区输入指令生成章节目录\"（含 [✨ AI 生成章节目录] 按",
-      "specLine": 135,
+      "specLine": 140,
       "codeFiles": [
         "src/renderer/components/layout/left-panel.tsx",
         "src/renderer/components/layout/right-panel.tsx",
@@ -1370,11 +1448,11 @@
       }
     },
     {
-      "id": "S-33",
+      "id": "S-35",
       "section": "绑定文件结构清单",
       "subsection": "核心功能",
       "description": "**chapter_index.md 存在但为空**：阶段③卡片点击 → 编辑区显示空状态\"章节目录为空。请编辑 `chapter_index.md` 添加章节，或使用 AI 生成\"（含 [📝 手动编辑] 按钮，点击以 Markdown ",
-      "specLine": 136,
+      "specLine": 141,
       "codeFiles": [
         "src/renderer/components/layout/toolbar.tsx",
         "src/renderer/components/layout/left-panel.tsx",
@@ -1416,11 +1494,11 @@
       }
     },
     {
-      "id": "S-34",
+      "id": "S-36",
       "section": "绑定文件结构清单",
       "subsection": "核心功能",
       "description": "**chapter_index.md 格式错误**（正则匹配到 0 条有效行，但文件非空）→ 竖列视图顶部显示警告条\"章节目录格式异常，请检查 `chapter_index.md` 格式。预期格式：`**第N章** 标题名称`\"",
-      "specLine": 137,
+      "specLine": 142,
       "codeFiles": [
         "src/renderer/components/layout/toolbar.tsx",
         "src/renderer/components/layout/left-panel.tsx",
@@ -1457,11 +1535,11 @@
       }
     },
     {
-      "id": "S-35",
+      "id": "S-37",
       "section": "绑定文件结构清单",
       "subsection": "核心功能",
       "description": "**容错**：若解析到的章节号在 `chapters/` 下无对应文件 → 章节行显示为灰色不可点击态 + ⚠ 图标，hover 提示\"文件不存在\"",
-      "specLine": 140,
+      "specLine": 145,
       "codeFiles": [
         "src/renderer/components/layout/left-panel.tsx",
         "src/main/services/file-service.ts",
@@ -1489,11 +1567,11 @@
       }
     },
     {
-      "id": "S-36",
+      "id": "S-38",
       "section": "绑定文件结构清单",
       "subsection": "核心功能",
       "description": "**一致性校验**：若解析出的章节数 ≠ `chapters/` 下实际 .md 文件数 → 视图顶部显示窄条警告\"章节索引与文件数不一致\"，3 秒后自动消失",
-      "specLine": 141,
+      "specLine": 146,
       "codeFiles": [
         "src/renderer/components/layout/left-panel.tsx",
         "src/main/services/file-service.ts",
@@ -1519,11 +1597,11 @@
       }
     },
     {
-      "id": "S-37",
+      "id": "S-39",
       "section": "绑定文件结构清单",
       "subsection": "核心功能",
       "description": "**章节点击行为**：点击章节行 → 若章节文件存在且为空 → 新建标签页加载文件 + **自动触发 AI** 生成该章节。若章节文件已有内容 → 仅加载文件到编辑区，**不触发 AI**（与阶段卡片只读模式逻辑一致）",
-      "specLine": 142,
+      "specLine": 147,
       "codeFiles": [
         "src/renderer/components/layout/left-panel.tsx",
         "src/main/services/file-service.ts",
@@ -1560,11 +1638,11 @@
       }
     },
     {
-      "id": "S-38",
+      "id": "S-40",
       "section": "绑定文件结构清单",
       "subsection": "核心功能",
       "description": "**返回章节目录**：在章节编辑标签页的标签名旁显示 `[← 目录]` 小号文字链接，点击切换回章节目录竖列视图",
-      "specLine": 143,
+      "specLine": 148,
       "codeFiles": [
         "src/renderer/components/layout/app-layout.tsx",
         "src/renderer/components/layout/toolbar.tsx",
@@ -1601,11 +1679,11 @@
       }
     },
     {
-      "id": "S-39",
+      "id": "S-41",
       "section": "绑定文件结构清单",
       "subsection": "核心功能",
       "description": "**章节完成引导**：AI 完成一个章节的生成后，对话区显示内联提示 `✅ 第 N 章已完成 [继续写第 N+1 章 →]`，点击后自动触发下一章的 AI 生成",
-      "specLine": 144,
+      "specLine": 149,
       "codeFiles": [
         "src/renderer/components/layout/right-panel.tsx",
         "src/main/services/file-service.ts",
@@ -1659,11 +1737,11 @@
       }
     },
     {
-      "id": "S-40",
+      "id": "S-42",
       "section": "绑定文件结构清单",
       "subsection": "核心功能",
       "description": "**左侧章节列表显示**：阶段④ 下方不再显示原始文件名（`Ch-01.md`），改为解析 `chapter_index.md` 提取章节标题，显示为 `第1章 · 婚礼上的陌生人`。列表顶部提供 `🔍 跳转到章...` 输入框，输入章节",
-      "specLine": 145,
+      "specLine": 150,
       "codeFiles": [
         "src/renderer/components/layout/toolbar.tsx",
         "src/renderer/components/layout/left-panel.tsx",
@@ -1694,11 +1772,11 @@
       }
     },
     {
-      "id": "S-41",
+      "id": "S-43",
       "section": "绑定文件结构清单",
       "subsection": "核心功能",
       "description": "多标签页管理：每个打开的文件一个标签，标签名 = 文件名，右侧 X 按钮关闭。双击标签名 → inline 编辑模式，输入新名称 Enter 确认重命名（同步磁盘文件重命名）。重命名冲突 → 标签名红色闪烁 + tooltip\"文件名已存在",
-      "specLine": 148,
+      "specLine": 153,
       "codeFiles": [
         "src/renderer/components/layout/toolbar.tsx",
         "src/renderer/components/layout/left-panel.tsx",
@@ -1734,11 +1812,11 @@
       }
     },
     {
-      "id": "S-42",
+      "id": "S-44",
       "section": "绑定文件结构清单",
       "subsection": "核心功能",
       "description": "关闭标签 ≠ 删除文件：仅从视图移除标签页，磁盘文件不受影响",
-      "specLine": 149,
+      "specLine": 154,
       "codeFiles": [
         "src/renderer/components/layout/left-panel.tsx",
         "src/main/services/file-service.ts",
@@ -1761,11 +1839,11 @@
       }
     },
     {
-      "id": "S-43",
+      "id": "S-45",
       "section": "绑定文件结构清单",
       "subsection": "核心功能",
       "description": "**标签溢出处理**（对标 Figma / Arc 浏览器）：标签宽度最小 80px（超长文件名截断为 `未命名...`）。标签总宽度超出标签栏时 → 标签栏底部出现 3px 横向滚动条，鼠标滚轮横向滑动选标签，也可拖拽滚动条滑块。活跃标签",
-      "specLine": 150,
+      "specLine": 155,
       "codeFiles": [
         "src/renderer/components/layout/left-panel.tsx",
         "src/main/services/file-service.ts",
@@ -1791,11 +1869,11 @@
       }
     },
     {
-      "id": "S-44",
+      "id": "S-46",
       "section": "绑定文件结构清单",
       "subsection": "核心功能",
       "description": "**新建空白页面**：编辑区工具栏 `[+ 新建]` 按钮 → 在项目根目录创建空 `.md` 文件 `未命名.md` → 编辑区自动以新标签页打开，光标聚焦进入编辑模式。用户可双击标签名重命名。新文件纳入文件树显示。若项目目录已存在 `未",
-      "specLine": 151,
+      "specLine": 156,
       "codeFiles": [
         "src/renderer/components/layout/app-layout.tsx",
         "src/renderer/components/layout/toolbar.tsx",
@@ -1836,11 +1914,11 @@
       }
     },
     {
-      "id": "S-45",
+      "id": "S-47",
       "section": "绑定文件结构清单",
       "subsection": "核心功能",
       "description": "编辑/预览切换：右上角按钮切换 Markdown 源码编辑和渲染预览",
-      "specLine": 152,
+      "specLine": 157,
       "codeFiles": [
         "src/renderer/components/layout/app-layout.tsx",
         "src/renderer/components/layout/toolbar.tsx",
@@ -1875,11 +1953,11 @@
       }
     },
     {
-      "id": "S-46",
+      "id": "S-48",
       "section": "绑定文件结构清单",
       "subsection": "核心功能",
       "description": "自动保存：编辑内容实时写入磁盘（默认间隔 2 秒，可在设置中调整为 5s/10s/30s/60s）",
-      "specLine": 153,
+      "specLine": 158,
       "codeFiles": [
         "src/renderer/components/editor/markdown-editor.tsx",
         "src/renderer/components/editor/markdown-preview.tsx",
@@ -1908,11 +1986,11 @@
       }
     },
     {
-      "id": "S-47",
+      "id": "S-49",
       "section": "绑定文件结构清单",
       "subsection": "核心功能",
       "description": "**并发写入锁策略**：AI 正在流式写入某文件时，该文件的编辑区标签页自动进入**只读模式**（编辑区顶部显示窄条提示\"AI 正在生成内容，暂时无法编辑\"）。AI 写入完成后只读模式自动解除。用户可随时点击 [✏️ 手动接管] 按钮中断 ",
-      "specLine": 154,
+      "specLine": 159,
       "codeFiles": [
         "src/renderer/components/layout/toolbar.tsx",
         "src/renderer/components/layout/left-panel.tsx",
@@ -1966,11 +2044,11 @@
       }
     },
     {
-      "id": "S-48",
+      "id": "S-50",
       "section": "绑定文件结构清单",
       "subsection": "核心功能",
       "description": "**阶段卡片只读模式**：已完成（✅）的阶段卡片点击时，仅加载文件到编辑区，**不触发 AI**。只有未开始（⏹）或进行中（⟳）的阶段卡片点击时才会自动发送预设指令。用户可在已完成标签页中手动在 AI 对话区输入指令触发 AI。",
-      "specLine": 155,
+      "specLine": 160,
       "codeFiles": [
         "src/renderer/components/layout/left-panel.tsx",
         "src/renderer/components/layout/right-panel.tsx",
@@ -2036,11 +2114,11 @@
       }
     },
     {
-      "id": "S-49",
+      "id": "S-51",
       "section": "绑定文件结构清单",
       "subsection": "核心功能",
       "description": "**编辑区快捷键**（对标 VS Code / Obsidian）：",
-      "specLine": 156,
+      "specLine": 161,
       "codeFiles": [
         "src/renderer/components/editor/markdown-editor.tsx",
         "src/renderer/components/editor/markdown-preview.tsx",
@@ -2066,11 +2144,11 @@
       }
     },
     {
-      "id": "S-50",
+      "id": "S-52",
       "section": "绑定文件结构清单",
       "subsection": "核心功能",
       "description": "**编辑区右键菜单**（选中文本后右键）：复制 / 剪切 / 粘贴 / ── / 🤖 AI 重写选中内容 / ✨ AI 扩写选中段落 / 🔤 AI 润色选中对话。AI 操作流程：选中文本+指令 → 发送到对话区 → AI 返回预览（显示",
-      "specLine": 163,
+      "specLine": 168,
       "codeFiles": [
         "src/renderer/components/layout/right-panel.tsx",
         "src/main/services/file-service.ts",
@@ -2131,11 +2209,11 @@
       }
     },
     {
-      "id": "S-51",
+      "id": "S-53",
       "section": "绑定文件结构清单",
       "subsection": "核心功能",
       "description": "两种触发方式：点击左侧阶段卡片 → AI 自动发送预设引导指令 / 底部输入框手动输入",
-      "specLine": 167,
+      "specLine": 172,
       "codeFiles": [
         "src/renderer/components/layout/left-panel.tsx",
         "src/main/services/file-service.ts",
@@ -2196,11 +2274,11 @@
       }
     },
     {
-      "id": "S-52",
+      "id": "S-54",
       "section": "绑定文件结构清单",
       "subsection": "核心功能",
       "description": "流式输出：AI 生成内容实时在对话区显示，生成到文件的内容同步更新到编辑区",
-      "specLine": 168,
+      "specLine": 173,
       "codeFiles": [
         "src/renderer/components/layout/left-panel.tsx",
         "src/renderer/components/layout/right-panel.tsx",
@@ -2263,11 +2341,11 @@
       }
     },
     {
-      "id": "S-53",
+      "id": "S-55",
       "section": "绑定文件结构清单",
       "subsection": "核心功能",
       "description": "智能联动：修改某阶段内容后，AI 可主动提醒是否需要联动调整后续阶段",
-      "specLine": 170,
+      "specLine": 175,
       "codeFiles": [
         "src/renderer/components/layout/left-panel.tsx",
         "src/renderer/components/navigation/stage-cards.tsx",
@@ -2285,11 +2363,11 @@
       }
     },
     {
-      "id": "S-54",
+      "id": "S-56",
       "section": "绑定文件结构清单",
       "subsection": "核心功能",
       "description": "**对话历史搜索**：对话区顶部提供搜索入口（🔍 图标），点击展开搜索框，输入关键词 → 高亮匹配的对话块 + 上下箭头跳转到上一个/下一个匹配项。对标 Claude.ai 的对话搜索交互",
-      "specLine": 171,
+      "specLine": 176,
       "codeFiles": [
         "src/renderer/components/layout/right-panel.tsx",
         "src/main/services/file-service.ts",
@@ -2338,11 +2416,11 @@
       }
     },
     {
-      "id": "S-55",
+      "id": "S-57",
       "section": "绑定文件结构清单",
       "subsection": "核心功能",
       "description": "**对话导出**：对话区头部提供 [↗ 导出] 按钮 → 将当前项目完整对话历史导出为 Markdown 文件，保存到项目目录 `{项目}/conversation-export.md`",
-      "specLine": 172,
+      "specLine": 177,
       "codeFiles": [
         "src/renderer/components/layout/toolbar.tsx",
         "src/renderer/components/layout/left-panel.tsx",
@@ -2410,11 +2488,11 @@
       }
     },
     {
-      "id": "S-56",
+      "id": "S-58",
       "section": "绑定文件结构清单",
       "subsection": "核心功能",
       "description": "**Token 用量显示**：对话区头部显示当前项目的累计 Token 消耗（小号灰色文字，如 `📊 12.4K tokens`），hover 显示分模型明细（如 `Claude Opus: 8.2K / DeepSeek V3: 4.2",
-      "specLine": 173,
+      "specLine": 178,
       "codeFiles": [
         "src/renderer/components/layout/right-panel.tsx",
         "src/main/services/file-service.ts",
@@ -2469,11 +2547,11 @@
       }
     },
     {
-      "id": "S-57",
+      "id": "S-59",
       "section": "绑定文件结构清单",
       "subsection": "核心功能",
       "description": "**防重复点击保护**：",
-      "specLine": 174,
+      "specLine": 179,
       "codeFiles": [],
       "designFrames": [],
       "e2eTests": [],
@@ -2487,11 +2565,11 @@
       }
     },
     {
-      "id": "S-58",
+      "id": "S-60",
       "section": "绑定文件结构清单",
       "subsection": "核心功能",
       "description": "**输入框发送按钮状态**：",
-      "specLine": 178,
+      "specLine": 183,
       "codeFiles": [
         "src/renderer/components/layout/toolbar.tsx",
         "src/renderer/components/layout/status-bar.tsx",
@@ -2512,11 +2590,11 @@
       }
     },
     {
-      "id": "S-59",
+      "id": "S-61",
       "section": "绑定文件结构清单",
       "subsection": "核心功能",
       "description": "**AI 生成中断与恢复**：",
-      "specLine": 181,
+      "specLine": 186,
       "codeFiles": [],
       "designFrames": [],
       "e2eTests": [],
@@ -2530,11 +2608,11 @@
       }
     },
     {
-      "id": "S-60",
+      "id": "S-62",
       "section": "绑定文件结构清单",
       "subsection": "核心功能",
       "description": "**内联操作按钮**（AI 生成内容完成后在对话块底部显示）：",
-      "specLine": 188,
+      "specLine": 193,
       "codeFiles": [
         "src/renderer/components/layout/toolbar.tsx",
         "src/renderer/components/layout/right-panel.tsx",
@@ -2586,11 +2664,11 @@
       }
     },
     {
-      "id": "S-61",
+      "id": "S-63",
       "section": "绑定文件结构清单",
       "subsection": "核心功能",
       "description": "7 种内置提供商入口 + 自定义：Anthropic Claude（含订阅登录 + API Key 双认证）、Kimi、GLM、MiniMax、DeepSeek、Qwen、OpenRouter、自定义 API",
-      "specLine": 194,
+      "specLine": 199,
       "codeFiles": [],
       "designFrames": [],
       "e2eTests": [],
@@ -2604,11 +2682,11 @@
       }
     },
     {
-      "id": "S-62",
+      "id": "S-64",
       "section": "绑定文件结构清单",
       "subsection": "核心功能",
       "description": "提供商列表可拖拽排序（优先级 = 默认选择顺序）",
-      "specLine": 195,
+      "specLine": 200,
       "codeFiles": [
         "src/renderer/components/layout/left-panel.tsx"
       ],
@@ -2624,11 +2702,11 @@
       }
     },
     {
-      "id": "S-63",
+      "id": "S-65",
       "section": "绑定文件结构清单",
       "subsection": "核心功能",
       "description": "内联展开编辑：点击提供商 → 在列表内展开配置面板（API 地址 + Key + 模型列表）。API Key 输入框默认 password 类型掩码显示，右侧 👁 按钮切换明文/掩码",
-      "specLine": 196,
+      "specLine": 201,
       "codeFiles": [
         "src/renderer/components/layout/app-layout.tsx",
         "src/renderer/components/layout/toolbar.tsx",
@@ -2674,65 +2752,65 @@
       }
     },
     {
-      "id": "S-64",
-      "section": "绑定文件结构清单",
-      "subsection": "核心功能",
-      "description": "[🔍] 一键拉取模型：输入 API 地址 + Key → 调用 `/v1/models` 接口 → 自动填充可用模型列表",
-      "specLine": 197,
-      "codeFiles": [
-        "src/main/services/api-config-service.ts",
-        "src/main/ipc/api-config-ipc.ts",
-        "src/renderer/pages/api-config-page.tsx",
-        "src/renderer/components/api-config/provider-card.tsx",
-        "src/main/engine/universal/model-router.ts"
-      ],
-      "designFrames": [
-        "EA2KT",
-        "jpMj1"
-      ],
-      "e2eTests": [],
-      "phase": 5,
-      "status": "implemented",
-      "coverage": {
-        "hasCode": true,
-        "hasDesign": true,
-        "hasTest": false,
-        "score": 2
-      }
-    },
-    {
-      "id": "S-65",
-      "section": "绑定文件结构清单",
-      "subsection": "核心功能",
-      "description": "每个提供商内指定默认模型（非全局默认）",
-      "specLine": 198,
-      "codeFiles": [
-        "src/main/services/api-config-service.ts",
-        "src/main/ipc/api-config-ipc.ts",
-        "src/renderer/pages/api-config-page.tsx",
-        "src/renderer/components/api-config/provider-card.tsx",
-        "src/main/engine/universal/model-router.ts"
-      ],
-      "designFrames": [
-        "EA2KT",
-        "jpMj1"
-      ],
-      "e2eTests": [],
-      "phase": 5,
-      "status": "implemented",
-      "coverage": {
-        "hasCode": true,
-        "hasDesign": true,
-        "hasTest": false,
-        "score": 2
-      }
-    },
-    {
       "id": "S-66",
       "section": "绑定文件结构清单",
       "subsection": "核心功能",
+      "description": "[🔍] 一键拉取模型：输入 API 地址 + Key → 调用 `/v1/models` 接口 → 自动填充可用模型列表",
+      "specLine": 202,
+      "codeFiles": [
+        "src/main/services/api-config-service.ts",
+        "src/main/ipc/api-config-ipc.ts",
+        "src/renderer/pages/api-config-page.tsx",
+        "src/renderer/components/api-config/provider-card.tsx",
+        "src/main/engine/universal/model-router.ts"
+      ],
+      "designFrames": [
+        "EA2KT",
+        "jpMj1"
+      ],
+      "e2eTests": [],
+      "phase": 5,
+      "status": "implemented",
+      "coverage": {
+        "hasCode": true,
+        "hasDesign": true,
+        "hasTest": false,
+        "score": 2
+      }
+    },
+    {
+      "id": "S-67",
+      "section": "绑定文件结构清单",
+      "subsection": "核心功能",
+      "description": "每个提供商内指定默认模型（非全局默认）",
+      "specLine": 203,
+      "codeFiles": [
+        "src/main/services/api-config-service.ts",
+        "src/main/ipc/api-config-ipc.ts",
+        "src/renderer/pages/api-config-page.tsx",
+        "src/renderer/components/api-config/provider-card.tsx",
+        "src/main/engine/universal/model-router.ts"
+      ],
+      "designFrames": [
+        "EA2KT",
+        "jpMj1"
+      ],
+      "e2eTests": [],
+      "phase": 5,
+      "status": "implemented",
+      "coverage": {
+        "hasCode": true,
+        "hasDesign": true,
+        "hasTest": false,
+        "score": 2
+      }
+    },
+    {
+      "id": "S-68",
+      "section": "绑定文件结构清单",
+      "subsection": "核心功能",
       "description": "工作台顶部工具栏 → 下拉快速切换提供商和模型",
-      "specLine": 199,
+      "specLine": 204,
       "codeFiles": [
         "src/renderer/components/layout/app-layout.tsx",
         "src/renderer/components/layout/toolbar.tsx",
@@ -2764,11 +2842,11 @@
       }
     },
     {
-      "id": "S-67",
+      "id": "S-69",
       "section": "绑定文件结构清单",
       "subsection": "核心功能",
       "description": "API 配置页面为独立全屏视图（应用内路由切换，非新窗口），顶部包含窗口控制按钮（最小化/最大化/关闭——均为应用内按钮，与写作工作台工具栏一致。关闭按钮执行\"返回工作台\"，不退出应用）。页头作为可拖拽区域（无边框窗口拖拽移动）",
-      "specLine": 200,
+      "specLine": 205,
       "codeFiles": [
         "src/renderer/components/layout/app-layout.tsx",
         "src/renderer/components/layout/toolbar.tsx",
@@ -2840,11 +2918,11 @@
       }
     },
     {
-      "id": "S-68",
+      "id": "S-70",
       "section": "绑定文件结构清单",
       "subsection": "核心功能",
       "description": "**Claude Engine**：使用 `@anthropic-ai/claude-agent-sdk`，提供完整 Agent 循环、Session 管理、MCP 支持、子Agent 调度",
-      "specLine": 203,
+      "specLine": 208,
       "codeFiles": [],
       "designFrames": [],
       "e2eTests": [],
@@ -2858,11 +2936,11 @@
       }
     },
     {
-      "id": "S-69",
+      "id": "S-71",
       "section": "绑定文件结构清单",
       "subsection": "辅助功能",
       "description": "左侧面板收起时，顶部工具栏显示 ☰ 汉堡菜单按钮，点击以 overlay 形式展开左侧面板",
-      "specLine": 221,
+      "specLine": 226,
       "codeFiles": [
         "src/renderer/components/layout/app-layout.tsx",
         "src/renderer/components/layout/toolbar.tsx",
@@ -2887,11 +2965,11 @@
       }
     },
     {
-      "id": "S-70",
+      "id": "S-72",
       "section": "绑定文件结构清单",
       "subsection": "辅助功能",
       "description": "右侧面板收起时，顶部工具栏显示 💬 聊天图标 + 未读消息红点，点击以 overlay 形式展开",
-      "specLine": 222,
+      "specLine": 227,
       "codeFiles": [
         "src/renderer/components/layout/app-layout.tsx",
         "src/renderer/components/layout/toolbar.tsx",
@@ -2911,11 +2989,11 @@
       }
     },
     {
-      "id": "S-71",
+      "id": "S-73",
       "section": "绑定文件结构清单",
       "subsection": "辅助功能",
       "description": "面板拖拽调整宽度优先于断点规则——用户手动调整后面板宽度会被记住（存储到 settings.json）",
-      "specLine": 223,
+      "specLine": 228,
       "codeFiles": [
         "src/renderer/components/layout/left-panel.tsx",
         "src/renderer/components/layout/right-panel.tsx",
@@ -2951,11 +3029,11 @@
       }
     },
     {
-      "id": "S-72",
+      "id": "S-74",
       "section": "绑定文件结构清单",
       "subsection": "辅助功能",
       "description": "点击关闭按钮（✕）→ 强制保存所有打开的标签页（不论自动保存间隔）→ 退出应用",
-      "specLine": 227,
+      "specLine": 232,
       "codeFiles": [
         "src/renderer/components/layout/toolbar.tsx",
         "src/renderer/components/layout/fab-button.tsx",
@@ -2986,11 +3064,11 @@
       }
     },
     {
-      "id": "S-73",
+      "id": "S-75",
       "section": "绑定文件结构清单",
       "subsection": "辅助功能",
       "description": "AI 生成中 + 用户点击关闭 → 弹出确认\"AI 正在生成内容，关闭应用将中断生成。是否退出？\"（使用自定义弹窗——Electron 不支持 `window.confirm()`）",
-      "specLine": 228,
+      "specLine": 233,
       "codeFiles": [],
       "designFrames": [],
       "e2eTests": [],
@@ -3004,11 +3082,11 @@
       }
     },
     {
-      "id": "S-74",
+      "id": "S-76",
       "section": "绑定文件结构清单",
       "subsection": "辅助功能",
       "description": "关闭确认支持\"记住我的选择\"——勾选后下次不再提示，默认行为以第一次选择为准",
-      "specLine": 229,
+      "specLine": 234,
       "codeFiles": [],
       "designFrames": [
         "AIbP1"
@@ -3024,11 +3102,11 @@
       }
     },
     {
-      "id": "S-75",
+      "id": "S-77",
       "section": "绑定文件结构清单",
       "subsection": "辅助功能",
       "description": "用户可通过设置页面重置\"不再提示\"的偏好",
-      "specLine": 230,
+      "specLine": 235,
       "codeFiles": [
         "src/renderer/pages/settings-page.tsx",
         "src/main/services/settings-service.ts"
@@ -3048,11 +3126,11 @@
       }
     },
     {
-      "id": "S-76",
+      "id": "S-78",
       "section": "绑定文件结构清单",
       "subsection": "辅助功能",
       "description": "顶部工具栏：返回 Skill 主页按钮、当前 Skill > 项目名称面包屑、模型快速切换下拉",
-      "specLine": 237,
+      "specLine": 242,
       "codeFiles": [
         "src/renderer/components/layout/app-layout.tsx",
         "src/renderer/components/layout/toolbar.tsx",
@@ -3094,11 +3172,11 @@
       }
     },
     {
-      "id": "S-77",
+      "id": "S-79",
       "section": "绑定文件结构清单",
       "subsection": "辅助功能",
       "description": "对标 Scrivener：自动备份（每次关闭项目时备份，保留最近 N 份）+ 手动备份按钮",
-      "specLine": 241,
+      "specLine": 246,
       "codeFiles": [
         "src/renderer/components/layout/toolbar.tsx",
         "src/renderer/components/layout/fab-button.tsx",
@@ -3137,11 +3215,11 @@
       }
     },
     {
-      "id": "S-78",
+      "id": "S-80",
       "section": "绑定文件结构清单",
       "subsection": "辅助功能",
       "description": "支持从备份恢复项目",
-      "specLine": 243,
+      "specLine": 248,
       "codeFiles": [
         "src/main/services/project-service.ts",
         "src/renderer/components/navigation/project-context-menu.tsx",
@@ -3159,11 +3237,11 @@
       }
     },
     {
-      "id": "S-79",
+      "id": "S-81",
       "section": "全局交互模式",
       "subsection": "辅助功能",
       "description": "布局：居中显示，`text-text-tertiary text-[12px]` + 可选行动按钮",
-      "specLine": 252,
+      "specLine": 257,
       "codeFiles": [
         "src/renderer/components/layout/app-layout.tsx",
         "src/renderer/components/layout/toolbar.tsx",
@@ -3188,11 +3266,11 @@
       }
     },
     {
-      "id": "S-80",
+      "id": "S-82",
       "section": "全局交互模式",
       "subsection": "辅助功能",
       "description": "示例：`尚未创建章节目录。` + `[✨ AI 生成章节目录]`",
-      "specLine": 254,
+      "specLine": 259,
       "codeFiles": [
         "src/renderer/services/chapter-parser.ts",
         "src/renderer/components/editor/chapter-index-view.tsx",
@@ -3212,11 +3290,11 @@
       }
     },
     {
-      "id": "S-81",
+      "id": "S-83",
       "section": "全局交互模式",
       "subsection": "辅助功能",
       "description": "长操作（> 2s）：skeleton + 进度文字（如\"AI 正在生成故事大纲...\"）",
-      "specLine": 258,
+      "specLine": 263,
       "codeFiles": [],
       "designFrames": [],
       "e2eTests": [],
@@ -3230,11 +3308,11 @@
       }
     },
     {
-      "id": "S-82",
+      "id": "S-84",
       "section": "全局交互模式",
       "subsection": "辅助功能",
       "description": "按钮加载：按钮文字替换为 spinner + 按钮 disabled",
-      "specLine": 259,
+      "specLine": 264,
       "codeFiles": [
         "src/renderer/components/layout/toolbar.tsx",
         "src/renderer/components/layout/fab-button.tsx",
@@ -3253,11 +3331,11 @@
       }
     },
     {
-      "id": "S-83",
+      "id": "S-85",
       "section": "全局交互模式",
       "subsection": "辅助功能",
       "description": "内容：错误描述文字 + `[重试]` 按钮（如可重试）+ `[×]` 关闭按钮",
-      "specLine": 263,
+      "specLine": 268,
       "codeFiles": [
         "src/renderer/components/layout/toolbar.tsx",
         "src/renderer/components/layout/fab-button.tsx",
@@ -3279,11 +3357,11 @@
       }
     },
     {
-      "id": "S-84",
+      "id": "S-86",
       "section": "全局交互模式",
       "subsection": "辅助功能",
       "description": "使用自定义弹窗（Electron 不支持 `window.confirm()`）",
-      "specLine": 267,
+      "specLine": 272,
       "codeFiles": [],
       "designFrames": [],
       "e2eTests": [],
@@ -3297,11 +3375,11 @@
       }
     },
     {
-      "id": "S-85",
+      "id": "S-87",
       "section": "全局交互模式",
       "subsection": "辅助功能",
       "description": "每个独立全屏页面（Skill 主页、Skill 编辑区、写作工作台、API 配置页、设置页面）的页头/工具栏必须包含窗口控制按钮（最小化/最大化/关闭）",
-      "specLine": 273,
+      "specLine": 278,
       "codeFiles": [
         "src/renderer/components/layout/app-layout.tsx",
         "src/renderer/components/layout/toolbar.tsx",
@@ -3375,11 +3453,11 @@
       }
     },
     {
-      "id": "S-86",
+      "id": "S-88",
       "section": "全局交互模式",
       "subsection": "辅助功能",
       "description": "页头/工具栏作为无边框窗口的可拖拽区域（`-webkit-app-region: drag`），按钮需标注 `no-drag`",
-      "specLine": 274,
+      "specLine": 279,
       "codeFiles": [
         "src/renderer/components/layout/app-layout.tsx",
         "src/renderer/components/layout/toolbar.tsx",
@@ -3401,11 +3479,11 @@
       }
     },
     {
-      "id": "S-87",
+      "id": "S-89",
       "section": "全局交互模式",
       "subsection": "辅助功能",
       "description": "非独立页面（章节目录竖列视图、编辑区预览模式、弹窗/对话框）不设窗口控制按钮",
-      "specLine": 279,
+      "specLine": 284,
       "codeFiles": [
         "src/renderer/components/layout/app-layout.tsx",
         "src/renderer/components/layout/toolbar.tsx",
@@ -3469,11 +3547,11 @@
       }
     },
     {
-      "id": "S-88",
+      "id": "S-90",
       "section": "全局交互模式",
       "subsection": "辅助功能",
       "description": "❌ `window.prompt()` 不可用 → 使用内联输入 + 状态管理",
-      "specLine": 282,
+      "specLine": 287,
       "codeFiles": [
         "src/renderer/components/layout/status-bar.tsx"
       ],
@@ -3489,47 +3567,47 @@
       }
     },
     {
-      "id": "S-89",
-      "section": "全局交互模式",
-      "subsection": "辅助功能",
-      "description": "❌ `window.confirm()` 不可用 → 使用自定义弹窗组件",
-      "specLine": 283,
-      "codeFiles": [],
-      "designFrames": [],
-      "e2eTests": [],
-      "phase": null,
-      "status": "implemented",
-      "coverage": {
-        "hasCode": false,
-        "hasDesign": false,
-        "hasTest": false,
-        "score": 0
-      }
-    },
-    {
-      "id": "S-90",
-      "section": "全局交互模式",
-      "subsection": "辅助功能",
-      "description": "✅ API Key 存储必须使用 `safeStorage.encryptString()`",
-      "specLine": 284,
-      "codeFiles": [],
-      "designFrames": [],
-      "e2eTests": [],
-      "phase": null,
-      "status": "implemented",
-      "coverage": {
-        "hasCode": false,
-        "hasDesign": false,
-        "hasTest": false,
-        "score": 0
-      }
-    },
-    {
       "id": "S-91",
       "section": "全局交互模式",
       "subsection": "辅助功能",
+      "description": "❌ `window.confirm()` 不可用 → 使用自定义弹窗组件",
+      "specLine": 288,
+      "codeFiles": [],
+      "designFrames": [],
+      "e2eTests": [],
+      "phase": null,
+      "status": "implemented",
+      "coverage": {
+        "hasCode": false,
+        "hasDesign": false,
+        "hasTest": false,
+        "score": 0
+      }
+    },
+    {
+      "id": "S-92",
+      "section": "全局交互模式",
+      "subsection": "辅助功能",
+      "description": "✅ API Key 存储必须使用 `safeStorage.encryptString()`",
+      "specLine": 289,
+      "codeFiles": [],
+      "designFrames": [],
+      "e2eTests": [],
+      "phase": null,
+      "status": "implemented",
+      "coverage": {
+        "hasCode": false,
+        "hasDesign": false,
+        "hasTest": false,
+        "score": 0
+      }
+    },
+    {
+      "id": "S-93",
+      "section": "全局交互模式",
+      "subsection": "辅助功能",
       "description": "✅ 无边框窗口拖拽使用 `-webkit-app-region: drag`（按钮需标注 `no-drag`）",
-      "specLine": 286,
+      "specLine": 291,
       "codeFiles": [
         "src/renderer/components/layout/app-layout.tsx",
         "src/renderer/components/layout/toolbar.tsx",
@@ -3551,11 +3629,11 @@
       }
     },
     {
-      "id": "S-92",
+      "id": "S-94",
       "section": "UI 布局",
       "subsection": "区域一：顶部工具栏",
       "description": "右侧：模型快速切换下拉（显示当前提供商图标 + 模型名，点击展开已配置的所有模型列表，底部\"管理 API 配置...\"入口）",
-      "specLine": 325,
+      "specLine": 330,
       "codeFiles": [
         "src/renderer/components/layout/app-layout.tsx",
         "src/renderer/components/layout/toolbar.tsx",
@@ -3588,11 +3666,11 @@
       }
     },
     {
-      "id": "S-93",
+      "id": "S-95",
       "section": "UI 布局",
       "subsection": "区域二：左侧导航区",
       "description": "4 张阶段卡片垂直排列，当前或历史阶段高亮显示",
-      "specLine": 330,
+      "specLine": 335,
       "codeFiles": [
         "src/renderer/components/layout/left-panel.tsx",
         "src/renderer/components/navigation/stage-cards.tsx",
@@ -3610,11 +3688,11 @@
       }
     },
     {
-      "id": "S-94",
+      "id": "S-96",
       "section": "UI 布局",
       "subsection": "区域二：左侧导航区",
       "description": "章节写作卡片展开时显示 `chapters/` 下的文件列表（Ch-01.md ~ Ch-05.md）",
-      "specLine": 332,
+      "specLine": 337,
       "codeFiles": [
         "src/renderer/components/layout/left-panel.tsx",
         "src/main/services/file-service.ts",
@@ -3677,11 +3755,11 @@
       }
     },
     {
-      "id": "S-95",
+      "id": "S-97",
       "section": "UI 布局",
       "subsection": "区域二：左侧导航区",
       "description": "点击任意卡片 → 编辑区加载对应内容 + AI 自动发送预设指令",
-      "specLine": 333,
+      "specLine": 338,
       "codeFiles": [
         "src/renderer/components/editor/markdown-editor.tsx",
         "src/renderer/components/editor/markdown-preview.tsx",
@@ -3708,11 +3786,11 @@
       }
     },
     {
-      "id": "S-96",
+      "id": "S-98",
       "section": "UI 布局",
       "subsection": "区域二：左侧导航区",
       "description": "标题\"📁 项目文件\"，可折叠",
-      "specLine": 336,
+      "specLine": 341,
       "codeFiles": [
         "src/renderer/components/layout/toolbar.tsx",
         "src/renderer/components/layout/left-panel.tsx",
@@ -3738,11 +3816,11 @@
       }
     },
     {
-      "id": "S-97",
+      "id": "S-99",
       "section": "UI 布局",
       "subsection": "区域二：左侧导航区",
       "description": "树状显示项目文件结构，点击文件 → 在编辑区打开对应标签页",
-      "specLine": 337,
+      "specLine": 342,
       "codeFiles": [
         "src/renderer/components/layout/app-layout.tsx",
         "src/renderer/components/layout/toolbar.tsx",
@@ -3785,11 +3863,11 @@
       }
     },
     {
-      "id": "S-98",
+      "id": "S-100",
       "section": "UI 布局",
       "subsection": "区域三：中间编辑区",
       "description": "横向排列已打开的标签页，每标签：文件名 + × 关闭按钮",
-      "specLine": 343,
+      "specLine": 348,
       "codeFiles": [
         "src/renderer/components/layout/toolbar.tsx",
         "src/renderer/components/layout/left-panel.tsx",
@@ -3816,11 +3894,11 @@
       }
     },
     {
-      "id": "S-99",
+      "id": "S-101",
       "section": "UI 布局",
       "subsection": "区域三：中间编辑区",
       "description": "支持多个标签并存，独立关闭",
-      "specLine": 345,
+      "specLine": 350,
       "codeFiles": [
         "src/renderer/components/editor/tab-bar.tsx",
         "src/renderer/hooks/use-open-tabs.ts"
@@ -3837,11 +3915,11 @@
       }
     },
     {
-      "id": "S-100",
+      "id": "S-102",
       "section": "UI 布局",
       "subsection": "区域三：中间编辑区",
       "description": "Markdown 源码编辑（默认模式）",
-      "specLine": 348,
+      "specLine": 353,
       "codeFiles": [
         "src/renderer/components/editor/markdown-editor.tsx",
         "src/renderer/components/editor/markdown-preview.tsx",
@@ -3867,11 +3945,11 @@
       }
     },
     {
-      "id": "S-101",
+      "id": "S-103",
       "section": "UI 布局",
       "subsection": "区域三：中间编辑区",
       "description": "右上角 [✎ 编辑] / [👁 预览] 切换按钮",
-      "specLine": 349,
+      "specLine": 354,
       "codeFiles": [
         "src/renderer/components/layout/app-layout.tsx",
         "src/renderer/components/layout/toolbar.tsx",
@@ -3906,11 +3984,11 @@
       }
     },
     {
-      "id": "S-102",
+      "id": "S-104",
       "section": "UI 布局",
       "subsection": "区域三：中间编辑区",
       "description": "预览模式：Markdown 渲染显示，不可编辑",
-      "specLine": 350,
+      "specLine": 355,
       "codeFiles": [
         "src/renderer/components/editor/markdown-editor.tsx",
         "src/renderer/components/editor/markdown-preview.tsx",
@@ -3936,11 +4014,11 @@
       }
     },
     {
-      "id": "S-103",
+      "id": "S-105",
       "section": "UI 布局",
       "subsection": "区域三：中间编辑区",
       "description": "自动保存：编辑内容实时写入磁盘",
-      "specLine": 351,
+      "specLine": 356,
       "codeFiles": [
         "src/renderer/components/editor/markdown-editor.tsx",
         "src/renderer/components/editor/markdown-preview.tsx",
@@ -3967,11 +4045,11 @@
       }
     },
     {
-      "id": "S-104",
+      "id": "S-106",
       "section": "UI 布局",
       "subsection": "区域三：中间编辑区",
       "description": "不显示 Markdown 编辑器，而是渲染解析后的章节索引竖列视图",
-      "specLine": 354,
+      "specLine": 359,
       "codeFiles": [
         "src/renderer/components/editor/markdown-editor.tsx",
         "src/renderer/components/editor/markdown-preview.tsx",
@@ -3999,11 +4077,11 @@
       }
     },
     {
-      "id": "S-105",
+      "id": "S-107",
       "section": "UI 布局",
       "subsection": "区域三：中间编辑区",
       "description": "每行可点击 → 跳转到对应章节文件（编辑区新建标签页）",
-      "specLine": 356,
+      "specLine": 361,
       "codeFiles": [
         "src/renderer/components/layout/left-panel.tsx",
         "src/main/services/file-service.ts",
@@ -4038,11 +4116,11 @@
       }
     },
     {
-      "id": "S-106",
+      "id": "S-108",
       "section": "UI 布局",
       "subsection": "区域四：右侧 AI 对话区（文档式对话）",
       "description": "对话历史滚动区域，采用\"文档流\"排版（非气泡式、非聊天软件式）",
-      "specLine": 363,
+      "specLine": 368,
       "codeFiles": [
         "src/renderer/components/layout/right-panel.tsx",
         "src/main/services/file-service.ts",
@@ -4093,11 +4171,11 @@
       }
     },
     {
-      "id": "S-107",
+      "id": "S-109",
       "section": "UI 布局",
       "subsection": "区域四：右侧 AI 对话区（文档式对话）",
       "description": "**阶段分隔**：Linear 式的时间分隔线——`── 故事大纲 · 14:30 ──` 居中式标签，标记创作阶段切换",
-      "specLine": 366,
+      "specLine": 371,
       "codeFiles": [
         "src/renderer/components/layout/app-layout.tsx",
         "src/renderer/components/layout/toolbar.tsx",
@@ -4124,11 +4202,11 @@
       }
     },
     {
-      "id": "S-108",
+      "id": "S-110",
       "section": "UI 布局",
       "subsection": "区域四：右侧 AI 对话区（文档式对话）",
       "description": "**操作标签**：AI 完成任务后，内容块底部显示内联操作按钮（`[📝 已写入 outline.md]` `[✏️ 手动调整]`），幽灵按钮风格",
-      "specLine": 367,
+      "specLine": 372,
       "codeFiles": [
         "src/renderer/components/layout/toolbar.tsx",
         "src/renderer/components/layout/fab-button.tsx",
@@ -4165,11 +4243,11 @@
       }
     },
     {
-      "id": "S-109",
+      "id": "S-111",
       "section": "UI 布局",
       "subsection": "区域四：右侧 AI 对话区（文档式对话）",
       "description": "**系统消息**：AI 开始处理时显示轻量状态标签（如 `生成故事大纲中...`），完成后自动消失",
-      "specLine": 368,
+      "specLine": 373,
       "codeFiles": [
         "src/renderer/components/layout/status-bar.tsx",
         "src/renderer/components/editor/tab-bar.tsx",
@@ -4187,11 +4265,11 @@
       }
     },
     {
-      "id": "S-110",
+      "id": "S-112",
       "section": "UI 布局",
       "subsection": "区域四：右侧 AI 对话区（文档式对话）",
       "description": "底部：输入框 + 发送按钮",
-      "specLine": 369,
+      "specLine": 374,
       "codeFiles": [
         "src/renderer/components/layout/toolbar.tsx",
         "src/renderer/components/layout/fab-button.tsx",
@@ -4211,11 +4289,11 @@
       }
     },
     {
-      "id": "S-111",
+      "id": "S-113",
       "section": "UI 布局",
       "subsection": "区域四：右侧 AI 对话区（文档式对话）",
       "description": "输入框 placeholder：\"输入指令，或点击左侧阶段卡片自动开始...\"",
-      "specLine": 370,
+      "specLine": 375,
       "codeFiles": [
         "src/renderer/components/layout/left-panel.tsx",
         "src/renderer/components/chat/chat-input-bar.tsx",
@@ -4234,11 +4312,11 @@
       }
     },
     {
-      "id": "S-112",
+      "id": "S-114",
       "section": "UI 布局",
       "subsection": "区域四：右侧 AI 对话区（文档式对话）",
       "description": "点击左侧阶段卡片 → 预设指令自动填入并发送 + 对话区自动添加阶段分隔线",
-      "specLine": 373,
+      "specLine": 378,
       "codeFiles": [
         "src/renderer/components/layout/left-panel.tsx",
         "src/renderer/components/layout/right-panel.tsx",
@@ -4290,11 +4368,11 @@
       }
     },
     {
-      "id": "S-113",
+      "id": "S-115",
       "section": "UI 布局",
       "subsection": "区域四：右侧 AI 对话区（文档式对话）",
       "description": "用户可手动输入任意指令",
-      "specLine": 374,
+      "specLine": 379,
       "codeFiles": [
         "src/renderer/components/editor/markdown-editor.tsx",
         "src/renderer/components/editor/markdown-preview.tsx",
@@ -4328,11 +4406,11 @@
       }
     },
     {
-      "id": "S-114",
+      "id": "S-116",
       "section": "UI 布局",
       "subsection": "区域四：右侧 AI 对话区（文档式对话）",
       "description": "AI 流式输出同时更新对话区（文档块）和编辑区（文件内容）",
-      "specLine": 375,
+      "specLine": 380,
       "codeFiles": [
         "src/renderer/components/layout/left-panel.tsx",
         "src/renderer/components/layout/right-panel.tsx",
@@ -4395,11 +4473,11 @@
       }
     },
     {
-      "id": "S-115",
+      "id": "S-117",
       "section": "UI 布局",
       "subsection": "区域四：右侧 AI 对话区（文档式对话）",
       "description": "对话历史以文档流形式滚动阅读，不是即时通讯式的时间戳每条消息",
-      "specLine": 376,
+      "specLine": 381,
       "codeFiles": [
         "src/renderer/components/layout/right-panel.tsx",
         "src/main/services/file-service.ts",
@@ -4450,11 +4528,11 @@
       }
     },
     {
-      "id": "S-116",
+      "id": "S-118",
       "section": "用户使用流程",
       "subsection": "首次使用：配置 + 导入 Skill",
       "description": "启动应用 → 进入 Skill 主页面（空白，提示导入或新建 Skill）",
-      "specLine": 383,
+      "specLine": 388,
       "codeFiles": [
         "src/renderer/components/layout/app-layout.tsx",
         "src/renderer/pages/skill-home-page.tsx"
@@ -4479,11 +4557,11 @@
       }
     },
     {
-      "id": "S-117",
+      "id": "S-119",
       "section": "用户使用流程",
       "subsection": "首次使用：配置 + 导入 Skill",
       "description": "点击 [↑ 导入] → 选择\"现言\"Skill 文件夹 → 系统识别并注册",
-      "specLine": 384,
+      "specLine": 389,
       "codeFiles": [
         "src/renderer/components/layout/left-panel.tsx",
         "src/main/services/file-service.ts",
@@ -4512,11 +4590,11 @@
       }
     },
     {
-      "id": "S-118",
+      "id": "S-120",
       "section": "用户使用流程",
       "subsection": "首次使用：配置 + 导入 Skill",
       "description": "点击顶部导航进入 [⚙ 设置 → API 配置] → 添加 Claude + DeepSeek → 填入 Key → [🔍] 拉取模型列表 → 保存",
-      "specLine": 385,
+      "specLine": 390,
       "codeFiles": [
         "src/renderer/components/layout/left-panel.tsx",
         "src/renderer/components/editor/markdown-editor.tsx",
@@ -4558,11 +4636,11 @@
       }
     },
     {
-      "id": "S-119",
+      "id": "S-121",
       "section": "用户使用流程",
       "subsection": "新项目创作",
       "description": "在\"现言\"Skill 面板点击 [+ 新建项目] → 输入\"霸总契约新娘\" → 创建",
-      "specLine": 389,
+      "specLine": 394,
       "codeFiles": [
         "src/renderer/components/layout/left-panel.tsx",
         "src/renderer/components/layout/right-panel.tsx",
@@ -4589,11 +4667,11 @@
       }
     },
     {
-      "id": "S-120",
+      "id": "S-122",
       "section": "用户使用流程",
       "subsection": "新项目创作",
       "description": "自动进入写作工作台 → AI 对话区发起引导提问（Q1/Q2/Q3）",
-      "specLine": 390,
+      "specLine": 395,
       "codeFiles": [
         "src/renderer/components/layout/right-panel.tsx",
         "src/main/services/file-service.ts",
@@ -4654,59 +4732,11 @@
       }
     },
     {
-      "id": "S-121",
-      "section": "用户使用流程",
-      "subsection": "新项目创作",
-      "description": "回答 AI 的问题 → AI 生成故事大纲 → 流式输出到编辑区显示 outline.md",
-      "specLine": 391,
-      "codeFiles": [
-        "src/renderer/components/editor/markdown-editor.tsx",
-        "src/renderer/components/editor/markdown-preview.tsx",
-        "src/renderer/components/editor/tab-bar.tsx",
-        "src/renderer/components/editor/editor-toolbar.tsx",
-        "src/renderer/components/editor/editor-context-menu.tsx",
-        "src/renderer/components/editor/editor-workspace.tsx",
-        "src/renderer/components/editor/chapter-index-view.tsx",
-        "src/renderer/components/editor/chapter-index-row.tsx",
-        "src/renderer/pages/skill-editor-page.tsx"
-      ],
-      "designFrames": [],
-      "e2eTests": [
-        "editor-scroll-verify.spec.ts"
-      ],
-      "phase": 4,
-      "status": "implemented",
-      "coverage": {
-        "hasCode": true,
-        "hasDesign": false,
-        "hasTest": true,
-        "score": 2
-      }
-    },
-    {
-      "id": "S-122",
-      "section": "用户使用流程",
-      "subsection": "新项目创作",
-      "description": "左侧\"故事大纲\"卡片显示 ✅ → \"人物小传\"高亮为 ⟳",
-      "specLine": 392,
-      "codeFiles": [],
-      "designFrames": [],
-      "e2eTests": [],
-      "phase": null,
-      "status": "implemented",
-      "coverage": {
-        "hasCode": false,
-        "hasDesign": false,
-        "hasTest": false,
-        "score": 0
-      }
-    },
-    {
       "id": "S-123",
       "section": "用户使用流程",
       "subsection": "新项目创作",
-      "description": "点击\"人物小传\"卡片 → AI 自动读取大纲 → 生成人物小传 → 编辑区加载 character.md",
-      "specLine": 393,
+      "description": "回答 AI 的问题 → AI 生成故事大纲 → 流式输出到编辑区显示 outline.md",
+      "specLine": 396,
       "codeFiles": [
         "src/renderer/components/editor/markdown-editor.tsx",
         "src/renderer/components/editor/markdown-preview.tsx",
@@ -4735,8 +4765,56 @@
       "id": "S-124",
       "section": "用户使用流程",
       "subsection": "新项目创作",
+      "description": "左侧\"故事大纲\"卡片显示 ✅ → \"人物小传\"高亮为 ⟳",
+      "specLine": 397,
+      "codeFiles": [],
+      "designFrames": [],
+      "e2eTests": [],
+      "phase": null,
+      "status": "implemented",
+      "coverage": {
+        "hasCode": false,
+        "hasDesign": false,
+        "hasTest": false,
+        "score": 0
+      }
+    },
+    {
+      "id": "S-125",
+      "section": "用户使用流程",
+      "subsection": "新项目创作",
+      "description": "点击\"人物小传\"卡片 → AI 自动读取大纲 → 生成人物小传 → 编辑区加载 character.md",
+      "specLine": 398,
+      "codeFiles": [
+        "src/renderer/components/editor/markdown-editor.tsx",
+        "src/renderer/components/editor/markdown-preview.tsx",
+        "src/renderer/components/editor/tab-bar.tsx",
+        "src/renderer/components/editor/editor-toolbar.tsx",
+        "src/renderer/components/editor/editor-context-menu.tsx",
+        "src/renderer/components/editor/editor-workspace.tsx",
+        "src/renderer/components/editor/chapter-index-view.tsx",
+        "src/renderer/components/editor/chapter-index-row.tsx",
+        "src/renderer/pages/skill-editor-page.tsx"
+      ],
+      "designFrames": [],
+      "e2eTests": [
+        "editor-scroll-verify.spec.ts"
+      ],
+      "phase": 4,
+      "status": "implemented",
+      "coverage": {
+        "hasCode": true,
+        "hasDesign": false,
+        "hasTest": true,
+        "score": 2
+      }
+    },
+    {
+      "id": "S-126",
+      "section": "用户使用流程",
+      "subsection": "新项目创作",
       "description": "点击\"章节目录\" → 编辑区显示章节索引竖列",
-      "specLine": 395,
+      "specLine": 400,
       "codeFiles": [
         "src/renderer/components/editor/markdown-editor.tsx",
         "src/renderer/components/editor/markdown-preview.tsx",
@@ -4764,11 +4842,11 @@
       }
     },
     {
-      "id": "S-125",
+      "id": "S-127",
       "section": "用户使用流程",
       "subsection": "新项目创作",
       "description": "点击\"第一章 · 婚礼上的陌生人\" → 编辑区打开 Chapter-01.md 标签页",
-      "specLine": 396,
+      "specLine": 401,
       "codeFiles": [
         "src/renderer/components/editor/markdown-editor.tsx",
         "src/renderer/components/editor/markdown-preview.tsx",
@@ -4795,11 +4873,11 @@
       }
     },
     {
-      "id": "S-126",
+      "id": "S-128",
       "section": "用户使用流程",
       "subsection": "新项目创作",
       "description": "AI 开始写第 1 章 → 写完后可手动编辑或让 AI 调整",
-      "specLine": 397,
+      "specLine": 402,
       "codeFiles": [
         "src/renderer/components/editor/markdown-editor.tsx",
         "src/renderer/components/editor/markdown-preview.tsx",
@@ -4833,11 +4911,11 @@
       }
     },
     {
-      "id": "S-127",
+      "id": "S-129",
       "section": "用户使用流程",
       "subsection": "新项目创作",
       "description": "继续点击其他章节或手动在对话区输入 `/write 2`",
-      "specLine": 398,
+      "specLine": 403,
       "codeFiles": [
         "src/renderer/components/layout/right-panel.tsx",
         "src/main/services/file-service.ts",
@@ -4897,11 +4975,11 @@
       }
     },
     {
-      "id": "S-128",
+      "id": "S-130",
       "section": "用户使用流程",
       "subsection": "日常写作",
       "description": "启动应用 → Skill 主页 → 点击\"暗恋十年成真\"项目 → 进入工作台",
-      "specLine": 401,
+      "specLine": 406,
       "codeFiles": [
         "src/renderer/components/layout/app-layout.tsx",
         "src/main/services/project-service.ts",
@@ -4927,11 +5005,11 @@
       }
     },
     {
-      "id": "S-129",
+      "id": "S-131",
       "section": "用户使用流程",
       "subsection": "日常写作",
       "description": "AI 对话区自动恢复上次 Session，显示历史对话",
-      "specLine": 402,
+      "specLine": 407,
       "codeFiles": [
         "src/renderer/components/layout/right-panel.tsx",
         "src/main/services/file-service.ts",
@@ -4980,11 +5058,11 @@
       }
     },
     {
-      "id": "S-130",
+      "id": "S-132",
       "section": "用户使用流程",
       "subsection": "日常写作",
       "description": "左侧显示当前进度（大纲✅ 人物✅ 目录✅ 章节⟳ Ch-02）",
-      "specLine": 403,
+      "specLine": 408,
       "codeFiles": [
         "src/renderer/services/chapter-parser.ts",
         "src/renderer/components/editor/chapter-index-view.tsx",
@@ -5004,11 +5082,11 @@
       }
     },
     {
-      "id": "S-131",
+      "id": "S-133",
       "section": "用户使用流程",
       "subsection": "日常写作",
       "description": "在编辑区手动修改第 2 章内容",
-      "specLine": 404,
+      "specLine": 409,
       "codeFiles": [
         "src/renderer/components/editor/markdown-editor.tsx",
         "src/renderer/components/editor/markdown-preview.tsx",
@@ -5042,11 +5120,11 @@
       }
     },
     {
-      "id": "S-132",
+      "id": "S-134",
       "section": "用户使用流程",
       "subsection": "日常写作",
       "description": "选中某段 → AI 对话区输入\"这段加点暧昧氛围\"→ AI 返回改写",
-      "specLine": 405,
+      "specLine": 410,
       "codeFiles": [
         "src/renderer/components/layout/right-panel.tsx",
         "src/main/services/file-service.ts",
@@ -5105,11 +5183,11 @@
       }
     },
     {
-      "id": "S-133",
+      "id": "S-135",
       "section": "用户使用流程",
       "subsection": "日常写作",
       "description": "写完后点击\"章节目录\" → 点第 3 章 → 继续让 AI 创作",
-      "specLine": 406,
+      "specLine": 411,
       "codeFiles": [
         "src/renderer/services/chapter-parser.ts",
         "src/renderer/components/editor/chapter-index-view.tsx",
@@ -5129,47 +5207,47 @@
       }
     },
     {
-      "id": "S-134",
-      "section": "用户使用流程",
-      "subsection": "切换题材",
-      "description": "在工作台点击 🏠 → 返回 Skill 主页",
-      "specLine": 409,
-      "codeFiles": [],
-      "designFrames": [],
-      "e2eTests": [],
-      "phase": null,
-      "status": "unknown",
-      "coverage": {
-        "hasCode": false,
-        "hasDesign": false,
-        "hasTest": false,
-        "score": 0
-      }
-    },
-    {
-      "id": "S-135",
-      "section": "用户使用流程",
-      "subsection": "切换题材",
-      "description": "点击\"悬疑推理\"Skill（展开）→ \"现言\"Skill 自动收缩",
-      "specLine": 410,
-      "codeFiles": [],
-      "designFrames": [],
-      "e2eTests": [],
-      "phase": null,
-      "status": "unknown",
-      "coverage": {
-        "hasCode": false,
-        "hasDesign": false,
-        "hasTest": false,
-        "score": 0
-      }
-    },
-    {
       "id": "S-136",
       "section": "用户使用流程",
       "subsection": "切换题材",
+      "description": "在工作台点击 🏠 → 返回 Skill 主页",
+      "specLine": 414,
+      "codeFiles": [],
+      "designFrames": [],
+      "e2eTests": [],
+      "phase": null,
+      "status": "unknown",
+      "coverage": {
+        "hasCode": false,
+        "hasDesign": false,
+        "hasTest": false,
+        "score": 0
+      }
+    },
+    {
+      "id": "S-137",
+      "section": "用户使用流程",
+      "subsection": "切换题材",
+      "description": "点击\"悬疑推理\"Skill（展开）→ \"现言\"Skill 自动收缩",
+      "specLine": 415,
+      "codeFiles": [],
+      "designFrames": [],
+      "e2eTests": [],
+      "phase": null,
+      "status": "unknown",
+      "coverage": {
+        "hasCode": false,
+        "hasDesign": false,
+        "hasTest": false,
+        "score": 0
+      }
+    },
+    {
+      "id": "S-138",
+      "section": "用户使用流程",
+      "subsection": "切换题材",
       "description": "点击\"密室杀人案\"项目 → 进入工作台",
-      "specLine": 411,
+      "specLine": 416,
       "codeFiles": [
         "src/main/services/project-service.ts",
         "src/renderer/components/navigation/project-context-menu.tsx",
@@ -5187,11 +5265,11 @@
       }
     },
     {
-      "id": "S-137",
+      "id": "S-139",
       "section": "用户使用流程",
       "subsection": "切换题材",
       "description": "工具加载悬疑推理的 Agent 角色、写作方法论、模板",
-      "specLine": 412,
+      "specLine": 417,
       "codeFiles": [
         "src/main/services/file-service.ts",
         "src/main/services/project-service.ts",
@@ -5249,11 +5327,11 @@
       }
     },
     {
-      "id": "S-138",
+      "id": "S-140",
       "section": "用户使用流程",
       "subsection": "切换模型",
       "description": "写作中点击顶部工具栏 [🧠 Claude Opus ▼]",
-      "specLine": 416,
+      "specLine": 421,
       "codeFiles": [
         "src/renderer/components/layout/app-layout.tsx",
         "src/renderer/components/layout/toolbar.tsx",
@@ -5313,11 +5391,11 @@
       }
     },
     {
-      "id": "S-139",
+      "id": "S-141",
       "section": "用户使用流程",
       "subsection": "切换模型",
       "description": "(内部：Claude Engine 切换为 Universal Engine，Session 数据桥接)",
-      "specLine": 419,
+      "specLine": 424,
       "codeFiles": [
         "src/renderer/components/layout/app-layout.tsx",
         "src/renderer/components/layout/toolbar.tsx",
@@ -5341,11 +5419,11 @@
       }
     },
     {
-      "id": "S-140",
+      "id": "S-142",
       "section": "用户使用流程",
       "subsection": "导出 Skill",
       "description": "Skill 主页 → 点击\"古风仙侠\"Skill 的 [↗ 导出]",
-      "specLine": 422,
+      "specLine": 427,
       "codeFiles": [
         "src/renderer/pages/skill-home-page.tsx"
       ],
@@ -5368,11 +5446,11 @@
       }
     },
     {
-      "id": "S-141",
+      "id": "S-143",
       "section": "用户使用流程",
       "subsection": "导出 Skill",
       "description": "选择导出路径 → 确认",
-      "specLine": 423,
+      "specLine": 428,
       "codeFiles": [
         "src/renderer/pages/skill-home-page.tsx"
       ],
@@ -5388,55 +5466,10 @@
       }
     },
     {
-      "id": "S-142",
-      "section": "AI 能力需求",
-      "subsection": "导出 Skill",
-      "description": "文本生成（大语言模型）",
-      "specLine": 432,
-      "codeFiles": [
-        "src/main/services/api-config-service.ts",
-        "src/main/ipc/api-config-ipc.ts",
-        "src/renderer/pages/api-config-page.tsx",
-        "src/renderer/components/api-config/provider-card.tsx",
-        "src/main/engine/universal/model-router.ts"
-      ],
-      "designFrames": [
-        "EA2KT",
-        "jpMj1"
-      ],
-      "e2eTests": [],
-      "phase": 5,
-      "status": "implemented",
-      "coverage": {
-        "hasCode": true,
-        "hasDesign": true,
-        "hasTest": false,
-        "score": 2
-      }
-    },
-    {
-      "id": "S-143",
-      "section": "AI 能力需求",
-      "subsection": "导出 Skill",
-      "description": "流式响应（Streaming）",
-      "specLine": 435,
-      "codeFiles": [],
-      "designFrames": [],
-      "e2eTests": [],
-      "phase": null,
-      "status": "unknown",
-      "coverage": {
-        "hasCode": false,
-        "hasDesign": false,
-        "hasTest": false,
-        "score": 0
-      }
-    },
-    {
       "id": "S-144",
       "section": "AI 能力需求",
       "subsection": "导出 Skill",
-      "description": "模型自动发现",
+      "description": "文本生成（大语言模型）",
       "specLine": 437,
       "codeFiles": [
         "src/main/services/api-config-service.ts",
@@ -5461,10 +5494,55 @@
     },
     {
       "id": "S-145",
+      "section": "AI 能力需求",
+      "subsection": "导出 Skill",
+      "description": "流式响应（Streaming）",
+      "specLine": 440,
+      "codeFiles": [],
+      "designFrames": [],
+      "e2eTests": [],
+      "phase": null,
+      "status": "unknown",
+      "coverage": {
+        "hasCode": false,
+        "hasDesign": false,
+        "hasTest": false,
+        "score": 0
+      }
+    },
+    {
+      "id": "S-146",
+      "section": "AI 能力需求",
+      "subsection": "导出 Skill",
+      "description": "模型自动发现",
+      "specLine": 442,
+      "codeFiles": [
+        "src/main/services/api-config-service.ts",
+        "src/main/ipc/api-config-ipc.ts",
+        "src/renderer/pages/api-config-page.tsx",
+        "src/renderer/components/api-config/provider-card.tsx",
+        "src/main/engine/universal/model-router.ts"
+      ],
+      "designFrames": [
+        "EA2KT",
+        "jpMj1"
+      ],
+      "e2eTests": [],
+      "phase": 5,
+      "status": "implemented",
+      "coverage": {
+        "hasCode": true,
+        "hasDesign": true,
+        "hasTest": false,
+        "score": 2
+      }
+    },
+    {
+      "id": "S-147",
       "section": "技术方向",
       "subsection": "导出 Skill",
       "description": "Markdown 编辑器",
-      "specLine": 449,
+      "specLine": 454,
       "codeFiles": [
         "src/renderer/components/editor/markdown-editor.tsx",
         "src/renderer/components/editor/markdown-preview.tsx",
@@ -5490,11 +5568,11 @@
       }
     },
     {
-      "id": "S-146",
+      "id": "S-148",
       "section": "风险与应对策略",
       "subsection": "技术栈版本（开发时 WebSearch 确认最新）",
       "description": "AI 生成并发冲突",
-      "specLine": 476,
+      "specLine": 481,
       "codeFiles": [
         "src/main/engine/types.ts",
         "src/main/engine/universal/agent-loop.ts",
@@ -5519,11 +5597,11 @@
       }
     },
     {
-      "id": "S-147",
+      "id": "S-149",
       "section": "风险与应对策略",
       "subsection": "技术栈版本（开发时 WebSearch 确认最新）",
       "description": "引擎切换中断",
-      "specLine": 477,
+      "specLine": 482,
       "codeFiles": [
         "src/renderer/components/layout/app-layout.tsx",
         "src/renderer/components/layout/toolbar.tsx",
@@ -5556,11 +5634,11 @@
       }
     },
     {
-      "id": "S-148",
+      "id": "S-150",
       "section": "风险与应对策略",
       "subsection": "技术栈版本（开发时 WebSearch 确认最新）",
       "description": "自动保存与 AI 写入竞态",
-      "specLine": 478,
+      "specLine": 483,
       "codeFiles": [
         "src/renderer/components/editor/markdown-editor.tsx",
         "src/renderer/components/editor/markdown-preview.tsx",
@@ -5587,11 +5665,11 @@
       }
     },
     {
-      "id": "S-149",
+      "id": "S-151",
       "section": "风险与应对策略",
       "subsection": "技术栈版本（开发时 WebSearch 确认最新）",
       "description": "外部文件删除",
-      "specLine": 480,
+      "specLine": 485,
       "codeFiles": [
         "src/renderer/components/layout/left-panel.tsx",
         "src/main/services/file-service.ts",
@@ -5612,11 +5690,11 @@
       }
     },
     {
-      "id": "S-150",
+      "id": "S-152",
       "section": "风险与应对策略",
       "subsection": "技术栈版本（开发时 WebSearch 确认最新）",
       "description": "Skill 导入同名冲突",
-      "specLine": 481,
+      "specLine": 486,
       "codeFiles": [
         "src/renderer/pages/skill-home-page.tsx"
       ],
@@ -5639,11 +5717,11 @@
       }
     },
     {
-      "id": "S-151",
+      "id": "S-153",
       "section": "风险与应对策略",
       "subsection": "技术栈版本（开发时 WebSearch 确认最新）",
       "description": "应用关闭时 AI 生成中",
-      "specLine": 483,
+      "specLine": 488,
       "codeFiles": [],
       "designFrames": [],
       "e2eTests": [],
@@ -5657,47 +5735,47 @@
       }
     },
     {
-      "id": "S-152",
-      "section": "技术说明",
-      "subsection": "外部依赖",
-      "description": "**Claude Agent SDK**：运行在 Electron 主进程。需要 `ANTHROPIC_API_KEY` 环境变量或 `claude login` 认证。`query()` 异步迭代器流式返回消息。`resume: sess",
-      "specLine": 488,
-      "codeFiles": [],
-      "designFrames": [],
-      "e2eTests": [],
-      "phase": null,
-      "status": "unknown",
-      "coverage": {
-        "hasCode": false,
-        "hasDesign": false,
-        "hasTest": false,
-        "score": 0
-      }
-    },
-    {
-      "id": "S-153",
-      "section": "技术说明",
-      "subsection": "外部依赖",
-      "description": "**各 AI 提供商的 API 端点**：Kimi (`api.moonshot.cn`)、GLM (`open.bigmodel.cn`)、MiniMax (`api.minimax.chat`)、DeepSeek (`api.deeps",
-      "specLine": 489,
-      "codeFiles": [],
-      "designFrames": [],
-      "e2eTests": [],
-      "phase": null,
-      "status": "unknown",
-      "coverage": {
-        "hasCode": false,
-        "hasDesign": false,
-        "hasTest": false,
-        "score": 0
-      }
-    },
-    {
       "id": "S-154",
       "section": "技术说明",
       "subsection": "外部依赖",
+      "description": "**Claude Agent SDK**：运行在 Electron 主进程。需要 `ANTHROPIC_API_KEY` 环境变量或 `claude login` 认证。`query()` 异步迭代器流式返回消息。`resume: sess",
+      "specLine": 493,
+      "codeFiles": [],
+      "designFrames": [],
+      "e2eTests": [],
+      "phase": null,
+      "status": "unknown",
+      "coverage": {
+        "hasCode": false,
+        "hasDesign": false,
+        "hasTest": false,
+        "score": 0
+      }
+    },
+    {
+      "id": "S-155",
+      "section": "技术说明",
+      "subsection": "外部依赖",
+      "description": "**各 AI 提供商的 API 端点**：Kimi (`api.moonshot.cn`)、GLM (`open.bigmodel.cn`)、MiniMax (`api.minimax.chat`)、DeepSeek (`api.deeps",
+      "specLine": 494,
+      "codeFiles": [],
+      "designFrames": [],
+      "e2eTests": [],
+      "phase": null,
+      "status": "unknown",
+      "coverage": {
+        "hasCode": false,
+        "hasDesign": false,
+        "hasTest": false,
+        "score": 0
+      }
+    },
+    {
+      "id": "S-156",
+      "section": "技术说明",
+      "subsection": "外部依赖",
       "description": "**OpenRouter**：统一网关，填一个 Key 可用 300+ 模型。作为推荐的聚合入口。",
-      "specLine": 490,
+      "specLine": 495,
       "codeFiles": [
         "src/main/services/api-config-service.ts",
         "src/main/ipc/api-config-ipc.ts",
@@ -5720,11 +5798,11 @@
       }
     },
     {
-      "id": "S-155",
+      "id": "S-157",
       "section": "技术说明",
       "subsection": "特殊要求",
       "description": "**离线写作**：编辑区本身完全离线工作。AI 功能需要网络连接，但文件读写、编辑、项目管理不依赖网络。",
-      "specLine": 493,
+      "specLine": 498,
       "codeFiles": [
         "src/renderer/components/layout/left-panel.tsx",
         "src/main/services/file-service.ts",
@@ -5792,11 +5870,11 @@
       }
     },
     {
-      "id": "S-156",
+      "id": "S-158",
       "section": "技术说明",
       "subsection": "特殊要求",
       "description": "**文件系统权限**：Electron 主进程拥有完整 Node.js `fs` 权限，用户选择的数据目录需可读写。",
-      "specLine": 494,
+      "specLine": 499,
       "codeFiles": [
         "src/renderer/components/layout/left-panel.tsx",
         "src/main/services/file-service.ts",
@@ -5821,11 +5899,11 @@
       }
     },
     {
-      "id": "S-157",
+      "id": "S-159",
       "section": "技术说明",
       "subsection": "特殊要求",
       "description": "**系统通知**：AI 生成完成时可通过 Electron 桌面通知提醒用户。",
-      "specLine": 495,
+      "specLine": 500,
       "codeFiles": [],
       "designFrames": [],
       "e2eTests": [],
@@ -5839,11 +5917,11 @@
       }
     },
     {
-      "id": "S-158",
+      "id": "S-160",
       "section": "技术说明",
       "subsection": "特殊要求",
       "description": "**性能要求**：编辑区加载 2000-3000 字 Markdown 文件延迟 < 100ms；AI 流式输出到 UI 的渲染延迟 < 50ms。",
-      "specLine": 496,
+      "specLine": 501,
       "codeFiles": [
         "src/renderer/components/layout/left-panel.tsx",
         "src/main/services/file-service.ts",
@@ -5875,11 +5953,11 @@
       }
     },
     {
-      "id": "S-159",
+      "id": "S-161",
       "section": "技术说明",
       "subsection": "安全要求",
       "description": "**API Key 安全存储**：使用 Electron `safeStorage` API 加密存储所有提供商的 API Key",
-      "specLine": 499,
+      "specLine": 504,
       "codeFiles": [],
       "designFrames": [],
       "e2eTests": [],
@@ -5893,11 +5971,11 @@
       }
     },
     {
-      "id": "S-160",
+      "id": "S-162",
       "section": "反功能需求（\"不做\"列表）",
       "subsection": "安全要求",
       "description": "拖拽章节排序",
-      "specLine": 511,
+      "specLine": 516,
       "codeFiles": [
         "src/renderer/components/layout/left-panel.tsx",
         "src/renderer/services/chapter-parser.ts",
@@ -5918,11 +5996,11 @@
       }
     },
     {
-      "id": "S-161",
+      "id": "S-163",
       "section": "反功能需求（\"不做\"列表）",
       "subsection": "安全要求",
       "description": "批量导出多个项目",
-      "specLine": 512,
+      "specLine": 517,
       "codeFiles": [
         "src/main/services/project-service.ts",
         "src/renderer/components/navigation/project-context-menu.tsx",
@@ -5940,11 +6018,11 @@
       }
     },
     {
-      "id": "S-162",
+      "id": "S-164",
       "section": "反功能需求（\"不做\"列表）",
       "subsection": "安全要求",
       "description": "协同/多人编辑",
-      "specLine": 513,
+      "specLine": 518,
       "codeFiles": [
         "src/renderer/components/editor/markdown-editor.tsx",
         "src/renderer/components/editor/markdown-preview.tsx",
@@ -5970,11 +6048,11 @@
       }
     },
     {
-      "id": "S-163",
+      "id": "S-165",
       "section": "反功能需求（\"不做\"列表）",
       "subsection": "安全要求",
       "description": "语音输入/朗读",
-      "specLine": 515,
+      "specLine": 520,
       "codeFiles": [],
       "designFrames": [],
       "e2eTests": [],
@@ -5988,11 +6066,11 @@
       }
     },
     {
-      "id": "S-164",
+      "id": "S-166",
       "section": "性能预算表（专业版）",
       "subsection": "安全要求",
       "description": "编辑区加载（2000字 MD文件）",
-      "specLine": 528,
+      "specLine": 533,
       "codeFiles": [
         "src/renderer/components/layout/left-panel.tsx",
         "src/main/services/file-service.ts",
@@ -6024,11 +6102,11 @@
       }
     },
     {
-      "id": "S-165",
+      "id": "S-167",
       "section": "性能预算表（专业版）",
       "subsection": "安全要求",
       "description": "对话区滚动（100条消息）",
-      "specLine": 531,
+      "specLine": 536,
       "codeFiles": [
         "src/renderer/components/layout/right-panel.tsx",
         "src/main/services/file-service.ts",
@@ -6079,11 +6157,11 @@
       }
     },
     {
-      "id": "S-166",
+      "id": "S-168",
       "section": "性能预算表（专业版）",
       "subsection": "安全要求",
       "description": "标签页切换",
-      "specLine": 532,
+      "specLine": 537,
       "codeFiles": [
         "src/renderer/components/layout/app-layout.tsx",
         "src/renderer/components/layout/toolbar.tsx",
@@ -6108,11 +6186,11 @@
       }
     },
     {
-      "id": "S-167",
+      "id": "S-169",
       "section": "性能预算表（专业版）",
       "subsection": "安全要求",
       "description": "面板拖拽调整",
-      "specLine": 533,
+      "specLine": 538,
       "codeFiles": [
         "src/renderer/components/layout/left-panel.tsx",
         "src/renderer/components/layout/right-panel.tsx"
@@ -6129,11 +6207,11 @@
       }
     },
     {
-      "id": "S-168",
+      "id": "S-170",
       "section": "性能预算表（专业版）",
       "subsection": "安全要求",
       "description": "应用启动（冷启动）",
-      "specLine": 534,
+      "specLine": 539,
       "codeFiles": [
         "src/renderer/components/layout/app-layout.tsx"
       ],
@@ -6149,11 +6227,11 @@
       }
     },
     {
-      "id": "S-169",
+      "id": "S-171",
       "section": "补充说明",
       "subsection": "状态标识规则",
       "description": "点击阶段卡片（①②④）",
-      "specLine": 602,
+      "specLine": 607,
       "codeFiles": [
         "src/renderer/components/layout/left-panel.tsx",
         "src/renderer/components/navigation/stage-cards.tsx",
@@ -6171,11 +6249,11 @@
       }
     },
     {
-      "id": "S-170",
+      "id": "S-172",
       "section": "补充说明",
       "subsection": "状态标识规则",
       "description": "点击阶段③卡片（章节目录）",
-      "specLine": 603,
+      "specLine": 608,
       "codeFiles": [
         "src/renderer/components/layout/left-panel.tsx",
         "src/renderer/components/navigation/stage-cards.tsx",
@@ -6198,11 +6276,11 @@
       }
     },
     {
-      "id": "S-171",
+      "id": "S-173",
       "section": "补充说明",
       "subsection": "状态标识规则",
       "description": "AI 完成生成并写入文件",
-      "specLine": 604,
+      "specLine": 609,
       "codeFiles": [
         "src/renderer/components/layout/left-panel.tsx",
         "src/main/services/file-service.ts",
@@ -6223,11 +6301,11 @@
       }
     },
     {
-      "id": "S-172",
+      "id": "S-174",
       "section": "补充说明",
       "subsection": "状态标识规则",
       "description": "用户从文件树手动编辑并保存",
-      "specLine": 606,
+      "specLine": 611,
       "codeFiles": [
         "src/renderer/components/layout/left-panel.tsx",
         "src/main/services/file-service.ts",
@@ -6268,11 +6346,11 @@
       }
     },
     {
-      "id": "S-173",
+      "id": "S-175",
       "section": "补充说明",
       "subsection": "状态标识规则",
       "description": "外部删除文件（磁盘操作）",
-      "specLine": 607,
+      "specLine": 612,
       "codeFiles": [
         "src/renderer/components/layout/left-panel.tsx",
         "src/main/services/file-service.ts",
@@ -6293,11 +6371,11 @@
       }
     },
     {
-      "id": "S-174",
+      "id": "S-176",
       "section": "补充说明",
       "subsection": "状态标识规则",
       "description": "关闭项目 → 重新打开",
-      "specLine": 608,
+      "specLine": 613,
       "codeFiles": [
         "src/main/services/project-service.ts",
         "src/renderer/components/navigation/project-context-menu.tsx",
@@ -6315,11 +6393,11 @@
       }
     },
     {
-      "id": "S-175",
+      "id": "S-177",
       "section": "补充说明",
       "subsection": "标签页行为规则",
       "description": "切换到其他标签",
-      "specLine": 617,
+      "specLine": 622,
       "codeFiles": [
         "src/renderer/components/layout/app-layout.tsx",
         "src/renderer/components/layout/toolbar.tsx",
@@ -6344,11 +6422,11 @@
       }
     },
     {
-      "id": "S-176",
+      "id": "S-178",
       "section": "补充说明",
       "subsection": "标签页行为规则",
       "description": "删除项目文件（在文件树右键删除）",
-      "specLine": 619,
+      "specLine": 624,
       "codeFiles": [
         "src/renderer/components/layout/left-panel.tsx",
         "src/main/services/file-service.ts",
@@ -6373,11 +6451,11 @@
       }
     },
     {
-      "id": "S-177",
+      "id": "S-179",
       "section": "补充说明",
       "subsection": "标签页行为规则",
       "description": "通过 AI 命令删除文件",
-      "specLine": 620,
+      "specLine": 625,
       "codeFiles": [
         "src/renderer/components/layout/left-panel.tsx",
         "src/main/services/file-service.ts",
@@ -6385,53 +6463,6 @@
         "src/renderer/components/file-tree/file-tree.tsx",
         "src/renderer/components/file-tree/file-tree-context-menu.tsx",
         "src/renderer/hooks/use-file-system.ts"
-      ],
-      "designFrames": [],
-      "e2eTests": [],
-      "phase": 2,
-      "status": "implemented",
-      "coverage": {
-        "hasCode": true,
-        "hasDesign": false,
-        "hasTest": false,
-        "score": 1
-      }
-    },
-    {
-      "id": "S-178",
-      "section": "补充说明",
-      "subsection": "入口×行为矩阵",
-      "description": "打开方式 ↓ / 目标文件 →",
-      "specLine": 626,
-      "codeFiles": [
-        "src/renderer/components/layout/left-panel.tsx",
-        "src/main/services/file-service.ts",
-        "src/main/ipc/file-ipc.ts",
-        "src/renderer/components/file-tree/file-tree.tsx",
-        "src/renderer/components/file-tree/file-tree-context-menu.tsx",
-        "src/renderer/hooks/use-file-system.ts"
-      ],
-      "designFrames": [],
-      "e2eTests": [],
-      "phase": 2,
-      "status": "implemented",
-      "coverage": {
-        "hasCode": true,
-        "hasDesign": false,
-        "hasTest": false,
-        "score": 1
-      }
-    },
-    {
-      "id": "S-179",
-      "section": "补充说明",
-      "subsection": "入口×行为矩阵",
-      "description": "**点击阶段卡片**",
-      "specLine": 628,
-      "codeFiles": [
-        "src/renderer/components/layout/left-panel.tsx",
-        "src/renderer/components/navigation/stage-cards.tsx",
-        "src/renderer/components/navigation/stage-card-item.tsx"
       ],
       "designFrames": [],
       "e2eTests": [],
@@ -6448,8 +6479,8 @@
       "id": "S-180",
       "section": "补充说明",
       "subsection": "入口×行为矩阵",
-      "description": "**从文件树点击**",
-      "specLine": 629,
+      "description": "打开方式 ↓ / 目标文件 →",
+      "specLine": 631,
       "codeFiles": [
         "src/renderer/components/layout/left-panel.tsx",
         "src/main/services/file-service.ts",
@@ -6473,38 +6504,55 @@
       "id": "S-181",
       "section": "补充说明",
       "subsection": "入口×行为矩阵",
-      "description": "**从章节索引视图点击（文件为空）**",
-      "specLine": 630,
+      "description": "**点击阶段卡片**",
+      "specLine": 633,
       "codeFiles": [
         "src/renderer/components/layout/left-panel.tsx",
-        "src/main/services/file-service.ts",
-        "src/main/ipc/file-ipc.ts",
-        "src/renderer/components/file-tree/file-tree.tsx",
-        "src/renderer/components/file-tree/file-tree-context-menu.tsx",
-        "src/renderer/hooks/use-file-system.ts",
-        "src/renderer/services/chapter-parser.ts",
-        "src/renderer/components/editor/chapter-index-view.tsx",
-        "src/renderer/components/editor/chapter-index-row.tsx"
+        "src/renderer/components/navigation/stage-cards.tsx",
+        "src/renderer/components/navigation/stage-card-item.tsx"
       ],
       "designFrames": [],
-      "e2eTests": [
-        "spec-generated.spec.ts"
-      ],
+      "e2eTests": [],
       "phase": 2,
       "status": "implemented",
       "coverage": {
         "hasCode": true,
         "hasDesign": false,
-        "hasTest": true,
-        "score": 2
+        "hasTest": false,
+        "score": 1
       }
     },
     {
       "id": "S-182",
       "section": "补充说明",
       "subsection": "入口×行为矩阵",
-      "description": "**从章节索引视图点击（文件有内容）**",
-      "specLine": 631,
+      "description": "**从文件树点击**",
+      "specLine": 634,
+      "codeFiles": [
+        "src/renderer/components/layout/left-panel.tsx",
+        "src/main/services/file-service.ts",
+        "src/main/ipc/file-ipc.ts",
+        "src/renderer/components/file-tree/file-tree.tsx",
+        "src/renderer/components/file-tree/file-tree-context-menu.tsx",
+        "src/renderer/hooks/use-file-system.ts"
+      ],
+      "designFrames": [],
+      "e2eTests": [],
+      "phase": 2,
+      "status": "implemented",
+      "coverage": {
+        "hasCode": true,
+        "hasDesign": false,
+        "hasTest": false,
+        "score": 1
+      }
+    },
+    {
+      "id": "S-183",
+      "section": "补充说明",
+      "subsection": "入口×行为矩阵",
+      "description": "**从章节索引视图点击（文件为空）**",
+      "specLine": 635,
       "codeFiles": [
         "src/renderer/components/layout/left-panel.tsx",
         "src/main/services/file-service.ts",
@@ -6530,11 +6578,41 @@
       }
     },
     {
-      "id": "S-183",
+      "id": "S-184",
+      "section": "补充说明",
+      "subsection": "入口×行为矩阵",
+      "description": "**从章节索引视图点击（文件有内容）**",
+      "specLine": 636,
+      "codeFiles": [
+        "src/renderer/components/layout/left-panel.tsx",
+        "src/main/services/file-service.ts",
+        "src/main/ipc/file-ipc.ts",
+        "src/renderer/components/file-tree/file-tree.tsx",
+        "src/renderer/components/file-tree/file-tree-context-menu.tsx",
+        "src/renderer/hooks/use-file-system.ts",
+        "src/renderer/services/chapter-parser.ts",
+        "src/renderer/components/editor/chapter-index-view.tsx",
+        "src/renderer/components/editor/chapter-index-row.tsx"
+      ],
+      "designFrames": [],
+      "e2eTests": [
+        "spec-generated.spec.ts"
+      ],
+      "phase": 2,
+      "status": "implemented",
+      "coverage": {
+        "hasCode": true,
+        "hasDesign": false,
+        "hasTest": true,
+        "score": 2
+      }
+    },
+    {
+      "id": "S-185",
       "section": "补充说明",
       "subsection": "入口×行为矩阵",
       "description": "**AI 生成内容后自动打开**",
-      "specLine": 632,
+      "specLine": 637,
       "codeFiles": [],
       "designFrames": [],
       "e2eTests": [],
@@ -6548,11 +6626,11 @@
       }
     },
     {
-      "id": "S-184",
+      "id": "S-186",
       "section": "补充说明",
       "subsection": "跨引擎 Session 桥接",
       "description": "**切换流程**：",
-      "specLine": 652,
+      "specLine": 657,
       "codeFiles": [
         "src/renderer/components/layout/app-layout.tsx",
         "src/renderer/components/layout/toolbar.tsx",
@@ -6575,11 +6653,11 @@
       }
     },
     {
-      "id": "S-185",
+      "id": "S-187",
       "section": "补充说明",
       "subsection": "跨引擎 Session 桥接",
       "description": "**切换中 UI 状态**：导出对话历史 + 新引擎初始化的过程中（通常 < 2 秒），对话区显示临时加载态\"正在切换引擎...\"，输入框暂时禁用。加载完成后自动恢复",
-      "specLine": 656,
+      "specLine": 661,
       "codeFiles": [
         "src/renderer/components/layout/app-layout.tsx",
         "src/renderer/components/layout/toolbar.tsx",
@@ -6636,11 +6714,11 @@
       }
     },
     {
-      "id": "S-186",
+      "id": "S-188",
       "section": "补充说明",
       "subsection": "跨引擎 Session 桥接",
       "description": "**桥接失败处理**：格式转换异常或 Session 数据损坏 → 对话区显示系统消息 `⚠ 引擎切换失败，对话上下文可能不完整`。用户可选择\"从空白开始\"或\"重试切换\"",
-      "specLine": 657,
+      "specLine": 662,
       "codeFiles": [
         "src/renderer/components/layout/app-layout.tsx",
         "src/renderer/components/layout/toolbar.tsx",
@@ -6699,11 +6777,11 @@
       }
     },
     {
-      "id": "S-187",
+      "id": "S-189",
       "section": "补充说明",
       "subsection": "跨引擎 Session 桥接",
       "description": "**能力降级提示**：从 Claude Engine 切换到 Universal Engine 时，对话区显示系统消息 `⚠ 已切换至 Universal Engine，部分高级能力（MCP、子Agent）暂不可用`",
-      "specLine": 658,
+      "specLine": 663,
       "codeFiles": [
         "src/renderer/components/layout/app-layout.tsx",
         "src/renderer/components/layout/toolbar.tsx",

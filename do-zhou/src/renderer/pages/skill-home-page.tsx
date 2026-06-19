@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback, useRef } from 'react'
 import { WindowControls } from '../components/window-controls'
+import { RecentProjects } from '../components/recent-projects'
 
 interface SkillData {
   id: string; name: string; version: string; category: string
@@ -122,6 +123,7 @@ export function SkillHomePage({ onOpenProject, onEditSkill, onOpenSettings }: {
             </div>
           ) : (
             <div className="flex flex-col gap-[16px]">
+              <RecentProjects onOpenProject={(projectPath) => onOpenProject?.(projectPath)} />
               {skills.map((skill, idx) => (
                 <div key={skill.id}
                   className={`rounded-lg border border-border-default p-[16px] transition-all duration-150 ${idx === 0 ? 'bg-bg-panel' : 'bg-bg-base'} ${dragOverIdx === idx ? 'border-t-2 border-t-accent-dim' : ''} ${dragIdx === idx ? 'opacity-50 shadow-lg' : ''}`}
