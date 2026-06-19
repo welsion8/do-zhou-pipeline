@@ -147,7 +147,7 @@ export function ProviderCard({
             <input className="flex-1 px-[12px] py-[4px] rounded-sm bg-bg-active border border-border-default text-text-secondary text-[12px] outline-none focus:border-border-hover transition-colors"
               type={showKey ? 'text' : 'password'} value={key} onChange={e => setKey(e.target.value)}
               placeholder={provider.apiKey ? '••••••••••••' : '输入 API Key'} />
-            <button className="text-text-tertiary text-[14px] hover:text-text-secondary shrink-0" onClick={() => setShowKey(!showKey)}>
+            <button className="text-text-tertiary text-[14px] hover:text-text-secondary shrink-0" onClick={() => setShowKey(!showKey)} aria-label={showKey ? '隐藏 Key' : '显示 Key'}>
               {showKey ? '🙈' : '👁'}
             </button>
           </div>

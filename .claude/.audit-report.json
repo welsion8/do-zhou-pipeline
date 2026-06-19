@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-19T03:38:29.330Z",
+  "timestamp": "2026-06-19T03:57:31.977Z",
   "projectRoot": "F:/小说桌面端工具",
   "codeDir": "do-zhou",
   "stage": "developing",
@@ -933,6 +933,9 @@
             "e2e/user-stories.spec.ts",
             "e2e/user-stories.spec.ts",
             "src/main/engine/types.ts",
+            "src/renderer/components/api-config/provider-card.tsx",
+            "src/renderer/components/chat/chat-header.tsx",
+            "src/renderer/components/chat/chat-header.tsx",
             "src/renderer/components/chat/chat-input-bar.tsx",
             "src/renderer/components/editor/tab-bar.tsx",
             "src/renderer/components/layout/fab-button.tsx",
@@ -2140,6 +2143,7 @@
         "e2e\\phase-10-13-interactions.spec.ts",
         "e2e\\user-stories.spec.ts",
         "src\\main\\engine\\types.ts",
+        "src\\renderer\\components\\api-config\\provider-card.tsx",
         "src\\renderer\\components\\chat\\chat-input-bar.tsx",
         "src\\renderer\\components\\chat\\chat-operation-buttons.tsx",
         "src\\renderer\\components\\editor\\tab-bar.tsx",
@@ -3409,7 +3413,7 @@
     {
       "check": "a11y: 无障碍属性",
       "status": "🟢",
-      "detail": "28 处 (aria:13 role:2 tabIndex:0 alt:0 label:13) — 9/88 文件 (10%)"
+      "detail": "34 处 (aria:16 role:2 tabIndex:0 alt:0 label:16) — 11/88 文件 (13%)"
     },
     {
       "check": "a11y: 键盘导航",
@@ -3429,7 +3433,7 @@
     {
       "check": "a11y: ARIA 覆盖率",
       "status": "🟠",
-      "detail": "10% 文件使用了 ARIA/role/tabIndex/alt/label 属性（目标 ≥ 30%）"
+      "detail": "13% 文件使用了 ARIA/role/tabIndex/alt/label 属性（目标 ≥ 30%）"
     },
     {
       "check": "a11y: Phase gate 判定",

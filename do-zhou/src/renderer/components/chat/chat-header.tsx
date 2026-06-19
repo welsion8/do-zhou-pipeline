@@ -12,8 +12,8 @@ export function ChatHeader({ tokenCount, onSearch, onExport }: Props): React.Rea
         {tokenCount !== undefined && (
           <span className="text-text-tertiary text-[10px] font-ui">📊 {(tokenCount / 1000).toFixed(1)}K</span>
         )}
-        <button className="text-text-tertiary text-[12px] hover:text-text-secondary transition-colors" onClick={onSearch} data-testid="btn-search">🔍</button>
-        <button className="text-text-tertiary text-[12px] hover:text-text-secondary transition-colors" onClick={onExport} data-testid="btn-export">📤</button>
+        <button className="text-text-tertiary text-[12px] hover:text-text-secondary transition-colors" onClick={onSearch} data-testid="btn-search" aria-label="搜索对话">🔍</button>
+        <button className="text-text-tertiary text-[12px] hover:text-text-secondary transition-colors" onClick={onExport} data-testid="btn-export" aria-label="导出对话">📤</button>
       </div>
     </div>
   )
