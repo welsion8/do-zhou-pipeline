@@ -49,4 +49,11 @@ describe('preload API', () => {
     expect(exposedAPI.engine.chat).toBeInstanceOf(Function)
     expect(exposedAPI.engine.loadSession).toBeInstanceOf(Function)
   })
+
+  it('notify 服务', async () => {
+    await import('../preload')
+    expect(exposedAPI.notify).toBeDefined()
+    expect(exposedAPI.notify.complete).toBeInstanceOf(Function)
+    expect(exposedAPI.notify.error).toBeInstanceOf(Function)
+  })
 })
