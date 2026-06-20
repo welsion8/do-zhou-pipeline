@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-20T18:38:58.089Z",
+  "timestamp": "2026-06-20T18:41:42.183Z",
   "projectRoot": "F:/小说桌面端工具",
   "codeDir": "do-zhou",
   "stage": "developing",
@@ -13,8 +13,8 @@
   "penFileEmpty": false,
   "summary": {
     "red": 6,
-    "orange": 31,
-    "yellow": 122,
+    "orange": 32,
+    "yellow": 121,
     "green": 256
   },
   "d1_traceability": [
@@ -798,9 +798,6 @@
           "check": "右键菜单实现",
           "found": true,
           "files": [
-            "src/renderer/components/editor/editor-context-menu.ct.spec.tsx",
-            "src/renderer/components/editor/editor-context-menu.ct.spec.tsx",
-            "src/renderer/components/editor/editor-context-menu.ct.spec.tsx",
             "src/renderer/components/editor/editor-context-menu.tsx",
             "src/renderer/components/editor/editor-context-menu.tsx",
             "src/renderer/components/editor/editor-context-menu.tsx",
@@ -3776,7 +3773,7 @@
     {
       "check": "a11y: 无障碍属性",
       "status": "🟢",
-      "detail": "36 处 (aria:17 role:2 tabIndex:0 alt:0 label:17) — 12/141 文件 (9%)"
+      "detail": "36 处 (aria:17 role:2 tabIndex:0 alt:0 label:17) — 12/140 文件 (9%)"
     },
     {
       "check": "a11y: 键盘导航",
@@ -3853,7 +3850,7 @@
       "detail": "在 P90 预算内"
     },
     {
-      "check": "编辑器组件: 17文件 1046行",
+      "check": "编辑器组件: 16文件 1034行",
       "status": "🟡",
       "found": true,
       "detail": "编辑器组件接近 300行/文件 上限，建议拆分。"
@@ -4513,6 +4510,6 @@
     "filePathCount": 68
   },
   "code": {
-    "fileCount": 165
+    "fileCount": 164
   }
 }
