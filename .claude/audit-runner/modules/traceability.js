@@ -300,7 +300,11 @@ function extractKeywords(description) {
     '关闭.*AI.*生成': ['window-controls'],
     '内置提供商': ['api-config'], '提供商.*入口': ['api-config'],
     '自动打开': ['stage-navigation', 'editor'], 'AI.*生成.*后.*打开': ['stage-navigation'],
-    '系统通知': ['notification'], '桌面通知': ['notification'],
+    '系统通知': ['notification', 'preload'], '桌面通知': ['notification', 'preload'],
+    // 已实现但跨文件引用导致 traceability 漏检
+    'API Key.*存储': ['api-config', 'secure-storage'], 'safeStorage': ['api-config', 'secure-storage'],
+    '阶段.*卡片': ['stage-card'], '高亮': ['stage-card'],
+    '关闭.*AI': ['window-controls'], 'AI.*生成.*关闭': ['window-controls'],
   };
 
   const keywords = [];

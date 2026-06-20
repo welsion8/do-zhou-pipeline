@@ -1,13 +1,13 @@
 {
-  "timestamp": "2026-06-20T04:46:43.285Z",
+  "timestamp": "2026-06-20T04:55:45.259Z",
   "summary": {
     "totalSpecItems": 189,
     "implemented": 172,
-    "withCode": "172/189 (91%)",
+    "withCode": "173/189 (92%)",
     "withDesign": "71/189 (38%)",
     "withTest": "118/189 (62%)",
     "fullCoverage": "47/189",
-    "noCoverage": 8
+    "noCoverage": 7
   },
   "items": [
     {
@@ -2404,6 +2404,8 @@
         "src/renderer/components/chat/chat-input-bar.tsx",
         "src/renderer/components/chat/chat-operation-buttons.tsx",
         "src/renderer/hooks/use-chat-engine.ts",
+        "src/renderer/components/navigation/stage-cards.tsx",
+        "src/renderer/components/navigation/stage-card-item.tsx",
         "src/main/services/skill-service.ts",
         "src/main/ipc/skill-ipc.ts",
         "src/main/engine/claude/claude-engine.ts",
@@ -4818,16 +4820,19 @@
       "subsection": "新项目创作",
       "description": "左侧\"故事大纲\"卡片显示 ✅ → \"人物小传\"高亮为 ⟳",
       "specLine": 397,
-      "codeFiles": [],
+      "codeFiles": [
+        "src/renderer/components/navigation/stage-cards.tsx",
+        "src/renderer/components/navigation/stage-card-item.tsx"
+      ],
       "designFrames": [],
       "e2eTests": [],
-      "phase": null,
+      "phase": 8,
       "status": "implemented",
       "coverage": {
-        "hasCode": false,
+        "hasCode": true,
         "hasDesign": false,
         "hasTest": false,
-        "score": 0
+        "score": 1
       }
     },
     {
