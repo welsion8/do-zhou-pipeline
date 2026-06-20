@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-20T05:19:14.562Z",
+  "timestamp": "2026-06-20T05:30:43.992Z",
   "projectRoot": "F:/小说桌面端工具",
   "codeDir": "do-zhou",
   "stage": "developing",
@@ -12,7 +12,7 @@
   },
   "penFileEmpty": false,
   "summary": {
-    "red": 3,
+    "red": 6,
     "orange": 30,
     "yellow": 116,
     "green": 256
@@ -80,7 +80,6 @@
           "check": "折叠状态管理",
           "found": true,
           "files": [
-            "coverage/coverage-final.json",
             "src/main/services/skill-service.ts",
             "src/main/services/skill-service.ts",
             "src/main/services/skill-service.ts",
@@ -763,10 +762,6 @@
           "check": "右键菜单实现",
           "found": true,
           "files": [
-            "coverage/coverage-final.json",
-            "coverage/coverage-final.json",
-            "coverage/coverage-final.json",
-            "coverage/coverage-final.json",
             "src/renderer/components/editor/editor-context-menu.test.tsx",
             "src/renderer/components/editor/editor-context-menu.test.tsx",
             "src/renderer/components/editor/editor-context-menu.test.tsx",
@@ -1050,7 +1045,6 @@
           "check": "自动保存逻辑",
           "found": true,
           "files": [
-            "coverage/coverage-final.json",
             "src/main/services/settings-service.ts",
             "src/main/services/settings-service.ts",
             "src/renderer/components/editor/editor-workspace.tsx",
@@ -1291,7 +1285,6 @@
           "check": "错误处理",
           "found": true,
           "files": [
-            "coverage/coverage-final.json",
             "e2e/electron-smoke.spec.ts",
             "e2e/electron-smoke.spec.ts",
             "e2e/electron-smoke.spec.ts",
@@ -1641,7 +1634,6 @@
           "check": "Toast 组件",
           "found": true,
           "files": [
-            "coverage/coverage-final.json",
             "e2e/spec-generated.spec.ts",
             "e2e/spec-generated.spec.ts",
             "e2e/spec-generated.spec.ts",
@@ -2153,7 +2145,6 @@
           "check": "响应式逻辑",
           "found": true,
           "files": [
-            "coverage/coverage-final.json",
             "src/renderer/components/file-tree/file-tree.tsx",
             "src/renderer/components/file-tree/file-tree.tsx",
             "src/renderer/components/file-tree/file-tree.tsx",
@@ -3242,7 +3233,7 @@
     {
       "check": "状态: 启用/禁用状态",
       "found": true,
-      "file": "15 文件",
+      "file": "16 文件",
       "status": "✅"
     },
     {
@@ -3603,7 +3594,7 @@
     {
       "check": "a11y: 无障碍属性",
       "status": "🟢",
-      "detail": "38 处 (aria:18 role:2 tabIndex:0 alt:0 label:18) — 13/132 文件 (10%)"
+      "detail": "38 处 (aria:18 role:2 tabIndex:0 alt:0 label:18) — 13/136 文件 (10%)"
     },
     {
       "check": "a11y: 键盘导航",
@@ -4340,6 +4331,6 @@
     "filePathCount": 68
   },
   "code": {
-    "fileCount": 138
+    "fileCount": 141
   }
 }
