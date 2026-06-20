@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-20T05:30:43.992Z",
+  "timestamp": "2026-06-20T05:41:29.350Z",
   "projectRoot": "F:/小说桌面端工具",
   "codeDir": "do-zhou",
   "stage": "developing",
@@ -80,6 +80,7 @@
           "check": "折叠状态管理",
           "found": true,
           "files": [
+            "coverage/coverage-final.json",
             "src/main/services/skill-service.ts",
             "src/main/services/skill-service.ts",
             "src/main/services/skill-service.ts",
@@ -762,6 +763,10 @@
           "check": "右键菜单实现",
           "found": true,
           "files": [
+            "coverage/coverage-final.json",
+            "coverage/coverage-final.json",
+            "coverage/coverage-final.json",
+            "coverage/coverage-final.json",
             "src/renderer/components/editor/editor-context-menu.test.tsx",
             "src/renderer/components/editor/editor-context-menu.test.tsx",
             "src/renderer/components/editor/editor-context-menu.test.tsx",
@@ -1045,6 +1050,7 @@
           "check": "自动保存逻辑",
           "found": true,
           "files": [
+            "coverage/coverage-final.json",
             "src/main/services/settings-service.ts",
             "src/main/services/settings-service.ts",
             "src/renderer/components/editor/editor-workspace.tsx",
@@ -1285,6 +1291,7 @@
           "check": "错误处理",
           "found": true,
           "files": [
+            "coverage/coverage-final.json",
             "e2e/electron-smoke.spec.ts",
             "e2e/electron-smoke.spec.ts",
             "e2e/electron-smoke.spec.ts",
@@ -1634,6 +1641,7 @@
           "check": "Toast 组件",
           "found": true,
           "files": [
+            "coverage/coverage-final.json",
             "e2e/spec-generated.spec.ts",
             "e2e/spec-generated.spec.ts",
             "e2e/spec-generated.spec.ts",
@@ -2109,7 +2117,9 @@
             "src/renderer/styles/globals.css",
             "src/renderer/styles/globals.css",
             "src/renderer/styles/globals.css",
-            "src/renderer/styles/globals.css"
+            "src/renderer/styles/globals.css",
+            "src/renderer/test-utils/ipc-mock.ts",
+            "src/renderer/test-utils/ipc-mock.ts"
           ]
         }
       ],
@@ -2145,6 +2155,7 @@
           "check": "响应式逻辑",
           "found": true,
           "files": [
+            "coverage/coverage-final.json",
             "src/renderer/components/file-tree/file-tree.tsx",
             "src/renderer/components/file-tree/file-tree.tsx",
             "src/renderer/components/file-tree/file-tree.tsx",
@@ -2351,7 +2362,8 @@
         "src\\renderer\\pages\\api-config-page.tsx",
         "src\\renderer\\pages\\settings-page.tsx",
         "src\\renderer\\pages\\skill-editor-page.tsx",
-        "src\\renderer\\pages\\skill-home-page.tsx"
+        "src\\renderer\\pages\\skill-home-page.tsx",
+        "src\\renderer\\test-utils\\ipc-mock.ts"
       ],
       "status": "🟢"
     },
@@ -4331,6 +4343,6 @@
     "filePathCount": 68
   },
   "code": {
-    "fileCount": 141
+    "fileCount": 142
   }
 }
