@@ -1,13 +1,13 @@
 {
-  "timestamp": "2026-06-20T05:54:36.022Z",
-  "totalChanged": 15,
+  "timestamp": "2026-06-20T05:59:08.269Z",
+  "totalChanged": 14,
   "criticalChanges": 1,
   "criticalCount": 1,
   "highCount": 0,
   "hits": [
     {
-      "file": "do-zhou/src/main/ipc/__tests__/ipc-handlers.test.ts",
-      "label": "IPC 通道",
+      "file": "do-zhou/src/main/engine/universal/session-store.test.ts",
+      "label": "AI 引擎",
       "risk": "critical"
     }
   ],

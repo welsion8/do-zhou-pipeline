@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-20T05:54:35.507Z",
+  "timestamp": "2026-06-20T06:01:19.407Z",
   "projectRoot": "F:/小说桌面端工具",
   "codeDir": "do-zhou",
   "stage": "developing",
@@ -1241,6 +1241,7 @@
           "files": [
             "e2e/test-fixtures.js",
             "electron/preload.ts",
+            "src/main/engine/universal/agent-loop.test.ts",
             "src/main/ipc/file-ipc.ts",
             "src/main/services/trash-service.ts",
             "src/main/services/__tests__/file-service.test.ts",
@@ -2228,6 +2229,7 @@
       "codeFiles": [
         "e2e\\test-fixtures.js",
         "electron\\preload.ts",
+        "src\\main\\engine\\universal\\agent-loop.test.ts",
         "src\\main\\ipc\\file-ipc.ts",
         "src\\main\\services\\trash-service.ts",
         "src\\main\\services\\__tests__\\file-service.test.ts",
@@ -3607,7 +3609,7 @@
     {
       "check": "a11y: 无障碍属性",
       "status": "🟢",
-      "detail": "38 处 (aria:18 role:2 tabIndex:0 alt:0 label:18) — 13/139 文件 (9%)"
+      "detail": "38 处 (aria:18 role:2 tabIndex:0 alt:0 label:18) — 13/141 文件 (9%)"
     },
     {
       "check": "a11y: 键盘导航",
@@ -4344,6 +4346,6 @@
     "filePathCount": 68
   },
   "code": {
-    "fileCount": 145
+    "fileCount": 147
   }
 }
