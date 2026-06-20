@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-20T05:02:28.187Z",
+  "timestamp": "2026-06-20T05:19:14.562Z",
   "projectRoot": "F:/小说桌面端工具",
   "codeDir": "do-zhou",
   "stage": "developing",
@@ -12,10 +12,10 @@
   },
   "penFileEmpty": false,
   "summary": {
-    "red": 1,
+    "red": 3,
     "orange": 30,
     "yellow": 116,
-    "green": 257
+    "green": 256
   },
   "d1_traceability": [
     {
@@ -80,6 +80,7 @@
           "check": "折叠状态管理",
           "found": true,
           "files": [
+            "coverage/coverage-final.json",
             "src/main/services/skill-service.ts",
             "src/main/services/skill-service.ts",
             "src/main/services/skill-service.ts",
@@ -296,6 +297,7 @@
             "src/renderer/pages/skill-home-page.tsx",
             "src/renderer/pages/skill-home-page.tsx",
             "src/renderer/pages/skill-home-page.tsx",
+            "src/renderer/test-utils/ipc-mock.ts",
             "src/renderer/theme/theme-provider.tsx",
             "src/renderer/theme/theme-provider.tsx",
             "src/renderer/theme/theme-provider.tsx",
@@ -761,6 +763,10 @@
           "check": "右键菜单实现",
           "found": true,
           "files": [
+            "coverage/coverage-final.json",
+            "coverage/coverage-final.json",
+            "coverage/coverage-final.json",
+            "coverage/coverage-final.json",
             "src/renderer/components/editor/editor-context-menu.test.tsx",
             "src/renderer/components/editor/editor-context-menu.test.tsx",
             "src/renderer/components/editor/editor-context-menu.test.tsx",
@@ -1044,6 +1050,7 @@
           "check": "自动保存逻辑",
           "found": true,
           "files": [
+            "coverage/coverage-final.json",
             "src/main/services/settings-service.ts",
             "src/main/services/settings-service.ts",
             "src/renderer/components/editor/editor-workspace.tsx",
@@ -1255,6 +1262,7 @@
             "src/renderer/pages/skill-home-page.tsx",
             "src/renderer/pages/skill-home-page.tsx",
             "src/renderer/pages/skill-home-page.tsx",
+            "src/renderer/test-utils/ipc-mock.ts",
             "src/renderer/types/electron.d.ts"
           ]
         }
@@ -1283,6 +1291,7 @@
           "check": "错误处理",
           "found": true,
           "files": [
+            "coverage/coverage-final.json",
             "e2e/electron-smoke.spec.ts",
             "e2e/electron-smoke.spec.ts",
             "e2e/electron-smoke.spec.ts",
@@ -1599,6 +1608,7 @@
             "src/renderer/pages/skill-home-page.tsx",
             "src/renderer/pages/skill-home-page.tsx",
             "src/renderer/pages/skill-home-page.tsx",
+            "src/renderer/test-utils/ipc-mock.ts",
             "src/renderer/theme/theme-provider.tsx",
             "src/renderer/types/electron.d.ts",
             "src/styles/tokens.css",
@@ -1631,6 +1641,7 @@
           "check": "Toast 组件",
           "found": true,
           "files": [
+            "coverage/coverage-final.json",
             "e2e/spec-generated.spec.ts",
             "e2e/spec-generated.spec.ts",
             "e2e/spec-generated.spec.ts",
@@ -2142,6 +2153,7 @@
           "check": "响应式逻辑",
           "found": true,
           "files": [
+            "coverage/coverage-final.json",
             "src/renderer/components/file-tree/file-tree.tsx",
             "src/renderer/components/file-tree/file-tree.tsx",
             "src/renderer/components/file-tree/file-tree.tsx",
@@ -2226,6 +2238,7 @@
         "src\\renderer\\components\\layout\\model-dropdown.tsx",
         "src\\renderer\\components\\navigation\\stage-card-item.tsx",
         "src\\renderer\\pages\\skill-home-page.tsx",
+        "src\\renderer\\test-utils\\ipc-mock.ts",
         "src\\renderer\\types\\electron.d.ts"
       ],
       "status": "🟢"
@@ -2292,7 +2305,7 @@
         "src\\renderer\\pages\\settings-page.tsx",
         "src\\renderer\\pages\\skill-editor-page.tsx",
         "src\\renderer\\pages\\skill-home-page.tsx",
-        "src\\renderer\\theme\\theme-provider.tsx",
+        "src\\renderer\\test-utils\\ipc-mock.ts",
         "src\\renderer\\types\\electron.d.ts"
       ],
       "status": "🟢"
@@ -2318,7 +2331,8 @@
         "src\\renderer\\components\\navigation\\stage-card-item.tsx",
         "src\\renderer\\components\\recent-projects.tsx",
         "src\\renderer\\components\\window-controls.tsx",
-        "src\\renderer\\pages\\skill-editor-page.tsx"
+        "src\\renderer\\pages\\skill-editor-page.tsx",
+        "src\\renderer\\pages\\skill-home-page.tsx"
       ],
       "status": "🟡"
     },
@@ -2362,9 +2376,9 @@
       "found": true
     },
     {
-      "check": "全局加载态一致性: 3页偏离",
+      "check": "全局加载态一致性: 4页偏离",
       "status": "🟡",
-      "detail": "偏离页面: chat-view, settings-page, skill-editor-page。模板要求 spinner 或 skeleton 实现"
+      "detail": "偏离页面: chat-view, settings-page, skill-editor-page, skill-home-page.test。模板要求 spinner 或 skeleton 实现"
     },
     {
       "check": "Token 用量精度",
@@ -3216,7 +3230,7 @@
     {
       "check": "状态: 展开/收缩状态",
       "found": true,
-      "file": "9 文件",
+      "file": "10 文件",
       "status": "✅"
     },
     {
@@ -3228,7 +3242,7 @@
     {
       "check": "状态: 启用/禁用状态",
       "found": true,
-      "file": "14 文件",
+      "file": "15 文件",
       "status": "✅"
     },
     {
@@ -3240,7 +3254,7 @@
     {
       "check": "状态: 错误处理",
       "found": true,
-      "file": "48 文件",
+      "file": "49 文件",
       "status": "✅"
     }
   ],
@@ -3589,7 +3603,7 @@
     {
       "check": "a11y: 无障碍属性",
       "status": "🟢",
-      "detail": "38 处 (aria:18 role:2 tabIndex:0 alt:0 label:18) — 13/131 文件 (10%)"
+      "detail": "38 处 (aria:18 role:2 tabIndex:0 alt:0 label:18) — 13/132 文件 (10%)"
     },
     {
       "check": "a11y: 键盘导航",
@@ -3666,7 +3680,7 @@
       "detail": "在 P90 预算内"
     },
     {
-      "check": "编辑器组件: 18文件 1079行",
+      "check": "编辑器组件: 17文件 1061行",
       "status": "🟡",
       "found": true,
       "detail": "编辑器组件接近 300行/文件 上限，建议拆分。"
@@ -4326,6 +4340,6 @@
     "filePathCount": 68
   },
   "code": {
-    "fileCount": 136
+    "fileCount": 138
   }
 }
