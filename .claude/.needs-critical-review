@@ -1,0 +1,15 @@
+{
+  "timestamp": "2026-06-20T05:54:36.022Z",
+  "totalChanged": 15,
+  "criticalChanges": 1,
+  "criticalCount": 1,
+  "highCount": 0,
+  "hits": [
+    {
+      "file": "do-zhou/src/main/ipc/__tests__/ipc-handlers.test.ts",
+      "label": "IPC 通道",
+      "risk": "critical"
+    }
+  ],
+  "required": "Agent 双审（标准+严格模式）+ 审查通过后 mark-gate-item.sh code_review pass"
+}
