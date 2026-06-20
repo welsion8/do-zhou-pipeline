@@ -39,12 +39,14 @@
     "@vitest/coverage-v8": "^4.1.9",
     "axe-core": "^4.12.1",
     "babel-plugin-istanbul": "^8.0.0",
+    "c8": "^11.0.0",
     "electron": "^41.5.0",
     "electron-vite": "^5.0.0",
     "jsdom": "^29.1.1",
     "playwright": "^1.60.0",
     "tailwindcss": "^4.3.0",
     "typescript": "^5.8.0",
+    "v8-to-istanbul": "^9.3.0",
     "vitest": "^4.1.9"
   }
 }

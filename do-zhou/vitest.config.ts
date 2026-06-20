@@ -8,8 +8,9 @@ export default defineConfig({
     include: ['src/**/*.{test,spec}.{ts,tsx}', 'electron/**/*.{test,spec}.{ts,tsx}'],
     exclude: ['node_modules', 'out', 'dist'],
     coverage: {
-      provider: 'istanbul',
+      provider: 'v8',
       reporter: ['text', 'json'],
+      reportsDirectory: '../coverage/tmp/unit',
       include: ['src/**/*.{ts,tsx}', 'electron/**/*.{ts,tsx}'],
       exclude: ['src/**/*.{test,spec}.{ts,tsx}'],
     },
