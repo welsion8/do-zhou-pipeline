@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-20T06:01:19.407Z",
+  "timestamp": "2026-06-20T08:54:01.393Z",
   "projectRoot": "F:/小说桌面端工具",
   "codeDir": "do-zhou",
   "stage": "developing",
@@ -1465,6 +1465,8 @@
             "src/main/engine/universal/model-router.ts",
             "src/main/engine/universal/model-router.ts",
             "src/main/engine/universal/model-router.ts",
+            "src/main/engine/universal/tool-executor.test.ts",
+            "src/main/engine/universal/tool-executor.test.ts",
             "src/main/engine/universal/tool-executor.ts",
             "src/main/engine/universal/tool-executor.ts",
             "src/main/engine/universal/tool-executor.ts",
@@ -2279,6 +2281,7 @@
         "src\\main\\engine\\types.ts",
         "src\\main\\engine\\universal\\agent-loop.ts",
         "src\\main\\engine\\universal\\model-router.ts",
+        "src\\main\\engine\\universal\\tool-executor.test.ts",
         "src\\main\\engine\\universal\\tool-executor.ts",
         "src\\main\\ipc\\engine-ipc.ts",
         "src\\main\\ipc\\skill-ipc.ts",
@@ -3260,7 +3263,7 @@
     {
       "check": "状态: 错误处理",
       "found": true,
-      "file": "49 文件",
+      "file": "50 文件",
       "status": "✅"
     }
   ],
@@ -3609,7 +3612,7 @@
     {
       "check": "a11y: 无障碍属性",
       "status": "🟢",
-      "detail": "38 处 (aria:18 role:2 tabIndex:0 alt:0 label:18) — 13/141 文件 (9%)"
+      "detail": "38 处 (aria:18 role:2 tabIndex:0 alt:0 label:18) — 13/142 文件 (9%)"
     },
     {
       "check": "a11y: 键盘导航",
@@ -4346,6 +4349,6 @@
     "filePathCount": 68
   },
   "code": {
-    "fileCount": 147
+    "fileCount": 148
   }
 }
