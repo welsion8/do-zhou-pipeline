@@ -1,12 +1,12 @@
 {
-  "timestamp": "2026-06-20T06:04:06.926Z",
-  "totalChanged": 40,
+  "timestamp": "2026-06-20T09:12:57.226Z",
+  "totalChanged": 10,
   "criticalChanges": 1,
   "criticalCount": 1,
   "highCount": 0,
   "hits": [
     {
-      "file": "do-zhou/src/main/engine/universal/agent-loop.test.ts",
+      "file": "do-zhou/src/main/engine/universal/tool-executor.test.ts",
       "label": "AI 引擎",
       "risk": "critical"
     }
