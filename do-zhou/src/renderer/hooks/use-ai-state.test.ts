@@ -3,7 +3,6 @@ import { setAIStreaming, getAIState } from './use-ai-state'
 
 describe('use-ai-state', () => {
   beforeEach(() => {
-    // 重置状态
     setAIStreaming(false, null)
   })
 
