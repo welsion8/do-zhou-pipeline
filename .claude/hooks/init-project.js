@@ -288,94 +288,89 @@ function main() {
   fs.writeFileSync(path.join(projectDir, '.gitignore'), 'node_modules/\nout/\ndist/\n.env\n.env.local\n*.log\n.claude/audit-reports/*.json\n.claude/visual-baselines/*.png\n');
   console.log('✅ .gitignore');
 
-  // ── 测试基础设施（固化经验）──
+  // ── 测试基础设施（平台自适应）──
   const testUtilsDir = path.join(projectDir, projectName, 'src', 'renderer', 'test-utils');
   fs.mkdirSync(testUtilsDir, { recursive: true });
 
-  // IPC mock 层——页面组件测试的基石
-  fs.writeFileSync(path.join(testUtilsDir, 'ipc-mock.ts'), `/**
- * IPC Mock 层 — 页面组件测试基础设施
+  if (projectType === 'desktop') {
+    // Electron IPC mock
+    fs.writeFileSync(path.join(testUtilsDir, 'ipc-mock.ts'), `/**
+ * IPC Mock 层 — Electron 页面组件测试基础设施
  *
- * 模拟 window.electronAPI 的所有服务，让页面组件可以在 jsdom 中渲染测试。
- * 一次投入，所有页面测试复用。
- *
- * 用法:
- *   import { setupIPCMock } from '../test-utils/ipc-mock'
- *   beforeEach(() => setupIPCMock())
+ * 模拟 window.electronAPI 的所有服务。一次投入，所有页面测试复用。
+ * 用法: import { setupIPCMock } from '../test-utils/ipc-mock'
  */
 import { vi } from 'vitest'
 
 export function setupIPCMock(overrides: Record<string, any> = {}) {
   const mock = {
-    window: {
-      minimize: vi.fn(),
-      maximize: vi.fn(),
-      close: vi.fn(),
-      isMaximized: vi.fn(() => Promise.resolve(false)),
-    },
-    file: {
-      read: vi.fn(() => Promise.resolve('')),
-      write: vi.fn(() => Promise.resolve()),
-      list: vi.fn(() => Promise.resolve([])),
-      delete: vi.fn(() => Promise.resolve()),
-      rename: vi.fn(() => Promise.resolve()),
-      mkdir: vi.fn(() => Promise.resolve()),
-      exists: vi.fn(() => Promise.resolve(false)),
-    },
-    project: {
-      create: vi.fn(() => Promise.resolve({ name: '', skillName: '', path: '', createdAt: '' })),
-      list: vi.fn(() => Promise.resolve([])),
-      get: vi.fn(() => Promise.resolve(null)),
-      delete: vi.fn(() => Promise.resolve()),
-      rename: vi.fn(() => Promise.resolve()),
-      listFiles: vi.fn(() => Promise.resolve([])),
-    },
+    window: { minimize: vi.fn(), maximize: vi.fn(), close: vi.fn(), isMaximized: vi.fn(() => Promise.resolve(false)) },
+    file: { read: vi.fn(() => Promise.resolve('')), write: vi.fn(() => Promise.resolve()), list: vi.fn(() => Promise.resolve([])), delete: vi.fn(() => Promise.resolve()), rename: vi.fn(() => Promise.resolve()), mkdir: vi.fn(() => Promise.resolve()), exists: vi.fn(() => Promise.resolve(false)) },
+    project: { create: vi.fn(() => Promise.resolve({ name: '', skillName: '', path: '', createdAt: '' })), list: vi.fn(() => Promise.resolve([])), get: vi.fn(() => Promise.resolve(null)), delete: vi.fn(() => Promise.resolve()), rename: vi.fn(() => Promise.resolve()), listFiles: vi.fn(() => Promise.resolve([])) },
     app: { getDataRoot: vi.fn(() => Promise.resolve('/tmp')) },
     platform: 'win32',
     ...overrides,
   }
-
   vi.stubGlobal('electronAPI', mock)
-
-  // jsdom polyfills
-  if (!Element.prototype.scrollIntoView) {
-    Element.prototype.scrollIntoView = vi.fn()
-  }
-
+  if (!Element.prototype.scrollIntoView) Element.prototype.scrollIntoView = vi.fn()
   return mock
 }
 `);
-  console.log('✅ test-utils/ipc-mock.ts');
+    console.log('✅ test-utils/ipc-mock.ts (Electron)');
+  } else if (projectType === 'web') {
+    // Web fetch mock
+    fs.writeFileSync(path.join(testUtilsDir, 'api-mock.ts'), `/**
+ * API Mock 层 — Web 页面组件测试基础设施
+ *
+ * 模拟 fetch/API 调用。一次投入，所有页面测试复用。
+ * 用法: import { setupAPIMock } from '../test-utils/api-mock'
+ */
+import { vi } from 'vitest'
+
+export function setupAPIMock(overrides: Record<string, any> = {}) {
+  vi.stubGlobal('fetch', vi.fn(() => Promise.resolve({
+    ok: true,
+    json: () => Promise.resolve({}),
+    text: () => Promise.resolve(''),
+  })))
+  if (!Element.prototype.scrollIntoView) Element.prototype.scrollIntoView = vi.fn()
+  return { ...overrides }
+}
+`);
+    console.log('✅ test-utils/api-mock.ts (Web)');
+  }
+  // CLI: 无 UI，无需 mock
 
   // 测试策略文档
-  fs.writeFileSync(path.join(projectDir, projectName, 'TEST-STRATEGY.md'), `# 测试策略 · ${projectName}
+  const strategyContent = projectType === 'desktop'
+    ? `# 测试策略 · ${projectName} (Electron)
 
-> FeiCai Pipeline 自动生成。遵循此策略可最大化覆盖率 ROI。
+## 正确顺序
+1. 服务层测试 (10%): 纯逻辑服务，用 vi.mock('electron') 隔离
+2. IPC mock 层: 使用预置 test-utils/ipc-mock.ts
+3. 页面测试 (30-40%): 测主页面组件，每个 +5-7%
+4. 小组件补漏 (60%): 剩余组件/工具函数
 
-## 策略顺序
+❌ 不要: 从小组件开始逐个 +0.1%`
+    : projectType === 'web'
+    ? `# 测试策略 · ${projectName} (Web)
 
-### 第一步: 服务层测试 (目标 10%)
-先测纯逻辑服务——不依赖 Electron/IPC/React。
-- 构造器接受参数的服务: 用临时目录直接测
-- 依赖 Electron 的服务: 用 vi.mock('electron') 隔离
+## 正确顺序
+1. 服务层测试 (10%): 纯逻辑服务
+2. API mock 层: 使用预置 test-utils/api-mock.ts
+3. 页面测试 (30-40%): 测主页面组件
+4. 小组件补漏 (60%): 剩余组件
 
-### 第二步: IPC Mock 层 (一次投入)
-使用 \`test-utils/ipc-mock.ts\` 预置 mock。
-所有页面测试共享同一套 mock，不需每个组件单独 mock。
+❌ 不要: 从小组件开始逐个 +0.1%`
+    : `# 测试策略 · ${projectName} (CLI)
 
-### 第三步: 页面测试 (目标 30-40%)
-用 IPC mock 层测主页面组件。
-每个页面覆盖 200-400 行 → +5-7% 覆盖率。
-5 个页面 ≈ 35% 覆盖率。
+## 正确顺序
+1. 服务层测试 (40%): 全部服务逻辑
+2. 工具函数测试 (60%): 纯函数
 
-### 第四步: 小组件补漏 (目标 60%)
-测剩余小组件、纯逻辑 hooks、工具函数。
+CLI 无 UI，跳过页面测试。`;
 
-## 不要做的
-❌ 先从小小组件开始 → 每次 +0.1%，效率极低
-❌ 不读源码直接写测试 → 猜错 API 反复修
-✅ 先 IPC mock → 页面测试 → 小组件补漏
-`);
+  fs.writeFileSync(path.join(projectDir, projectName, 'TEST-STRATEGY.md'), strategyContent);
   console.log('✅ TEST-STRATEGY.md');
 
   console.log(`\n📦 项目 ${projectName} 初始化完成！`);

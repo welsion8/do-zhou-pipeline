@@ -1,6 +1,6 @@
 {
-  "timestamp": "2026-06-20T09:43:27.696Z",
-  "projectRoot": "F:/小说桌面端工具",
+  "timestamp": "2026-06-20T09:51:30.760Z",
+  "projectRoot": "F:\\小说桌面端工具",
   "codeDir": "do-zhou",
   "stage": "developing",
   "layers": {
@@ -14,7 +14,7 @@
   "summary": {
     "red": 6,
     "orange": 30,
-    "yellow": 116,
+    "yellow": 117,
     "green": 256
   },
   "d1_traceability": [
