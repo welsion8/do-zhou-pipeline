@@ -61,16 +61,16 @@ const STRATEGIES = {
     autoAction: 'main-process-logic',
   },
   '40-60': {
-    name: 'V8 合并 E2E 覆盖率',
+    name: 'Playwright CT 迁移',
     target: 60,
     check: (ctx) => ctx.currentCoverage >= 40 && ctx.currentCoverage < 60,
-    advice: `覆盖率 {cov}%，单元测试天花板已到。建议:
-    1. NODE_V8_COVERAGE 收集 Playwright E2E 覆盖率
-    2. v8-to-istanbul 转换 → 合并 vitest coverage-final.json
-    3. 80+ E2E 测试覆盖主进程代码 → 一举突破 60%
+    advice: `覆盖率 {cov}%，vitest jsdom 天花板已到。建议:
+    1. 迁移渲染层测试到 Playwright CT (真实 Chromium, 非 jsdom)
+    2. vitest (主进程) + Playwright CT (渲染层) → 统一 Chromium V8 → 自然合并
+    3. 迁移页面组件测试 (每个 +5-7%) → 覆盖率突破 60%
 
-    工具: node e2e/collect-coverage.js`,
-    autoAction: 'v8-merge',
+    工具: npx playwright test --config=playwright-ct.config.ts`,
+    autoAction: 'playwright-ct',
   },
   '60+': {
     name: '已完成',

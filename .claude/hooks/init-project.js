@@ -373,6 +373,25 @@ CLI 无 UI，跳过页面测试。`;
   fs.writeFileSync(path.join(projectDir, projectName, 'TEST-STRATEGY.md'), strategyContent);
   console.log('✅ TEST-STRATEGY.md');
 
+  // ── Playwright CT 配置（覆盖率 40→60% 核心引擎）──
+  if (projectType !== 'cli') {
+    const ctConfig = `import { defineConfig } from '@playwright/experimental-ct-react'
+export default defineConfig({
+  testDir: './src/renderer',
+  testMatch: '**/*.ct.spec.{ts,tsx}',
+  snapshotDir: './test-results/ct-snapshots',
+  use: { ctViteConfig: { resolve: { alias: { '@': new URL('./src', import.meta.url).pathname } } } },
+  reporter: [['line'], ['json', { outputFile: 'test-results/ct-report.json' }]],
+})
+`;
+    fs.writeFileSync(path.join(projectDir, projectName, 'playwright-ct.config.ts'), ctConfig);
+    const pwDir = path.join(projectDir, projectName, 'playwright');
+    fs.mkdirSync(pwDir, { recursive: true });
+    fs.writeFileSync(path.join(pwDir, 'index.html'), '<!DOCTYPE html><html><head><meta charset="UTF-8"/></head><body><div id="root"></div><script type="module" src="./index.ts"></script></body></html>');
+    fs.writeFileSync(path.join(pwDir, 'index.ts'), '// Playwright CT entry');
+    console.log('✅ playwright-ct.config.ts + playwright/ (CT 模板)');
+  }
+
   console.log(`\n📦 项目 ${projectName} 初始化完成！`);
   console.log(`\n下一步:`);
   console.log(`  1. cd ${projectDir}`);

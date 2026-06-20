@@ -13,7 +13,8 @@
  *   import fetch      → vi.stubGlobal('fetch')
  *
  * 用法:
- *   node spec-to-unit-test.js                          # 扫描 src/ 生成测试
+ *   node spec-to-unit-test.js                          # 扫描 src/ 生成 vitest 测试
+ *   node spec-to-unit-test.js --mode ct                # 生成 Playwright CT 测试
  *   node spec-to-unit-test.js --file <path>            # 单文件
  *   node spec-to-unit-test.js --dry-run                # 仅报告，不写文件
  *   node spec-to-unit-test.js --dir src/main/services  # 指定目录
@@ -178,13 +179,18 @@ function main() {
     files = findSourceFiles(srcDir);
   }
 
+  const modeIdx = args.indexOf('--mode');
+  const mode = modeIdx >= 0 ? args[modeIdx + 1] : 'vitest';
+
   let generated = 0;
   for (const file of files) {
     const content = fs.readFileSync(file, 'utf-8');
-    const testCode = generateTest(file, content);
+    const isReact = /from\s+['"]react['"]/.test(content) || /React/.test(content);
+    const testCode = generateTest(file, content, isReact && mode === 'ct' ? 'ct' : 'vitest');
     if (!testCode) continue;
 
-    const testFile = file.replace(/\.ts$/, '.test.ts');
+    const extension = (mode === 'ct' && isReact) ? '.ct.spec.tsx' : '.test.ts';
+    const testFile = file.replace(/\.tsx?$/, extension);
     if (fs.existsSync(testFile)) continue; // 跳过已有测试
 
     if (dryRun) {
