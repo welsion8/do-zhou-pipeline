@@ -97,5 +97,11 @@ export function setupIPCMock(overrides: Record<string, any> = {}) {
   }
 
   vi.stubGlobal('electronAPI', mock)
+
+  // jsdom polyfills — 补上真实浏览器有但 jsdom 没有的 API
+  if (!Element.prototype.scrollIntoView) {
+    Element.prototype.scrollIntoView = vi.fn()
+  }
+
   return mock
 }
