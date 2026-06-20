@@ -370,6 +370,12 @@
     - 有 UI Phase 但宣称"不需要设计帧"→ 🔴 违反反向覆盖门禁
     - `.needs-pen-extract` 标记存在 → design_read_check 不得标记 pass
 
+    **测试策略规范**（所有产品通用）：
+    - 新项目初始化自动生成 `test-utils/ipc-mock.ts` + `TEST-STRATEGY.md`
+    - 正确顺序: 服务层测试(10%) → IPC mock 层 → 页面测试(30%) → 小组件补漏(60%)
+    - 错误做法: 从小组件开始逐个 +0.1%，效率低 50 倍
+    - Agent 写测试前必须读源码确认 API 签名，禁止凭记忆猜测
+
     **代码覆盖率门禁**（专业版·所有 Phase）：
     - `project.config.json` 中 `testCoverage.enforce=true` 时启用
     - vitest coverage: lines≥60% branches≥50% functions≥60% statements≥60%

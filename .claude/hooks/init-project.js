@@ -288,6 +288,96 @@ function main() {
   fs.writeFileSync(path.join(projectDir, '.gitignore'), 'node_modules/\nout/\ndist/\n.env\n.env.local\n*.log\n.claude/audit-reports/*.json\n.claude/visual-baselines/*.png\n');
   console.log('✅ .gitignore');
 
+  // ── 测试基础设施（固化经验）──
+  const testUtilsDir = path.join(projectDir, projectName, 'src', 'renderer', 'test-utils');
+  fs.mkdirSync(testUtilsDir, { recursive: true });
+
+  // IPC mock 层——页面组件测试的基石
+  fs.writeFileSync(path.join(testUtilsDir, 'ipc-mock.ts'), `/**
+ * IPC Mock 层 — 页面组件测试基础设施
+ *
+ * 模拟 window.electronAPI 的所有服务，让页面组件可以在 jsdom 中渲染测试。
+ * 一次投入，所有页面测试复用。
+ *
+ * 用法:
+ *   import { setupIPCMock } from '../test-utils/ipc-mock'
+ *   beforeEach(() => setupIPCMock())
+ */
+import { vi } from 'vitest'
+
+export function setupIPCMock(overrides: Record<string, any> = {}) {
+  const mock = {
+    window: {
+      minimize: vi.fn(),
+      maximize: vi.fn(),
+      close: vi.fn(),
+      isMaximized: vi.fn(() => Promise.resolve(false)),
+    },
+    file: {
+      read: vi.fn(() => Promise.resolve('')),
+      write: vi.fn(() => Promise.resolve()),
+      list: vi.fn(() => Promise.resolve([])),
+      delete: vi.fn(() => Promise.resolve()),
+      rename: vi.fn(() => Promise.resolve()),
+      mkdir: vi.fn(() => Promise.resolve()),
+      exists: vi.fn(() => Promise.resolve(false)),
+    },
+    project: {
+      create: vi.fn(() => Promise.resolve({ name: '', skillName: '', path: '', createdAt: '' })),
+      list: vi.fn(() => Promise.resolve([])),
+      get: vi.fn(() => Promise.resolve(null)),
+      delete: vi.fn(() => Promise.resolve()),
+      rename: vi.fn(() => Promise.resolve()),
+      listFiles: vi.fn(() => Promise.resolve([])),
+    },
+    app: { getDataRoot: vi.fn(() => Promise.resolve('/tmp')) },
+    platform: 'win32',
+    ...overrides,
+  }
+
+  vi.stubGlobal('electronAPI', mock)
+
+  // jsdom polyfills
+  if (!Element.prototype.scrollIntoView) {
+    Element.prototype.scrollIntoView = vi.fn()
+  }
+
+  return mock
+}
+`);
+  console.log('✅ test-utils/ipc-mock.ts');
+
+  // 测试策略文档
+  fs.writeFileSync(path.join(projectDir, projectName, 'TEST-STRATEGY.md'), `# 测试策略 · ${projectName}
+
+> FeiCai Pipeline 自动生成。遵循此策略可最大化覆盖率 ROI。
+
+## 策略顺序
+
+### 第一步: 服务层测试 (目标 10%)
+先测纯逻辑服务——不依赖 Electron/IPC/React。
+- 构造器接受参数的服务: 用临时目录直接测
+- 依赖 Electron 的服务: 用 vi.mock('electron') 隔离
+
+### 第二步: IPC Mock 层 (一次投入)
+使用 \`test-utils/ipc-mock.ts\` 预置 mock。
+所有页面测试共享同一套 mock，不需每个组件单独 mock。
+
+### 第三步: 页面测试 (目标 30-40%)
+用 IPC mock 层测主页面组件。
+每个页面覆盖 200-400 行 → +5-7% 覆盖率。
+5 个页面 ≈ 35% 覆盖率。
+
+### 第四步: 小组件补漏 (目标 60%)
+测剩余小组件、纯逻辑 hooks、工具函数。
+
+## 不要做的
+❌ 先从小小组件开始 → 每次 +0.1%，效率极低
+❌ 不读源码直接写测试 → 猜错 API 反复修
+✅ 先 IPC mock → 页面测试 → 小组件补漏
+`);
+  console.log('✅ TEST-STRATEGY.md');
+
   console.log(`\n📦 项目 ${projectName} 初始化完成！`);
   console.log(`\n下一步:`);
   console.log(`  1. cd ${projectDir}`);
@@ -295,6 +385,7 @@ function main() {
   console.log(`  3. 填充 DESIGN-TOKENS.md 实际设计值`);
   console.log(`  4. 运行 /product-spec-builder 或继续手动完善 Spec`);
   console.log(`  5. Spec 定稿后运行 /dev-planner 生成开发计划`);
+  console.log(`  6. 阅读 TEST-STRATEGY.md — 了解正确的测试策略`);
 }
 
 main();
