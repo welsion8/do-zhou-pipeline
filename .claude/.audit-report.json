@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-20T04:43:41.724Z",
+  "timestamp": "2026-06-20T04:46:46.515Z",
   "projectRoot": "F:/小说桌面端工具",
   "codeDir": "do-zhou",
   "stage": "developing",
@@ -3598,7 +3598,7 @@
     {
       "check": "a11y: 无障碍属性",
       "status": "🟢",
-      "detail": "38 处 (aria:18 role:2 tabIndex:0 alt:0 label:18) — 13/126 文件 (10%)"
+      "detail": "38 处 (aria:18 role:2 tabIndex:0 alt:0 label:18) — 13/127 文件 (10%)"
     },
     {
       "check": "a11y: 键盘导航",
@@ -3675,7 +3675,7 @@
       "detail": "在 P90 预算内"
     },
     {
-      "check": "编辑器组件: 16文件 1049行",
+      "check": "编辑器组件: 17文件 1061行",
       "status": "🟡",
       "found": true,
       "detail": "编辑器组件接近 300行/文件 上限，建议拆分。"
@@ -4335,6 +4335,6 @@
     "filePathCount": 68
   },
   "code": {
-    "fileCount": 132
+    "fileCount": 133
   }
 }
