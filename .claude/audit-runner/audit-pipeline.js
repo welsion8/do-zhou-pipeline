@@ -71,7 +71,7 @@ function loadConfig() {
   const ignoreDirs = [...defaultIgnoreDirs, ...extraIgnoreDirs];
 
   const allChecks = ['l1_l2_traceability', 'l2_brief_check', 'l2_pen_check', 'd1_traceability', 'd2_consistency', 'd3_completeness', 'd4_references', 'd5_safety',
-    'visual_consistency', 'component_imports', 'cross_phase', 'reverse_visual', 'component_routing', 'e2e_check', 'perf_check', 'a11y_check', 'spec_ui_check', 'spec_to_e2e', 'bound_files', 'visual_regression', 'token_enforce', 'design_diff', 'traceability', 'pen_sync', 'dep_health', 'confirmation_guard', 'coverage_velocity'];
+    'visual_consistency', 'component_imports', 'cross_phase', 'reverse_visual', 'component_routing', 'e2e_check', 'perf_check', 'a11y_check', 'spec_ui_check', 'spec_to_e2e', 'bound_files', 'visual_regression', 'token_enforce', 'design_diff', 'traceability', 'pen_sync', 'dep_health', 'confirmation_guard', 'coverage_velocity', 'coverage_strategy'];
   if (projectType === 'desktop') allChecks.push('ipc_bridge', 'secure_storage');
   const disabledChecks = new Set(userConfig.checks?.disabled || []);
   const enabledChecks = allChecks.filter(c => !disabledChecks.has(c));
@@ -495,6 +495,7 @@ const MODULE_MAP = {
   dep_health: 'dep-health.js',
   confirmation_guard: 'confirmation-guard.js',
   coverage_velocity: 'coverage-velocity.js',
+  coverage_strategy: 'coverage-strategy.js',
 };
 
 function runCheckModule(checkName, ctx) {

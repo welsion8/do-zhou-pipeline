@@ -1,6 +1,6 @@
 {
-  "timestamp": "2026-06-20T13:48:18.699Z",
-  "projectRoot": "F:/小说桌面端工具",
+  "timestamp": "2026-06-20T14:50:18.247Z",
+  "projectRoot": "F:\\小说桌面端工具",
   "codeDir": "do-zhou",
   "stage": "developing",
   "layers": {
@@ -14,7 +14,7 @@
   "summary": {
     "red": 6,
     "orange": 30,
-    "yellow": 117,
+    "yellow": 123,
     "green": 256
   },
   "d1_traceability": [
@@ -1293,6 +1293,8 @@
           "found": true,
           "files": [
             "coverage/coverage-final.json",
+            "e2e/collect-coverage.js",
+            "e2e/collect-coverage.js",
             "e2e/electron-smoke.spec.ts",
             "e2e/electron-smoke.spec.ts",
             "e2e/electron-smoke.spec.ts",
@@ -2267,6 +2269,7 @@
       "label": "错误状态",
       "specMentions": true,
       "codeFiles": [
+        "e2e\\collect-coverage.js",
         "e2e\\electron-smoke.spec.ts",
         "e2e\\phase-10-13-interactions.spec.ts",
         "e2e\\spec-generated.spec.ts",
@@ -4349,6 +4352,6 @@
     "filePathCount": 68
   },
   "code": {
-    "fileCount": 152
+    "fileCount": 153
   }
 }
