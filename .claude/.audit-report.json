@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-20T04:50:55.388Z",
+  "timestamp": "2026-06-20T04:55:48.435Z",
   "projectRoot": "F:/小说桌面端工具",
   "codeDir": "do-zhou",
   "stage": "developing",
@@ -3555,11 +3555,10 @@
     {
       "check": "可追溯性-未覆盖",
       "status": "🟢",
-      "detail": "7 条可实现条目无代码/设计/测试覆盖 (阈值: 🔴>25 🟡>15)",
+      "detail": "6 条可实现条目无代码/设计/测试覆盖 (阈值: 🔴>25 🟡>15)",
       "items": [
         "S-70: **Claude Engine**：使用 `@anthropic-ai/claude-agent-sdk`，提供完整 A",
         "S-92: ✅ API Key 存储必须使用 `safeStorage.encryptString()`",
-        "S-124: 左侧\"故事大纲\"卡片显示 ✅ → \"人物小传\"高亮为 ⟳",
         "S-153: 应用关闭时 AI 生成中",
         "S-155: **各 AI 提供商的 API 端点**：Kimi (`api.moonshot.cn`)、GLM (`open.big",
         "S-159: **系统通知**：AI 生成完成时可通过 Electron 桌面通知提醒用户。",
@@ -3569,7 +3568,7 @@
     {
       "check": "可追溯性-缺代码",
       "status": "🟡",
-      "detail": "16 条可实现条目无对应代码文件"
+      "detail": "15 条可实现条目无对应代码文件"
     },
     {
       "check": "可追溯性-缺测试",
@@ -3579,12 +3578,12 @@
     {
       "check": "可追溯性-概要",
       "status": "🟡",
-      "detail": "189 条 Spec → 178 条可实现 → 96% 有代码 (Phase 13 阈值 90%, 未覆盖 7 条)"
+      "detail": "189 条 Spec → 178 条可实现 → 97% 有代码 (Phase 13 阈值 90%, 未覆盖 6 条)"
     },
     {
       "check": "功能完整性门禁",
       "status": "🟢",
-      "detail": "✅ 代码96% 设计38% E2E63% — 全部达标"
+      "detail": "✅ 代码97% 设计38% E2E63% — 全部达标"
     }
   ],
   "token_enforce": [],
