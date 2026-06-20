@@ -1,4 +1,4 @@
-const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/chat-input-bar-D4ZYh-FP.js","assets/jsx-runtime-Cf6CDGgj.js","assets/use-ai-state-DpaxKAWL.js","assets/chat-message-ai-CXtlJQn2.js","assets/chat-message-user-pAcDjyP7.js","assets/toolbar-C_msEkp_.js","assets/stage-card-item-hGSWBPr4.js"])))=>i.map(i=>d[i]);
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/chat-header-C9awCjJR.js","assets/jsx-runtime-CdovHwiP.js","assets/chat-input-bar-aWTix7Ic.js","assets/use-ai-state-ByEHruxj.js","assets/chat-message-ai-elatpYcP.js","assets/chat-message-user-Bxwy0ih4.js","assets/chat-system-message-BkR8Ea55.js","assets/editor-toolbar-BSwFjcXh.js","assets/status-bar-Ci8MvBPX.js","assets/toolbar-DpiEmD1C.js","assets/stage-card-item-CUernWnl.js"])))=>i.map(i=>d[i]);
 true              &&(function polyfill() {
   const relList = document.createElement("link").relList;
   if (relList && relList.supports && relList.supports("modulepreload")) {
@@ -17635,16 +17635,24 @@ window.playwrightUpdate = async (rootElement, component) => {
   entry.setRenderer(() => __pwRender(component));
 };
 
-const F__________do_zhou_src_renderer_components_chat_chat_input_bar_ChatInputBar = () => __vitePreload(() => import('./chat-input-bar-D4ZYh-FP.js'),true              ?__vite__mapDeps([0,1,2]):void 0).then((mod) => mod.ChatInputBar);
-const F__________do_zhou_src_renderer_components_chat_chat_message_ai_ChatMessageAI = () => __vitePreload(() => import('./chat-message-ai-CXtlJQn2.js'),true              ?__vite__mapDeps([3,1]):void 0).then((mod) => mod.ChatMessageAI);
-const F__________do_zhou_src_renderer_components_chat_chat_message_user_ChatMessageUser = () => __vitePreload(() => import('./chat-message-user-pAcDjyP7.js'),true              ?__vite__mapDeps([4,1]):void 0).then((mod) => mod.ChatMessageUser);
-const F__________do_zhou_src_renderer_components_layout_toolbar_Toolbar = () => __vitePreload(() => import('./toolbar-C_msEkp_.js'),true              ?__vite__mapDeps([5,1,2]):void 0).then((mod) => mod.Toolbar);
-const F__________do_zhou_src_renderer_components_navigation_stage_card_item_StageCardItem = () => __vitePreload(() => import('./stage-card-item-hGSWBPr4.js'),true              ?__vite__mapDeps([6,1]):void 0).then((mod) => mod.StageCardItem);
-__pwRegistry.initialize({ F__________do_zhou_src_renderer_components_chat_chat_input_bar_ChatInputBar,
+const F__________do_zhou_src_renderer_components_chat_chat_header_ChatHeader = () => __vitePreload(() => import('./chat-header-C9awCjJR.js'),true              ?__vite__mapDeps([0,1]):void 0).then((mod) => mod.ChatHeader);
+const F__________do_zhou_src_renderer_components_chat_chat_input_bar_ChatInputBar = () => __vitePreload(() => import('./chat-input-bar-aWTix7Ic.js'),true              ?__vite__mapDeps([2,1,3]):void 0).then((mod) => mod.ChatInputBar);
+const F__________do_zhou_src_renderer_components_chat_chat_message_ai_ChatMessageAI = () => __vitePreload(() => import('./chat-message-ai-elatpYcP.js'),true              ?__vite__mapDeps([4,1]):void 0).then((mod) => mod.ChatMessageAI);
+const F__________do_zhou_src_renderer_components_chat_chat_message_user_ChatMessageUser = () => __vitePreload(() => import('./chat-message-user-Bxwy0ih4.js'),true              ?__vite__mapDeps([5,1]):void 0).then((mod) => mod.ChatMessageUser);
+const F__________do_zhou_src_renderer_components_chat_chat_system_message_ChatSystemMessage = () => __vitePreload(() => import('./chat-system-message-BkR8Ea55.js'),true              ?__vite__mapDeps([6,1]):void 0).then((mod) => mod.ChatSystemMessage);
+const F__________do_zhou_src_renderer_components_editor_editor_toolbar_EditorToolbar = () => __vitePreload(() => import('./editor-toolbar-BSwFjcXh.js'),true              ?__vite__mapDeps([7,1]):void 0).then((mod) => mod.EditorToolbar);
+const F__________do_zhou_src_renderer_components_layout_status_bar_StatusBar = () => __vitePreload(() => import('./status-bar-Ci8MvBPX.js'),true              ?__vite__mapDeps([8,1]):void 0).then((mod) => mod.StatusBar);
+const F__________do_zhou_src_renderer_components_layout_toolbar_Toolbar = () => __vitePreload(() => import('./toolbar-DpiEmD1C.js'),true              ?__vite__mapDeps([9,1,3]):void 0).then((mod) => mod.Toolbar);
+const F__________do_zhou_src_renderer_components_navigation_stage_card_item_StageCardItem = () => __vitePreload(() => import('./stage-card-item-CUernWnl.js'),true              ?__vite__mapDeps([10,1]):void 0).then((mod) => mod.StageCardItem);
+__pwRegistry.initialize({ F__________do_zhou_src_renderer_components_chat_chat_header_ChatHeader,
+  F__________do_zhou_src_renderer_components_chat_chat_input_bar_ChatInputBar,
   F__________do_zhou_src_renderer_components_chat_chat_message_ai_ChatMessageAI,
   F__________do_zhou_src_renderer_components_chat_chat_message_user_ChatMessageUser,
+  F__________do_zhou_src_renderer_components_chat_chat_system_message_ChatSystemMessage,
+  F__________do_zhou_src_renderer_components_editor_editor_toolbar_EditorToolbar,
+  F__________do_zhou_src_renderer_components_layout_status_bar_StatusBar,
   F__________do_zhou_src_renderer_components_layout_toolbar_Toolbar,
   F__________do_zhou_src_renderer_components_navigation_stage_card_item_StageCardItem });
 
 export { getDefaultExportFromCjs as g, reactExports as r };
-//# sourceMappingURL=index-D5BN7oG-.js.map
+//# sourceMappingURL=index-iQly_VhA.js.map
