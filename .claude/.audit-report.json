@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-20T18:30:44.790Z",
+  "timestamp": "2026-06-20T18:38:58.089Z",
   "projectRoot": "F:/小说桌面端工具",
   "codeDir": "do-zhou",
   "stage": "developing",
@@ -140,8 +140,7 @@
             "src/renderer/components/editor/editor-context-menu.tsx",
             "src/renderer/components/editor/editor-context-menu.tsx",
             "src/renderer/components/editor/editor-context-menu.tsx",
-            "src/renderer/components/editor/editor-toolbar.test.tsx",
-            "src/renderer/components/editor/editor-toolbar.test.tsx",
+            "src/renderer/components/editor/editor-toolbar.ct.spec.tsx",
             "src/renderer/components/editor/editor-toolbar.tsx",
             "src/renderer/components/editor/editor-toolbar.tsx",
             "src/renderer/components/editor/editor-toolbar.tsx",
@@ -215,11 +214,6 @@
             "src/renderer/components/recent-projects.tsx",
             "src/renderer/components/ui/dropdown-select.tsx",
             "src/renderer/components/ui/dropdown-select.tsx",
-            "src/renderer/components/ui/toggle-switch.test.tsx",
-            "src/renderer/components/ui/toggle-switch.test.tsx",
-            "src/renderer/components/ui/toggle-switch.test.tsx",
-            "src/renderer/components/ui/toggle-switch.test.tsx",
-            "src/renderer/components/ui/toggle-switch.test.tsx",
             "src/renderer/components/ui/toggle-switch.tsx",
             "src/renderer/components/window-controls.tsx",
             "src/renderer/components/window-controls.tsx",
@@ -368,8 +362,7 @@
             "src/renderer/components/editor/editor-context-menu.tsx",
             "src/renderer/components/editor/editor-context-menu.tsx",
             "src/renderer/components/editor/editor-context-menu.tsx",
-            "src/renderer/components/editor/editor-toolbar.test.tsx",
-            "src/renderer/components/editor/editor-toolbar.test.tsx",
+            "src/renderer/components/editor/editor-toolbar.ct.spec.tsx",
             "src/renderer/components/editor/editor-toolbar.tsx",
             "src/renderer/components/editor/editor-toolbar.tsx",
             "src/renderer/components/editor/editor-toolbar.tsx",
@@ -405,7 +398,6 @@
             "src/renderer/components/file-tree/file-tree.tsx",
             "src/renderer/components/layout/app-layout.tsx",
             "src/renderer/components/layout/app-layout.tsx",
-            "src/renderer/components/layout/fab-button.test.tsx",
             "src/renderer/components/layout/fab-button.tsx",
             "src/renderer/components/layout/fab-button.tsx",
             "src/renderer/components/layout/left-panel.tsx",
@@ -806,10 +798,9 @@
           "check": "右键菜单实现",
           "found": true,
           "files": [
-            "src/renderer/components/editor/editor-context-menu.test.tsx",
-            "src/renderer/components/editor/editor-context-menu.test.tsx",
-            "src/renderer/components/editor/editor-context-menu.test.tsx",
-            "src/renderer/components/editor/editor-context-menu.test.tsx",
+            "src/renderer/components/editor/editor-context-menu.ct.spec.tsx",
+            "src/renderer/components/editor/editor-context-menu.ct.spec.tsx",
+            "src/renderer/components/editor/editor-context-menu.ct.spec.tsx",
             "src/renderer/components/editor/editor-context-menu.tsx",
             "src/renderer/components/editor/editor-context-menu.tsx",
             "src/renderer/components/editor/editor-context-menu.tsx",
@@ -825,16 +816,9 @@
             "src/renderer/components/editor/tab-bar.tsx",
             "src/renderer/components/editor/tab-bar.tsx",
             "src/renderer/components/editor/tab-bar.tsx",
-            "src/renderer/components/editor/tab-context-menu.test.tsx",
-            "src/renderer/components/editor/tab-context-menu.test.tsx",
-            "src/renderer/components/editor/tab-context-menu.test.tsx",
-            "src/renderer/components/editor/tab-context-menu.test.tsx",
             "src/renderer/components/editor/tab-context-menu.tsx",
             "src/renderer/components/editor/tab-context-menu.tsx",
             "src/renderer/components/editor/tab-context-menu.tsx",
-            "src/renderer/components/file-tree/file-tree-context-menu.test.tsx",
-            "src/renderer/components/file-tree/file-tree-context-menu.test.tsx",
-            "src/renderer/components/file-tree/file-tree-context-menu.test.tsx",
             "src/renderer/components/file-tree/file-tree-context-menu.tsx",
             "src/renderer/components/file-tree/file-tree.tsx",
             "src/renderer/components/file-tree/file-tree.tsx",
@@ -845,10 +829,6 @@
             "src/renderer/components/layout/left-panel.tsx",
             "src/renderer/components/layout/left-panel.tsx",
             "src/renderer/components/layout/left-panel.tsx",
-            "src/renderer/components/navigation/project-context-menu.test.tsx",
-            "src/renderer/components/navigation/project-context-menu.test.tsx",
-            "src/renderer/components/navigation/project-context-menu.test.tsx",
-            "src/renderer/components/navigation/project-context-menu.test.tsx",
             "src/renderer/components/navigation/project-context-menu.tsx",
             "src/renderer/pages/skill-home-page.tsx"
           ]
@@ -1072,7 +1052,6 @@
             "src/renderer/components/chat/chat-header.tsx",
             "src/renderer/components/chat/chat-input-bar.tsx",
             "src/renderer/components/editor/tab-bar.tsx",
-            "src/renderer/components/layout/fab-button.test.tsx",
             "src/renderer/components/layout/fab-button.tsx",
             "src/renderer/components/layout/toolbar.tsx",
             "src/renderer/components/layout/toolbar.tsx",
@@ -1130,8 +1109,7 @@
             "src/main/services/settings-service.ts",
             "src/renderer/components/editor/editor-workspace.tsx",
             "src/renderer/components/editor/editor-workspace.tsx",
-            "src/renderer/components/layout/status-bar.test.tsx",
-            "src/renderer/components/layout/status-bar.test.tsx",
+            "src/renderer/components/layout/status-bar.ct.spec.tsx",
             "src/renderer/hooks/use-autosave.ts",
             "src/renderer/hooks/use-autosave.ts",
             "src/renderer/pages/settings-page.tsx",
@@ -2519,7 +2497,6 @@
         "src\\renderer\\components\\chat\\chat-operation-buttons.tsx",
         "src\\renderer\\components\\editor\\tab-bar.tsx",
         "src\\renderer\\components\\file-tree\\file-tree.tsx",
-        "src\\renderer\\components\\layout\\fab-button.test.tsx",
         "src\\renderer\\components\\layout\\fab-button.tsx",
         "src\\renderer\\components\\layout\\left-panel.tsx",
         "src\\renderer\\components\\layout\\toolbar.tsx",
@@ -3799,7 +3776,7 @@
     {
       "check": "a11y: 无障碍属性",
       "status": "🟢",
-      "detail": "38 处 (aria:18 role:2 tabIndex:0 alt:0 label:18) — 13/148 文件 (9%)"
+      "detail": "36 处 (aria:17 role:2 tabIndex:0 alt:0 label:17) — 12/141 文件 (9%)"
     },
     {
       "check": "a11y: 键盘导航",
@@ -3876,7 +3853,7 @@
       "detail": "在 P90 预算内"
     },
     {
-      "check": "编辑器组件: 18文件 1083行",
+      "check": "编辑器组件: 17文件 1046行",
       "status": "🟡",
       "found": true,
       "detail": "编辑器组件接近 300行/文件 上限，建议拆分。"
@@ -4536,6 +4513,6 @@
     "filePathCount": 68
   },
   "code": {
-    "fileCount": 172
+    "fileCount": 165
   }
 }
