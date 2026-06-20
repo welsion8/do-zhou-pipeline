@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-20T04:55:48.435Z",
+  "timestamp": "2026-06-20T05:02:28.187Z",
   "projectRoot": "F:/小说桌面端工具",
   "codeDir": "do-zhou",
   "stage": "developing",
@@ -80,7 +80,6 @@
           "check": "折叠状态管理",
           "found": true,
           "files": [
-            "coverage/coverage-final.json",
             "src/main/services/skill-service.ts",
             "src/main/services/skill-service.ts",
             "src/main/services/skill-service.ts",
@@ -762,10 +761,6 @@
           "check": "右键菜单实现",
           "found": true,
           "files": [
-            "coverage/coverage-final.json",
-            "coverage/coverage-final.json",
-            "coverage/coverage-final.json",
-            "coverage/coverage-final.json",
             "src/renderer/components/editor/editor-context-menu.test.tsx",
             "src/renderer/components/editor/editor-context-menu.test.tsx",
             "src/renderer/components/editor/editor-context-menu.test.tsx",
@@ -1049,7 +1044,6 @@
           "check": "自动保存逻辑",
           "found": true,
           "files": [
-            "coverage/coverage-final.json",
             "src/main/services/settings-service.ts",
             "src/main/services/settings-service.ts",
             "src/renderer/components/editor/editor-workspace.tsx",
@@ -1289,7 +1283,6 @@
           "check": "错误处理",
           "found": true,
           "files": [
-            "coverage/coverage-final.json",
             "e2e/electron-smoke.spec.ts",
             "e2e/electron-smoke.spec.ts",
             "e2e/electron-smoke.spec.ts",
@@ -1638,7 +1631,6 @@
           "check": "Toast 组件",
           "found": true,
           "files": [
-            "coverage/coverage-final.json",
             "e2e/spec-generated.spec.ts",
             "e2e/spec-generated.spec.ts",
             "e2e/spec-generated.spec.ts",
@@ -2150,7 +2142,6 @@
           "check": "响应式逻辑",
           "found": true,
           "files": [
-            "coverage/coverage-final.json",
             "src/renderer/components/file-tree/file-tree.tsx",
             "src/renderer/components/file-tree/file-tree.tsx",
             "src/renderer/components/file-tree/file-tree.tsx",
@@ -3598,7 +3589,7 @@
     {
       "check": "a11y: 无障碍属性",
       "status": "🟢",
-      "detail": "38 处 (aria:18 role:2 tabIndex:0 alt:0 label:18) — 13/129 文件 (10%)"
+      "detail": "38 处 (aria:18 role:2 tabIndex:0 alt:0 label:18) — 13/131 文件 (10%)"
     },
     {
       "check": "a11y: 键盘导航",
@@ -3675,7 +3666,7 @@
       "detail": "在 P90 预算内"
     },
     {
-      "check": "编辑器组件: 17文件 1061行",
+      "check": "编辑器组件: 18文件 1079行",
       "status": "🟡",
       "found": true,
       "detail": "编辑器组件接近 300行/文件 上限，建议拆分。"
@@ -4335,6 +4326,6 @@
     "filePathCount": 68
   },
   "code": {
-    "fileCount": 135
+    "fileCount": 136
   }
 }
