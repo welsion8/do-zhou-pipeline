@@ -1,5 +1,5 @@
-import { j as jsxRuntimeExports } from './jsx-runtime-T-HTLqpv.js';
-import './index-T5kIhPs7.js';
+import { j as jsxRuntimeExports } from './jsx-runtime-B_gFkkE_.js';
+import './index-BHNt27Zf.js';
 
 function Slider({ value, min, max, step = 1, onChange, label }) {
   const pct = (value - min) / (max - min) * 100;
@@ -24,4 +24,4 @@ function Slider({ value, min, max, step = 1, onChange, label }) {
 }
 
 export { Slider };
-//# sourceMappingURL=slider-Dv3hq1Nb.js.map
+//# sourceMappingURL=slider-BkSPKjZT.js.map

@@ -1,5 +1,5 @@
-import { j as jsxRuntimeExports } from './jsx-runtime-T-HTLqpv.js';
-import { r as reactExports } from './index-T5kIhPs7.js';
+import { j as jsxRuntimeExports } from './jsx-runtime-B_gFkkE_.js';
+import { r as reactExports } from './index-BHNt27Zf.js';
 
 const SHORTCUTS = [
   { keys: "Ctrl+S", desc: "强制保存当前标签页" },
@@ -71,4 +71,4 @@ function StatusBar() {
 }
 
 export { StatusBar };
-//# sourceMappingURL=status-bar-fSYSmy04.js.map
+//# sourceMappingURL=status-bar-CoFP2Fe_.js.map

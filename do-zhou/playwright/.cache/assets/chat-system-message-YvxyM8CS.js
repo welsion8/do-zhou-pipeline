@@ -1,5 +1,5 @@
-import { j as jsxRuntimeExports } from './jsx-runtime-T-HTLqpv.js';
-import './index-T5kIhPs7.js';
+import { j as jsxRuntimeExports } from './jsx-runtime-B_gFkkE_.js';
+import './index-BHNt27Zf.js';
 
 function ChatSystemMessage({ content, timestamp }) {
   const time = timestamp ? new Date(timestamp).toLocaleTimeString("zh-CN", { hour: "2-digit", minute: "2-digit" }) : "";
@@ -15,4 +15,4 @@ function ChatSystemMessage({ content, timestamp }) {
 }
 
 export { ChatSystemMessage };
-//# sourceMappingURL=chat-system-message-C4cBBFMz.js.map
+//# sourceMappingURL=chat-system-message-YvxyM8CS.js.map

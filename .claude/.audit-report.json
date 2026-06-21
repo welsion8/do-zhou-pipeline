@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-21T04:22:23.480Z",
+  "timestamp": "2026-06-21T04:43:36.658Z",
   "projectRoot": "F:/小说桌面端工具",
   "codeDir": "do-zhou",
   "stage": "developing",
@@ -214,6 +214,9 @@
             "src/renderer/components/recent-projects.tsx",
             "src/renderer/components/ui/dropdown-select.tsx",
             "src/renderer/components/ui/dropdown-select.tsx",
+            "src/renderer/components/ui/toggle-switch.ct.spec.tsx",
+            "src/renderer/components/ui/toggle-switch.ct.spec.tsx",
+            "src/renderer/components/ui/toggle-switch.ct.spec.tsx",
             "src/renderer/components/ui/toggle-switch.tsx",
             "src/renderer/components/window-controls.tsx",
             "src/renderer/components/window-controls.tsx",
@@ -1395,6 +1398,8 @@
             "e2e/collect-coverage.js",
             "e2e/collect-coverage.js",
             "e2e/collect-coverage.js",
+            "e2e/collect-coverage.js",
+            "e2e/collect-coverage.js",
             "e2e/electron-smoke.spec.ts",
             "e2e/electron-smoke.spec.ts",
             "e2e/electron-smoke.spec.ts",
@@ -1502,6 +1507,7 @@
             "electron/main.ts",
             "electron/preload.ts",
             "electron/__tests__/preload.test.ts",
+            "playwright/ct-coverage-setup.ts",
             "src/common/error-reporting.test.ts",
             "src/common/error-reporting.test.ts",
             "src/common/error-reporting.test.ts",
@@ -2435,6 +2441,7 @@
         "e2e\\user-stories.spec.ts",
         "electron\\main.ts",
         "electron\\preload.ts",
+        "playwright\\ct-coverage-setup.ts",
         "src\\common\\error-reporting.test.ts",
         "src\\common\\error-reporting.ts",
         "src\\main\\engine\\claude\\claude-engine.ts",
@@ -3424,7 +3431,7 @@
     {
       "check": "状态: 错误处理",
       "found": true,
-      "file": "50 文件",
+      "file": "51 文件",
       "status": "✅"
     }
   ],
@@ -3773,7 +3780,7 @@
     {
       "check": "a11y: 无障碍属性",
       "status": "🟢",
-      "detail": "36 处 (aria:17 role:2 tabIndex:0 alt:0 label:17) — 12/142 文件 (8%)"
+      "detail": "36 处 (aria:17 role:2 tabIndex:0 alt:0 label:17) — 12/144 文件 (8%)"
     },
     {
       "check": "a11y: 键盘导航",
@@ -4510,6 +4517,6 @@
     "filePathCount": 68
   },
   "code": {
-    "fileCount": 166
+    "fileCount": 168
   }
 }

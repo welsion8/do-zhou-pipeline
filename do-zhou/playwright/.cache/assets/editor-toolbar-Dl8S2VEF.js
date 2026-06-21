@@ -1,5 +1,5 @@
-import { j as jsxRuntimeExports } from './jsx-runtime-T-HTLqpv.js';
-import './index-T5kIhPs7.js';
+import { j as jsxRuntimeExports } from './jsx-runtime-B_gFkkE_.js';
+import './index-BHNt27Zf.js';
 
 function EditorToolbar({ mode, onToggleMode, onNewFile }) {
   const ghostBtn = "px-[10px] py-[3px] rounded-sm bg-transparent border border-transparent text-[11px] text-text-secondary font-ui hover:bg-bg-active hover:text-text-primary transition-colors duration-75 flex items-center gap-[4px]";
@@ -10,4 +10,4 @@ function EditorToolbar({ mode, onToggleMode, onNewFile }) {
 }
 
 export { EditorToolbar };
-//# sourceMappingURL=editor-toolbar-CoUsAMkp.js.map
+//# sourceMappingURL=editor-toolbar-Dl8S2VEF.js.map

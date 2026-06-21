@@ -1,5 +1,5 @@
-import { j as jsxRuntimeExports } from './jsx-runtime-T-HTLqpv.js';
-import './index-T5kIhPs7.js';
+import { j as jsxRuntimeExports } from './jsx-runtime-B_gFkkE_.js';
+import './index-BHNt27Zf.js';
 
 function ChatHeader({ tokenCount, onSearch, onExport }) {
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between px-[16px] py-[8px] border-b border-border-default shrink-0", children: [
@@ -17,4 +17,4 @@ function ChatHeader({ tokenCount, onSearch, onExport }) {
 }
 
 export { ChatHeader };
-//# sourceMappingURL=chat-header-C9yfwzMe.js.map
+//# sourceMappingURL=chat-header-Bl3uV7Hg.js.map
