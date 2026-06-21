@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/experimental-ct-react'
+import { test, expect } from '../../../../playwright/ct-coverage-fixture'
 import { DropdownSelect } from './dropdown-select'
 
 const opts = [{ label: 'Inter', value: 'inter' }, { label: 'Noto', value: 'noto' }]

@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/experimental-ct-react'
+import { test, expect } from '../../../../playwright/ct-coverage-fixture'
 import { ChatMessageUser } from './chat-message-user'
 
 test.describe('ChatMessageUser (CT)', () => {

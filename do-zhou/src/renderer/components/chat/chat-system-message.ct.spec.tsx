@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/experimental-ct-react'
+import { test, expect } from '../../../../playwright/ct-coverage-fixture'
 import { ChatSystemMessage } from './chat-system-message'
 
 test.describe('ChatSystemMessage (CT)', () => {
