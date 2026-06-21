@@ -6,13 +6,13 @@ export default defineConfig({
     globals: true,
     environment: 'node',
     include: ['src/**/*.{test,spec}.{ts,tsx}', 'electron/**/*.{test,spec}.{ts,tsx}'],
-    exclude: ['node_modules', 'out', 'dist'],
+    exclude: ['node_modules', 'out', 'dist', 'src/**/*.ct.spec.{ts,tsx}', 'electron/**/*.ct.spec.{ts,tsx}'],
     coverage: {
       provider: 'v8',
       reporter: ['text', 'json'],
       reportsDirectory: '../coverage/tmp/unit',
       include: ['src/**/*.{ts,tsx}', 'electron/**/*.{ts,tsx}'],
-      exclude: ['src/**/*.{test,spec}.{ts,tsx}'],
+      exclude: ['src/**/*.{test,spec}.{ts,tsx}', 'src/**/*.ct.spec.{ts,tsx}'],
     },
   },
   resolve: {
