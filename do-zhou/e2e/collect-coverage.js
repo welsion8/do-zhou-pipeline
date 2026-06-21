@@ -100,60 +100,108 @@ function mergeAll() {
   return pct;
 }
 
+/**
+ * Vite bundle 名 → 源文件路径 映射
+ * e.g. "chat-message-ai-C1owyl7k.js" → "src/renderer/components/chat/chat-message-ai.tsx"
+ */
+function viteBundleToSource(bundleName) {
+  // 去掉 hash 后缀
+  const clean = bundleName.replace(/-[A-Za-z0-9]{6,10}\.js$/, '.tsx');
+  // 在 src/ 中搜索匹配的源文件
+  const srcDir = path.join(PROJECT_ROOT, 'src');
+  if (!fs.existsSync(srcDir)) return null;
+
+  // 搜索匹配文件
+  function search(dir, name) {
+    try {
+      for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
+        if (e.name.startsWith('.') || e.name === 'node_modules') continue;
+        const fp = path.join(dir, e.name);
+        if (e.isDirectory()) {
+          const r = search(fp, name);
+          if (r) return r;
+        } else if (e.name === name || e.name === name.replace('.tsx', '.ts')) {
+          return path.relative(path.join(PROJECT_ROOT, 'do-zhou'), fp).replace(/\\/g, '/');
+        }
+      }
+    } catch (_) {}
+    return null;
+  }
+
+  // 先精确搜
+  const exact = search(srcDir, clean);
+  if (exact) return exact;
+
+  // 再模糊搜（只搜组件名，不带目录前缀）
+  const baseName = clean.split('-')[0];
+  if (baseName.length > 3) {
+    return search(srcDir, baseName + '.tsx') || search(srcDir, baseName + '.ts');
+  }
+  return null;
+}
+
 function mergeCTCoverage() {
-  // 合并 CT 覆盖率 (coverage/tmp/ct/) → 与 vitest v8 同格式
   const ctDir = path.join(PROJECT_ROOT, 'coverage', 'tmp', 'ct');
   const ctFiles = fs.existsSync(ctDir) ? fs.readdirSync(ctDir).filter(f => f.endsWith('.json')) : [];
   if (ctFiles.length === 0) {
-    console.log('⚠ 无 CT 覆盖率数据 (coverage/tmp/ct/)。先跑: npx playwright test --config=playwright-ct.config.ts');
+    console.log('⚠ 无 CT 覆盖率数据。');
     return 0;
   }
 
-  // 加载已有合并数据
+  // 加载 vitest v8 数据
   let merged = {};
-  if (fs.existsSync(MERGED_OUT)) {
-    try { merged = JSON.parse(fs.readFileSync(MERGED_OUT, 'utf-8')); } catch (_) {}
+  const vitestCov = path.join(PROJECT_ROOT, 'coverage', 'tmp', 'unit', 'coverage-final.json');
+  if (fs.existsSync(vitestCov)) {
+    try { merged = JSON.parse(fs.readFileSync(vitestCov, 'utf-8')); } catch (_) {}
   }
 
-  let ctFuncs = 0;
+  let ctFuncs = 0, mappedFiles = 0;
+  const unmapped = new Set();
+
   for (const f of ctFiles) {
     try {
       const data = JSON.parse(fs.readFileSync(path.join(ctDir, f), 'utf-8'));
       if (!data.result) continue;
       for (const entry of data.result) {
-        if (!entry.url || entry.url.includes('node_modules')) continue;
-        const url = entry.url.replace(/^file:\/\//, '').replace(/\\/g, '/');
-        const srcIdx = url.indexOf('/src/');
-        if (srcIdx < 0) continue;
-        const relPath = url.substring(srcIdx + 1);
+        if (!entry.url || entry.url.includes('node_modules') || !entry.functions) continue;
 
-        if (!merged[relPath]) merged[relPath] = { path: relPath, s: {} };
-        if (entry.functions) {
-          for (const fn of entry.functions) {
-            for (const range of (fn.ranges || [])) {
-              const key = `${range.startOffset}-${range.endOffset}`;
-              if (!merged[relPath].s[key]) merged[relPath].s[key] = 0;
-              if (range.count > 0) {
-                merged[relPath].s[key] = Math.max(merged[relPath].s[key], range.count);
-                ctFuncs++;
-              }
+        // 从 Vite bundle URL 提取组件名
+        const url = entry.url.replace(/^http:\/\/[^/]+\//, '').replace(/^file:\/\//, '');
+        const bundleName = url.split('/').pop() || '';
+        const sourcePath = viteBundleToSource(bundleName);
+
+        if (!sourcePath) {
+          unmapped.add(bundleName.substring(0, 30));
+          continue;
+        }
+
+        if (!merged[sourcePath]) merged[sourcePath] = { path: sourcePath, s: {} };
+        for (const fn of entry.functions) {
+          for (const range of (fn.ranges || [])) {
+            const key = `${range.startOffset}-${range.endOffset}`;
+            if (!merged[sourcePath].s[key]) merged[sourcePath].s[key] = 0;
+            if (range.count > 0) {
+              merged[sourcePath].s[key] = Math.max(merged[sourcePath].s[key], range.count);
+              ctFuncs++;
             }
           }
         }
+        mappedFiles++;
       }
     } catch (e) {}
   }
 
   fs.writeFileSync(MERGED_OUT, JSON.stringify(merged));
-  console.log(`✅ CT 合并: ${ctFuncs} 函数 (${ctFiles.length} 文件)`);
+  console.log(`✅ CT 合并: ${ctFuncs} 函数 → ${mappedFiles} bundle (${ctFiles.length} 文件)`);
+  if (unmapped.size > 0) console.log(`   未映射: ${unmapped.size} 个 bundle (${[...unmapped].slice(0,5).join(', ')}...)`);
 
-  // 统计
   let total = 0, covered = 0;
   for (const entry of Object.values(merged)) {
     if (!entry.s) continue;
     for (const k of Object.keys(entry.s)) { total++; if (entry.s[k] > 0) covered++; }
   }
   const pct = total > 0 ? Math.round(covered / total * 100) : 0;
+  console.log(`📈 Vitest + CT 统一覆盖率: ${pct}% (${covered}/${total} statements · ${Object.keys(merged).length} 文件)`);
   return pct;
 }
 
